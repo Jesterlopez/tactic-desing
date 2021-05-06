@@ -2,7 +2,7 @@ const settings = {
   "name": "tactic-center",
   "state": {
     "frontity": {
-      "url": "http://tactic-center.test",
+      "url": "http://tactic-build.tactic-center.com/",
       "title": "Tactic Center",
       "description": "Agencia de publicidad"
     }
@@ -15,7 +15,7 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "api": "http://tactic-center.test/wp-json/",
+          "api": "http://admin-tactic.tactic-center.com/wp-json/",
           "postTypes": [
             {
               type: "servicios",
