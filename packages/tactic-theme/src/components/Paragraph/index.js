@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { connect } from "frontity";
 import { IconWaveQuote } from "../Icons";
+
 // import { AnimeIcon, FadeRight } from "../Styles/animations";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -13,10 +14,10 @@ import {
 } from "./styles";
 
 const Paragraph = () => {
-  useEffect(() => {
-    AOS.init();
-    AOS.refresh();
-  }, []);
+  // useEffect(() => {
+  //   AOS.init();
+  //   AOS.refresh();
+  // }, []);
   return (
     <>
       <ContainerParagraph id="paragraph">

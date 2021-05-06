@@ -7,6 +7,7 @@ import MenuNavbar from "./components/MenuNavbar";
 import ContainerHeader from "./components/HeaderFirst";
 import Paragraph from "./components/Paragraph";
 import FooterPage from "./components/FooterPage";
+import Content from "./components/Content";
 
 import { Globalstyle } from "./components/Styles/styles";
 import "./components/Styles/styles.css";
@@ -36,7 +37,7 @@ const Root = () => {
       <ContainerHeader />
       <Paragraph />
       {/* div solo para rellenar temporal  */}
-      <div className="height100 margin__bottom__end"></div>
+      <Content className="margin__bottom__end" />
       <FooterPage />
     </>
   );
