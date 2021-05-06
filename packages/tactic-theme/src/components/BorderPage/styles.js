@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
 export const Borders = styled.div`
-  transition: transform 500ms cubic-bezier(0.7, 0, 0.3, 1) 0ms;
+  & > * {
+    transition: transform 500ms cubic-bezier(0.7, 0, 0.3, 1) 0ms;
+  }
 `;
 
 export const BorderTop = styled.div`

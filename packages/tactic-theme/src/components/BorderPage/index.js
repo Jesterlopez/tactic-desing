@@ -11,7 +11,7 @@ import {
 const BorderPage = () => {
   return (
     <>
-      <Borders>
+      <Borders className="borders">
         <BorderTop></BorderTop>
         <BorderBottom></BorderBottom>
         <BorderLeft></BorderLeft>

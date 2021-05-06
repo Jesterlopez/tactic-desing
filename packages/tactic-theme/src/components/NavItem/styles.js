@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Item = styled.li`
-  &:hover > span > span {
+  & > a:hover > span > span::before {
     transform: scaleX(1) translateY(-50%);
   }
 `;

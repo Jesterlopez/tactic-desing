@@ -15,12 +15,6 @@ export const Menu = styled.div`
     left 500ms cubic-bezier(1, 0, 0, 1) 0ms;
 `;
 
-// .menuOpen Menu{
-//   transform: translateX(0%) !important;
-//     left: 40px;
-//     right: 20%;
-// }
-
 export const ContainerNav = styled.div`
   padding-left: calc(16vw - 60px);
   height: 360px;
@@ -32,35 +26,24 @@ export const NavMenu = styled.ul`
   list-style: none;
   margin-bottom: 60px;
   margin-left: -10px;
-`;
-
-export const ContainerContact = styled.div`
-  display: flex;
-  flex-direction: column;
-  font-family: "Gilroy Light", sans-serif;
-  margin: 40px 0;
-  font-size: 13px;
-  & > * {
-    font-size: 0.9em;
-    line-height: 1.6;
-    color: #1c1b20;
-    margin: 0px;
-    font-weight: 500;
-    text-decoration: none;
-  }
-  & > .contact__phone,
-  .contact__email {
-    font-weight: 900;
-    font-size: 1.1em;
-    font-family: "Gilroy Bold", sans-serif;
-    &:hover {
-      text-decoration: underline;
-    }
-  }
+  min-height: 220px;
 `;
 
 export const MenuFooter = styled.div`
   display: flex;
   justify-content: space-between;
   width: 55vw;
+`;
+
+export const ColorMenu = styled.div`
+  background: #ff5851;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 500ms cubic-bezier(1, 0, 0, 1) 0ms;
+  z-index: 8;
+  opacity: 0;
+  pointer-events: none;
 `;

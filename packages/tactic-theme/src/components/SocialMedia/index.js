@@ -2,25 +2,25 @@ import React from "react";
 import { connect } from "frontity";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faFacebookSquare,
-  faInstagramSquare,
+  faInstagram,
   faLinkedinIn,
-  faTwitterSquare,
+  faTwitter,
+  faFacebookF,
 } from "@fortawesome/free-brands-svg-icons";
 
 import { ListSocialMedia } from "./styles";
 
 const SocialMedia = () => {
   return (
-    <ListSocialMedia>
+    <ListSocialMedia className="socialMedia__header">
       <li>
         <a href="#">
-          <FontAwesomeIcon icon={faFacebookSquare} />
+          <FontAwesomeIcon icon={faFacebookF} />
         </a>
       </li>
       <li>
         <a href="#">
-          <FontAwesomeIcon icon={faInstagramSquare} />
+          <FontAwesomeIcon icon={faInstagram} />
         </a>
       </li>
       <li>
@@ -30,7 +30,7 @@ const SocialMedia = () => {
       </li>
       <li>
         <a href="#">
-          <FontAwesomeIcon icon={faTwitterSquare} />
+          <FontAwesomeIcon icon={faTwitter} />
         </a>
       </li>
     </ListSocialMedia>

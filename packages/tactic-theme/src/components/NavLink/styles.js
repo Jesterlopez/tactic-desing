@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Link = styled.a`
+export const Anchor = styled.a`
   font-family: "Gilroy Bold", sans-serif;
   font-size: 1.8rem;
   font-weight: 800;

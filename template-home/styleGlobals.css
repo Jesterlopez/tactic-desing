@@ -602,9 +602,6 @@ a > .mask {
   width: 100%;
   height: 100%;
 }
-.icon__wave__low > div.animeIcon {
-  /* animation: leftToRight 1s linear forwards; */
-}
 .icon__wave__low svg {
   width: 25px;
   height: 5px;

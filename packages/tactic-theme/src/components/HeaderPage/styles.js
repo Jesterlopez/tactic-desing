@@ -20,12 +20,11 @@ export const Head = styled.span`
 `;
 
 export const Brand = styled.div`
-  background: #3cd;
   transition: transform 500ms cubic-bezier(0.7, 0, 0.3, 1) 0ms;
   position: fixed;
   top: 0;
   z-index: 1000;
-  display: inline-block;
+  display: flex;
   padding: 0px;
   height: 40px;
   line-height: 40px;
@@ -33,13 +32,24 @@ export const Brand = styled.div`
   margin: 0px;
   color: inherit;
   white-space: nowrap;
+  align-items: center;
   float: left;
 `;
 
 export const BrandImg = styled.img`
   height: 100%;
+  width: 120px;
   padding: 5px;
   box-sizing: border-box;
+  background: #3cd;
+`;
+
+export const NamePage = styled.a`
+  text-decoration: none;
+  text-transform: capitalize;
+  color: var(--color-dark);
+  font-size: 0.8rem;
+  margin-left: 5px;
 `;
 
 export const ToggleLang = styled.ul`
@@ -108,6 +118,17 @@ export const ToggleMenu = styled.a`
       &:nth-child(4) {
         transform: translateY(3px);
       }
+    }
+  }
+  &:hover {
+    & .iconMenu::before {
+      width: 20px;
+    }
+    & .iconMenu {
+      width: 32px;
+    }
+    & .iconMenu::after {
+      width: 17px;
     }
   }
 `;

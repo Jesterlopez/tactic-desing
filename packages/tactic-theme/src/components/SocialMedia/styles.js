@@ -13,12 +13,15 @@ export const ListSocialMedia = styled.ul`
   right: 10px;
   z-index: 500;
   transform: translateY(-50%);
+  transition: all 500ms cubic-bezier(0.7, 0, 0.3, 1) 0ms;
+
   & > li {
     padding: 4px;
     & > a {
       text-decoration: none;
       color: #1c1b20;
       text-transform: uppercase;
+      font-size: 0.8rem;
     }
   }
 `;

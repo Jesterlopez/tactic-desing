@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { connect } from "frontity";
 import SocialMedia from "../SocialMedia";
 import {
@@ -11,20 +11,29 @@ import {
   ToggleMenu,
   Icon,
   Text,
+  NamePage,
 } from "./styles";
 
 const HeaderPage = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    document.body.classList.toggle("menuOpen", isOpen);
+  }, [isOpen]);
   return (
     <>
       <Header>
         <Head>
-          <Brand>
+          <Brand className="brand">
             <BrandImg
               src="https://tactic-center.com/wp-content/uploads/2018/04/Logo-TC.png"
               alt="logo tactic center"
             />
+            <NamePage className="text__italic" href="#">
+              Name Page
+            </NamePage>
           </Brand>
-          <ToggleLang>
+          <ToggleLang className="langToggle">
             <li>
               <a href="#" className="link__active">
                 es.
@@ -36,9 +45,18 @@ const HeaderPage = () => {
           </ToggleLang>
         </Head>
         <HeaderMiddle>
-          <ToggleMenu onClick="" href="#" id="menu__toggle">
-            <Icon></Icon>
-            <Text>
+          <ToggleMenu
+            onClick={(e) => {
+              e.preventDefault();
+              setIsOpen(!isOpen);
+            }}
+            onMouseEnter={() => document.body.classList.add("menu__hover")}
+            onMouseLeave={() => document.body.classList.remove("menu__hover")}
+            href="#"
+            id="menu__toggle"
+          >
+            <Icon className="iconMenu"></Icon>
+            <Text className="iconMenuText">
               <span>m</span>
               <span>e</span>
               <span>n</span>

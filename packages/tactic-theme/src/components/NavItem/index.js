@@ -1,40 +1,26 @@
 import React from "react";
 import { connect } from "frontity";
-
+import NavLink from "../NavLink";
 import { Item } from "./styles";
 
-const NavItem = ({ children }) => {
+const NavItem = () => {
   return (
     <>
-      <Item>{children}</Item>
-      {/* <li class="nav__item">
-        <a href="#">
-          <span class="mask">
-            <span>Values.</span>
-          </span>
-        </a>
-      </li>
-      <li class="nav__item">
-        <a href="#">
-          <span class="mask">
-            <span>Startup studio.</span>
-          </span>
-        </a>
-      </li>
-      <li class="nav__item">
-        <a href="#">
-          <span class="mask">
-            <span>Projects.</span>
-          </span>
-        </a>
-      </li>
-      <li class="nav__item">
-        <a href="#">
-          <span class="mask">
-            <span>Jobs.</span>
-          </span>
-        </a>
-      </li> */}
+      <Item>
+        <NavLink href="#">Agency.</NavLink>
+      </Item>
+      <Item>
+        <NavLink href="#">Values.</NavLink>
+      </Item>
+      <Item>
+        <NavLink href="#">Startup studio.</NavLink>
+      </Item>
+      <Item>
+        <NavLink href="#">Projects.</NavLink>
+      </Item>
+      <Item>
+        <NavLink href="#">Jobs.</NavLink>
+      </Item>
     </>
   );
 };
