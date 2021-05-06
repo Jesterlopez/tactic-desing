@@ -8,7 +8,6 @@ import ContainerHeader from "./components/HeaderFirst";
 import Paragraph from "./components/Paragraph";
 import FooterPage from "./components/FooterPage";
 import Content from "./components/Content";
-
 import { Globalstyle } from "./components/Styles/styles";
 import "./components/Styles/styles.css";
 
@@ -35,7 +34,7 @@ const Root = () => {
       <HeaderPage />
       <MenuNavbar />
       <ContainerHeader />
-      <Paragraph />
+      {/* <Paragraph /> */}
       {/* div solo para rellenar temporal  */}
       <Content className="margin__bottom__end" />
       <FooterPage />
