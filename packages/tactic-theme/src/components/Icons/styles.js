@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const ArrowRight = styled.i`
   display: block;
@@ -41,6 +41,11 @@ export const IconWave = styled.i`
     background: #ff5851;
     width: 100%;
     height: 100%;
+  }
+  &.big svg {
+    width: 50px;
+    height: 10px;
+    margin-bottom: 30px;
   }
   & svg {
     width: 25px;

@@ -19,11 +19,18 @@ const Root = () => {
 
   const handleScroll = (e) => {
     const containerHeader = document.getElementById("header");
+    const Hello = document.getElementById("hello");
+    const Content = document.querySelector("#content");
 
     if (containerHeader.getBoundingClientRect().top < 0) {
       containerHeader.classList.add("expanded__height");
     } else {
       containerHeader.classList.remove("expanded__height");
+    }
+    if (Content.getBoundingClientRect().top < 0) {
+      Hello.style.opacity = 0;
+    } else {
+      Hello.style.opacity = 1;
     }
   };
   return (

@@ -1,11 +1,13 @@
 import React from "react";
 import { connect } from "frontity";
 
+import { Anchor } from "./styles";
+
 const AnchorLink = ({ href, children, className }) => {
   return (
-    <a href={href} className={className}>
+    <Anchor href={href} className={className}>
       {children}
-    </a>
+    </Anchor>
   );
 };
 

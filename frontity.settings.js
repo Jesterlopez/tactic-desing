@@ -16,6 +16,13 @@ const settings = {
       state: {
         source: {
           api: "http://admin-tactic.tactic-center.com/wp-json/",
+          postTypes: [
+            {
+              type: "servicios",
+              endpoint: "servicios",
+              archive: "/servicios",
+            },
+          ],
         },
       },
     },

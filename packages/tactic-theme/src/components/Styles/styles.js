@@ -152,4 +152,7 @@ body.menuOpen{
 .expanded__height{
   height: 200vh !important;
 }
+.padding__bottom__none{
+  padding-bottom: 0;
+}
 `;
