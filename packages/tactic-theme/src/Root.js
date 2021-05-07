@@ -20,6 +20,7 @@ const Root = () => {
   const handleScroll = (e) => {
     const containerHeader = document.getElementById("header");
     const Hello = document.getElementById("hello");
+    const Paragraph = document.getElementById("paragraph");
     const Content = document.querySelector("#content");
 
     if (containerHeader.getBoundingClientRect().top < 0) {
@@ -29,8 +30,10 @@ const Root = () => {
     }
     if (Content.getBoundingClientRect().top < 0) {
       Hello.style.opacity = 0;
+      Paragraph.style.opacity = 0;
     } else {
       Hello.style.opacity = 1;
+      Paragraph.style.opacity = 1;
     }
   };
   return (
@@ -41,7 +44,7 @@ const Root = () => {
       <HeaderPage />
       <MenuNavbar />
       <ContainerHeader />
-      {/* <Paragraph /> */}
+      <Paragraph id="paragraph" />
       {/* div solo para rellenar temporal  */}
       <Content className="margin__bottom__end" />
       <FooterPage />

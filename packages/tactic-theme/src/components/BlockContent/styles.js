@@ -2,9 +2,8 @@ import styled from "styled-components";
 
 export const BlockCont = styled.div`
   width: 100%;
-  padding-right: 12%;
-
-  & .link__blockContent {
+  padding-right: 50%;
+  /* & .link__blockContent {
     position: relative;
     font-size: 1.2rem;
     &::before {
@@ -46,5 +45,5 @@ export const BlockCont = styled.div`
         transition-duration: 400ms;
       }
     }
-  }
+  } */
 `;

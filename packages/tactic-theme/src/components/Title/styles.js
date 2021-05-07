@@ -7,6 +7,9 @@ export const TitleBlock = styled.span`
   line-height: 1.2;
   font-family: "Gilroy Bold", sans-serif;
   display: block;
+  &.text__italic {
+    font-size: 2.1rem;
+  }
 
   &.italic {
     font-family: "Libre Baskerville", serif;

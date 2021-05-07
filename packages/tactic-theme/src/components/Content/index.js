@@ -23,7 +23,7 @@ const Content = () => {
       <ContainerContent id="content">
         <img src="https://www.wokine.com/wp-content/themes/wokine/assets/pages/home/video-visuel-large.jpg" />
         <ContentSection className="padding__bottom__none">
-          <div>
+          <div className="container__fullWidth">
             <NameSection>
               {/* recibe la clase big para cambiar el estilo depende la situacion | */}
               <IconWaveQuote className="big" />
@@ -31,7 +31,7 @@ const Content = () => {
               <span>ital</span>
             </NameSection>
           </div>
-          <div>
+          <div className="container__left middle">
             <BlockContent id="BlockContent">
               <HeadBlockContent>
                 <Title>An</Title>
@@ -50,7 +50,7 @@ const Content = () => {
               </AnchorLink>
             </BlockContent>
           </div>
-          <div>
+          <div className="container__right">
             <ContainerServices className="container__services">
               <ServiceItem>
                 <ServiceName>Desing</ServiceName>
@@ -96,7 +96,7 @@ const Content = () => {
           </div>
         </ContentSection>
         <ContentSection className="padding__bottom__none">
-          <div>
+          <div className="container__fullWidth">
             <NameSection>
               {/* recibe la clase big para cambiar el estilo depende la situacion | */}
               <IconWaveQuote className="big" />
@@ -104,10 +104,19 @@ const Content = () => {
               <span>rea</span>
             </NameSection>
           </div>
-          <div>
-            <ContainerServices className="container__services"></ContainerServices>
+          <div className="container__left imagen__content">
+            <div>
+              <img src="https://www.wokine.com/wp-content/themes/wokine/assets/pages/home/visuel_project-retina.jpg" />
+            </div>
+            <div className="footer__image">
+              <p className="title__project">Decathlon recruitment.</p>
+              <p className="category__project">Web & mobile - 2014</p>
+              <AnchorLink className="text__italic link__blockContent" href="#">
+                see the project
+              </AnchorLink>
+            </div>
           </div>
-          <div>
+          <div className="container__right">
             <BlockContent id="BlockContent">
               <HeadBlockContent>
                 <Title className="text__italic">User-centered</Title>
@@ -126,7 +135,7 @@ const Content = () => {
           </div>
         </ContentSection>
         <ContentSection>
-          <div>
+          <div className="container__fullWidth">
             <NameSection>
               {/* recibe la clase big para cambiar el estilo depende la situacion | */}
               <IconWaveQuote className="big" />
@@ -134,8 +143,34 @@ const Content = () => {
               <span>eas</span>
             </NameSection>
           </div>
-          <div className="image">
+          <div className="image container__fullWidth">
             <img src="https://www.wokine.com/wp-content/themes/wokine/assets/pages/home/wokine-startup-factory-retina.jpg" />
+          </div>
+          <div className="container__fullWidth padding__top__80">
+            <BlockContent id="BlockContent">
+              <HeadBlockContent className="column__left">
+                <Title>A studio dedicated to</Title>
+                <Title className="text__italic">startups.</Title>
+              </HeadBlockContent>
+              <BodyContent className="column__center">
+                Have you dreamed up an innovative new digital platform, a
+                revolutionary mobile application, a life-enhancing chatbot, or
+                do you just want to change the world? Let's do it together.
+              </BodyContent>
+              <BodyContent className="column__right">
+                We're here to make your dreams come true. Our support method
+                will turn your bright idea into a real prototype, and then grow
+                it into a profitable business.
+                <div>
+                  <AnchorLink
+                    className="text__italic link__blockContent"
+                    href="#"
+                  >
+                    see how
+                  </AnchorLink>
+                </div>
+              </BodyContent>
+            </BlockContent>
           </div>
         </ContentSection>
       </ContainerContent>

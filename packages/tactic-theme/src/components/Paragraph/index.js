@@ -14,10 +14,10 @@ import {
 } from "./styles";
 
 const Paragraph = () => {
-  // useEffect(() => {
-  //   AOS.init();
-  //   AOS.refresh();
-  // }, []);
+  useEffect(() => {
+    AOS.init();
+    // AOS.refresh();
+  }, []);
   return (
     <>
       <ContainerParagraph id="paragraph">
@@ -32,7 +32,7 @@ const Paragraph = () => {
             data-aos-delay="200"
             data-aos-easing="ease-in-sine"
           >
-            Depuis 2004.
+            Since 2004.
           </RefQuote>
         </Quote>
         <ParagraphContent>
