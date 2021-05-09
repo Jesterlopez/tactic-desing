@@ -15,12 +15,12 @@ const settings = {
       name: "@frontity/wp-source",
       state: {
         source: {
-          api: "http://admin-tactic.tactic-center.com/wp-json/",
+          api: "http://admin-tactic.tactic-center.com/wp-json",
           postTypes: [
             {
-              type: "servicios",
-              endpoint: "servicios",
-              archive: "/servicios",
+              type: "servicio",
+              endpoint: "servicio",
+              archive: "/servicio",
             },
           ],
         },

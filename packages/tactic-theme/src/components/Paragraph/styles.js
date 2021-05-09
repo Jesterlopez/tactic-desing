@@ -5,6 +5,7 @@ export const ContainerParagraph = styled.div`
   position: fixed;
   top: 50%;
   transform: translateY(-50%);
+  opacity: 0;
 `;
 
 export const Quote = styled.span`

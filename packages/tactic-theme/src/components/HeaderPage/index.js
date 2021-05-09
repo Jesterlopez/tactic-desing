@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "frontity";
 import SocialMedia from "../SocialMedia";
+import AnchorLink from "../AnchorLink";
 import {
   Header,
   Head,
@@ -14,7 +15,7 @@ import {
   NamePage,
 } from "./styles";
 
-const HeaderPage = () => {
+const HeaderPage = ({ namePage }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
@@ -25,12 +26,14 @@ const HeaderPage = () => {
       <Header>
         <Head>
           <Brand className="brand">
-            <BrandImg
-              src="https://tactic-center.com/wp-content/uploads/2018/04/Logo-TC.png"
-              alt="logo tactic center"
-            />
+            <AnchorLink href="/">
+              <BrandImg
+                src="https://tactic-center.com/wp-content/uploads/2018/04/Logo-TC.png"
+                alt="logo tactic center"
+              />
+            </AnchorLink>
             <NamePage className="text__italic" href="#">
-              Name Page
+              {namePage}
             </NamePage>
           </Brand>
           <ToggleLang className="langToggle">

@@ -111,8 +111,9 @@ export const BodyContent = styled.p`
   line-height: 1.3rem;
   box-sizing: border-box;
   color: #606060;
-  > div {
+  > span {
     margin-top: 30px;
+    display: block;
   }
 `;
 

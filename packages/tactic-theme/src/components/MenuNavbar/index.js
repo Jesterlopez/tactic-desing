@@ -1,20 +1,10 @@
 import React from "react";
 import { connect } from "frontity";
 import NavItem from "../NavItem";
-import { IconArrowRight } from "../Icons";
 import InfoContact from "../InfoContact";
 import Contact from "../Contact";
-// import AOS from "aos";
-// import "aos/dist/aos.css";
 
-import {
-  Menu,
-  ContainerNav,
-  NavMenu,
-  ContainerContact,
-  MenuFooter,
-  ColorMenu,
-} from "./styles";
+import { Menu, ContainerNav, NavMenu, MenuFooter, ColorMenu } from "./styles";
 
 const MenuNavbar = () => {
   return (

@@ -27,8 +27,8 @@ const Content = () => {
             <NameSection>
               {/* recibe la clase big para cambiar el estilo depende la situacion | */}
               <IconWaveQuote className="big" />
-              <span>dig</span>
-              <span>ital</span>
+              <span>ser</span>
+              <span>vicios</span>
             </NameSection>
           </div>
           <div className="container__left middle">
@@ -39,11 +39,10 @@ const Content = () => {
                 <Title>of your digital strategy.</Title>
               </HeadBlockContent>
               <BodyContent>
-                A key component of your transformation, your digital strategy
-                requires special attention. We provide you with the support you
-                need all during your project. Through regular workshops,
-                brainstormings and idea sharing, we help grow your initial idea
-                into a cutting-edge digital solution.
+                En Tactic Center presentamos una oferta de servicio de Inbound
+                Marketing y optimización de procesos, mediante la utilización de
+                herramientas tecnológicas ajustadas al giro de negocio de
+                nuestros clientes
               </BodyContent>
               <AnchorLink className="text__italic link__blockContent" href="#">
                 Our Values
@@ -53,43 +52,39 @@ const Content = () => {
           <div className="container__right">
             <ContainerServices className="container__services">
               <ServiceItem>
-                <ServiceName>Desing</ServiceName>
+                <ServiceName>Inbound Marketing</ServiceName>
                 <ListService>
-                  <ListItem>Web design</ListItem>
-                  <ListItem>Web design</ListItem>
-                  <ListItem>Web design</ListItem>
-                  <ListItem>Web design</ListItem>
-                  <ListItem>Web design</ListItem>
+                  <ListItem>Atraer</ListItem>
+                  <ListItem>Convertir</ListItem>
+                  <ListItem>Cerrar</ListItem>
+                  <ListItem>Fidelizar</ListItem>
                 </ListService>
               </ServiceItem>
               <ServiceItem>
-                <ServiceName>Desing</ServiceName>
+                <ServiceName>Integración de Tecnologías</ServiceName>
                 <ListService>
-                  <ListItem>Web design</ListItem>
-                  <ListItem>Web design</ListItem>
-                  <ListItem>Web design</ListItem>
-                  <ListItem>Web design</ListItem>
-                  <ListItem>Web design</ListItem>
+                  <ListItem>Optimización de Procesos y ERP’s</ListItem>
+                  <ListItem>Recursos Humanos y Manejos de tiempos</ListItem>
+                  <ListItem>Colaboración y Productividad</ListItem>
+                  <ListItem>Automatización de Marketing y Ventas</ListItem>
+                  <ListItem>Administración de TI y Seguridad</ListItem>
+                  <ListItem>Comercio Electrónico</ListItem>
                 </ListService>
               </ServiceItem>
               <ServiceItem>
-                <ServiceName>Desing</ServiceName>
+                <ServiceName>Marketing Digital</ServiceName>
                 <ListService>
-                  <ListItem>Web design</ListItem>
-                  <ListItem>Web design</ListItem>
-                  <ListItem>Web design</ListItem>
-                  <ListItem>Web design</ListItem>
-                  <ListItem>Web design</ListItem>
+                  <ListItem>Administración de Redes Sociales</ListItem>
+                  <ListItem>Administración de Contenido</ListItem>
                 </ListService>
               </ServiceItem>
               <ServiceItem>
-                <ServiceName>Desing</ServiceName>
+                <ServiceName>Mercadeo Convencional</ServiceName>
                 <ListService>
-                  <ListItem>Web design</ListItem>
-                  <ListItem>Web design</ListItem>
-                  <ListItem>Web design</ListItem>
-                  <ListItem>Web design</ListItem>
-                  <ListItem>Web design</ListItem>
+                  <ListItem>Estrategias de medios masivos (ATL)</ListItem>
+                  <ListItem>Estrategias de relaciones públicas</ListItem>
+                  <ListItem>Estrategias de activaciones (BTL)</ListItem>
+                  <ListItem>Diseño Gráfico</ListItem>
                 </ListService>
               </ServiceItem>
             </ContainerServices>
@@ -112,24 +107,24 @@ const Content = () => {
               <p className="title__project">Decathlon recruitment.</p>
               <p className="category__project">Web & mobile - 2014</p>
               <AnchorLink className="text__italic link__blockContent" href="#">
-                see the project
+                Ir a Proyectos
               </AnchorLink>
             </div>
           </div>
           <div className="container__right">
             <BlockContent id="BlockContent">
               <HeadBlockContent>
-                <Title className="text__italic">User-centered</Title>
-                <Title>creativity.</Title>
+                <Title>En</Title>
+                <Title className="text__italic">Tactic</Title>
+                <Title>Center.</Title>
               </HeadBlockContent>
               <BodyContent>
-                Efficient and immersive user experience is the way to capture
-                attention and deliver a clear message. This is why we believe,
-                first and foremost, that usability serves design. And that all
-                design must be elegant and innovative.
+                Nos tomamos en serio el diseño de una comunicación y estrategia
+                adaptada a las necesidades de tu marca, que te acercarán a tu
+                objetivo de convertirte en el líder del mercado.
               </BodyContent>
               <AnchorLink className="text__italic link__blockContent" href="#">
-                see our work
+                Proyectos
               </AnchorLink>
             </BlockContent>
           </div>
@@ -161,14 +156,14 @@ const Content = () => {
                 We're here to make your dreams come true. Our support method
                 will turn your bright idea into a real prototype, and then grow
                 it into a profitable business.
-                <div>
+                <span>
                   <AnchorLink
                     className="text__italic link__blockContent"
                     href="#"
                   >
                     see how
                   </AnchorLink>
-                </div>
+                </span>
               </BodyContent>
             </BlockContent>
           </div>

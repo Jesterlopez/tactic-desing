@@ -7,19 +7,10 @@ const NavItem = () => {
   return (
     <>
       <Item>
-        <NavLink href="#">Agency.</NavLink>
+        <NavLink href="/servicio">Servicios</NavLink>
       </Item>
       <Item>
-        <NavLink href="#">Values.</NavLink>
-      </Item>
-      <Item>
-        <NavLink href="#">Startup studio.</NavLink>
-      </Item>
-      <Item>
-        <NavLink href="#">Projects.</NavLink>
-      </Item>
-      <Item>
-        <NavLink href="#">Jobs.</NavLink>
+        <NavLink href="/nosotros">Nosotros</NavLink>
       </Item>
     </>
   );
