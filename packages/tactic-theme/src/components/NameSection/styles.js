@@ -8,10 +8,13 @@ export const TitleH1 = styled.h1`
   margin-bottom: 100px;
   line-height: 0.9;
   z-index: 2;
-  & > * {
+  & span {
     display: block;
   }
-  & > span:last-child {
+  & div:last-child {
+    display: inline-block;
+  }
+  & span:last-child {
     display: inline-block;
   }
   &::after {

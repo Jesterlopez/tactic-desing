@@ -40,6 +40,15 @@ export const fadeInLeft = keyframes`
     }
     
 `;
+export const fadeInRight = keyframes`
+    from{
+        transform: translate(110%, '');
+    }
+    to{
+        transform: translate(0%, '');
+    }
+    
+`;
 export const fadeOutLeft = keyframes`
     from{
         opacity: 1;

@@ -55,11 +55,14 @@ export const ContentSection = styled.section`
     padding-right: 5%;
     box-sizing: border-box;
 
-    > div {
+    & > div {
       width: 100%;
       height: 100%;
-      & .react-parallax-bgimage {
-        width: inherit !important;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      &.thumbnail__medium img {
+        width: auto;
         height: 80% !important;
       }
       & > img {

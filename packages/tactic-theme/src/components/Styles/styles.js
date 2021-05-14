@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+
 import {
   fadeInUp,
   fadeInDown,
@@ -6,6 +7,7 @@ import {
   slideInRight,
   slideOutRight,
   fadeOutLeft,
+  fadeInRight,
 } from "./animation";
 
 export const Globalstyle = createGlobalStyle`
@@ -223,6 +225,13 @@ body.menuOpen{
     width: 20%;
     margin-left: 20px;
   }
+  .height100{
+    height: 100%;
+    width: auto;
+  }
+  .width100{
+    width: 100%;
+  }
 
   .animation{
     &.fadeInUp{
@@ -233,6 +242,9 @@ body.menuOpen{
     }
     &.fadeInLeft{
       animation: ${fadeInLeft} 1s forwards;
+    }
+    &.fadeInRight{
+      animation: ${fadeInRight} 1s forwards;
     }
     &.fadeOutLeft{
       animation: ${fadeOutLeft} 1s forwards;

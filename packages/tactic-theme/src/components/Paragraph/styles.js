@@ -6,6 +6,8 @@ export const ContainerParagraph = styled.div`
   top: 50%;
   transform: translateY(-50%);
   opacity: 0;
+  z-index: 1;
+  /* transition: 0.2s transform ease; */
 `;
 
 export const Quote = styled.span`

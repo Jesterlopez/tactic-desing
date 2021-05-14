@@ -26,7 +26,7 @@ const HeaderPage = ({ namePage }) => {
       <Header>
         <Head>
           <Brand className="brand">
-            <AnchorLink href="/">
+            <AnchorLink href="/" className="height100">
               <BrandImg
                 src="https://tactic-center.com/wp-content/uploads/2018/04/Logo-TC.png"
                 alt="logo tactic center"

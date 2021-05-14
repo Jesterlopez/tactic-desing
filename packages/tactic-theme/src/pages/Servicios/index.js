@@ -3,7 +3,8 @@ import { connect } from "frontity";
 import {} from "./styles";
 import Paragraph from "../../components/Paragraph";
 
-const Servicios = () => {
+const Servicios = ({ state }) => {
+  const data = state.source.get(state.router.link);
   return (
     <>
       <Paragraph />

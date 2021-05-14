@@ -3,14 +3,20 @@ import { connect } from "frontity";
 import NavLink from "../NavLink";
 import { Item } from "./styles";
 
-const NavItem = () => {
+const NavItem = ({ state }) => {
   return (
     <>
       <Item>
-        <NavLink href="/servicio">Servicios</NavLink>
+        <NavLink href="/nosotros">Nosotros</NavLink>
       </Item>
       <Item>
-        <NavLink href="/nosotros">Nosotros</NavLink>
+        <NavLink href="/servicios">Servicios</NavLink>
+      </Item>
+      <Item>
+        <NavLink href="/blog">Blog</NavLink>
+      </Item>
+      <Item>
+        <NavLink href="/contacto">Contáctanos</NavLink>
       </Item>
     </>
   );
