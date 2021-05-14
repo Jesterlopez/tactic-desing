@@ -38,12 +38,12 @@ const HeaderPage = ({ namePage }) => {
           </Brand>
           <ToggleLang className="langToggle">
             <li>
-              <a href="#" className="link__active">
+              <a href="/es" className="link__active">
                 es.
               </a>
             </li>
             <li>
-              <a href="#">en.</a>
+              <a href="/en">en.</a>
             </li>
           </ToggleLang>
         </Head>

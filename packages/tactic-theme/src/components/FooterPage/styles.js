@@ -7,6 +7,8 @@ export const Footer = styled.footer`
   z-index: -1;
   width: 100%;
   background: #fff;
+  display: flex;
+  justify-content: center;
   & .padding__custom {
     display: flex;
     align-items: center;
@@ -16,12 +18,18 @@ export const Footer = styled.footer`
     position: relative;
     justify-content: space-between;
   }
+  & div > a,
+  div > div {
+    width: 240px;
+    padding-right: 20px;
+  }
 `;
 
 export const Credits = styled.div`
   display: flex;
   flex-direction: column;
   text-align: right;
+  width: 200px;
   & .logo__company {
     height: 40px;
     display: flex;

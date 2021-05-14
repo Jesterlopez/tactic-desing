@@ -70,14 +70,20 @@ export const Globalstyle = createGlobalStyle`
     padding: 0;
     margin: 0;
 }
+html{scroll-behavior:smooth}
 body{
     font-family: 'Lato', sans-serif;
     overflow-x: hidden;
     background: #f8f8f8;
+    scroll-behavior:smooth
 }
 
 body.menuOpen{
   overflow: hidden;
+}
+
+.link__active{
+  color: #c2c2c2 !important;
 }
 
 .menuOpen #navbarMenu{
@@ -235,7 +241,7 @@ body.menuOpen{
 
   .animation{
     &.fadeInUp{
-      animation: ${fadeInUp} 1s forwards;
+      animation: ${fadeInUp} .5s forwards;
     }
     &.fadeInDown{
       animation: ${fadeInDown} 1s forwards;

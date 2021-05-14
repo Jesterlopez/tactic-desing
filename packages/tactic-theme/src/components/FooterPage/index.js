@@ -19,10 +19,10 @@ const FooterPage = () => {
             © Tactic Center
           </a>
           <a href="#" className="credit__link">
-            Mentions légales
+            Muestras legales
           </a>
           <a href="#" className="credit__link">
-            Notre politique de confidentialité
+            Nuestra politica de privacidad
           </a>
         </Credits>
       </div>

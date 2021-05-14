@@ -1,4 +1,4 @@
-import { Global, css, connect, styled, Head } from "frontity";
+import { connect } from "frontity";
 import React, { useEffect, useState } from "react";
 import HeaderPage from "./components/HeaderPage";
 import BorderPage from "./components/BorderPage";
@@ -11,6 +11,7 @@ import ContentPage from "./components/ContentPage";
 import Single from "./components/Single";
 import Error404 from "./components/404";
 import Home from "./components/Home";
+import Title from "./title";
 
 import Servicios from "./pages/Servicios";
 
@@ -23,32 +24,53 @@ const Root = ({ state, actions }) => {
   // animacion del home al hace scroll
   useEffect(() => {
     actions.source.fetch("/inicio");
-    window.addEventListener("scroll", handleScroll);
-    window.addEventListener("scroll", handleScrollParallax);
+    if (document.readyState === "complete") {
+      window.addEventListener("scroll", handleScroll);
+      window.addEventListener("scroll", handleScrollParallax);
+      window.addEventListener("scroll", scrollFadeIn);
+    }
 
     return () => {
       window.removeEventListener("scroll", handleScrollParallax);
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  const handleScroll = () => {
+
+  const scrollFadeIn = () => {
+    const img = document.querySelectorAll(".fadeObserve");
+    const callback = (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("animation");
+        }
+      });
+    };
+
+    const options = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0,
+    };
+
+    const myObserver = new IntersectionObserver(callback, options);
+
+    img.forEach((img) => {
+      myObserver.observe(img);
+    });
+  };
+
+  const handleScroll = (e) => {
     const containerHeader = document.getElementById("header");
     const Hello = document.getElementById("hello");
     const Paragraph = document.getElementById("paragraph");
 
-    const fadeInUp = document.querySelectorAll(".fadeInUp");
+    const fadeInUp = document.querySelectorAll(".scrollAnime");
     const slideInRight = document.querySelector(".slideInRight");
     const fadeInLeft = document.querySelector(".fadeInLeft");
     const fadeInRight = document.querySelector(".fadeInRight");
 
     const Content = document.querySelector("#content");
     const Section = document.querySelector("#section");
-
-    // if (Section.getBoundingClientRect().top < 100) {
-    //   fadeInRight.classList.add("animation");
-    // } else {
-    //   fadeInRight.classList.remove("animation");
-    // }
 
     if (containerHeader.getBoundingClientRect().top < 0) {
       containerHeader.classList.add("expanded__height");
@@ -100,8 +122,10 @@ const Root = ({ state, actions }) => {
       ElementParallax.style.transform = `translateY(-50%)`;
     }
   };
+
   return (
     <>
+      <Title />
       <Globalstyle />
       <BorderPage />
       <HeaderPage
@@ -117,7 +141,8 @@ const Root = ({ state, actions }) => {
         <>
           <ContainerHeader />
           <Paragraph />
-          <Home /> <FooterPage />
+          <Home />
+          <FooterPage />
         </>
       )}
       {data.isServicioArchive && (
@@ -138,25 +163,20 @@ const Root = ({ state, actions }) => {
       )}
       {data.isPost && (
         <>
-          <ContentPage>{/* <Single state={state}></Single> */}</ContentPage>
+          <ContentPage>
+            <Single></Single>
+          </ContentPage>
         </>
       )}
       {data.isPage && (
         <>
           <ContentPage>
-            <h1>Is page</h1>
-          </ContentPage>
-          {/* <ContainerHeader />
-          <Paragraph /> */}
-          {/* <Content className="margin__bottom__end" /> */}
-          {/* <FooterPage /> */}
-          {/* <ContentPage>
             <div
               dangerouslySetInnerHTML={{
                 __html: `${data2.page[id].content.rendered}`,
               }}
             ></div>
-          </ContentPage> */}
+          </ContentPage>
         </>
       )}
     </>

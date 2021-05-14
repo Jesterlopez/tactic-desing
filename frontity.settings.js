@@ -1,5 +1,6 @@
 const settings = {
   name: "tactic-center",
+
   state: {
     frontity: {
       url: "https://tactic-build.tactic-center.com/",
@@ -26,8 +27,8 @@ const settings = {
           // pages: [
           //   {
           //     type: "page",
-          //     endpoint: "sample",
-          //     archive: "/sample-page",
+          //     endpoint: "en",
+          //     archive: "/en",
           //   },
           // ],
         },

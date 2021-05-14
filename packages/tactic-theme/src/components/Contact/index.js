@@ -9,13 +9,13 @@ const Contact = () => {
     <>
       <ContainerContact>
         <AnchorLink className="contact__address" href="#">
-          16 Place Cormontaigne, 59000 Lille France
+          Planes de Altamira, Plaza San Agustín, Módulo 3. Managua, Nicaragua.
         </AnchorLink>
         <AnchorLink className="contact__phone" href="#">
-          +505 89562302
+          (505) 2223 6113
         </AnchorLink>
         <AnchorLink className="contact__email" href="#">
-          contact@company.com
+          info@tactic-center.com
         </AnchorLink>
       </ContainerContact>
     </>

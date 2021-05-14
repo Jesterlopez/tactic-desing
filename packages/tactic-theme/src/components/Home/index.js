@@ -3,10 +3,11 @@ import { connect } from "frontity";
 import NameSection from "../NameSection";
 import { IconWaveQuote } from "../Icons";
 import BlockContent from "../BlockContent";
-import Title from "../Title";
+import Title from "../Titles";
 import AnchorLink from "../AnchorLink";
 import ServiceItem from "../ServiceItem";
 import Media from "../Media";
+import ImgParallax from "../ImgParallax";
 import { motion, useAnimation } from "framer-motion";
 import { Parallax, Background } from "react-parallax";
 import { InView, useInView } from "react-intersection-observer";
@@ -29,8 +30,8 @@ const Home = ({ state }) => {
 
   const [translate, setTranslate] = useState(0);
   const parallaxRef = useRef();
+
   const controls = useAnimation();
-  // const { ref, fadeInUp, inView } = useInView();
   const { ref, inView } = useInView({
     triggerOnce: true,
     delay: 50,
@@ -96,7 +97,12 @@ const Home = ({ state }) => {
       {typeof home === "undefined" ? null : (
         <ContainerContent id="content">
           <div className="container__fullWidth">
-            <Media idImg={home.featured_media} element="home" />
+            <ImgParallax
+              imgID={home.featured_media}
+              height={"100vh"}
+              strength={100}
+            ></ImgParallax>
+            {/* <Media idImg={home.featured_media} element="home" /> */}
           </div>
           <ContentSection className="padding__bottom__none" id="section">
             <div className="container__fullWidth">
@@ -231,61 +237,17 @@ const Home = ({ state }) => {
                 {/* recibe la clase big para cambiar el estilo depende la situacion | */}
                 <IconWaveQuote className="big" />
                 <div style={{ height: "90", overflow: "hidden" }}>
-                  <InView>
-                    {({ ref }) => (
-                      <motion.div
-                        initial="hidden"
-                        animate={controls}
-                        variants={AnimationInUp}
-                        ref={ref}
-                      >
-                        <span>c</span>
-                      </motion.div>
-                    )}
-                  </InView>
+                  <span className="fadeInUp fadeObserve">c</span>
                 </div>
                 <div style={{ height: "90", overflow: "hidden" }}>
-                  <InView>
-                    {({ ref }) => (
-                      <motion.div
-                        initial="hidden"
-                        animate={controls}
-                        variants={AnimationInUp}
-                        ref={ref}
-                      >
-                        <span>rea</span>
-                      </motion.div>
-                    )}
-                  </InView>
+                  <span className="fadeInUp fadeObserve">rea</span>
                 </div>
-                {/* <motion.div
-                    className="Box"
-                    initial="hidden"
-                    animate={controls}
-                    variants={AnimationInUp}
-                    ref={ref1}
-                  >
-                    <span>c</span>
-                  </motion.div>
-                </div>
-                <div style={{ height: "90", overflow: "hidden" }}>
-                  <motion.div
-                    className="Box"
-                    initial="hidden"
-                    animate={controls}
-                    variants={AnimationInUp}
-                    ref={ref1}
-                  >
-                    <span>rea</span>
-                  </motion.div> */}
               </NameSection>
             </div>
             <div className="container__left imagen__content">
-              <div className="thumbnail__medium">
-                <img
-                  src={home.acf.seccion_imagen_y_texto.imagen.sizes.medium}
-                />
-              </div>
+              {/* <div className="thumbnail__medium"> */}
+              <img src={home.acf.seccion_imagen_y_texto.imagen.sizes.medium} />
+              {/* </div> */}
             </div>
             <div className="container__right">
               <BlockContent id="BlockContent">
@@ -305,8 +267,13 @@ const Home = ({ state }) => {
               <NameSection>
                 {/* recibe la clase big para cambiar el estilo depende la situacion | */}
                 <IconWaveQuote className="big" />
-                <span>c</span>
-                <span>rea</span>
+
+                <div style={{ height: "90", overflow: "hidden" }}>
+                  <span className="fadeInUp fadeObserve">c</span>
+                </div>
+                <div style={{ height: "90", overflow: "hidden" }}>
+                  <span className="fadeInUp fadeObserve">rea</span>
+                </div>
               </NameSection>
             </div>
             <div className="container__left imagen__content">
@@ -357,8 +324,12 @@ const Home = ({ state }) => {
               <NameSection>
                 {/* recibe la clase big para cambiar el estilo depende la situacion | */}
                 <IconWaveQuote className="big" />
-                <span>id</span>
-                <span>eas</span>
+                <div style={{ height: "90", overflow: "hidden" }}>
+                  <span className="fadeInUp fadeObserve">id</span>
+                </div>
+                <div style={{ height: "90", overflow: "hidden" }}>
+                  <span className="fadeInUp fadeObserve">eas</span>
+                </div>
               </NameSection>
             </div>
             <div className="image container__fullWidth">

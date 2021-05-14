@@ -6,18 +6,26 @@ import { Item } from "./styles";
 const NavItem = ({ state }) => {
   return (
     <>
-      <Item>
-        <NavLink href="/nosotros">Nosotros</NavLink>
-      </Item>
-      <Item>
-        <NavLink href="/servicios">Servicios</NavLink>
-      </Item>
-      <Item>
-        <NavLink href="/blog">Blog</NavLink>
-      </Item>
-      <Item>
-        <NavLink href="/contacto">Contáctanos</NavLink>
-      </Item>
+      <div style={{ height: "90", overflow: "hidden" }}>
+        <Item className="fadeInUp fadeObserve">
+          <NavLink href="/nosotros">Nosotros</NavLink>
+        </Item>
+      </div>
+      <div style={{ height: "90", overflow: "hidden" }}>
+        <Item className="fadeInUp fadeObserve">
+          <NavLink href="/servicios">Servicios</NavLink>
+        </Item>
+      </div>
+      <div style={{ height: "90", overflow: "hidden" }}>
+        <Item className="fadeInUp fadeObserve">
+          <NavLink href="/blog">Blog</NavLink>
+        </Item>
+      </div>
+      <div style={{ height: "90", overflow: "hidden" }}>
+        <Item className="fadeInUp fadeObserve">
+          <NavLink href="/contactanos">Contáctanos</NavLink>
+        </Item>
+      </div>
     </>
   );
 };

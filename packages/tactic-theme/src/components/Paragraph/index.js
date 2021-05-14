@@ -23,14 +23,14 @@ const Paragraph = () => {
         </Quote>
         <ParagraphContent>
           <div className="text__primary text__dark">
-            <strong className="fadeInUp">Las oportunidades</strong>
+            <strong className="fadeInUp scrollAnime">Las oportunidades</strong>
           </div>
           <div className="text__secundary text__white">
             <span>
-              <strong className="fadeInUp">no pasan,</strong>
+              <strong className="fadeInUp scrollAnime">no pasan,</strong>
             </span>
             <span>
-              <strong className="fadeInUp">¡Uno las crea!</strong>
+              <strong className="fadeInUp scrollAnime">¡Uno las crea!</strong>
             </span>
           </div>
         </ParagraphContent>

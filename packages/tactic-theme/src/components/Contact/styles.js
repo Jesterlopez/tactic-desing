@@ -18,6 +18,7 @@ export const ContainerContact = styled.div`
     font-weight: 900;
     font-size: 0.8rem;
     font-family: "Gilroy Bold", sans-serif;
+
     &:hover {
       text-decoration: underline;
     }
