@@ -2,7 +2,7 @@ const settings = {
   name: "tactic-center",
   state: {
     frontity: {
-      url: "http://admin-tactic.tactic-center.com/",
+      url: "http://tactic-build.tactic-center.com/",
       title: "Tactic Center",
       description: "Agencia de publicidad",
     },
