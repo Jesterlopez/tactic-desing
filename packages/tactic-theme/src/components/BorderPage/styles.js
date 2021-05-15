@@ -1,8 +1,11 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Borders = styled.div`
   & > * {
     transition: transform 500ms cubic-bezier(0.7, 0, 0.3, 1) 0ms;
+  }
+  @media screen and (max-width: 768px) {
+    display: none;
   }
 `;
 
@@ -15,6 +18,9 @@ export const BorderTop = styled.div`
   width: 100%;
   height: 40px;
   transform-origin: top center;
+  @media screen and (max-width: 768px) {
+    height: 20px;
+  }
 `;
 
 export const BorderBottom = styled.div`
@@ -26,6 +32,9 @@ export const BorderBottom = styled.div`
   width: 100%;
   height: 40px;
   transform-origin: bottom center;
+  @media screen and (max-width: 768px) {
+    height: 20px;
+  }
 `;
 
 export const BorderLeft = styled.div`
@@ -37,6 +46,9 @@ export const BorderLeft = styled.div`
   height: 100%;
   width: 40px;
   transform-origin: left center;
+  @media screen and (max-width: 768px) {
+    width: 20px;
+  }
 `;
 
 export const BorderRight = styled.div`
@@ -48,4 +60,7 @@ export const BorderRight = styled.div`
   height: 100%;
   width: 40px;
   transform-origin: right center;
+  @media screen and (max-width: 768px) {
+    width: 20px;
+  }
 `;

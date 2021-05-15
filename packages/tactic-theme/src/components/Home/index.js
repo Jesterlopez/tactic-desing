@@ -101,6 +101,7 @@ const Home = ({ state }) => {
               imgID={home.featured_media}
               height={"100vh"}
               strength={100}
+              className="img_mobile"
             ></ImgParallax>
             {/* <Media idImg={home.featured_media} element="home" /> */}
           </div>
@@ -187,7 +188,7 @@ const Home = ({ state }) => {
               <div
                 id="parallax"
                 ref={parallaxRef}
-                style={{ transform: `translate(0 ,-${translate}%)` }}
+                style={{ transform: `translate(0 ,-${translate - 13}%)` }}
               >
                 <ContainerServices className="container__services">
                   <ServiceItem>

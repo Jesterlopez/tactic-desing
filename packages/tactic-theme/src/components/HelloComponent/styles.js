@@ -7,4 +7,9 @@ export const Svg = styled.svg`
   transform: translateX(0%);
   transition: transform 1000ms cubic-bezier(0.7, 0, 0.3, 1) 0ms;
   animation: ${fadeIn} 1s forwards;
+
+  @media screen and (max-width: 768px) {
+    width: 250px;
+    height: 160px;
+  }
 `;

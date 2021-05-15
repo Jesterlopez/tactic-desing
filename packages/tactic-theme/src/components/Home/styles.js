@@ -19,9 +19,11 @@ export const ContainerContent = styled.div`
 export const ContentSection = styled.section`
   width: 100vw;
   background: #f8f8f8;
-  padding: 20vh 165px 20vh 20%;
+  padding: 20vh 0 20vh 20%;
   display: flex;
   flex-wrap: wrap;
+  box-sizing: border-box;
+
   & div.container__fullWidth {
     display: flex;
     flex-direction: column;
@@ -46,7 +48,7 @@ export const ContentSection = styled.section`
   }
   & div.container__right {
     display: flex;
-    width: 50%;
+    width: 70%;
   }
   & div.imagen__content {
     width: 50%;
@@ -105,6 +107,9 @@ export const ContentSection = styled.section`
       height: 100%;
       object-fit: cover;
     }
+  }
+  @media screen and (max-width: 768px) {
+    padding: 60px 40px;
   }
 `;
 

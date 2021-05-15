@@ -7,7 +7,7 @@ import { ContainerContact } from "./styles";
 const Contact = () => {
   return (
     <>
-      <ContainerContact>
+      <ContainerContact id="contact">
         <AnchorLink className="contact__address" href="#">
           Planes de Altamira, Plaza San Agustín, Módulo 3. Managua, Nicaragua.
         </AnchorLink>

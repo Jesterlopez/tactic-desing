@@ -8,6 +8,9 @@ export const Anchor = styled.a`
   color: var(--color-dark);
   line-height: 1.5;
   position: relative;
+  @media screen and (max-width: 768px) {
+    font-size: 1.5rem;
+  }
 `;
 
 export const Mask = styled.span`

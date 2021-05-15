@@ -19,6 +19,9 @@ export const AnchorEmail = styled.a`
     font-size: 1.5rem;
     font-weight: 800;
   }
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const AnchorNewsletter = styled.a`
@@ -32,5 +35,10 @@ export const AnchorNewsletter = styled.a`
     text-transform: uppercase;
     font-size: 1.5rem;
     font-weight: 800;
+  }
+  @media screen and (max-width: 768px) {
+    position: absolute;
+    bottom: 150px;
+    left: 40px;
   }
 `;

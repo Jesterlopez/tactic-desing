@@ -23,4 +23,12 @@ export const ContainerContact = styled.div`
       text-decoration: underline;
     }
   }
+  @media screen and (max-width: 768px) {
+    order: 2;
+    margin-top: auto;
+    margin-bottom: 60px;
+    & > .contact__address {
+      line-height: 0.8rem;
+    }
+  }
 `;

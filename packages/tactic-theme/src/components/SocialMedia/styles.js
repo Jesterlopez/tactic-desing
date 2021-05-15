@@ -15,6 +15,12 @@ export const ListSocialMedia = styled.ul`
   transform: translateY(-50%);
   transition: all 500ms cubic-bezier(0.7, 0, 0.3, 1) 0ms;
 
+  @media screen and (max-width: 768px) {
+    flex-direction: row;
+    left: -100%;
+    right: inherit;
+  }
+
   & > li {
     padding: 4px;
     & > a {

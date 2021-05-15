@@ -6,6 +6,7 @@ export const HeaderContainer = styled.div`
   position: relative;
   height: 100vh;
   width: 100vw;
+  overflow: hidden;
   &.expanded__height > div:first-child {
     transform: translateX(100%);
   }

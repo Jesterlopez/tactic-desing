@@ -3,6 +3,9 @@ import styled from "styled-components";
 export const BlockCont = styled.div`
   width: 100%;
   padding-right: 50%;
+  @media screen and (max-width: 768px) {
+    padding-right: 0%;
+  }
   /* & .link__blockContent {
     position: relative;
     font-size: 1.2rem;

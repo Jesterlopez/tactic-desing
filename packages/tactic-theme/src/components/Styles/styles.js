@@ -11,6 +11,7 @@ import {
 } from "./animation";
 
 export const Globalstyle = createGlobalStyle`
+
 :root{
     --color-primary: #FF5851;
     --color-secundary: #f8f8f8;
@@ -19,6 +20,10 @@ export const Globalstyle = createGlobalStyle`
     --color-blue: #414a6b;
     --color-gray:#d8d8e8;
     --color-gray2:#b49a85;
+}
+
+#root{
+  position: relative;
 }
 .margin__bottom__end {
   margin-bottom: 200px;
@@ -93,8 +98,7 @@ body.menuOpen{
 }
 .menu__hover #navbarMenu{
   transform: translateX(-95%);
-
-}
+} 
 .menuOpen .menu__color{
   opacity: 0.95;
 }
@@ -105,9 +109,12 @@ body.menuOpen{
 .menuOpen .brand{
   transform: translate(calc(16vw - 60px), 100%);
 }
+
 .menuOpen .langToggle{
   transform: translate(-40px, 40px);
+  /* right: -22.5%; */
 }
+
 .menuOpen #menu__toggle {
   transform: translateX(60px);
   width: 20px;
@@ -137,6 +144,8 @@ body.menuOpen{
 }
 .menuOpen .socialMedia__header {
   right: 30px;
+  left: 13%;
+  top: 45%;
 }
 .padding__custom {
   padding: 20vh 165px 20vh 20%;
@@ -238,6 +247,9 @@ body.menuOpen{
   .width100{
     width: 100%;
   }
+  .d-none{
+    display: none;
+  }
 
   .animation{
     &.fadeInUp{
@@ -262,4 +274,47 @@ body.menuOpen{
       animation: ${slideOutRight} 1s forwards;
     }
   }
+
+
+  @media screen and (max-width: 768px) {
+    .menuOpen .brand{
+      display: none;
+    }
+    .brand{
+      position: absolute;
+    }
+    .menuOpen #menu__toggle {
+    transform: translateX(0);
+    width: 50px;
+    z-index: 99999;
+    }
+    .menu__hover #navbarMenu {
+    transform: translateX(-100%);
+    left: 0;
+    }
+ 
+    .menuOpen .langToggle{
+      transform: translate(-40px, 0);
+    }
+    .menuOpen .borders{
+      display: block;
+    }
+    .menuOpen .borders > *{
+      transform: translate(0, 0%) scale(1) !important;
+    }
+    .img_mobile{
+      width: 100%;
+      height: 200px;
+    }
+    .react-parallax{
+      width: 100%;
+      height: 200px !important;
+    }
+    .container__left, .container__right{
+      width: 100% !important;
+    }
+    .column__left, .column__center, .column__right{
+      width: 100%;
+    }
+}
 `;

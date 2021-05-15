@@ -32,6 +32,7 @@
     "frontity": "^1.15.0",
     "react-intersection-observer": "^8.31.1",
     "react-parallax": "^3.3.0",
+    "react-router": "^5.2.0",
     "styled-components": "^5.3.0",
     "tactic-theme": "file:packages/tactic-theme",
     "wow.js": "^1.2.2",

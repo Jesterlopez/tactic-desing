@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useRef } from "react";
 
 import { Svg } from "./styles";
-function HelloComponent() {
+const HelloComponent = () => {
+  const helloRef = useRef();
   return (
     <Svg
       xmlns="http://www.w3.org/2000/svg"
@@ -9,6 +10,7 @@ function HelloComponent() {
       height={343}
       viewBox="0 0 428.83 343.87"
       id="hello"
+      ref={helloRef}
     >
       <path
         className="prefix__line"
@@ -35,6 +37,6 @@ function HelloComponent() {
       />
     </Svg>
   );
-}
+};
 
 export default HelloComponent;

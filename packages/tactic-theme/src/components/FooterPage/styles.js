@@ -17,11 +17,25 @@ export const Footer = styled.footer`
     padding-bottom: 0;
     position: relative;
     justify-content: space-between;
+    @media screen and (max-width: 768px) {
+      padding: 60px 40px;
+    }
   }
   & div > a,
   div > div {
     width: 240px;
     padding-right: 20px;
+  }
+  & #contact {
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    width: 100vw;
+    & #contact {
+      display: none;
+    }
   }
 `;
 
@@ -53,6 +67,9 @@ export const Credits = styled.div`
   }
   .credit__link:hover {
     text-decoration: underline;
+  }
+  @media screen and (max-width: 768px) {
+    display: none;
   }
 `;
 // .credits {
