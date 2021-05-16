@@ -22,20 +22,26 @@ const Root = ({ state, actions }) => {
   const data = state.source.get(state.router.link);
   const data2 = state.source;
   const id = data.id;
+
   // animacion del home al hace scroll
   useEffect(() => {
     actions.source.fetch("/inicio");
+
     if (document.readyState === "complete") {
+      // window.addEventListener("resize", handleWindowResize);
       window.addEventListener("scroll", scrollAnimations);
-      // window.addEventListener("scroll", handleScrollParallax);
-      // window.addEventListener("scroll", scrollFadeIn);
     }
 
     return () => {
       // window.removeEventListener("scroll", handleScrollParallax);
       window.removeEventListener("scroll", scrollAnimations);
+      // window.removeEventListener("resize", handleWindowResize);
     };
   }, []);
+
+  // const handleWindowResize = () => {
+  //   setWindowWidth(window.innerWidth);
+  // };
 
   // const scrollFadeIn = () => {
   //   const img = document.querySelectorAll(".fadeObserve");
@@ -61,7 +67,6 @@ const Root = ({ state, actions }) => {
   // };
 
   const scrollAnimations = () => {
-    const img = document.querySelectorAll(".fadeObserve");
     const containerHeader = document.getElementById("header");
     const Hello = document.getElementById("hello");
     const Paragraph = document.getElementById("paragraph");
@@ -118,6 +123,8 @@ const Root = ({ state, actions }) => {
     } else {
       ElementParallax.style.transform = `translateY(-50%)`;
     }
+    // referencia al elemento a animar
+    const img = document.querySelectorAll(".fadeObserve");
 
     const callback = (entries, observer) => {
       entries.forEach((entry) => {

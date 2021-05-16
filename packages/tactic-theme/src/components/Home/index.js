@@ -11,6 +11,7 @@ import ImgParallax from "../ImgParallax";
 import { motion, useAnimation } from "framer-motion";
 import { Parallax, Background } from "react-parallax";
 import { InView, useInView } from "react-intersection-observer";
+import TitleSection from "../TitleSection";
 
 import {
   ContainerContent,
@@ -92,6 +93,16 @@ const Home = ({ state }) => {
     },
   };
 
+  const AnimationWave = {
+    hidden: { x: 0 },
+    visible: {
+      x: 60,
+      transition: {
+        duration: 1,
+      },
+    },
+  };
+
   return (
     <>
       {typeof home === "undefined" ? null : (
@@ -100,7 +111,7 @@ const Home = ({ state }) => {
             <ImgParallax
               imgID={home.featured_media}
               height={"100vh"}
-              strength={100}
+              strength={150}
               className="img_mobile"
             ></ImgParallax>
             {/* <Media idImg={home.featured_media} element="home" /> */}
@@ -110,44 +121,16 @@ const Home = ({ state }) => {
               <NameSection>
                 {/* recibe la clase big para cambiar el estilo depende la situacion | */}
                 <IconWaveQuote className="big" />
-                <div style={{ height: "90", overflow: "hidden" }}>
-                  <InView>
-                    {({ ref }) => (
-                      <motion.div
-                        initial="hidden"
-                        animate={controls}
-                        variants={AnimationInUp}
-                        ref={ref}
-                      >
-                        <span>
-                          {home.acf.primer_seccion.titulo_de_la_seccion.slice(
-                            0,
-                            3
-                          )}
-                        </span>
-                      </motion.div>
-                    )}
-                  </InView>
-                </div>
-                <div style={{ height: "90", overflow: "hidden" }}>
-                  <InView>
-                    {({ ref }) => (
-                      <motion.div
-                        initial="hidden"
-                        animate={controls}
-                        variants={AnimationInUp}
-                        ref={ref}
-                      >
-                        <span>
-                          {home.acf.primer_seccion.titulo_de_la_seccion.slice(
-                            3,
-                            -1
-                          )}
-                        </span>
-                      </motion.div>
-                    )}
-                  </InView>
-                </div>
+                <TitleSection
+                  textUp={home.acf.primer_seccion.titulo_de_la_seccion.slice(
+                    0,
+                    3
+                  )}
+                  textDown={home.acf.primer_seccion.titulo_de_la_seccion.slice(
+                    3,
+                    -1
+                  )}
+                />
               </NameSection>
             </div>
             <div className="container__left middle">
@@ -237,12 +220,7 @@ const Home = ({ state }) => {
               <NameSection>
                 {/* recibe la clase big para cambiar el estilo depende la situacion | */}
                 <IconWaveQuote className="big" />
-                <div style={{ height: "90", overflow: "hidden" }}>
-                  <span className="fadeInUp fadeObserve">c</span>
-                </div>
-                <div style={{ height: "90", overflow: "hidden" }}>
-                  <span className="fadeInUp fadeObserve">rea</span>
-                </div>
+                <TitleSection />
               </NameSection>
             </div>
             <div className="container__left imagen__content">
@@ -268,13 +246,7 @@ const Home = ({ state }) => {
               <NameSection>
                 {/* recibe la clase big para cambiar el estilo depende la situacion | */}
                 <IconWaveQuote className="big" />
-
-                <div style={{ height: "90", overflow: "hidden" }}>
-                  <span className="fadeInUp fadeObserve">c</span>
-                </div>
-                <div style={{ height: "90", overflow: "hidden" }}>
-                  <span className="fadeInUp fadeObserve">rea</span>
-                </div>
+                <TitleSection />
               </NameSection>
             </div>
             <div className="container__left imagen__content">
@@ -322,15 +294,11 @@ const Home = ({ state }) => {
           </ContentSection>
           <ContentSection>
             <div className="container__fullWidth">
-              <NameSection>
+              <NameSection className="textUpImg">
                 {/* recibe la clase big para cambiar el estilo depende la situacion | */}
                 <IconWaveQuote className="big" />
-                <div style={{ height: "90", overflow: "hidden" }}>
-                  <span className="fadeInUp fadeObserve">id</span>
-                </div>
-                <div style={{ height: "90", overflow: "hidden" }}>
-                  <span className="fadeInUp fadeObserve">eas</span>
-                </div>
+
+                <TitleSection textUp={"val"} textDown={"ues"} />
               </NameSection>
             </div>
             <div className="image container__fullWidth">
@@ -338,7 +306,7 @@ const Home = ({ state }) => {
                 bgImage={
                   "https://www.wokine.com/wp-content/themes/wokine/assets/pages/home/wokine-startup-factory-retina.jpg"
                 }
-                strength={100}
+                strength={150}
                 style={{ height: 300 }}
               ></Parallax>
             </div>

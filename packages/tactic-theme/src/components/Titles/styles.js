@@ -20,4 +20,10 @@ export const TitleBlock = styled.span`
     line-height: 1.2;
     font-weight: 900;
   }
+  @media screen and (max-width: 768px) {
+    font-size: 1.3rem;
+    &.text__italic {
+      font-size: 1.5rem;
+    }
+  }
 `;

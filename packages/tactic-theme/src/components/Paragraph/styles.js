@@ -21,4 +21,9 @@ export const RefQuote = styled.span`
   transition: transform 0.3s cubic-bezier(0.7, 0, 0.3, 1);
 `;
 
-export const ParagraphContent = styled.div``;
+export const ParagraphContent = styled.div`
+  & .text__primary,
+  .text__secundary {
+    font-size: 1.1rem;
+  }
+`;

@@ -47,6 +47,10 @@ export const IconWave = styled.i`
     height: 10px;
     margin-bottom: 30px;
   }
+  &.big div {
+    background: #f8f8f8;
+  }
+
   & svg {
     width: 25px;
     height: 5px;

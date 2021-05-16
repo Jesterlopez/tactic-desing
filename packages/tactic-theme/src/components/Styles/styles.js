@@ -144,8 +144,8 @@ body.menuOpen{
 }
 .menuOpen .socialMedia__header {
   right: 30px;
-  left: 13%;
-  top: 45%;
+  left: auto;
+  top: 50%;
 }
 .padding__custom {
   padding: 20vh 165px 20vh 20%;
@@ -227,17 +227,16 @@ body.menuOpen{
 
   
   .column__left {
-    width: 20%;
+    width: 25%;
     margin-right: 20px;
   }
   .column__center {
-    width: 22%;
+    width: 28%;
     margin-right: 20px;
     margin-left: 20px;
-
   }
   .column__right {
-    width: 20%;
+    width: 28%;
     margin-left: 20px;
   }
   .height100{
@@ -253,6 +252,7 @@ body.menuOpen{
 
   .animation{
     &.fadeInUp{
+      transform: translateY(100px);
       animation: ${fadeInUp} .5s forwards;
     }
     &.fadeInDown{
@@ -277,6 +277,9 @@ body.menuOpen{
 
 
   @media screen and (max-width: 768px) {
+    #content{
+      margin-bottom: 280 !important;
+    }
     .menuOpen .brand{
       display: none;
     }
@@ -285,12 +288,15 @@ body.menuOpen{
     }
     .menuOpen #menu__toggle {
     transform: translateX(0);
-    width: 50px;
+    width: 45px;
     z-index: 99999;
     }
     .menu__hover #navbarMenu {
     transform: translateX(-100%);
     left: 0;
+    }
+    .menuOpen .socialMedia__header {
+    left: 13%;
     }
  
     .menuOpen .langToggle{
@@ -316,5 +322,35 @@ body.menuOpen{
     .column__left, .column__center, .column__right{
       width: 100%;
     }
+    .menu__hover #navbarMenu {
+    transform: translateX(-100%);
+    }
+    .expanded__height{
+      height: 150vh !important;
+    }
+    #paragraph{
+      top: inherit;
+      bottom: 0;
+      position: absolute;
+      transform: translateY(80%) !important; 
+      padding: 0 0 0 10%;
+
+    }
+    .expanded__height #paragraph{
+      position: absolute;
+      transform: translateY(-50%) !important; 
+    }
+    .expanded__height .react-parallax-bgimage{
+      transform: translate3d(-50%, 0, 0px);
+    }
+
+    .font__italic__paragraph {
+    font-size: .8rem;
+    }
+    .column__center, .column__right{
+      margin-left: 0;
+    }
+
+    
 }
 `;

@@ -19,6 +19,15 @@ export const Footer = styled.footer`
     justify-content: space-between;
     @media screen and (max-width: 768px) {
       padding: 60px 40px;
+      flex-direction: column;
+      height: 13vh;
+
+      & .text__italic {
+        font-size: 0.9rem;
+      }
+      & .font__bold {
+        font-size: 1.2rem;
+      }
     }
   }
   & div > a,
@@ -35,6 +44,17 @@ export const Footer = styled.footer`
     width: 100vw;
     & #contact {
       display: none;
+    }
+    .send__email {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      left: 0;
+    }
+    & div > a {
+      position: relative;
+      bottom: 0;
+      left: -30px;
     }
   }
 `;

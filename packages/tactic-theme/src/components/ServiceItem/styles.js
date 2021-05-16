@@ -8,4 +8,8 @@ export const Service = styled.div`
   & > i {
     margin-bottom: 12px;
   }
+  @media screen and (max-width: 768px) {
+    margin-top: 40px !important;
+    width: 100%;
+  }
 `;

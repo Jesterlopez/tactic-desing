@@ -4,11 +4,12 @@ export const Toggle = styled.a`
   display: flex;
   align-items: center;
   transition: all 500ms cubic-bezier(0.7, 0, 0.3, 1) 0ms;
-  top: 5%;
-  right: 6%;
+  top: 45px;
+  right: 25px;
+
   margin-top: -20px;
-  height: 50px;
-  width: 50px;
+  height: 45px;
+  width: 45px;
   position: fixed;
   margin-left: -10px;
   text-align: center;

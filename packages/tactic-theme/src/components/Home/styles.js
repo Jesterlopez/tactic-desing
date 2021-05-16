@@ -27,7 +27,7 @@ export const ContentSection = styled.section`
   & div.container__fullWidth {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 100vw;
     & > div {
       display: flex;
       flex-wrap: wrap;
@@ -99,7 +99,7 @@ export const ContentSection = styled.section`
     }
   }
   & > div.image {
-    width: 100%;
+    width: 100vw;
     height: 300px;
     margin-left: -20%;
     /* margin-top: -20vh; */
@@ -110,6 +110,29 @@ export const ContentSection = styled.section`
   }
   @media screen and (max-width: 768px) {
     padding: 60px 40px;
+    & > div.image {
+      width: 100%;
+    }
+    & .image.container__fullWidth {
+      margin-left: -40px;
+      margin-right: -40px;
+      width: 100vw;
+      height: 200px;
+    }
+    & div.container__left.imagen__content {
+      order: 2;
+      margin-left: -40px;
+      margin-right: -40px;
+      padding: 0;
+      width: 100vw !important;
+    }
+    & .footer__image {
+      margin: 20px -30px 0;
+      & a {
+        margin-top: 20px !important;
+        font-size: 0.8rem !important;
+      }
+    }
   }
 `;
 
@@ -128,6 +151,9 @@ export const BodyContent = styled.p`
     margin-top: 30px;
     display: block;
   }
+  @media screen and (max-width: 768px) {
+    font-size: 0.8rem;
+  }
 `;
 
 export const ContainerServices = styled.div`
@@ -142,10 +168,21 @@ export const ContainerServices = styled.div`
   > :nth-child(2) {
     margin-top: 0;
   }
+  @media screen and (max-width: 768px) {
+    padding: 40px 20px;
+    width: 100vw;
+    margin-left: -40px;
+    & > :first-child {
+      margin-top: 0 !important;
+    }
+  }
 `;
 
 export const ServiceName = styled.h3`
   margin-bottom: 20px;
+  @media screen and (max-width: 768px) {
+    font-size: 1rem;
+  }
 `;
 
 export const ListService = styled.ul`
@@ -153,4 +190,8 @@ export const ListService = styled.ul`
 `;
 export const ListItem = styled.li`
   color: #4c4a57;
+  @media screen and (max-width: 768px) {
+    font-size: 0.8rem;
+    line-height: 1.2rem;
+  }
 `;
