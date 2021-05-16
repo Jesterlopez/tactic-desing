@@ -119,6 +119,9 @@ export const ContentSection = styled.section`
       width: 100vw;
       height: 200px;
     }
+    & div.container__left {
+      margin-bottom: 60px;
+    }
     & div.container__left.imagen__content {
       order: 2;
       margin-left: -40px;

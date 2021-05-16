@@ -295,8 +295,11 @@ body.menuOpen{
     transform: translateX(-100%);
     left: 0;
     }
+    .menuOpen #navbarMenu{
+      left: 0;
+    }
     .menuOpen .socialMedia__header {
-    left: 13%;
+    left: 10%;
     }
  
     .menuOpen .langToggle{
@@ -322,9 +325,7 @@ body.menuOpen{
     .column__left, .column__center, .column__right{
       width: 100%;
     }
-    .menu__hover #navbarMenu {
-    transform: translateX(-100%);
-    }
+
     .expanded__height{
       height: 150vh !important;
     }

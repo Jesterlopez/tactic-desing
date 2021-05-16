@@ -7,7 +7,7 @@ export const TitleH1 = styled.h1`
   font-size: 6rem;
   margin-bottom: 100px;
   line-height: 0.9;
-  letter-spacing: -3px;
+  letter-spacing: -2px;
   z-index: 2;
   &.textUpImg {
     margin-bottom: -50px;
@@ -31,5 +31,9 @@ export const TitleH1 = styled.h1`
   @media screen and (max-width: 768px) {
     font-size: 3.2rem;
     margin-bottom: 40px;
+
+    &.textUpImg {
+      margin-bottom: -20px;
+    }
   }
 `;

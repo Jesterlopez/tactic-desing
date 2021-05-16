@@ -14,6 +14,8 @@ import Error404 from "./components/404";
 import Home from "./components/Home";
 import Title from "./title";
 
+import { Lines } from "react-preloaders";
+
 import Servicios from "./pages/Servicios";
 
 import { Globalstyle } from "./components/Styles/styles";
