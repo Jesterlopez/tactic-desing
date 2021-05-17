@@ -4,13 +4,13 @@ export const TitleH1 = styled.h1`
   text-transform: uppercase;
   font-family: "Gilroy Bold", sans-serif;
   font-weight: 900;
-  font-size: 6rem;
+  font-size: 5rem;
   margin-bottom: 100px;
   line-height: 0.9;
   letter-spacing: -2px;
   z-index: 2;
   &.textUpImg {
-    margin-bottom: -50px;
+    margin-bottom: -20px;
     z-index: 8;
     display: block;
   }

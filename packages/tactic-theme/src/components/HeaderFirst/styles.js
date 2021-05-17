@@ -4,7 +4,7 @@ export const HeaderContainer = styled.div`
   display: flex;
   background: var(--color-primary);
   position: relative;
-  height: 100vh;
+  height: 110vh;
   width: 100vw;
   overflow: hidden;
   &.expanded__height > div:first-child {
@@ -12,6 +12,9 @@ export const HeaderContainer = styled.div`
   }
   &.expanded__height #hello {
     transform: translateX(190%);
+  }
+  @media screen and (max-width: 768px) {
+    height: 100vh;
   }
 `;
 

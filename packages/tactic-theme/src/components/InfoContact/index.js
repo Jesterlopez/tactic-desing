@@ -12,7 +12,7 @@ const InfoContact = () => {
         <span className="text__italic">
           Conoce más sobre nuestro programa de Partners!
         </span>
-        <span className="font__bold">Programa de Partners</span>
+        <span className="font__bold">Partners</span>
       </AnchorEmail>
       <AnchorNewsletter href="#">
         <span className="text__italic">Click para subscribirte!</span>

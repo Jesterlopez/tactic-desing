@@ -75,17 +75,20 @@ export const Globalstyle = createGlobalStyle`
     padding: 0;
     margin: 0;
 }
-html{scroll-behavior:smooth}
+html{
+  scroll-behavior:smooth;}
 body{
     font-family: 'Lato', sans-serif;
     overflow-x: hidden;
     background: #f8f8f8;
-    scroll-behavior:smooth
+    scroll-behavior:smooth;
+    margin: 0;
 }
 
 body.menuOpen{
   overflow: hidden;
 }
+
 
 .link__active{
   color: #c2c2c2 !important;
@@ -225,7 +228,6 @@ body.menuOpen{
     }
   }
 
-  
   .column__left {
     width: 25%;
     margin-right: 20px;
@@ -275,7 +277,6 @@ body.menuOpen{
     }
   }
 
-
   @media screen and (max-width: 768px) {
     #content{
       margin-bottom: 280 !important;
@@ -299,11 +300,14 @@ body.menuOpen{
       left: 0;
     }
     .menuOpen .socialMedia__header {
-    left: 10%;
+    left: 15%;
+    /* margin-top: 20px; */
+    position: fixed;
+    /* transform: translateY(50vh) translateX(0); */
     }
  
     .menuOpen .langToggle{
-      transform: translate(-40px, 0);
+      transform: translate(-28px, 0);
     }
     .menuOpen .borders{
       display: block;
@@ -350,6 +354,13 @@ body.menuOpen{
     }
     .column__center, .column__right{
       margin-left: 0;
+    }
+
+    @media screen and (max-width: 380px){
+      .menuOpen .socialMedia__header {
+    left: 10%;
+
+    }
     }
 
     

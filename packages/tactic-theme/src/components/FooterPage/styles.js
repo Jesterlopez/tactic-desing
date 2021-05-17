@@ -17,6 +17,12 @@ export const Footer = styled.footer`
     padding-bottom: 0;
     position: relative;
     justify-content: space-between;
+    & > a {
+      height: 70px;
+    }
+    & .font__bold {
+      font-size: 1.2rem;
+    }
     @media screen and (max-width: 768px) {
       padding: 60px 40px;
       flex-direction: column;
@@ -54,7 +60,8 @@ export const Footer = styled.footer`
     & div > a {
       position: relative;
       bottom: 0;
-      left: -30px;
+      left: -35px;
+      margin-bottom: 20px;
     }
   }
 `;

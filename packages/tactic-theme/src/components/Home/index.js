@@ -82,26 +82,26 @@ const Home = ({ state }) => {
     },
   };
 
-  const AnimationInUp = {
-    hidden: { y: 100, opacity: 1 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 1,
-      },
-    },
-  };
+  // const AnimationInUp = {
+  //   hidden: { y: 100, opacity: 1 },
+  //   visible: {
+  //     y: 0,
+  //     opacity: 1,
+  //     transition: {
+  //       duration: 1,
+  //     },
+  //   },
+  // };
 
-  const AnimationWave = {
-    hidden: { x: 0 },
-    visible: {
-      x: 60,
-      transition: {
-        duration: 1,
-      },
-    },
-  };
+  // const AnimationWave = {
+  //   hidden: { x: 0 },
+  //   visible: {
+  //     x: 60,
+  //     transition: {
+  //       duration: 1,
+  //     },
+  //   },
+  // };
 
   return (
     <>
@@ -110,10 +110,15 @@ const Home = ({ state }) => {
           <div className="container__fullWidth">
             <ImgParallax
               imgID={home.featured_media}
-              height={"100vh"}
+              // height={"100vh"}
               strength={150}
               className="img_mobile"
             ></ImgParallax>
+            {/* <Parallax strength={300} style={{ height: "100vh", zIndex: 8 }}>
+              <Background>
+                <img src="https://www.wokine.com/wp-content/themes/wokine/assets/pages/home/wokine-startup-factory-retina.jpg"></img>
+              </Background>
+            </Parallax> */}
             {/* <Media idImg={home.featured_media} element="home" /> */}
           </div>
           <ContentSection className="padding__bottom__none" id="section">
@@ -127,8 +132,7 @@ const Home = ({ state }) => {
                     3
                   )}
                   textDown={home.acf.primer_seccion.titulo_de_la_seccion.slice(
-                    3,
-                    -1
+                    3
                   )}
                 />
               </NameSection>
@@ -215,18 +219,16 @@ const Home = ({ state }) => {
             </motion.div>
           </ContentSection>
 
-          <ContentSection className="padding__bottom__none">
+          {/* <ContentSection className="padding__bottom__none">
             <div className="container__fullWidth">
-              <NameSection>
-                {/* recibe la clase big para cambiar el estilo depende la situacion | */}
-                <IconWaveQuote className="big" />
-                <TitleSection />
-              </NameSection>
-            </div>
+              <NameSection> */}
+          {/* recibe la clase big para cambiar el estilo depende la situacion | */}
+          {/* <IconWaveQuote className="big" />
+                <TitleSection textUp={"Noso"} textDown={"tros"} />
+              </NameSection> */}
+          {/* </div>
             <div className="container__left imagen__content">
-              {/* <div className="thumbnail__medium"> */}
               <img src={home.acf.seccion_imagen_y_texto.imagen.sizes.medium} />
-              {/* </div> */}
             </div>
             <div className="container__right">
               <BlockContent id="BlockContent">
@@ -240,13 +242,14 @@ const Home = ({ state }) => {
                 </BodyContent>
               </BlockContent>
             </div>
-          </ContentSection>
+          </ContentSection> */}
+
           <ContentSection className="padding__bottom__none">
             <div className="container__fullWidth">
               <NameSection>
                 {/* recibe la clase big para cambiar el estilo depende la situacion | */}
                 <IconWaveQuote className="big" />
-                <TitleSection />
+                <TitleSection textUp={"proy"} textDown={"ectos"} />
               </NameSection>
             </div>
             <div className="container__left imagen__content">
@@ -254,8 +257,8 @@ const Home = ({ state }) => {
                 <img src={home.acf.imagen_seccion.url} />
               </div>
               <div className="footer__image">
-                <p className="title__project">Decathlon recruitment.</p>
-                <p className="category__project">Web & mobile - 2014</p>
+                <p className="title__project">Nombre del proyecto.</p>
+                <p className="category__project">Categoria - 2014</p>
                 <AnchorLink
                   className="text__italic link__blockContent"
                   href="#"
@@ -292,19 +295,23 @@ const Home = ({ state }) => {
               </BlockContent>
             </div>
           </ContentSection>
+
           <ContentSection>
             <div className="container__fullWidth">
               <NameSection className="textUpImg">
                 {/* recibe la clase big para cambiar el estilo depende la situacion | */}
                 <IconWaveQuote className="big" />
 
-                <TitleSection textUp={"val"} textDown={"ues"} />
+                <TitleSection
+                  textUp={home.acf.seccion[0].titulo_parrafo.split(" ")[0]}
+                  textDown={home.acf.seccion[0].titulo_parrafo.split(" ")[1]}
+                />
               </NameSection>
             </div>
             <div className="image container__fullWidth">
               <Parallax
                 bgImage={
-                  "https://www.wokine.com/wp-content/themes/wokine/assets/pages/home/wokine-startup-factory-retina.jpg"
+                  "https://tactic-center.com/wp-content/uploads/2018/05/Suscribite-Home-min-1.jpg"
                 }
                 strength={150}
                 style={{ height: 300 }}

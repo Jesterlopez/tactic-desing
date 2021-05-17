@@ -11,7 +11,6 @@ const ContainerHeader = () => {
       <HeaderContainer id="header">
         <HeaderRight />
         <Paragraph />
-
         <ContainerFullWidth>
           <HelloComponent />
         </ContainerFullWidth>

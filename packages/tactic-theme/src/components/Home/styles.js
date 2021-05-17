@@ -14,6 +14,17 @@ export const ContainerContent = styled.div`
     position: relative;
     z-index: 7;
   }
+  .react-parallax-background-children {
+    width: 100%;
+  }
+  @media screen and (max-width: 768px) {
+    img.react-parallax-bgimage {
+      transform: translateY(0) translateX(-50%) !important;
+    }
+    .react-parallax-background-children {
+      transform: translateY(0) translateX(-50%) !important;
+    }
+  }
 `;
 
 export const ContentSection = styled.section`
