@@ -19,6 +19,7 @@ const NavLink = ({ href, children, actions, state, className }) => {
         setIsOpen(!isOpen);
         actions.router.set(href);
       }}
+      className={className}
     >
       <Mask>
         <NameLink>{children}</NameLink>

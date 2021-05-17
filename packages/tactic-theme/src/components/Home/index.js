@@ -9,7 +9,7 @@ import ServiceItem from "../ServiceItem";
 import Media from "../Media";
 import ImgParallax from "../ImgParallax";
 import { motion, useAnimation } from "framer-motion";
-import { Parallax, Background } from "react-parallax";
+import { Parallax } from "react-parallax";
 import { InView, useInView } from "react-intersection-observer";
 import TitleSection from "../TitleSection";
 
@@ -321,18 +321,19 @@ const Home = ({ state }) => {
             <div className="container__fullWidth padding__top__80">
               <BlockContent id="BlockContent">
                 <HeadBlockContent className="column__left">
-                  <Title>A studio dedicated to</Title>
-                  <Title className="text__italic">startups.</Title>
+                  <Title>
+                    {home.acf.seccion[0].titulo_parrafo.split(" ")[0]}
+                  </Title>
+                  <Title className="text__italic">
+                    {home.acf.seccion[0].titulo_parrafo.split(" ")[1]}
+                  </Title>
                 </HeadBlockContent>
                 <BodyContent className="column__center">
-                  Have you dreamed up an innovative new digital platform, a
-                  revolutionary mobile application, a life-enhancing chatbot, or
-                  do you just want to change the world? Let's do it together.
+                  {home.acf.seccion[0].contenido_parrafo}
                 </BodyContent>
                 <BodyContent className="column__right">
-                  We're here to make your dreams come true. Our support method
-                  will turn your bright idea into a real prototype, and then
-                  grow it into a profitable business.
+                  {home.acf.seccion[0].contenido_parrafo}
+
                   <span>
                     <AnchorLink
                       className="text__italic link__blockContent"

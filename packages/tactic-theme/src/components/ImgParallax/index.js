@@ -17,7 +17,7 @@ const ImgParallax = ({ state, imgID, height, strength }) => {
       <Parallax
         id="parallaxImage"
         strength={strength}
-        style={{ height: "100vh", zIndex: 8 }}
+        style={{ height: "100vh", zIndex: 7 }}
       >
         <Background>
           <img src={media.source_url}></img>

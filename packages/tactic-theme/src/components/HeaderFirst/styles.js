@@ -14,7 +14,7 @@ export const HeaderContainer = styled.div`
     transform: translateX(190%);
   }
   @media screen and (max-width: 768px) {
-    height: 100vh;
+    height: 115vh;
   }
 `;
 

@@ -12,7 +12,7 @@ export const Borders = styled.div`
 export const BorderTop = styled.div`
   position: fixed;
   background: #fff;
-  z-index: 9;
+  z-index: 10;
   top: 0;
   left: 0;
   width: 100%;
@@ -26,7 +26,7 @@ export const BorderTop = styled.div`
 export const BorderBottom = styled.div`
   position: fixed;
   background: #fff;
-  z-index: 9;
+  z-index: 10;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -40,7 +40,7 @@ export const BorderBottom = styled.div`
 export const BorderLeft = styled.div`
   position: fixed;
   background: #fff;
-  z-index: 9;
+  z-index: 10;
   top: 0;
   left: 0;
   height: 100%;
@@ -54,7 +54,7 @@ export const BorderLeft = styled.div`
 export const BorderRight = styled.div`
   position: fixed;
   background: #fff;
-  z-index: 9;
+  z-index: 10;
   top: 0;
   right: 0;
   height: 100%;

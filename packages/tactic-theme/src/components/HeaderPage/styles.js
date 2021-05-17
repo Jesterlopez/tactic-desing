@@ -4,7 +4,7 @@ export const Header = styled.div`
   display: flex;
   padding: 0 40px;
   position: fixed;
-  z-index: 10;
+  z-index: 11;
   box-sizing: border-box;
   @media screen and (max-width: 768px) {
     position: relative;

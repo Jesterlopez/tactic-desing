@@ -89,6 +89,13 @@ body.menuOpen{
   overflow: hidden;
 }
 
+.linkHome > span{
+  height: 100%;
+  transform:translateY(-6px);
+  & span{
+    padding: 0;
+  }
+}
 
 .link__active{
   color: #c2c2c2 !important;
@@ -98,6 +105,8 @@ body.menuOpen{
     transform: translateX(0%) !important;
     left: 40px;
     right: 20%; 
+    z-index: 10;
+
 }
 .menu__hover #navbarMenu{
   transform: translateX(-95%);
@@ -301,7 +310,7 @@ body.menuOpen{
     }
     .menuOpen .socialMedia__header {
     left: 15%;
-    /* margin-top: 20px; */
+    margin-top: 20px;
     position: fixed;
     /* transform: translateY(50vh) translateX(0); */
     }

@@ -4,6 +4,7 @@ import SocialMedia from "../SocialMedia";
 import AnchorLink from "../AnchorLink";
 import MenuToggle from "../MenuToggle";
 import ToggleLang from "../ToggleLang";
+import NavLink from "../NavLink";
 import {
   Header,
   Head,
@@ -21,12 +22,18 @@ const HeaderPage = ({ namePage }) => {
       <Header>
         <Head>
           <Brand className="brand">
-            <AnchorLink href="/" className="height100">
+            <NavLink href="/" className="height100 linkHome">
               <BrandImg
                 src="https://tactic-center.com/wp-content/uploads/2018/04/Logo-TC.png"
                 alt="logo tactic center"
               />
-            </AnchorLink>
+            </NavLink>
+            {/* <AnchorLink href="/" className="height100">
+              <BrandImg
+                src="https://tactic-center.com/wp-content/uploads/2018/04/Logo-TC.png"
+                alt="logo tactic center"
+              />
+            </AnchorLink> */}
             <NamePage className="text__italic" href="#">
               {namePage}
             </NamePage>
