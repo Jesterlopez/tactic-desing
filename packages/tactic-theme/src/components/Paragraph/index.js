@@ -30,7 +30,10 @@ const Paragraph = () => {
     const fadeInLeft = document.querySelector(".fadeInLeft");
     const fadeInRight = document.querySelector(".fadeInRight");
 
+    let scrollPosition = window.pageYOffset;
     const ElementParallax = document.querySelector("#paragraph");
+
+    const Content = document.querySelector("#content");
 
     if (containerHeader.getBoundingClientRect().top < 0) {
       Paragraph.style.opacity = 1;
@@ -51,6 +54,16 @@ const Paragraph = () => {
       fadeInUp.forEach((e) => {
         e.classList.add("fadeInDown");
       });
+    }
+    if (
+      Content.getBoundingClientRect().top <= 700 &&
+      Content.getBoundingClientRect().top > 0
+    ) {
+      ElementParallax.style.transform = `translateY(calc(-25% + -${
+        (scrollPosition / 50) * 3
+      }%))`;
+    } else {
+      ElementParallax.style.transform = `translateY(-50%)`;
     }
   };
 

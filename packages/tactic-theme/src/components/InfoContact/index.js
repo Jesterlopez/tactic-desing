@@ -7,14 +7,14 @@ import { AnchorEmail, AnchorNewsletter } from "./styles";
 const InfoContact = () => {
   return (
     <>
-      <AnchorEmail href="#" className="send__email">
+      <AnchorEmail href="#" className="send__email" id="send__email">
         <IconArrowRight />
         <span className="text__italic">
           Conoce más sobre nuestro programa de Partners!
         </span>
         <span className="font__bold">Partners</span>
       </AnchorEmail>
-      <AnchorNewsletter href="#">
+      <AnchorNewsletter href="#" id="suscribe">
         <span className="text__italic">Click para subscribirte!</span>
         <span className="font__bold">Suscríbete.</span>
       </AnchorNewsletter>

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Footer = styled.footer`
-  position: fixed;
+  position: relative;
   bottom: 0;
   left: 0;
   z-index: -1;
@@ -9,6 +9,8 @@ export const Footer = styled.footer`
   background: #fff;
   display: flex;
   justify-content: center;
+  /* height: 50vh; */
+
   & .padding__custom {
     display: flex;
     align-items: center;
@@ -41,11 +43,24 @@ export const Footer = styled.footer`
     width: 240px;
     padding-right: 20px;
   }
-  & #contact {
+  /* & #contact {
     @media screen and (max-width: 768px) {
       display: none;
     }
   }
+  & #send__email {
+    transform: translate(0, -200%);
+  }
+  & #suscribe {
+    transform: translate(0, -200%);
+  }
+  & #contact {
+    transform: translate(0, -200%);
+  }
+
+  & #credits {
+    transform: translate(0, -100%);
+  } */
   @media screen and (max-width: 768px) {
     width: 100vw;
     & #contact {

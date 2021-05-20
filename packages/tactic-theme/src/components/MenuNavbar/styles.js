@@ -6,7 +6,7 @@ export const Menu = styled.div`
   left: 40px;
   right: 80px;
   height: 100%;
-  z-index: 9;
+  z-index: 11;
   display: flex;
   align-items: center;
   transform: translateX(-100%);

@@ -24,6 +24,6 @@ export const RefQuote = styled.span`
 export const ParagraphContent = styled.div`
   & .text__primary,
   .text__secundary {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
   }
 `;

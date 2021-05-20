@@ -64,3 +64,12 @@ export const IconWave = styled.i`
     }
   }
 `;
+
+export const IconScroll = styled.i`
+  display: inline-block;
+  vertical-align: middle;
+  & svg {
+    display: block;
+    font-size: 1rem;
+  }
+`;

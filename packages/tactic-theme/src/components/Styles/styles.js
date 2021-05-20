@@ -8,6 +8,9 @@ import {
   slideOutRight,
   fadeOutLeft,
   fadeInRight,
+  BounceArrow,
+  fadeOut,
+  fadeInScroll,
 } from "./animation";
 
 export const Globalstyle = createGlobalStyle`
@@ -105,12 +108,13 @@ body.menuOpen{
     transform: translateX(0%) !important;
     left: 40px;
     right: 20%; 
-    z-index: 10;
+    z-index: 11;
 
 }
 .menu__hover #navbarMenu{
   transform: translateX(-95%);
 } 
+
 .menuOpen .menu__color{
   opacity: 0.95;
 }
@@ -187,7 +191,10 @@ body.menuOpen{
   overflow: hidden;
 }
 .expanded__height{
-  height: 200vh !important;
+  /* height: 200vh !important; */
+}
+#header{
+  height: 200vh;
 }
 .padding__bottom__none{
   padding-bottom: 0;
@@ -284,7 +291,20 @@ body.menuOpen{
     &.slideOutRight{
       animation: ${slideOutRight} 1s forwards;
     }
+    &.fadeOut{
+      animation: ${fadeOut} 1s forwards;
+    }
+    &.fadeInScroll{
+      animation: ${fadeInScroll} 1s forwards;
+    }
   }
+
+  .scrollDown{
+    animation: ${BounceArrow} 800ms cubic-bezier(0.7, 0, 0.3, 1) infinite alternate;
+  }
+  .menuOpen .containerScroll{
+      z-index: 9 !important;
+    }
 
   @media screen and (max-width: 768px) {
     #content{
@@ -308,6 +328,7 @@ body.menuOpen{
     .menuOpen #navbarMenu{
       left: 0;
     }
+  
     .menuOpen .socialMedia__header {
     left: 15%;
     margin-top: 20px;

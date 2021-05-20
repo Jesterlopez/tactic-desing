@@ -5,23 +5,24 @@ import { IconWaveQuote } from "../Icons";
 import BlockContent from "../BlockContent";
 import Title from "../Titles";
 import AnchorLink from "../AnchorLink";
-import ServiceItem from "../ServiceItem";
 import Media from "../Media";
 import ImgParallax from "../ImgParallax";
 import { motion, useAnimation } from "framer-motion";
-import { Parallax } from "react-parallax";
+import { Parallax, Background } from "react-parallax";
 import { InView, useInView } from "react-intersection-observer";
 import TitleSection from "../TitleSection";
+import ContainerServices from "../ContainerServices";
+import { ScrollDown2 } from "../ScrollDown";
+
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
 
 import {
   ContainerContent,
   ContentSection,
   HeadBlockContent,
   BodyContent,
-  ContainerServices,
-  ListService,
-  ListItem,
-  ServiceName,
 } from "./styles";
 const Home = ({ state }) => {
   const data = state.source.get(state.router.link);
@@ -29,84 +30,46 @@ const Home = ({ state }) => {
   const id = data.id;
   const home = state.source.page[51];
 
-  const [translate, setTranslate] = useState(0);
-  const parallaxRef = useRef();
-
-  const controls = useAnimation();
-  const { ref, inView } = useInView({
-    triggerOnce: true,
-    delay: 50,
-  });
-
-  useEffect(() => {
-    const ParralaxScroll = () => {
-      let scrollPosition = window.pageYOffset;
-      const llaxRef = parallaxRef.current;
-      const { y } = llaxRef.getBoundingClientRect();
-
-      // console.log(y);
-      const positionScroll = () => {
-        if (y <= 800) {
-          setTranslate(scrollPosition / 150);
-        } else {
-          setTranslate(0);
-        }
-      };
-      setTranslate(positionScroll);
-    };
-
-    window.addEventListener("scroll", ParralaxScroll);
-    return () => {
-      window.removeEventListener("scroll", ParralaxScroll);
-    };
-  }, []);
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-    if (!inView) {
-      controls.start("hidden");
-    }
-    return controls.stop;
-  }, [controls, inView]);
-
-  const AnimationLeft = {
-    hidden: { x: 600, opacity: 0.5 },
-    visible: {
-      x: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.5,
-      },
-    },
-  };
-
-  // const AnimationInUp = {
-  //   hidden: { y: 100, opacity: 1 },
-  //   visible: {
+  // useEffect(() => {
+  //   gsap.to("#suscribe", {
+  //     scrollTrigger: {
+  //       trigger: "#footer",
+  //       start: "top 10%",
+  //       end: "top 20%",
+  //       toggleActions: "restart pause reverse pause",
+  //       scrub: true,
+  //       markers: true,
+  //     },
   //     y: 0,
-  //     opacity: 1,
-  //     transition: {
-  //       duration: 1,
-  //     },
+  //   });
+  // gsap.to("#send__email", {
+  //   scrollTrigger: {
+  //     trigger: "#footer",
+  //     start: "20px 100%",
+  //     end: "bottom 100px",
+  //     toggleActions: "restart pause reverse pause",
+  //     scrub: true,
+  //     markers: true,
   //   },
-  // };
-
-  // const AnimationWave = {
-  //   hidden: { x: 0 },
-  //   visible: {
-  //     x: 60,
-  //     transition: {
-  //       duration: 1,
-  //     },
+  //   y: 0,
+  // });
+  // gsap.to("#contact", {
+  //   scrollTrigger: {
+  //     trigger: "#footer",
+  //     start: "top center",
+  //     end: "+=300",
+  //     toggleActions: "restart pause reverse pause",
+  //     scrub: true,
+  //     markers: true,
   //   },
-  // };
-
+  //   y: 0,
+  // });
+  // }, []);
   return (
     <>
       {typeof home === "undefined" ? null : (
         <ContainerContent id="content">
+          <ScrollDown2 />
           <div className="container__fullWidth">
             <ImgParallax
               imgID={home.featured_media}
@@ -114,12 +77,6 @@ const Home = ({ state }) => {
               strength={150}
               className="img_mobile"
             ></ImgParallax>
-            {/* <Parallax strength={300} style={{ height: "100vh", zIndex: 8 }}>
-              <Background>
-                <img src="https://www.wokine.com/wp-content/themes/wokine/assets/pages/home/wokine-startup-factory-retina.jpg"></img>
-              </Background>
-            </Parallax> */}
-            {/* <Media idImg={home.featured_media} element="home" /> */}
           </div>
           <ContentSection className="padding__bottom__none" id="section">
             <div className="container__fullWidth">
@@ -164,59 +121,7 @@ const Home = ({ state }) => {
                 </AnchorLink>
               </BlockContent>
             </div>
-
-            <motion.div
-              className="Box container__right"
-              initial="hidden"
-              animate={controls}
-              variants={AnimationLeft}
-              ref={ref}
-            >
-              <div
-                id="parallax"
-                ref={parallaxRef}
-                style={{ transform: `translate(0 ,-${translate - 13}%)` }}
-              >
-                <ContainerServices className="container__services">
-                  <ServiceItem>
-                    <ServiceName>Inbound Marketing</ServiceName>
-                    <ListService>
-                      <ListItem>Atraer</ListItem>
-                      <ListItem>Convertir</ListItem>
-                      <ListItem>Cerrar</ListItem>
-                      <ListItem>Fidelizar</ListItem>
-                    </ListService>
-                  </ServiceItem>
-                  <ServiceItem>
-                    <ServiceName>Integración de Tecnologías</ServiceName>
-                    <ListService>
-                      <ListItem>Optimización de Procesos y ERP’s</ListItem>
-                      <ListItem>Recursos Humanos y Manejos de tiempos</ListItem>
-                      <ListItem>Colaboración y Productividad</ListItem>
-                      <ListItem>Automatización de Marketing y Ventas</ListItem>
-                      <ListItem>Administración de TI y Seguridad</ListItem>
-                      <ListItem>Comercio Electrónico</ListItem>
-                    </ListService>
-                  </ServiceItem>
-                  <ServiceItem>
-                    <ServiceName>Marketing Digital</ServiceName>
-                    <ListService>
-                      <ListItem>Administración de Redes Sociales</ListItem>
-                      <ListItem>Administración de Contenido</ListItem>
-                    </ListService>
-                  </ServiceItem>
-                  <ServiceItem>
-                    <ServiceName>Mercadeo Convencional</ServiceName>
-                    <ListService>
-                      <ListItem>Estrategias de medios masivos (ATL)</ListItem>
-                      <ListItem>Estrategias de relaciones públicas</ListItem>
-                      <ListItem>Estrategias de activaciones (BTL)</ListItem>
-                      <ListItem>Diseño Gráfico</ListItem>
-                    </ListService>
-                  </ServiceItem>
-                </ContainerServices>
-              </div>
-            </motion.div>
+            <ContainerServices />
           </ContentSection>
 
           {/* <ContentSection className="padding__bottom__none">
@@ -254,7 +159,11 @@ const Home = ({ state }) => {
             </div>
             <div className="container__left imagen__content">
               <div className="parallax__none">
-                <img src={home.acf.imagen_seccion.url} />
+                <Parallax
+                  bgImage={home.acf.imagen_seccion.url}
+                  strength={150}
+                  style={{ height: 300 }}
+                ></Parallax>
               </div>
               <div className="footer__image">
                 <p className="title__project">Nombre del proyecto.</p>

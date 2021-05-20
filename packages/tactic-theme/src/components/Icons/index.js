@@ -1,5 +1,5 @@
 import React from "react";
-import { ArrowRight, IconWave } from "./styles";
+import { ArrowRight, IconWave, IconScroll } from "./styles";
 
 export const IconArrowRight = () => {
   return (
@@ -40,5 +40,24 @@ export const IconWaveQuote = ({ color, children, className }) => {
       </svg>
       <div className="slideInRight fadeObserve"></div>
     </IconWave>
+  );
+};
+
+export const IconScrollDown = ({ state }) => {
+  return (
+    <IconScroll className="scrollDown">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width={12}
+        height={18}
+        viewBox="0 0 17 10"
+      >
+        <path
+          fill="#fff"
+          className="prefix__cls-1"
+          d="M6.22 8.75L3.37 5.89H17V4.12H3.37l2.85-2.87L5 0 0 5l5 5z"
+        />
+      </svg>
+    </IconScroll>
   );
 };

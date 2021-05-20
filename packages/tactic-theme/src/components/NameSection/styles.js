@@ -10,7 +10,7 @@ export const TitleH1 = styled.h1`
   letter-spacing: -2px;
   z-index: 2;
   &.textUpImg {
-    margin-bottom: -20px;
+    margin-bottom: -60px;
     z-index: 8;
     display: block;
   }

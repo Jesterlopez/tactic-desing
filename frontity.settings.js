@@ -5,7 +5,8 @@ const settings = {
     frontity: {
       url: "https://tactic-build.tactic-center.com/",
       title: "Tactic Center",
-      description: "Agencia de publicidad",
+      description:
+        "agencia especializada en inbound Marketing y Optimización de procesos",
     },
   },
   packages: [
