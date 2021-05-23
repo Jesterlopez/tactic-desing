@@ -39,7 +39,9 @@ const BlockContent = ({ children }) => {
   }
   return (
     <>
-      <BlockCont className="fadeInUp fadeObserve">{children}</BlockCont>
+      <BlockCont className="fadeInUp fadeObserve padding__right__none padding__mobile padding__left__none">
+        {children}
+      </BlockCont>
     </>
   );
 };

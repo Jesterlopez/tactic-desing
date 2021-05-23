@@ -1,5 +1,4 @@
-import { createGlobalStyle } from "styled-components";
-
+import { createGlobalStyle, css } from "styled-components";
 import {
   fadeInUp,
   fadeInDown,
@@ -11,15 +10,16 @@ import {
   BounceArrow,
   fadeOut,
   fadeInScroll,
+  slideLeft,
+  slideInRightInitial,
+  fadeOutUp,
 } from "./animation";
-
 export const Globalstyle = createGlobalStyle`
-
 :root{
     --color-primary: #FF5851;
     --color-secundary: #f8f8f8;
     --color-dark: #1c1b20;
-    --color-yeloow: #f3c130;
+    --color-yellow: #f3c130;
     --color-blue: #414a6b;
     --color-gray:#d8d8e8;
     --color-gray2:#b49a85;
@@ -28,41 +28,82 @@ export const Globalstyle = createGlobalStyle`
 #root{
   position: relative;
 }
+.fontPrimary{
+  font-family: 'Poppins', sans-serif;
+}
+.fontSecundary{
+  font-family: 'Libre Baskerville', serif;
+}
+.fontSize__titleContent{
+  font-size: 2.5rem;
+}
+.fontSize__titleContentBig{
+  font-size: 3rem;
+}
+.font__weight__400 {
+  font-weight: 400;
+}
+.fontSize__contentItalicSection{
+  font-size: 1.2rem;
+}
 .margin__bottom__end {
   margin-bottom: 200px;
+}
+
+.padding__top__none{
+  padding-top: 0;
 }
 
 .height100{
   height: 100vh;
   width: 100vw;
 }
+.H100vh{
+  height: 100vh;
+}
+.padding__none{
+  padding: 0;
+}
+
+.order__1{
+  order: 1;
+
+}
+.order__2{
+  order: 2;
+}
+
 
 .text__italic{
     font-family: "Libre Baskerville", serif;
     font-style: italic;
+    font-weight: 400;
 }
+
 .font__italic{
     font-family: "Libre Baskerville", serif;
     font-size: 1.1rem;
     font-style: italic;
     font-weight: 300;
 }
+
 .font__italic__paragraph{
     font-family: "Libre Baskerville", serif;
     font-size: .7rem;
     font-style: italic;
     font-weight: 300;
 }
+
 .font__phar{
-    font-family: "Gilroy Light", sans-serif;
+    font-family: "Poppins", sans-serif;
     font-size: 3.2rem;
 }
 .font__titles{
-    font-family: "Gilroy Bold", sans-serif;
+    font-family: "Poppins", sans-serif;
     font-size: 4.7rem;
 }
 .font__bold{
-    font-family: "Gilroy Bold", sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 .text__drink{
     color: var(--color-primary);
@@ -74,12 +115,15 @@ export const Globalstyle = createGlobalStyle`
     color: var(--color-dark);
 }
 
+
 *{
     padding: 0;
     margin: 0;
 }
 html{
-  scroll-behavior:smooth;}
+  scroll-behavior:smooth;
+/* overflow-x: hidden; */
+}
 body{
     font-family: 'Lato', sans-serif;
     overflow-x: hidden;
@@ -94,10 +138,20 @@ body.menuOpen{
 
 .linkHome > span{
   height: 100%;
-  transform:translateY(-6px);
+  /* position: absolute; */
+  display: flex;
+    align-items: center;
+  top: 0;
+  /* transform:translateY(-6px); */
   & span{
+    font-size: 1rem;
     padding: 0;
   }
+}
+.linkHome{
+  transform: translateY(0);
+  transition: all 500ms cubic-bezier(0.7,0,0.3,1) 0ms;
+
 }
 
 .link__active{
@@ -169,7 +223,7 @@ body.menuOpen{
 
 .text__primary,
 .text__secundary {
-  font-family: "Gilroy Bold", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .text__primary {
@@ -199,6 +253,7 @@ body.menuOpen{
 .padding__bottom__none{
   padding-bottom: 0;
 }
+
 
 .link__blockContent {
     position: relative;
@@ -297,7 +352,17 @@ body.menuOpen{
     &.fadeInScroll{
       animation: ${fadeInScroll} 1s forwards;
     }
+    &.slideLeft{
+      animation: ${slideLeft} 1s forwards;
+    }
+    &.slideInRightInitial{
+      animation: ${slideInRightInitial} 1s forwards;
+    }
+    &.fadeOutUp{
+      animation: ${fadeOutUp} 1s forwards;
+    }
   }
+
 
   .scrollDown{
     animation: ${BounceArrow} 800ms cubic-bezier(0.7, 0, 0.3, 1) infinite alternate;
@@ -307,11 +372,25 @@ body.menuOpen{
     }
 
   @media screen and (max-width: 768px) {
+
+    .padding__mobile{
+  padding: 0 40px !important;
+}
+    
+.padding__bottom__footer{
+  margin-bottom: 480px;
+}
+    .d__none__mobile{
+  display: none;
+}
+    .linkHome{
+  transform: translateY(30px);
+    }
     #content{
-      margin-bottom: 280 !important;
+      margin-bottom: 480px !important;
     }
     .menuOpen .brand{
-      display: none;
+      transform: translate(0, 0);
     }
     .brand{
       position: absolute;
@@ -354,7 +433,7 @@ body.menuOpen{
       height: 200px !important;
     }
     .container__left, .container__right{
-      width: 100% !important;
+      width: 100vw !important;
     }
     .column__left, .column__center, .column__right{
       width: 100%;

@@ -28,7 +28,7 @@ export const Footer = styled.footer`
     @media screen and (max-width: 768px) {
       padding: 60px 40px;
       flex-direction: column;
-      height: 13vh;
+      height: auto;
 
       & .text__italic {
         font-size: 0.9rem;
@@ -63,20 +63,27 @@ export const Footer = styled.footer`
   } */
   @media screen and (max-width: 768px) {
     width: 100vw;
+    padding-left: 40px;
+    box-sizing: border-box;
+    position: fixed;
     & #contact {
-      display: none;
+      width: 100% !important;
+      margin-bottom: 20px;
+      /* display: none; */
+    }
+    & #credits {
+      width: 100% !important;
     }
     .send__email {
       display: flex;
-      width: 100%;
+      width: 100% !important;
       flex-direction: column;
-      left: 0;
     }
     & div > a {
       position: relative;
       bottom: 0;
       left: -35px;
-      margin-bottom: 20px;
+      margin-bottom: 10px;
     }
   }
 `;
@@ -111,7 +118,27 @@ export const Credits = styled.div`
     text-decoration: underline;
   }
   @media screen and (max-width: 768px) {
-    display: none;
+    /* display: none; */
+    order: 2;
+    text-align: left;
+    width: 100%;
+
+    .logo__company {
+      display: flex;
+      /* flex-direction: column; */
+      position: relative;
+      margin-bottom: 10px;
+      & > img {
+        width: 65px;
+        margin: 0;
+      }
+      & > span {
+        margin-top: 10px;
+      }
+      .credit__link {
+        margin-bottom: 5px;
+      }
+    }
   }
 `;
 // .credits {

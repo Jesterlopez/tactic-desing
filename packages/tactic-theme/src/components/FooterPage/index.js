@@ -203,7 +203,7 @@ const FooterPage = () => {
                 src="https://tactic-center.com/wp-content/uploads/2018/04/Logo-TC.png"
                 alt=""
               />
-              ©Tactic Center
+              <span> ©Tactic Center</span>
             </a>
             <a href="#" className="credit__link">
               Muestras legales

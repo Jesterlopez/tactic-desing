@@ -11,9 +11,9 @@ const ContainerHeader = () => {
     <>
       <HeaderContainer id="header">
         <ScrollDown />
-        <HeaderRight />
+        <HeaderRight className="header__animation" />
         <Paragraph />
-        <ContainerFullWidth>
+        <ContainerFullWidth id="containerHello">
           <HelloComponent />
         </ContainerFullWidth>
       </HeaderContainer>

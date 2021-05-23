@@ -37,9 +37,10 @@ export const NavMenu = styled.ul`
   margin: 0px;
   padding: 0px;
   list-style: none;
-  margin-bottom: 60px;
+  margin-top: 20px;
+  /* margin-bottom: 50px; */
   margin-left: -10px;
-  min-height: 220px;
+  min-height: 250px;
   @media screen and (max-width: 768px) {
     margin-top: 120px;
     margin-left: -70px;
@@ -50,6 +51,7 @@ export const MenuFooter = styled.div`
   display: flex;
   justify-content: space-between;
   width: 55vw;
+  margin-top: 70px;
 `;
 
 export const ColorMenu = styled.div`

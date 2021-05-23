@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const TitleH1 = styled.h1`
   text-transform: uppercase;
-  font-family: "Gilroy Bold", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-weight: 900;
   font-size: 5rem;
   margin-bottom: 100px;

@@ -56,7 +56,7 @@ export const ContentSection = styled.section`
   & div.container__left.middle {
     display: flex;
     flex-direction: column;
-    width: 25%;
+    width: 30%;
   }
   & div.container__left {
     display: flex;
@@ -65,7 +65,7 @@ export const ContentSection = styled.section`
   }
   & div.container__right {
     display: flex;
-    width: 70%;
+    width: 65%;
   }
   & div.imagen__content {
     width: 50%;
@@ -127,6 +127,9 @@ export const ContentSection = styled.section`
   }
   @media screen and (max-width: 768px) {
     padding: 60px 40px;
+    & .padding__left__none {
+      padding-left: 0 !important;
+    }
     & > div.image {
       width: 100%;
     }
@@ -153,10 +156,13 @@ export const ContentSection = styled.section`
         font-size: 0.8rem !important;
       }
     }
+    & div.container__right {
+      width: 100vw;
+    }
   }
 `;
 
-export const HeadBlockContent = styled.p`
+export const HeadBlockContent = styled.div`
   margin-bottom: 40px;
   color: var(--color-dark);
 `;

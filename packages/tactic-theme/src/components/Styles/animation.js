@@ -9,6 +9,15 @@ export const fadeIn = keyframes`
         opacity: 1;
     }
 `;
+export const fadeOutUp = keyframes`
+    from{
+        opacity: 1;
+        
+    }
+    to{
+        opacity: 0;
+    }
+`;
 
 export const fadeInScroll = keyframes`
 from{
@@ -20,6 +29,26 @@ to{
   transform: translateY(0) rotate(-90deg);
   opacity: 1;
 }
+`;
+
+export const slideLeft = keyframes`
+    from{
+        transform: translateX(600px);
+    }
+    to{
+        transform: translateX(0);
+    }
+    
+`;
+
+export const slideInRightInitial = keyframes`
+ from{
+       width: 100%;
+    }
+    to{
+        width: 0;
+    }
+
 `;
 
 export const fadeOut = keyframes`

@@ -27,6 +27,8 @@ export const ContainerContact = styled.div`
     order: 2;
     margin-top: auto;
     margin-bottom: 60px;
+    width: 100%;
+
     & > .contact__address {
       line-height: 0.8rem;
     }

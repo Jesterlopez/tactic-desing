@@ -22,18 +22,13 @@ const HeaderPage = ({ namePage }) => {
       <Header>
         <Head>
           <Brand className="brand">
-            <NavLink href="/" className="height100 linkHome">
-              <BrandImg
+            <NavLink href="/" className="fadeOutUp height100 linkHome">
+              Tactic Center
+              {/* <BrandImg
                 src="https://tactic-center.com/wp-content/uploads/2018/04/Logo-TC.png"
                 alt="logo tactic center"
-              />
+              /> */}
             </NavLink>
-            {/* <AnchorLink href="/" className="height100">
-              <BrandImg
-                src="https://tactic-center.com/wp-content/uploads/2018/04/Logo-TC.png"
-                alt="logo tactic center"
-              />
-            </AnchorLink> */}
             <NamePage className="text__italic" href="#">
               {namePage}
             </NamePage>

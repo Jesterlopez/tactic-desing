@@ -7,6 +7,33 @@ const MenuToggleMobile = () => {
 
   useEffect(() => {
     document.body.classList.toggle("menuOpen", isOpen);
+    const link = document.querySelectorAll(".link__menu");
+    const sendMail = document.querySelector("#send__email");
+    const suscribe = document.querySelector("#suscribe");
+    const contact = document.querySelector("#contact");
+
+    if (isOpen) {
+      setTimeout(() => {
+        sendMail.classList.add("animation");
+        suscribe.classList.add("animation");
+        contact.classList.add("animation");
+      }, 100);
+      link.forEach((e, i) => {
+        e.classList.add("animation");
+        e.style.animationDelay = `calc(${i + 2}00ms)`;
+      });
+    } else {
+      setTimeout(() => {
+        sendMail.classList.remove("animation");
+        suscribe.classList.remove("animation");
+        contact.classList.remove("animation");
+      }, 500);
+      link.forEach((e) => {
+        setTimeout(() => {
+          e.classList.remove("animation");
+        }, 500);
+      });
+    }
   }, [isOpen]);
   return (
     <>

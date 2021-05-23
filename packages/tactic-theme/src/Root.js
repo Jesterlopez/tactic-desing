@@ -1,4 +1,4 @@
-import { connect } from "frontity";
+import { connect, Head } from "frontity";
 import React, { useEffect, useState } from "react";
 import HeaderPage from "./components/HeaderPage";
 import BorderPage from "./components/BorderPage";
@@ -15,7 +15,7 @@ import Home from "./components/Home";
 import Title from "./title";
 import Servicios from "./pages/Servicios";
 import Preloader from "./components/Loading";
-
+import Nosotros from "./pages/Nosotros";
 import { Globalstyle } from "./components/Styles/styles";
 
 const Root = ({ state, actions }) => {
@@ -24,24 +24,25 @@ const Root = ({ state, actions }) => {
   const id = data.id;
 
   const [loading, setLoading] = useState(true);
+  const [offset, setoffset] = useState(0);
 
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 300);
+    }, 500);
   }, []);
 
-  useEffect(() => {
-    const linkMenu = document.querySelector(".link__menu");
+  // useEffect(() => {
+  //   const linkMenu = document.querySelector(".link__menu");
 
-    if (document.body.classList.contains("menuOpen")) {
-      if (linkMenu.classList.contains("fadeInUp")) {
-        linkMenu.classList.remove("fadeInUp");
-      } else {
-        linkMenu.classList.add("fadeInUp");
-      }
-    }
-  }, []);
+  //   if (document.body.classList.contains("menuOpen")) {
+  //     if (linkMenu.classList.contains("fadeInUp")) {
+  //       linkMenu.classList.remove("fadeInUp");
+  //     } else {
+  //       linkMenu.classList.add("fadeInUp");
+  //     }
+  //   }
+  // }, []);
 
   // animacion del home al hace scroll
   useEffect(() => {
@@ -59,6 +60,8 @@ const Root = ({ state, actions }) => {
   const scrollAnimations = () => {
     const containerHeader = document.getElementById("header");
     const Hello = document.getElementById("hello");
+    const CHello = document.getElementById("containerHello");
+
     const Paragraph = document.getElementById("paragraph");
     const ScrollDown = document.querySelector("#scrollDown");
     const ScrollDown2 = document.querySelector("#scrollDown2");
@@ -67,6 +70,12 @@ const Root = ({ state, actions }) => {
     // const ElementParallax = document.querySelector("#paragraph");
 
     const Content = document.querySelector("#content");
+
+    if (Content.getBoundingClientRect().bottom <= 650) {
+      ScrollDown2.style.zIndex = "-1";
+    } else {
+      ScrollDown2.style.zIndex = "10";
+    }
 
     if (containerHeader.getBoundingClientRect().top < 0) {
       containerHeader.classList.add("expanded__height");
@@ -85,14 +94,12 @@ const Root = ({ state, actions }) => {
       containerHeader.classList.remove("expanded__height");
     }
     if (Content.getBoundingClientRect().top < 0) {
-      Hello.style.display = "none";
-      Hello.style.opacity = 0;
+      CHello.style.zIndex = "-1";
       Paragraph.style.opacity = 0;
       Paragraph.style.zIndex = -1;
     } else {
-      Hello.style.opacity = 1;
-      Hello.style.display = "block";
       Paragraph.style.zIndex = 1;
+      CHello.style.zIndex = 0;
     }
 
     // referencia al elemento a animar
@@ -120,6 +127,20 @@ const Root = ({ state, actions }) => {
 
   return (
     <>
+      <Head>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+          rel="stylesheet"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400&display=swap"
+          rel="stylesheet"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
+          rel="stylesheet"
+        />
+      </Head>
       <Globalstyle />
       <Title />
       {loading ? (
@@ -141,7 +162,7 @@ const Root = ({ state, actions }) => {
             <>
               <ContainerHeader />
               <Home />
-              <FooterPage />
+              {/* <FooterPage /> */}
             </>
           )}
           {data.isServicioArchive && (
@@ -152,7 +173,7 @@ const Root = ({ state, actions }) => {
             </>
           )}
 
-          {data.isFetching && <h1>Cargando...</h1>}
+          {data.isFetching && <Preloader />}
           {data.isError && (
             <>
               <ContentPage>
@@ -170,17 +191,19 @@ const Root = ({ state, actions }) => {
           {data.isPage && (
             <>
               <ContentPage>
-                <div
+                <Nosotros />
+                {/* <div
                   dangerouslySetInnerHTML={{
                     __html: `${data2.page[id].content.rendered}`,
                   }}
-                ></div>
+                ></div> */}
               </ContentPage>
             </>
           )}
         </>
       )}
       {/* <iframe src="https://tactic-center.vercel.app"></iframe> */}
+      <FooterPage />
     </>
   );
 };

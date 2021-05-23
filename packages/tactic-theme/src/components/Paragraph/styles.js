@@ -22,6 +22,8 @@ export const RefQuote = styled.span`
 `;
 
 export const ParagraphContent = styled.div`
+  line-height: 1.2;
+
   & .text__primary,
   .text__secundary {
     font-size: 1.5rem;

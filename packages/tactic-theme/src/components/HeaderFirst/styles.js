@@ -7,14 +7,19 @@ export const HeaderContainer = styled.div`
   height: 110vh;
   width: 100vw;
   overflow: hidden;
-  &.expanded__height > div:first-child {
+  &.expanded__height .header__animation {
     transform: translateX(100%);
   }
   &.expanded__height #hello {
-    transform: translateX(190%);
+    transform: translateX(200%);
   }
   @media screen and (max-width: 768px) {
     height: 115vh;
+    &.expanded__height #hello {
+      position: absolute;
+      top: 30%;
+      transform: translateX(75%);
+    }
   }
 `;
 

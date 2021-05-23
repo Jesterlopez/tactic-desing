@@ -21,7 +21,7 @@ const NavLink = ({ href, children, actions, state, className }) => {
       }}
       className={className}
     >
-      <Mask>
+      <Mask className="mask">
         <NameLink>{children}</NameLink>
       </Mask>
     </Anchor>

@@ -97,7 +97,19 @@ const Home = ({ state }) => {
             <div className="container__left middle">
               <BlockContent id="BlockContent">
                 <HeadBlockContent>
-                  <Title>
+                  <Title
+                    className="title__low"
+                    // dangerouslySetInnerHTML={{
+                    //   __html: home.acf.primer_seccion.titulo_de_parrafo,
+                    // }}
+                  >
+                    <span
+                      dangerouslySetInnerHTML={{
+                        __html: home.acf.primer_seccion.titulo_de_parrafo,
+                      }}
+                    ></span>
+                  </Title>
+                  {/* <Title>
                     {home.acf.primer_seccion.titulo_de_parrafo.split(" ")[0]}
                   </Title>
                   <Title className="text__italic">
@@ -108,7 +120,7 @@ const Home = ({ state }) => {
                       .split(" ")
                       .slice(2)
                       .join(" ")}
-                  </Title>
+                  </Title> */}
                 </HeadBlockContent>
                 <BodyContent>
                   {home.acf.primer_seccion.contenido_de_parrafo}
@@ -149,7 +161,7 @@ const Home = ({ state }) => {
             </div>
           </ContentSection> */}
 
-          <ContentSection className="padding__bottom__none">
+          <ContentSection className="padding__bottom__none padding__top__none">
             <div className="container__fullWidth">
               <NameSection>
                 {/* recibe la clase big para cambiar el estilo depende la situacion | */}
@@ -179,17 +191,8 @@ const Home = ({ state }) => {
             <div className="container__right">
               <BlockContent id="BlockContent">
                 <HeadBlockContent>
-                  <Title>
-                    {home.acf.segunda_seccion.titulo_de_parrafo.split(" ")[0]}
-                  </Title>
-                  <Title className="text__italic">
-                    {home.acf.segunda_seccion.titulo_de_parrafo.split(" ")[1]}
-                  </Title>
-                  <Title>
-                    {home.acf.segunda_seccion.titulo_de_parrafo
-                      .split(" ")
-                      .slice(2)
-                      .join(" ")}
+                  <Title className="title__low">
+                    {home.acf.segunda_seccion.titulo_de_parrafo}
                   </Title>
                 </HeadBlockContent>
                 <BodyContent>
@@ -230,11 +233,8 @@ const Home = ({ state }) => {
             <div className="container__fullWidth padding__top__80">
               <BlockContent id="BlockContent">
                 <HeadBlockContent className="column__left">
-                  <Title>
-                    {home.acf.seccion[0].titulo_parrafo.split(" ")[0]}
-                  </Title>
-                  <Title className="text__italic">
-                    {home.acf.seccion[0].titulo_parrafo.split(" ")[1]}
+                  <Title className="title__low">
+                    {home.acf.seccion[0].titulo_parrafo}
                   </Title>
                 </HeadBlockContent>
                 <BodyContent className="column__center">

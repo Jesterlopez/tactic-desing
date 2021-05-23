@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const Anchor = styled.a`
-  font-family: "Gilroy Bold", sans-serif;
-  font-size: 1.8rem;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.7rem;
   font-weight: 800;
   text-decoration: none;
   color: var(--color-dark);

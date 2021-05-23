@@ -2,12 +2,16 @@ import React from "react";
 import { connect } from "frontity";
 import { Service } from "./styles";
 
-import { IconWaveQuote } from "../Icons";
+import { IconWaveQuote, IconWaveQuoteLow } from "../Icons";
 
-const ServiceItem = ({ children }) => {
+const ServiceItem = ({ children, className }) => {
   return (
     <Service>
-      <IconWaveQuote color="#FFF" />
+      {className == "NoAnimation" ? (
+        <IconWaveQuoteLow color="#fff" />
+      ) : (
+        <IconWaveQuote color="#FFF" />
+      )}
       {children}
     </Service>
   );

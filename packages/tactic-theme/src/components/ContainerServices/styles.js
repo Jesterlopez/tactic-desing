@@ -1,4 +1,12 @@
 import styled from "styled-components";
+export const ContainerParallax = styled.div`
+  transform: translateY(25%);
+
+  @media screen and (max-width: 768px) {
+    width: 100vw !important;
+    transform: translateY(0%);
+  }
+`;
 export const ContainerService = styled.div`
   background: var(--color-dark);
   color: #fff;

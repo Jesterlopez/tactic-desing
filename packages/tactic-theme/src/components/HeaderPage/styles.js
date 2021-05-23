@@ -8,6 +8,7 @@ export const Header = styled.div`
   box-sizing: border-box;
   @media screen and (max-width: 768px) {
     position: relative;
+    z-index: inherit;
   }
 `;
 
@@ -57,7 +58,7 @@ export const NamePage = styled.a`
   text-transform: capitalize;
   color: var(--color-dark);
   font-size: 0.8rem;
-  margin-left: 5px;
+  margin-left: 10px;
 
   @media screen and (max-width: 768px) {
     display: none;

@@ -33,6 +33,7 @@ export const IconWave = styled.i`
   align-items: center;
   transition: transform 0.3s cubic-bezier(0.7, 0, 0.3, 1);
   position: relative;
+  max-width: 80px;
 
   & > div {
     position: absolute;

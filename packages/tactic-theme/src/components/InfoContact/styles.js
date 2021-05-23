@@ -16,11 +16,15 @@ export const AnchorEmail = styled.a`
   }
   & .font__bold {
     text-transform: uppercase;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 800;
+  }
+  & .text__italic {
+    font-size: 0.8rem;
   }
   @media screen and (max-width: 768px) {
     display: none;
+    width: 100%;
   }
 `;
 
@@ -33,12 +37,16 @@ export const AnchorNewsletter = styled.a`
   }
   & .font__bold {
     text-transform: uppercase;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 800;
+  }
+  & .text__italic {
+    font-size: 0.8rem;
   }
   @media screen and (max-width: 768px) {
     position: absolute;
     bottom: 150px;
     left: 40px;
+    width: 100% !important;
   }
 `;
