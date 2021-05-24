@@ -47,7 +47,7 @@ export const HeaderContent = styled.p`
     height: 100%;
   }
   & span {
-    transform: translateY(80px) !important;
+    transform: translateY(80px);
     display: block;
     color: #fff;
   }
