@@ -4,7 +4,7 @@ import { H1 } from "./styles";
 import TitleSection from "../TitleSection";
 import { IconWaveQuote } from "../../components/Icons";
 
-const TitleHeader = ({ state, textUp, textDown }) => {
+const TitleHeader = ({ state, textUp, textDown, className }) => {
   const data = state.source.get(state.router.link);
 
   return (
@@ -14,8 +14,12 @@ const TitleHeader = ({ state, textUp, textDown }) => {
           className="big"
           animation="slideInRightInitial animation"
         />
-        <span>{textUp}</span>
-        <span>{textDown}.</span>
+        <div>
+          <span className={className}>{textUp}</span>
+        </div>
+        <div>
+          <span className={className}>{textDown}.</span>
+        </div>
       </H1>
     </>
   );

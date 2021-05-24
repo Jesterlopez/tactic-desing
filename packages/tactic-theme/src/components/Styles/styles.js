@@ -122,7 +122,7 @@ export const Globalstyle = createGlobalStyle`
 }
 html{
   scroll-behavior:smooth;
-/* overflow-x: hidden; */
+overflow-x: hidden;
 }
 body{
     font-family: 'Lato', sans-serif;
@@ -271,6 +271,14 @@ body.menuOpen{
       background: var(--color-primary);
       transform-origin: bottom left;
       transition-duration: 400ms;
+    }
+    &.white{
+      &::before{
+      background: var(--color-gray);
+      }
+      &::after{
+      background: var(--color-gray);
+      }
     }
 
     &::after {

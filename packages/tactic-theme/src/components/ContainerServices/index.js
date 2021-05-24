@@ -20,7 +20,7 @@ const ContainerServices = ({ state }) => {
   const content = document.getElementById("content");
   const containerServiceRef = useRef(null);
 
-  const windowSize = useWindowSize();
+  // const windowSize = useWindowSize();
   // const dataAnimation = {
   //   ease: 0.1,
   //   curr: 0,
@@ -39,27 +39,27 @@ const ContainerServices = ({ state }) => {
   // useEffect(() => {
   //   requestAnimationFrame(() => smoothScroll());
   // }, []);
-  if (window.innerWidth > 768) {
-    const initScrollAnimation = useCallback(() => {
-      gsap.to(containerServiceRef.current, {
-        scrollTrigger: {
-          trigger: !containerServiceRef.current,
-          start: "center 80%",
-          scrub: true,
-        },
-        yPercent: -100,
-        duration: 0.8,
-        stagger: {
-          from: "center",
-          amount: 0.9,
-        },
-      });
-    }, []);
+  // if (window.innerWidth > 768) {
+  const initScrollAnimation = useCallback(() => {
+    gsap.to(containerServiceRef.current, {
+      scrollTrigger: {
+        trigger: !containerServiceRef.current,
+        start: "center 80%",
+        scrub: true,
+      },
+      yPercent: -100,
+      duration: 0.8,
+      stagger: {
+        from: "center",
+        amount: 0.9,
+      },
+    });
+  }, []);
 
-    useEffect(() => {
-      initScrollAnimation();
-    }, [windowSize.height, initScrollAnimation]);
-  }
+  useEffect(() => {
+    initScrollAnimation();
+  }, [initScrollAnimation]);
+  // }
 
   return (
     <ContainerParallax

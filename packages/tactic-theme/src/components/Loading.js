@@ -5,7 +5,7 @@ const Preloader = () => {
   return (
     <Loader
       type="Puff"
-      color="#d8d8da"
+      color="#f8f8f8"
       height={"100vh"}
       width={120}
       style={{

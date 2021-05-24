@@ -11,7 +11,8 @@ export const ContainerHeader = styled.div`
 export const ColorYellow = styled.div`
   position: absolute;
   right: 0;
-  width: 75%;
+  width: 100%;
+  left: 27%;
   height: 100%;
   background: var(--color-yellow);
 
@@ -20,6 +21,7 @@ export const ColorYellow = styled.div`
     width: 100%;
     position: absolute;
     top: 50vh;
+    left: 0% !important;
   }
 `;
 
@@ -31,21 +33,28 @@ export const HeaderContent = styled.p`
   position: absolute;
   font-weight: 900;
   font-family: "Poppins", sans-serif;
-  top: 35%;
+  top: 30%;
   right: 15%;
   line-height: 1.3;
   color: #fff;
   & p {
-    color: var(--color-dark);
     margin-bottom: 30px;
+    color: var(--color-dark);
+    opacity: 0;
   }
-  & > span {
+  & div {
+    overflow: hidden;
+    height: 100%;
+  }
+  & span {
+    transform: translateY(150px) !important;
     display: block;
+    color: #fff;
   }
 
-  & span:last-child {
+  /* & span:last-child {
     color: var(--color-dark);
-  }
+  } */
   @media screen and (max-width: 768px) {
     width: 90%;
     font-size: 1.2rem;
@@ -155,7 +164,7 @@ export const ContainerSection = styled.section`
   }
 `;
 
-export const HeadBlockContent = styled.p`
+export const HeadBlockContent = styled.div`
   margin-bottom: 40px;
   color: var(--color-dark);
 
@@ -197,6 +206,14 @@ export const ContainerRight = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  .blockOne {
+    transform: translateY(150px);
+  }
+
+  .blockTwo {
+    transform: translate(-105px, -150px);
+  }
 
   &.padding__left__10 {
     padding-left: 10%;
@@ -270,7 +287,7 @@ export const ContainerLeft = styled.div`
   @media screen and (max-width: 768px) {
     width: 100% !important;
     order: 2;
-
+    transform: translate(0, 0) !important;
     &.withImg {
       height: 326px;
       z-index: 0;
@@ -317,6 +334,9 @@ export const Services = styled.div`
 
 export const ServiceName = styled.h3`
   margin-bottom: 20px;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 900;
   @media screen and (max-width: 768px) {
     font-size: 1rem;
   }
@@ -327,6 +347,7 @@ export const ListService = styled.ul`
 `;
 export const ListItem = styled.li`
   color: #4c4a57;
+  font-size: 0.9rem;
   @media screen and (max-width: 768px) {
     font-size: 0.8rem;
     line-height: 1.2rem;

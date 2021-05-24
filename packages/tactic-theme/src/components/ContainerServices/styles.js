@@ -4,10 +4,12 @@ export const ContainerParallax = styled.div`
 
   @media screen and (max-width: 768px) {
     width: 100vw !important;
-    transform: translateY(0%);
+    /* transform: translateY(0%); */
+    transform: translate(0px, 0px) !important;
   }
 `;
 export const ContainerService = styled.div`
+  transform: translateX(100%);
   background: var(--color-dark);
   color: #fff;
   padding: 80px;
@@ -31,6 +33,9 @@ export const ContainerService = styled.div`
 
 export const ServiceName = styled.h3`
   margin-bottom: 20px;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 900;
   @media screen and (max-width: 768px) {
     font-size: 1rem;
   }
@@ -41,6 +46,7 @@ export const ListService = styled.ul`
 `;
 export const ListItem = styled.li`
   color: #4c4a57;
+  font-size: 0.9rem;
   @media screen and (max-width: 768px) {
     font-size: 0.8rem;
     line-height: 1.2rem;

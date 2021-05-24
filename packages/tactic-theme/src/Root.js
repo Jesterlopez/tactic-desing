@@ -58,49 +58,49 @@ const Root = ({ state, actions }) => {
   }, []);
 
   const scrollAnimations = () => {
-    const containerHeader = document.getElementById("header");
-    const Hello = document.getElementById("hello");
-    const CHello = document.getElementById("containerHello");
+    // const containerHeader = document.getElementById("header");
+    // const Hello = document.getElementById("hello");
+    // const CHello = document.getElementById("containerHello");
 
-    const Paragraph = document.getElementById("paragraph");
-    const ScrollDown = document.querySelector("#scrollDown");
-    const ScrollDown2 = document.querySelector("#scrollDown2");
+    // const Paragraph = document.getElementById("paragraph");
+    // const ScrollDown = document.querySelector("#scrollDown");
+    // const ScrollDown2 = document.querySelector("#scrollDown2");
 
-    // let scrollPosition = window.pageYOffset;
-    // const ElementParallax = document.querySelector("#paragraph");
+    // // let scrollPosition = window.pageYOffset;
+    // // const ElementParallax = document.querySelector("#paragraph");
 
-    const Content = document.querySelector("#content");
+    // const Content = document.querySelector("#content");
 
-    if (Content.getBoundingClientRect().bottom <= 650) {
-      ScrollDown2.style.zIndex = "-1";
-    } else {
-      ScrollDown2.style.zIndex = "10";
-    }
+    // if (Content.getBoundingClientRect().bottom <= 650) {
+    //   ScrollDown2.style.zIndex = "-1";
+    // } else {
+    //   ScrollDown2.style.zIndex = "10";
+    // }
 
-    if (containerHeader.getBoundingClientRect().top < 0) {
-      containerHeader.classList.add("expanded__height");
-      Paragraph.style.opacity = 1;
-      ScrollDown.classList.add("animation");
-      ScrollDown.classList.add("fadeOut");
+    // if (containerHeader.getBoundingClientRect().top < 0) {
+    //   containerHeader.classList.add("expanded__height");
+    //   Paragraph.style.opacity = 1;
+    //   ScrollDown.classList.add("animation");
+    //   ScrollDown.classList.add("fadeOut");
 
-      ScrollDown.classList.remove("fadeInScroll");
-      ScrollDown2.classList.add("fadeInScroll");
-    } else {
-      ScrollDown.classList.add("fadeOut");
-      ScrollDown2.classList.remove("fadeInScroll");
+    //   ScrollDown.classList.remove("fadeInScroll");
+    //   ScrollDown2.classList.add("fadeInScroll");
+    // } else {
+    //   ScrollDown.classList.add("fadeOut");
+    //   ScrollDown2.classList.remove("fadeInScroll");
 
-      ScrollDown.classList.remove("fadeOut");
-      ScrollDown.classList.add("fadeInScroll");
-      containerHeader.classList.remove("expanded__height");
-    }
-    if (Content.getBoundingClientRect().top < 0) {
-      CHello.style.zIndex = "-1";
-      Paragraph.style.opacity = 0;
-      Paragraph.style.zIndex = -1;
-    } else {
-      Paragraph.style.zIndex = 1;
-      CHello.style.zIndex = 0;
-    }
+    //   ScrollDown.classList.remove("fadeOut");
+    //   ScrollDown.classList.add("fadeInScroll");
+    //   containerHeader.classList.remove("expanded__height");
+    // }
+    // if (Content.getBoundingClientRect().top < 0) {
+    //   CHello.style.zIndex = "-1";
+    //   Paragraph.style.opacity = 0;
+    //   Paragraph.style.zIndex = -1;
+    // } else {
+    //   Paragraph.style.zIndex = 1;
+    //   CHello.style.zIndex = 0;
+    // }
 
     // referencia al elemento a animar
     const img = document.querySelectorAll(".fadeObserve");
@@ -188,7 +188,7 @@ const Root = ({ state, actions }) => {
               </ContentPage>
             </>
           )}
-          {data.isPage && (
+          {data.isPage && data2.page[id].slug == "nosotros" && (
             <>
               <ContentPage>
                 <Nosotros />

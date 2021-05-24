@@ -65,7 +65,7 @@ export const fadeOut = keyframes`
 export const fadeInUp = keyframes`
     from{
         opacity: 0;
-        transform: translateY(100px);
+        transform: translateY(150px);
     }
     to{
         opacity: 1;
