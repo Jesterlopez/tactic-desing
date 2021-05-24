@@ -4,9 +4,9 @@ export const Borders = styled.div`
   & > * {
     transition: transform 500ms cubic-bezier(0.7, 0, 0.3, 1) 0ms;
   }
-  /* @media screen and (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     display: none;
-  } */
+  }
 `;
 
 export const BorderTop = styled.div`
@@ -21,7 +21,7 @@ export const BorderTop = styled.div`
   transition: all 500ms cubic-bezier(0.7, 0, 0.3, 1) 0ms;
 
   @media screen and (max-width: 768px) {
-    height: 0;
+    height: 20px;
   }
 `;
 
@@ -37,7 +37,7 @@ export const BorderBottom = styled.div`
   transition: all 500ms cubic-bezier(0.7, 0, 0.3, 1) 0ms;
 
   @media screen and (max-width: 768px) {
-    height: 0;
+    height: 20px;
   }
 `;
 
@@ -53,7 +53,7 @@ export const BorderLeft = styled.div`
   transition: all 500ms cubic-bezier(0.7, 0, 0.3, 1) 0ms;
 
   @media screen and (max-width: 768px) {
-    width: 0;
+    width: 20px;
   }
 `;
 
@@ -69,6 +69,6 @@ export const BorderRight = styled.div`
   transition: all 500ms cubic-bezier(0.7, 0, 0.3, 1) 0ms;
 
   @media screen and (max-width: 768px) {
-    width: 0;
+    width: 20px;
   }
 `;

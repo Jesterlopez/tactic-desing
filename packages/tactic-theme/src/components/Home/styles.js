@@ -137,7 +137,7 @@ export const ContentSection = styled.section`
       margin-left: -40px;
       margin-right: -40px;
       width: 100vw;
-      height: 200px;
+      height: 0;
     }
     & div.container__left {
       margin-bottom: 60px;

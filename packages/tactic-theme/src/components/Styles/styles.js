@@ -13,6 +13,7 @@ import {
   slideLeft,
   slideInRightInitial,
   fadeOutUp,
+  slideDown,
 } from "./animation";
 export const Globalstyle = createGlobalStyle`
 :root{
@@ -332,6 +333,9 @@ body.menuOpen{
   }
 
   .animation{
+    &.slideDown{
+      animation: ${slideDown} 1s forwards;
+    }
     &.fadeInUp{
       transform: translateY(100px);
       animation: ${fadeInUp} .5s forwards;

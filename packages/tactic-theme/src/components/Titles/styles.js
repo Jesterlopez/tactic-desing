@@ -75,11 +75,11 @@ export const TitleBlock = styled.h2`
     }
     &.center__section {
       position: relative;
-      top: 0;
-      left: 0;
+      top: 5%;
+      left: 10%;
       width: 100%;
       z-index: 2;
-      transform: translateY(-50px);
+      /* transform: translateY(-50px); */
     }
     .marginBottom__40 {
       margin-bottom: 40px;

@@ -222,7 +222,7 @@ const Home = ({ state }) => {
               </NameSection>
             </div>
             <div className="container__left imagen__content">
-              <div className="parallax__none">
+              <div className="parallax__none fadeObserve slideOutRight">
                 <Parallax
                   bgImage={home.acf.imagen_seccion.url}
                   strength={150}
@@ -272,7 +272,7 @@ const Home = ({ state }) => {
                 />
               </NameSection>
             </div>
-            <div className="image container__fullWidth">
+            <div className="image container__fullWidth fadeObserve slideDown">
               <Parallax
                 bgImage={
                   "https://tactic-center.com/wp-content/uploads/2018/05/Suscribite-Home-min-1.jpg"

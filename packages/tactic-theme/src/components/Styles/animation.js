@@ -133,6 +133,16 @@ export const slideOutRight = keyframes`
     
 `;
 
+export const slideDown = keyframes`
+    from{
+       height: 0;
+    }
+    to{
+        height: 200px;
+
+    }
+`;
+
 export const HLeftMove = keyframes`
    0% {
      stroke-dashoffset: 124px;

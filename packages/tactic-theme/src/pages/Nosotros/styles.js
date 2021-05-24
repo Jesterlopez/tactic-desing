@@ -134,12 +134,12 @@ export const ContainerSection = styled.section`
     }
     &.margin__top__negative {
       padding-top: 30px;
-      padding-bottom: 30px;
+      padding-bottom: 0;
     }
     & .content__italic {
-      font-size: 1rem;
+      font-size: 1.2rem;
       line-height: 1.2;
-      font-style: normal;
+      /* font-style: normal; */
       /* font-family: "L", sans-serif; */
     }
     /* &.padding__top {

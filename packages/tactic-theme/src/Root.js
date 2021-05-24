@@ -121,7 +121,9 @@ const Root = ({ state, actions }) => {
     const Observer = new IntersectionObserver(callback, options);
 
     img.forEach((img) => {
-      Observer.observe(img);
+      setTimeout(() => {
+        Observer.observe(img);
+      }, 1000);
     });
   };
 
