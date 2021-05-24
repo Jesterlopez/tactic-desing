@@ -47,7 +47,7 @@ export const HeaderContent = styled.p`
     height: 100%;
   }
   & span {
-    transform: translateY(150px) !important;
+    transform: translateY(80px) !important;
     display: block;
     color: #fff;
   }
@@ -57,7 +57,7 @@ export const HeaderContent = styled.p`
   } */
   @media screen and (max-width: 768px) {
     width: 90%;
-    font-size: 1.2rem;
+    font-size: 1.8rem;
     top: 60%;
     right: 0%;
     padding-left: 10%;
@@ -133,7 +133,7 @@ export const ContainerSection = styled.section`
       font-size: 2rem;
     }
     &.margin__top__negative {
-      padding-top: 30px;
+      padding-top: 65px;
       padding-bottom: 0;
     }
     & .content__italic {

@@ -385,6 +385,10 @@ body.menuOpen{
 
   @media screen and (max-width: 768px) {
 
+    .H90vh{
+      height: 90vh;
+    }
+
     .padding__mobile{
   padding: 0 40px !important;
 }

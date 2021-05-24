@@ -94,13 +94,13 @@ const Nosotros = ({ state }) => {
 
   useEffect(() => {
     initScrollAnimation();
-    setTimeout(() => {
-      const animation = document.querySelectorAll(".fadeInUp");
-      animation.forEach((e, i) => {
-        e.classList.add("animation");
-        e.style.animationDelay = `calc(${i + 1}00ms)`;
-      });
-    }, 0);
+    // setTimeout(() => {
+    const animation = document.querySelectorAll(".fadeInUp");
+    animation.forEach((e, i) => {
+      e.classList.add("animation");
+      e.style.animationDelay = `calc(${i + 1}00ms)`;
+    });
+    // }, 100);
   }, [initScrollAnimation]);
 
   return (
@@ -240,7 +240,7 @@ const Nosotros = ({ state }) => {
           </ContainerImage>
         </ContainerRight>
       </ContainerSection>
-      <ContainerSection className="padding__none H100vh">
+      <ContainerSection className="padding__none H100vh H90vh">
         <ContainerLeft className="withImg" style={{ width: "45%" }}>
           <ContainerImageBig>
             <img src="https://tactic-center.com/wp-content/uploads/2018/04/Header-Nosotros-1.jpg" />
