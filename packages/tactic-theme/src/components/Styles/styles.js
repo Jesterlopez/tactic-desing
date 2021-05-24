@@ -50,7 +50,9 @@ export const Globalstyle = createGlobalStyle`
 .margin__bottom__end {
   margin-bottom: 200px;
 }
-
+#content{
+  margin-bottom: 30vh;
+}
 .padding__top__none{
   padding-top: 0;
 }
