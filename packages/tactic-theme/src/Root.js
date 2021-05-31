@@ -178,8 +178,7 @@ const Root = ({ state, actions }) => {
           {data.isBlogArchive && (
             <>
               <ContentPage>
-                {/* <Blog /> */}
-                <h1>Funciona</h1>
+                <Blog />
               </ContentPage>
             </>
           )}
