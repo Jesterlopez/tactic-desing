@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { connect } from "frontity";
 import {
   ContainerHeader,
@@ -13,9 +13,11 @@ import Client from "../../components/Client";
 import Title from "../../components/Titles";
 import TitleHeader from "../../components/TitleHeader";
 import BlockContent from "../../components/BlockContent";
-import ContainerBlog from "../../components/ContainerBlog";
+// import ContainerBlog from "../../components/ContainerBlog";
 import PlaceholderLazyLoad from "../../components/PlaceholderLazyLoad";
-
+const ContainerBlog = React.lazy(() =>
+  import("../../components/ContainerBlog")
+);
 import LazyLoad from "react-lazyload";
 
 const Blog = ({ state }) => {
@@ -57,12 +59,13 @@ const Blog = ({ state }) => {
           const category = state.source.category[idCat].name;
           // console.log(blog);
           return (
-            <LazyLoad
-              height={320}
-              // placeholder={<PlaceholderLazyLoad />}
-              debounce={500}
-              offset={[-200, 0]}
-            >
+            // <LazyLoad
+            //   height={320}
+            //   placeholder={<PlaceholderLazyLoad />}
+            //   debounce={500}
+            //   offset={[-200, 0]}
+            // >
+            <Suspense fallback={<PlaceholderLazyLoad />}>
               <ContainerBlog
                 key={id}
                 category={category}
@@ -72,7 +75,9 @@ const Blog = ({ state }) => {
                 link={blog.link}
                 background={blog.acf.background}
               />
-            </LazyLoad>
+            </Suspense>
+
+            // </LazyLoad>
           );
         })}
       </ContainerBlogs>
