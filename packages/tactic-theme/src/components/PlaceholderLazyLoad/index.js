@@ -6,7 +6,7 @@ const PlaceholderLazyLoad = ({ state, background }) => {
   const data = state.source.get(state.router.link);
 
   return (
-    <Container background={background}>
+    <Container>
       <img src="https://tactic-center.com/wp-content/uploads/2018/04/Logo-TC.png" />
     </Container>
   );

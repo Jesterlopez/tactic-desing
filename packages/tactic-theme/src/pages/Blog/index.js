@@ -57,22 +57,22 @@ const Blog = ({ state }) => {
           const category = state.source.category[idCat].name;
           // console.log(blog);
           return (
-            // <LazyLoad
-            //   height={320}
-            //   placeholder={<PlaceholderLazyLoad />}
-            //   debounce={500}
-            //   offset={[-200, 0]}
-            // >
-            <ContainerBlog
-              key={id}
-              category={category}
-              title={blog.title.rendered}
-              image={blog.featured_media}
-              introBlog={blog.excerpt.rendered}
-              link={blog.link}
-              background={blog.acf.background}
-            />
-            // </LazyLoad>
+            <LazyLoad
+              height={320}
+              placeholder={<PlaceholderLazyLoad />}
+              debounce={500}
+              offset={[-200, 0]}
+            >
+              <ContainerBlog
+                key={id}
+                category={category}
+                title={blog.title.rendered}
+                image={blog.featured_media}
+                introBlog={blog.excerpt.rendered}
+                link={blog.link}
+                background={blog.acf.background}
+              />
+            </LazyLoad>
           );
         })}
       </ContainerBlogs>
