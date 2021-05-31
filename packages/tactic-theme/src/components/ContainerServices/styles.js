@@ -26,6 +26,8 @@ export const ContainerService = styled.div`
     padding: 40px 20px;
     width: 100vw;
     margin-left: -40px;
+    transform: translateX(73%) translateY(0);
+
     & > :first-child {
       margin-top: 0 !important;
     }
