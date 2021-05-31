@@ -50,6 +50,7 @@ const Root = ({ state, actions }) => {
   // animacion del home al hace scroll
   useEffect(() => {
     actions.source.fetch("/inicio");
+    // actions.source.fetch("/blog");
 
     // if (document.readyState === "complete") {
     window.addEventListener("scroll", scrollAnimations);
@@ -177,7 +178,8 @@ const Root = ({ state, actions }) => {
           {data.isBlogArchive && (
             <>
               <ContentPage>
-                <Blog />
+                {/* <Blog /> */}
+                <h1>Funciona</h1>
               </ContentPage>
             </>
           )}

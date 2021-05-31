@@ -51,7 +51,7 @@ const Blog = ({ state }) => {
 
       <ContainerBlogs>
         {data.items.map(({ id }) => {
-          console.log(id);
+          // console.log(id);
           const blog = state.source.blog[id];
           const idCat = blog.categories;
           const category = state.source.category[idCat].name;

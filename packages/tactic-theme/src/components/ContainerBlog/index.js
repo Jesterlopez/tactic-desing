@@ -18,6 +18,7 @@ const ContainerBlog = ({
   link,
   image,
   background,
+  key,
 }) => {
   const data = state.source.get(state.router.link);
   const media = state.source.attachment[image];
