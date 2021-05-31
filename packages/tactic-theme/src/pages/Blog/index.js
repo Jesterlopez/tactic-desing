@@ -51,13 +51,14 @@ const Blog = ({ state }) => {
 
       <ContainerBlogs>
         {data.items.map(({ id }) => {
+          <p>Hola</p>;
           // console.log(id);
           // const blog = state.source.blog[id];
           // const idCat = blog.categories;
           // const category = state.source.category[idCat].name;
           // // console.log(blog);
           // return (
-          //   <>
+          //   <p>
           //     <LazyLoad
           //       height={320}
           //       placeholder={<PlaceholderLazyLoad />}
@@ -74,7 +75,7 @@ const Blog = ({ state }) => {
           //         background={blog.acf.background}
           //       />
           //     </LazyLoad>
-          //   </>
+          //   </p>
           // );
         })}
       </ContainerBlogs>
