@@ -45,6 +45,9 @@ export const ContainerRight = styled.div`
     position: relative;
     height: 50%;
     width: 90%;
+    & .margin__top__paragraph {
+      margin-top: 15%;
+    }
 
     & .padding__mobile {
       padding-left: 0 !important;
@@ -52,7 +55,12 @@ export const ContainerRight = styled.div`
   }
 `;
 
-export const HeadBlockContent = styled.div``;
+export const HeadBlockContent = styled.div`
+  &.animate {
+    opacity: 0;
+  }
+  /* opacity: 0; */
+`;
 
 export const BodyContent = styled.div`
   & p {

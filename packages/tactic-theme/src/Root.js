@@ -28,7 +28,6 @@ const Root = ({ state, actions }) => {
   const id = data.id;
 
   const [loading, setLoading] = useState(true);
-  const [offset, setoffset] = useState(0);
 
   useEffect(() => {
     setTimeout(() => {

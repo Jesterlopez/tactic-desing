@@ -489,9 +489,10 @@ body.menuOpen{
     .d__none__mobile{
   display: none;
 }
-    .linkHome{
+.linkHome{
   transform: translateY(30px);
-    }
+
+  }
     #content{
       margin-bottom: 480px !important;
     }
@@ -500,6 +501,12 @@ body.menuOpen{
     }
     .brand{
       position: absolute;
+      
+      & > .text__italic {
+        display: block;
+        transform: translateY(75%);
+        transition: transform 500ms cubic-bezier(0.7,0,0.3,1) 0ms;
+      }
     }
     .overflowContact #menu__toggle{
       display: none;

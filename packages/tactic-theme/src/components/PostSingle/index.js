@@ -38,7 +38,7 @@ const PostSingle = ({ state, element }) => {
   const idCat = post.categories;
   const category = state.source.category[idCat].name;
   const secciones = post.acf.columnas;
-
+  console.log(post);
   if (element === "blog") {
     return (
       <>
@@ -59,10 +59,12 @@ const PostSingle = ({ state, element }) => {
           background={post.acf.background}
           color={post.acf.text_color}
         >
-          <Category className="text__italic">Category</Category>
+          <Category className="text__italic">{category}</Category>
           {/* {console.log(secciones)} */}
-          <TitleBlog>Herramientas útiles para diseñadores</TitleBlog>
-          <IntroBlog>Pequeña titulo del blog</IntroBlog>
+          <TitleBlog>{post.title.rendered}</TitleBlog>
+          <IntroBlog>
+            {post.excerpt.rendered || "Pequeño titulo del blog"}
+          </IntroBlog>
           <Container>
             <HeaderContent>
               <p className="text__italic">Goal.</p>

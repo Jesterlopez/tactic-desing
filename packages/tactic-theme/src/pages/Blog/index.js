@@ -34,7 +34,10 @@ const Blog = ({ state }) => {
           />
         </ContainerLeft>
         <ContainerRight className="padding__top fadeInUp animation">
-          <BlockContent id="BlockContent" className="padding__left noFade">
+          <BlockContent
+            id="BlockContent"
+            className="padding__left margin__top__paragraph"
+          >
             <HeadBlockContent>
               <Title className="title__customTwo title__low">
                 Conocé todo sobre disrupción
@@ -83,7 +86,7 @@ const Blog = ({ state }) => {
       </ContainerBlogs>
       <ContainerClients>
         <BlockContent id="BlockContent" className="padding__left">
-          <HeadBlockContent>
+          <HeadBlockContent className="fadeInUp fadeObserve animate">
             <Title className="title__customTwo">
               Nos clients
               <span className="text__italic">depuis 2004</span>
