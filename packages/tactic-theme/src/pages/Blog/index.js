@@ -49,35 +49,35 @@ const Blog = ({ state }) => {
         </ContainerRight>
       </ContainerHeader>
 
-      {/* <ContainerBlogs>
+      <ContainerBlogs>
         {data.items.map(({ id }) => {
           // console.log(id);
-          const blog = state.source.blog[id];
-          const idCat = blog.categories;
-          const category = state.source.category[idCat].name;
-          // console.log(blog);
-          return (
-            <>
-              <LazyLoad
-                height={320}
-                placeholder={<PlaceholderLazyLoad />}
-                debounce={500}
-                offset={[-200, 0]}
-              >
-                <ContainerBlog
-                  key={id}
-                  category={category}
-                  title={blog.title.rendered}
-                  image={blog.featured_media}
-                  introBlog={blog.excerpt.rendered}
-                  link={blog.link}
-                  background={blog.acf.background}
-                />
-              </LazyLoad>
-            </>
-          );
+          // const blog = state.source.blog[id];
+          // const idCat = blog.categories;
+          // const category = state.source.category[idCat].name;
+          // // console.log(blog);
+          // return (
+          //   <>
+          //     <LazyLoad
+          //       height={320}
+          //       placeholder={<PlaceholderLazyLoad />}
+          //       debounce={500}
+          //       offset={[-200, 0]}
+          //     >
+          //       <ContainerBlog
+          //         key={id}
+          //         category={category}
+          //         title={blog.title.rendered}
+          //         image={blog.featured_media}
+          //         introBlog={blog.excerpt.rendered}
+          //         link={blog.link}
+          //         background={blog.acf.background}
+          //       />
+          //     </LazyLoad>
+          //   </>
+          // );
         })}
-      </ContainerBlogs> */}
+      </ContainerBlogs>
       <ContainerClients>
         <BlockContent id="BlockContent" className="padding__left">
           <HeadBlockContent>
