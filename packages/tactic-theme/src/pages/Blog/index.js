@@ -59,7 +59,7 @@ const Blog = ({ state }) => {
           return (
             <LazyLoad
               height={320}
-              placeholder={<PlaceholderLazyLoad />}
+              // placeholder={<PlaceholderLazyLoad />}
               debounce={500}
               offset={[-200, 0]}
             >
