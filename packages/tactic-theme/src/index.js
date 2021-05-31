@@ -18,6 +18,7 @@ export default {
         showOnList: false,
         showOnPost: false,
       },
+      searchBlogValue: "",
     },
   },
   actions: {
@@ -27,6 +28,9 @@ export default {
       },
       closeMobileMenu: ({ state }) => {
         state.theme.isMobileMenuOpen = false;
+      },
+      setSearchBlogValue: ({ state }) => (value) => {
+        state.theme.searchBlogValue = value;
       },
     },
   },

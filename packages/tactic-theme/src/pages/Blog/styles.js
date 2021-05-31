@@ -112,3 +112,9 @@ export const ContainerClient = styled.div`
     height: 100%;
   }
 `;
+export const MessageInfo = styled.div`
+  width: 100%;
+  text-align: center;
+  padding: 5% 5%;
+  background: #f8f8f8;
+`;

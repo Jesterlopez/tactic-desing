@@ -25,7 +25,7 @@ const ContainerBlog = ({
   // console.log(media);
   return (
     <>
-      <Container>
+      <Container key={key}>
         <Link href={link}>
           <Img src={media.source_url} loading="lazy" />
           <Overlay background={background} />

@@ -8,6 +8,7 @@ import {
   BodyContent,
   ContainerBlogs,
   ContainerClients,
+  MessageInfo,
 } from "./styles";
 import Client from "../../components/Client";
 import Title from "../../components/Titles";
@@ -18,10 +19,20 @@ import PlaceholderLazyLoad from "../../components/PlaceholderLazyLoad";
 const ContainerBlog = React.lazy(() =>
   import("../../components/ContainerBlog")
 );
+import SearchBar from "../../components/SearchBar";
 // import LazyLoad from "react-lazyload";
 
-const Blog = ({ state }) => {
+const Blog = ({ state, actions }) => {
   const data = state.source.get(state.router.link);
+  const allBlog = Object.values(state.source.blog);
+
+  const filterBlog = allBlog.filter((blog) =>
+    blog.title.rendered
+      .toLowerCase()
+      .includes(state.theme.searchBlogValue.toLowerCase())
+  );
+  console.log(filterBlog);
+  console.log(allBlog);
 
   return (
     <>
@@ -53,13 +64,19 @@ const Blog = ({ state }) => {
           </BlockContent>
         </ContainerRight>
       </ContainerHeader>
-
+      <SearchBar />
       <ContainerBlogs>
-        {data.items.map(({ id }) => {
-          console.log(id);
-          const blog = state.source.blog[id];
+        {!filterBlog.length > 0 && (
+          <MessageInfo className="text__italic">
+            No hay resultados relacionados con{" "}
+            <strong>"{state.theme.searchBlogValue}"</strong>
+          </MessageInfo>
+        )}
+        {filterBlog.reverse().map((blog) => {
           const idCat = blog.categories;
           const category = state.source.category[idCat].name;
+          // console.log(id);
+          // const blog = state.source.blog[id];
           // console.log(blog);
           return (
             // <LazyLoad
@@ -70,7 +87,7 @@ const Blog = ({ state }) => {
             // >
             <Suspense fallback={<PlaceholderLazyLoad />}>
               <ContainerBlog
-                key={id}
+                key={blog.id}
                 category={category}
                 title={blog.title.rendered}
                 image={blog.featured_media}
@@ -79,7 +96,6 @@ const Blog = ({ state }) => {
                 background={blog.acf.background}
               />
             </Suspense>
-
             // </LazyLoad>
           );
         })}
