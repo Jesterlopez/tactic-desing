@@ -49,7 +49,7 @@ const Blog = ({ state }) => {
         </ContainerRight>
       </ContainerHeader>
 
-      <ContainerBlogs>
+      {/* <ContainerBlogs>
         {data.items.map(({ id }) => {
           // console.log(id);
           const blog = state.source.blog[id];
@@ -58,7 +58,7 @@ const Blog = ({ state }) => {
           // console.log(blog);
           return (
             <>
-              {/* <LazyLoad
+              <LazyLoad
                 height={320}
                 placeholder={<PlaceholderLazyLoad />}
                 debounce={500}
@@ -73,11 +73,11 @@ const Blog = ({ state }) => {
                   link={blog.link}
                   background={blog.acf.background}
                 />
-              </LazyLoad> */}
+              </LazyLoad>
             </>
           );
         })}
-      </ContainerBlogs>
+      </ContainerBlogs> */}
       <ContainerClients>
         <BlockContent id="BlockContent" className="padding__left">
           <HeadBlockContent>
