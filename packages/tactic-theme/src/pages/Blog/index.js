@@ -18,7 +18,7 @@ import PlaceholderLazyLoad from "../../components/PlaceholderLazyLoad";
 const ContainerBlog = React.lazy(() =>
   import("../../components/ContainerBlog")
 );
-import LazyLoad from "react-lazyload";
+// import LazyLoad from "react-lazyload";
 
 const Blog = ({ state }) => {
   const data = state.source.get(state.router.link);

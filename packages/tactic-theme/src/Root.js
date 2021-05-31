@@ -54,7 +54,6 @@ const Root = ({ state, actions }) => {
     // if (document.readyState === "complete") {
     window.addEventListener("scroll", scrollAnimations);
     // }
-
     return () => {
       window.removeEventListener("scroll", scrollAnimations);
     };

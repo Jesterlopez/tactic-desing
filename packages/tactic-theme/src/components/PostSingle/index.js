@@ -35,10 +35,12 @@ import { ScrollDown2 } from "../ScrollDown";
 const PostSingle = ({ state, element }) => {
   const data = state.source.get(state.router.link);
   const post = state.source[data.type][data.id];
+  const FeaturedMedia = state.source.attachment[post.featured_media].source_url;
   const idCat = post.categories;
   const category = state.source.category[idCat].name;
   const secciones = post.acf.columnas;
   console.log(post);
+  console.log(FeaturedMedia);
   if (element === "blog") {
     return (
       <>
@@ -62,9 +64,11 @@ const PostSingle = ({ state, element }) => {
           <Category className="text__italic">{category}</Category>
           {/* {console.log(secciones)} */}
           <TitleBlog>{post.title.rendered}</TitleBlog>
-          <IntroBlog>
-            {post.excerpt.rendered || "Pequeño titulo del blog"}
-          </IntroBlog>
+          <IntroBlog
+            dangerouslySetInnerHTML={{
+              __html: post.excerpt.rendered || "Pequeño titulo del blog",
+            }}
+          ></IntroBlog>
           <Container>
             <HeaderContent>
               <p className="text__italic">Goal.</p>
@@ -100,7 +104,7 @@ const PostSingle = ({ state, element }) => {
         </ContainerHeader>
         <ImgFullWidthParallax id="parallaxBlog">
           <Parallax
-            bgImage="https://tactic-center.com/wp-content/uploads/2020/10/imagen-principal-1080x675.jpg"
+            bgImage={FeaturedMedia}
             strength={100}
             style={{ height: 540 }}
             className="parallax__blog"
