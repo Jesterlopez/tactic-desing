@@ -1,0 +1,106 @@
+import styled from "styled-components";
+
+export const ContainerHeader = styled.section`
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  background: #f8f8f8;
+  position: relative;
+  padding: 0 15vh;
+
+  & .padding__top {
+    padding-top: 15vh;
+  }
+  & .padding__top .noFade {
+    transform: translate(0) !important;
+  }
+
+  @media screen and (max-width: 768px) {
+    height: 90vh;
+    padding: 0 5vh;
+    flex-wrap: wrap;
+    & .padding__top {
+      padding-top: 0;
+    }
+  }
+`;
+
+export const ContainerLeft = styled.div`
+  height: 100%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    height: 50%;
+  }
+`;
+export const ContainerRight = styled.div`
+  height: 100%;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  @media screen and (max-width: 768px) {
+    position: relative;
+    height: 50%;
+    width: 90%;
+
+    & .padding__mobile {
+      padding-left: 0 !important;
+    }
+  }
+`;
+
+export const HeadBlockContent = styled.div``;
+
+export const BodyContent = styled.div`
+  & p {
+    margin-top: 40px;
+    font-size: 0.85rem;
+    line-height: 1.4rem;
+    color: #606060;
+  }
+`;
+
+export const ContainerBlogs = styled.section`
+  width: 100%;
+  height: auto;
+  /* min-height: 100vh; */
+  display: flex;
+  flex-wrap: wrap;
+  background: #ffffff;
+  /* padding: 5vh 0; */
+  box-sizing: border-box;
+`;
+
+export const ContainerClients = styled.div`
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  background: var(--color-dark);
+  box-sizing: border-box;
+  color: #fff;
+  padding: 20vh 30vh;
+
+  @media screen and (max-width: 768px) {
+    padding: 5vh 4vh;
+  }
+`;
+
+export const ContainerClient = styled.div`
+  width: 165px;
+  height: 145px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 10px;
+  margin-bottom: 20px;
+
+  & img {
+    width: 100%;
+    height: 100%;
+  }
+`;

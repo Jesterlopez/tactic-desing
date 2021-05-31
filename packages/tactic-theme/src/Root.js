@@ -16,8 +16,12 @@ import Title from "./title";
 import Servicios from "./pages/Servicios";
 import Preloader from "./components/Loading";
 import Nosotros from "./pages/Nosotros";
-import { Globalstyle } from "./components/Styles/styles";
+import Blog from "./pages/Blog";
+import PostSingle from "./components/PostSingle";
+import ContactPopup from "./components/ContactPopup";
+import { ScrollDown2 } from "./components/ScrollDown";
 
+import { Globalstyle } from "./components/Styles/styles";
 const Root = ({ state, actions }) => {
   const data = state.source.get(state.router.link);
   const data2 = state.source;
@@ -43,7 +47,6 @@ const Root = ({ state, actions }) => {
   //     }
   //   }
   // }, []);
-
   // animacion del home al hace scroll
   useEffect(() => {
     actions.source.fetch("/inicio");
@@ -58,50 +61,21 @@ const Root = ({ state, actions }) => {
   }, []);
 
   const scrollAnimations = () => {
-    // const containerHeader = document.getElementById("header");
-    // const Hello = document.getElementById("hello");
-    // const CHello = document.getElementById("containerHello");
+    const content = document.querySelector("#contentGeneral");
+    const ScrollDown2 = document.querySelector("#scrollDown2");
+    const conten = document.querySelector("#contentGeneral");
 
-    // const Paragraph = document.getElementById("paragraph");
-    // const ScrollDown = document.querySelector("#scrollDown");
-    // const ScrollDown2 = document.querySelector("#scrollDown2");
+    // if (conten.getBoundingClientRect().top < 0) {
+    //   ScrollDown2.classList.add("animation");
+    // } else {
+    //   ScrollDown2.classList.remove("remove");
+    // }
 
-    // // let scrollPosition = window.pageYOffset;
-    // // const ElementParallax = document.querySelector("#paragraph");
-
-    // const Content = document.querySelector("#content");
-
-    // if (Content.getBoundingClientRect().bottom <= 650) {
+    // if (content.getBoundingClientRect().bottom <= 700) {
     //   ScrollDown2.style.zIndex = "-1";
     // } else {
     //   ScrollDown2.style.zIndex = "10";
     // }
-
-    // if (containerHeader.getBoundingClientRect().top < 0) {
-    //   containerHeader.classList.add("expanded__height");
-    //   Paragraph.style.opacity = 1;
-    //   ScrollDown.classList.add("animation");
-    //   ScrollDown.classList.add("fadeOut");
-
-    //   ScrollDown.classList.remove("fadeInScroll");
-    //   ScrollDown2.classList.add("fadeInScroll");
-    // } else {
-    //   ScrollDown.classList.add("fadeOut");
-    //   ScrollDown2.classList.remove("fadeInScroll");
-
-    //   ScrollDown.classList.remove("fadeOut");
-    //   ScrollDown.classList.add("fadeInScroll");
-    //   containerHeader.classList.remove("expanded__height");
-    // }
-    // if (Content.getBoundingClientRect().top < 0) {
-    //   CHello.style.zIndex = "-1";
-    //   Paragraph.style.opacity = 0;
-    //   Paragraph.style.zIndex = -1;
-    // } else {
-    //   Paragraph.style.zIndex = 1;
-    //   CHello.style.zIndex = 0;
-    // }
-
     // referencia al elemento a animar
     const img = document.querySelectorAll(".fadeObserve");
 
@@ -114,7 +88,7 @@ const Root = ({ state, actions }) => {
     };
     const options = {
       root: null,
-      rootMargin: "0px",
+      rootMargin: "-100px",
       threshold: 0,
     };
 
@@ -142,6 +116,14 @@ const Root = ({ state, actions }) => {
           href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
           rel="stylesheet"
         />
+        <link
+          href="http://admin-tactic.tactic-center.com/wp-includes/css/dist/block-library/style.min.css"
+          rel="stylesheet"
+        />
+        <link
+          href="http://admin-tactic.tactic-center.com/wp-includes/css/dist/block-library/theme.min.css"
+          rel="stylesheet"
+        />
       </Head>
       <Globalstyle />
       <Title />
@@ -150,27 +132,36 @@ const Root = ({ state, actions }) => {
       ) : (
         <>
           <BorderPage />
-          <MenuToggleMobile />
+          {data.isBlog ? (
+            <MenuToggleMobile className="d__none" />
+          ) : (
+            <MenuToggleMobile />
+          )}
           <HeaderPage
             namePage={
               (data.isError && "Not Found") ||
               (data.isPage && data2.page[id].title.rendered) ||
               (data.isPost && data2.post[id].title.rendered) ||
+              (data.isBlogArchive && data.type) ||
               (data.isServicioArchive && data.type)
             }
           />
           <MenuNavbar />
+          <ContactPopup />
+          <ScrollDown2 />
           {data.isHome && (
             <>
-              <ContainerHeader />
-              <Home />
+              <ContentPage>
+                <ContainerHeader />
+                <Home />
+              </ContentPage>
               {/* <FooterPage /> */}
             </>
           )}
           {data.isServicioArchive && (
             <>
               <ContentPage>
-                <Servicios></Servicios>
+                <Servicios />
               </ContentPage>
             </>
           )}
@@ -183,10 +174,17 @@ const Root = ({ state, actions }) => {
               </ContentPage>
             </>
           )}
-          {data.isPost && (
+          {data.isBlogArchive && (
             <>
               <ContentPage>
-                <Single></Single>
+                <Blog />
+              </ContentPage>
+            </>
+          )}
+          {data.isBlog && (
+            <>
+              <ContentPage element="blog">
+                <PostSingle element="blog" />
               </ContentPage>
             </>
           )}
@@ -194,11 +192,6 @@ const Root = ({ state, actions }) => {
             <>
               <ContentPage>
                 <Nosotros />
-                {/* <div
-                  dangerouslySetInnerHTML={{
-                    __html: `${data2.page[id].content.rendered}`,
-                  }}
-                ></div> */}
               </ContentPage>
             </>
           )}

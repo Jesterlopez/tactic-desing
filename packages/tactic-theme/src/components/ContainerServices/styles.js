@@ -9,7 +9,8 @@ export const ContainerParallax = styled.div`
   }
 `;
 export const ContainerService = styled.div`
-  transform: translateX(100%);
+  opacity: 0;
+  transform: translateX(85%) translateY(0);
   background: var(--color-dark);
   color: #fff;
   padding: 80px;

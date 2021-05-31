@@ -8,6 +8,7 @@ import ItemTimeline from "../../components/ItemTimeline";
 import ServiceItem from "../../components/ServiceItem";
 import AnchorLink from "../../components/AnchorLink";
 import gsap from "gsap";
+import { Parallax } from "react-parallax";
 
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
@@ -175,7 +176,7 @@ const Nosotros = ({ state }) => {
         </ContainerRight>
       </ContainerSection>
       <ContainerSection className="padding__top__none line__timeline">
-        <ul className="list__timeline">
+        <ul className="list__timeline fadeInUp fadeObserve">
           <li className="timelineItem padding__mobile">
             <ItemTimeline
               textUp="Relaciones"
@@ -235,14 +236,21 @@ const Nosotros = ({ state }) => {
           </BlockContent>
         </ContainerLeft>
         <ContainerRight className="right">
-          <ContainerImage>
-            <img src="https://tactic-center.com/wp-content/uploads/2018/05/Misión-y-Visión-Nosotros-min.jpg" />
+          <ContainerImage
+          // className="fadeObserve slideLeft"
+          >
+            <Parallax
+              bgImage="https://tactic-center.com/wp-content/uploads/2018/05/Misión-y-Visión-Nosotros-min.jpg"
+              strength={200}
+              style={{ height: "100%" }}
+            ></Parallax>
+            {/* <img src="https://tactic-center.com/wp-content/uploads/2018/05/Misión-y-Visión-Nosotros-min.jpg" /> */}
           </ContainerImage>
         </ContainerRight>
       </ContainerSection>
       <ContainerSection className="padding__none H100vh H90vh">
         <ContainerLeft className="withImg" style={{ width: "45%" }}>
-          <ContainerImageBig>
+          <ContainerImageBig className="fadeObserve fadeInLeft">
             <img src="https://tactic-center.com/wp-content/uploads/2018/04/Header-Nosotros-1.jpg" />
           </ContainerImageBig>
         </ContainerLeft>
@@ -305,8 +313,11 @@ const Nosotros = ({ state }) => {
             </p>
           </BodyContent>
         </ContainerRight>
-        <ContainerFullWidth style={{ height: "350px" }} className="order__2">
-          <img src="https://tactic-center.com/wp-content/uploads/2018/04/Header-Nosotros-1.jpg" />{" "}
+        <ContainerFullWidth style={{ height: "350px" }} className="order__2 ">
+          <img
+            className="fadeObserve slideDown"
+            src="https://tactic-center.com/wp-content/uploads/2018/04/Header-Nosotros-1.jpg"
+          />
         </ContainerFullWidth>
       </ContainerSection>
       <ContainerSection className="container__services">
@@ -371,7 +382,10 @@ const Nosotros = ({ state }) => {
         }}
       >
         <ContainerLeft>
-          <BlockContent id="BlockContent" className="padding__left">
+          <BlockContent
+            id="BlockContent"
+            className="padding__left fadeObserve fadeInUp"
+          >
             <HeadBlockContent
               style={{ paddingLeft: "27%", color: "#fff", fontSize: "2rem" }}
             >
@@ -383,7 +397,7 @@ const Nosotros = ({ state }) => {
           </BlockContent>
         </ContainerLeft>
         <ContainerRight
-          className="order__2 width__100 padding__left__10"
+          className="order__2 width__100 padding__left__10 fadeInUp fadeObserve "
           style={{
             color: "#fff",
             flexWrap: "wrap",

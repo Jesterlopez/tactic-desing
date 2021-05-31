@@ -36,6 +36,13 @@ export const IndicatorScrollDown = styled.span`
       fill: #000;
     }
   }
+  &.noAnimation {
+    transform: translateY(0) rotate(-90deg);
+    opacity: 1;
+    animation: none !important;
+    z-index: 17;
+    font-size: 0.7rem;
+  }
   @media screen and (max-width: 768px) {
     display: none;
   }

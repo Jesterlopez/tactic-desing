@@ -304,6 +304,7 @@ export const ContainerFullWidth = styled.div`
     height: 100%;
     width: 100%;
     object-fit: cover;
+    opacity: 0;
   }
   @media screen and (max-width: 768px) {
     height: 200px !important;
@@ -357,7 +358,7 @@ export const ListItem = styled.li`
 export const ContainerImage = styled.div`
   width: 100%;
   height: 420px;
-
+  /* transform: translateX(50%); */
   & img {
     width: 100%;
     height: 100%;
@@ -370,6 +371,7 @@ export const ContainerImageBig = styled.div`
   height: 100vh;
   padding-left: 0 !important;
   padding-right: 0 !important;
+  opacity: 0;
 
   & img {
     width: 100%;

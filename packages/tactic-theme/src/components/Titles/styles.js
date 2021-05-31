@@ -10,7 +10,7 @@ export const TitleBlock = styled.h2`
   display: block;
   &.title__low {
     font-size: 1.7rem;
-    width: 200px;
+    width: auto;
   }
   &.title__custom {
     font-size: 2.8rem;

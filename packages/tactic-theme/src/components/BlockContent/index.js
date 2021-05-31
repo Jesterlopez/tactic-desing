@@ -4,7 +4,9 @@ import { BlockCont } from "./styles";
 import gsap from "gsap";
 import { useIntersection } from "react-use";
 
-const BlockContent = ({ children }) => {
+const BlockContent = ({ children, className, state }) => {
+  const data = state.source.get(state.router.link);
+
   const contentRef = useRef(null);
 
   const intersection = useIntersection(contentRef, {
@@ -39,9 +41,25 @@ const BlockContent = ({ children }) => {
   }
   return (
     <>
-      <BlockCont className="fadeInUp fadeObserve padding__right__none padding__mobile padding__left__none">
-        {children}
-      </BlockCont>
+      {data.type === "blog" ? (
+        <BlockCont
+          className={
+            "fadeInUp animation padding__right__none padding__mobile padding__left__none " +
+            className
+          }
+        >
+          {children}
+        </BlockCont>
+      ) : (
+        <BlockCont
+          className={
+            "fadeInUp fadeObserve padding__right__none padding__mobile padding__left__none " +
+            className
+          }
+        >
+          {children}
+        </BlockCont>
+      )}
     </>
   );
 };

@@ -5,11 +5,11 @@ import { IconWaveQuote } from "../Icons";
 import BlockContent from "../BlockContent";
 import Title from "../Titles";
 import AnchorLink from "../AnchorLink";
-import Media from "../Media";
+// import Media from "../Media";
 import ImgParallax from "../ImgParallax";
-import { motion, useAnimation } from "framer-motion";
+// import { motion, useAnimation } from "framer-motion";
 import { Parallax, Background } from "react-parallax";
-import { InView, useInView } from "react-intersection-observer";
+// import { InView, useInView } from "react-intersection-observer";
 import TitleSection from "../TitleSection";
 import ContainerServices from "../ContainerServices";
 import { ScrollDown2 } from "../ScrollDown";
@@ -39,7 +39,7 @@ const Home = ({ state }) => {
 
   const scrollAnimations = () => {
     const containerHeader = document.getElementById("header");
-    const Hello = document.getElementById("hello");
+    // const Hello = document.getElementById("hello");
     const CHello = document.getElementById("containerHello");
 
     const Paragraph = document.getElementById("paragraph");
@@ -51,7 +51,7 @@ const Home = ({ state }) => {
 
     const Content = document.querySelector("#content");
 
-    if (Content.getBoundingClientRect().bottom <= 650) {
+    if (Content.getBoundingClientRect().bottom <= 700) {
       ScrollDown2.style.zIndex = "-1";
     } else {
       ScrollDown2.style.zIndex = "10";
@@ -75,11 +75,13 @@ const Home = ({ state }) => {
     }
     if (Content.getBoundingClientRect().top < 0) {
       CHello.style.zIndex = "-1";
+      CHello.style.opacity = 0;
       Paragraph.style.opacity = 0;
       Paragraph.style.zIndex = -1;
     } else {
       Paragraph.style.zIndex = 1;
       CHello.style.zIndex = 0;
+      CHello.style.opacity = 1;
     }
   };
   // useEffect(() => {
@@ -121,7 +123,6 @@ const Home = ({ state }) => {
     <>
       {typeof home === "undefined" ? null : (
         <ContainerContent id="content">
-          <ScrollDown2 />
           <div className="container__fullWidth">
             <ImgParallax
               imgID={home.featured_media}
@@ -260,7 +261,7 @@ const Home = ({ state }) => {
             </div>
           </ContentSection>
 
-          <ContentSection>
+          <ContentSection className="padding__bottom__none">
             <div className="container__fullWidth">
               <NameSection className="textUpImg">
                 {/* recibe la clase big para cambiar el estilo depende la situacion | */}

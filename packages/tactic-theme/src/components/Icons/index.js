@@ -1,5 +1,13 @@
-import React from "react";
-import { ArrowRight, IconWave, IconScroll } from "./styles";
+import React, { useRef, useEffect } from "react";
+import {
+  ArrowRight,
+  IconWave,
+  IconScroll,
+  Circle,
+  ArrowContact,
+  Equis,
+  CircleClose,
+} from "./styles";
 
 export const IconArrowRight = () => {
   return (
@@ -81,5 +89,49 @@ export const IconScrollDown = ({ state }) => {
         />
       </svg>
     </IconScroll>
+  );
+};
+
+export const IconToggleClose = ({ state }) => {
+  useEffect(() => {
+    window.addEventListener("scroll", scrollColorToggle);
+    return () => {
+      removeEventListener("scroll", scrollColorToggle);
+    };
+  }, []);
+  const scrollColorToggle = () => {
+    const toggleBlog = document.querySelector("#toggleBlog");
+    const brandBlog = document.querySelector("#brandBlog");
+
+    const limit = document.getElementById("parallaxBlog");
+    if (limit.getBoundingClientRect().bottom <= 50) {
+      toggleBlog.classList.add("colorTwo");
+      brandBlog.classList.add("colorTwo");
+    } else {
+      toggleBlog.classList.remove("colorTwo");
+      brandBlog.classList.remove("colorTwo");
+    }
+  };
+  return <Circle id="toggleBlog"></Circle>;
+};
+
+export const IconToggleCloseContact = ({ state }) => {
+  return (
+    <CircleClose id="btnClose">
+      <Equis />
+    </CircleClose>
+  );
+};
+
+export const IconArrowContact = () => {
+  return (
+    <ArrowContact
+      width="24"
+      height="24"
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+    >
+      <path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z"></path>
+    </ArrowContact>
   );
 };

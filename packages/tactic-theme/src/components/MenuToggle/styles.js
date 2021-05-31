@@ -23,6 +23,7 @@ export const Toggle = styled.a`
   }
   &:hover {
     margin-left: 5px;
+    left: 20px;
     & > div > span {
       &:nth-child(1) {
         transform: translateY(-5px);

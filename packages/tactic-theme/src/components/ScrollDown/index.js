@@ -12,10 +12,10 @@ export const ScrollDown = () => {
   );
 };
 
-export const ScrollDown2 = () => {
+export const ScrollDown2 = ({ className }) => {
   return (
     <IndicatorScrollDown
-      className="fadeOut animation scrollDownTwo"
+      className={"fadeOut animation scrollDownTwo " + className}
       id="scrollDown2"
     >
       Scroll

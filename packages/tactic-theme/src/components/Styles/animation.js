@@ -37,6 +37,7 @@ export const slideLeft = keyframes`
     }
     to{
         transform: translateX(0);
+        opacity: 1;
     }
     
 `;
@@ -133,13 +134,38 @@ export const slideOutRight = keyframes`
     
 `;
 
+export const slideOutRightMid = keyframes`
+    from{
+      right: 0;
+       width: 100%;
+    }
+    to{
+      right: 0;
+
+        width: 0%;
+
+    }
+`;
+export const slideOutLeftMid = keyframes`
+    from{
+      left: 0;
+       width: 100%;
+    }
+    to{
+      left: 0;
+
+        width: 0%;
+
+    }
+`;
 export const slideDown = keyframes`
     from{
        height: 0;
+       opacity: 0;
     }
     to{
-        height: 200px;
-
+        height: 300px;
+      opacity: 1;
     }
 `;
 

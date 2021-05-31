@@ -20,6 +20,9 @@ export const Toggle = styled.a`
   border-radius: 50%;
   background: #fff;
   justify-content: center;
+  &.d__none {
+    display: none;
+  }
 
   @media screen and (min-width: 768px) {
     display: none;

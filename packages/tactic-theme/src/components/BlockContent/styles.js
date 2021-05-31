@@ -4,6 +4,7 @@ export const BlockCont = styled.div`
   width: 100%;
   padding-right: 50%;
   padding-left: 5%;
+  opacity: 0;
   @media screen and (max-width: 768px) {
     padding-right: 0%;
     margin-bottom: 40px;

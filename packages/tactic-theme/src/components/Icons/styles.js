@@ -74,3 +74,108 @@ export const IconScroll = styled.i`
     font-size: 1rem;
   }
 `;
+
+export const Circle = styled.div`
+  width: 40px;
+  height: 40px;
+  /* background: #000; */
+  border-radius: 50%;
+  display: block;
+  border: 2px solid #fff;
+  background: transparent;
+  position: fixed;
+  right: 40px;
+  top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+  &.colorTwo {
+    border: 2px solid #000;
+    &::after {
+      background: #000;
+    }
+    &::before {
+      background: #000;
+    }
+  }
+  &::after {
+    content: "";
+    width: 50%;
+    height: 2px;
+    background: #fff;
+    position: absolute;
+    top: 50%;
+    transform: rotate(-45deg);
+  }
+  &::before {
+    content: "";
+    width: 50%;
+    height: 2px;
+    background: #fff;
+    top: 50%;
+    position: absolute;
+    transform: rotate(45deg);
+  }
+`;
+export const CircleClose = styled.button`
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: block;
+  border: 2px solid #606060;
+  background: transparent;
+  position: fixed;
+  right: 40px;
+  top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 20;
+  cursor: pointer;
+
+  &:hover div {
+    transform: rotate(-90deg);
+  }
+
+  &:focus {
+    outline: none;
+  }
+`;
+
+export const Equis = styled.div`
+  width: 100%;
+  height: 100%;
+  transition: transform 240ms cubic-bezier(0.56, 0, 0.265, 1);
+
+  &::after {
+    content: "";
+    width: 30%;
+    height: 2px;
+    background: #fff;
+    position: absolute;
+    top: 50%;
+    left: 36%;
+    transform: rotate(-45deg);
+  }
+  &::before {
+    content: "";
+    width: 30%;
+    height: 2px;
+    background: #fff;
+    top: 50%;
+    left: 36%;
+    position: absolute;
+    transform: rotate(45deg);
+  }
+`;
+
+export const ArrowContact = styled.svg`
+  transform: rotate(42deg) scale(1.5);
+  transition: transform 240ms cubic-bezier(0.56, 0, 0.265, 1);
+  fill: #fff;
+  &:hover {
+    transform: rotate(0) scale(1.6);
+    fill: var(--color-primary);
+  }
+`;

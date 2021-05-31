@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { connect } from "frontity";
 import { Toggle, Icon, Text } from "./styles";
 
 const MenuToggle = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const toggleMenuRef = useRef(null);
   useEffect(() => {
+    const html = document.getElementsByTagName("html")[0];
+    html.classList.toggle("overflow", isOpen);
     document.body.classList.toggle("menuOpen", isOpen);
     const link = document.querySelectorAll(".link__menu");
     const sendMail = document.querySelector("#send__email");
@@ -20,7 +22,6 @@ const MenuToggle = () => {
         e.classList.add("animation");
         e.style.animationDelay = `calc(${i + 2}00ms)`;
       });
-      // console.log(document.body.classList);
     } else {
       setTimeout(() => {
         sendMail.classList.remove("animation");
@@ -36,6 +37,7 @@ const MenuToggle = () => {
   return (
     <>
       <Toggle
+        ref={toggleMenuRef}
         onClick={(e) => {
           e.preventDefault();
           setIsOpen(!isOpen);

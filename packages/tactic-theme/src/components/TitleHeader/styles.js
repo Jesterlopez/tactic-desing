@@ -16,7 +16,7 @@ export const H1 = styled.h1`
   left: 15%;
   & > div {
     overflow: hidden;
-    height: 100px;
+    height: 110px;
     width: 125%;
   }
   & span {
@@ -26,7 +26,7 @@ export const H1 = styled.h1`
 
   @media screen and (max-width: 768px) {
     width: 90%;
-    height: 190px;
+    height: 200px;
     font-size: 5.5rem;
     line-height: 1;
     margin-bottom: 20px;

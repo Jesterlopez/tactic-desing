@@ -9,6 +9,11 @@ const NavLink = ({ href, children, actions, state, className }) => {
   useEffect(() => {
     // si el menu esta abierto remuevo la clase para cerrarlo al darle click en algun enlace / pagina
     document.body.classList.remove("menuOpen", isOpen);
+    const html = document.getElementsByTagName("html")[0];
+    if (document.body.classList.contains("menuOpen")) {
+    } else {
+      html.classList.remove("overflow");
+    }
   }, [isOpen]);
   return (
     <Anchor

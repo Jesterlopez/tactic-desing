@@ -14,6 +14,8 @@ import {
   slideInRightInitial,
   fadeOutUp,
   slideDown,
+  slideOutRightMid,
+  slideOutLeftMid,
 } from "./animation";
 export const Globalstyle = createGlobalStyle`
 :root{
@@ -193,6 +195,7 @@ body.menuOpen{
   width: 20px;
   z-index: 15;
   margin-left:0;
+  left: 40px;
 }
 .menuOpen .iconMenu::before {
   transform: rotate(90deg);
@@ -254,7 +257,7 @@ body.menuOpen{
   height: 200vh;
 }
 .padding__bottom__none{
-  padding-bottom: 0;
+  padding-bottom: 0 !important;
 }
 
 
@@ -375,18 +378,103 @@ body.menuOpen{
     &.fadeOutUp{
       animation: ${fadeOutUp} 1s forwards;
     }
+    &.slideOutRightMid{
+      animation: ${slideOutRightMid} 1s forwards;
+    }
+    &.slideOutLeftMid{
+      animation: ${slideOutLeftMid} 1s forwards;
+    }
   }
-
 
   .scrollDown{
     animation: ${BounceArrow} 800ms cubic-bezier(0.7, 0, 0.3, 1) infinite alternate;
+  
   }
   .menuOpen .containerScroll{
       z-index: 9 !important;
     }
 
-  @media screen and (max-width: 768px) {
+    .containerImage__fullWidth__content{
+      width: 100vw;
+      height: 540px;
+      position: relative;
+    }
 
+    .title__blog {
+    font-size: 2rem;
+    font-weight: 900;
+    overflow: hidden;
+    line-height: 1.2;
+    font-family: "Poppins", sans-serif;
+  }
+
+  .paragraph__blog{
+    margin-top: 20px;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #606060;
+  }
+
+  .containerLeft{
+    width: 48%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    box-sizing: border-box;
+  }  
+  .containeRight{
+    width: 48%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  .containerLeft__image{
+    padding: 20px;
+    box-sizing: border-box;
+    width: 48%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .containerRight__image{
+    padding: 20px;
+    box-sizing: border-box;
+    width: 48%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+
+  .containerFull__width{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .image__with__text{
+    width: 100%
+  }
+
+  .text__center{
+    /* text-align: center; */
+    justify-content: center;
+  }
+  .overflow{
+      overflow: hidden
+  }
+  .overflowContact{
+    overflow: hidden
+  }
+  @media screen and (max-width: 768px) {
+  
+    .overflow{
+      overflow: hidden
+    }
+    .menuOpen{
+      overflow: hidden;
+    }
     .H90vh{
       height: 90vh;
     }
@@ -413,10 +501,15 @@ body.menuOpen{
     .brand{
       position: absolute;
     }
+    .overflowContact #menu__toggle{
+      display: none;
+    }
     .menuOpen #menu__toggle {
     transform: translateX(0);
     width: 45px;
     z-index: 99999;
+    right: 25px;
+    left: inherit;
     }
     .menu__hover #navbarMenu {
     transform: translateX(-100%);
@@ -449,6 +542,13 @@ body.menuOpen{
     .react-parallax{
       width: 100%;
       height: 200px !important;
+    }
+    .react-parallax.parallax__blog{
+      height: 100% !important;
+
+      & img{
+        height: 100% !important;
+      }
     }
     .container__left, .container__right{
       width: 100vw !important;
