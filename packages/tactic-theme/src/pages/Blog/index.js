@@ -58,7 +58,7 @@ const Blog = ({ state }) => {
           // console.log(blog);
           return (
             <>
-              <LazyLoad
+              {/* <LazyLoad
                 height={320}
                 placeholder={<PlaceholderLazyLoad />}
                 debounce={500}
@@ -73,7 +73,7 @@ const Blog = ({ state }) => {
                   link={blog.link}
                   background={blog.acf.background}
                 />
-              </LazyLoad>
+              </LazyLoad> */}
             </>
           );
         })}
