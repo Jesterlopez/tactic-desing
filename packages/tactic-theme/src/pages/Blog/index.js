@@ -51,32 +51,29 @@ const Blog = ({ state }) => {
 
       <ContainerBlogs>
         {data.items.map(({ id }) => {
-          <p>Hola</p>;
-          // console.log(id);
-          // const blog = state.source.blog[id];
-          // const idCat = blog.categories;
-          // const category = state.source.category[idCat].name;
-          // // console.log(blog);
-          // return (
-          //   <p>
-          //     <LazyLoad
-          //       height={320}
-          //       placeholder={<PlaceholderLazyLoad />}
-          //       debounce={500}
-          //       offset={[-200, 0]}
-          //     >
-          //       <ContainerBlog
-          //         key={id}
-          //         category={category}
-          //         title={blog.title.rendered}
-          //         image={blog.featured_media}
-          //         introBlog={blog.excerpt.rendered}
-          //         link={blog.link}
-          //         background={blog.acf.background}
-          //       />
-          //     </LazyLoad>
-          //   </p>
-          // );
+          console.log(id);
+          const blog = state.source.blog[id];
+          const idCat = blog.categories;
+          const category = state.source.category[idCat].name;
+          // console.log(blog);
+          return (
+            // <LazyLoad
+            //   height={320}
+            //   placeholder={<PlaceholderLazyLoad />}
+            //   debounce={500}
+            //   offset={[-200, 0]}
+            // >
+            <ContainerBlog
+              key={id}
+              category={category}
+              title={blog.title.rendered}
+              image={blog.featured_media}
+              introBlog={blog.excerpt.rendered}
+              link={blog.link}
+              background={blog.acf.background}
+            />
+            // </LazyLoad>
+          );
         })}
       </ContainerBlogs>
       <ContainerClients>
