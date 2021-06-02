@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ContainerHeader = styled.div`
   width: 100vw;
-  min-height: 100vh;
+  min-height: 90vh;
   position: relative;
   margin-left: -7%;
   margin-top: -12%;
@@ -17,6 +17,7 @@ export const ContainerHeader = styled.div`
     margin-left: 0;
     padding: 10%;
     padding-top: 70%;
+    min-height: auto;
   }
 `;
 
@@ -24,6 +25,7 @@ export const Category = styled.p`
   font-size: 1.5rem;
   width: 100%;
   margin-bottom: 5%;
+  opacity: 0;
   @media screen and (max-width: 768px) {
     font-size: 1.2rem;
     margin-bottom: 10%;
@@ -37,13 +39,15 @@ export const TitleBlog = styled.h1`
   font-family: "Poppins", sans-serif;
   width: 100%;
   display: block;
+  opacity: 0;
   @media screen and (max-width: 768px) {
     font-size: 1.4rem;
+    margin-bottom: 2%;
   }
 `;
 
 export const IntroBlog = styled.h1`
-  margin-bottom: 10%;
+  margin-bottom: 2%;
   font-size: 2.5rem;
   font-weight: 900;
   overflow: hidden;
@@ -51,9 +55,11 @@ export const IntroBlog = styled.h1`
   font-family: "Poppins", sans-serif;
   width: 100%;
   display: block;
+  opacity: 0;
+
   @media screen and (max-width: 768px) {
     font-size: 1.2rem;
-    margin-bottom: 20%;
+    margin-bottom: 10%;
   }
 `;
 export const HeaderContent = styled.div`
@@ -75,6 +81,33 @@ export const HeaderContent = styled.div`
     margin: 0 0 15%;
   }
 `;
+export const InfoBlog = styled.div`
+  width: 23%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1rem;
+  opacity: 0;
+
+  & :first-child {
+    font-family: "Poppins", sans-serif;
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  & :last-child {
+    color: #fff;
+    font-weight: 500;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 65%;
+    font-size: 0.8rem;
+  }
+`;
 export const Container = styled.div`
   width: 100%;
   display: flex;
@@ -85,6 +118,7 @@ export const Container = styled.div`
 export const ContainerContent = styled.div`
   display: flex;
   flex-wrap: wrap;
+  padding-top: 8%;
 
   @media screen and (max-width: 768px) {
     padding-top: 20%;
@@ -137,6 +171,7 @@ export const ImgFullWidthContent = styled.div`
   width: 100vw;
   height: 540px;
   position: relative;
+  margin-bottom: 5%;
   &.padding__bottom {
     padding-bottom: 5%;
   }
@@ -152,6 +187,7 @@ export const Title = styled.h3`
   overflow: hidden;
   line-height: 1.2;
   font-family: "Poppins", sans-serif;
+  margin-bottom: 40px;
   &.margin__bottom {
     margin-bottom: 40px;
   }
@@ -201,6 +237,11 @@ export const ContainerRight = styled.div`
       padding: 8% 10%;
     }
   }
+`;
+export const ContainerFullWidth = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5% 10%;
 `;
 
 export const ContainerMedia = styled.div`

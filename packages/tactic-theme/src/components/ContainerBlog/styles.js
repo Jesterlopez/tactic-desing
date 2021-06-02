@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.article`
-  width: 420px;
+  width: 33.3%;
   height: 320px;
   display: flex;
   align-items: center;
@@ -35,6 +35,7 @@ export const Container = styled.article`
   }
 
   @media screen and (max-width: 768px) {
+    width: 100%;
   }
 `;
 
@@ -43,6 +44,7 @@ export const TitleBlog = styled.h3`
   display: block;
   width: 100%;
   font-size: 1.5rem;
+  line-height: 1.6rem;
 
   @media screen and (max-width: 768px) {
     font-size: 1.2rem;
@@ -56,7 +58,7 @@ export const IntroBlog = styled.h3`
   display: block;
   width: 80%;
   font-size: 1.5rem;
-  transform: translateY(110%);
+  transform: translateY(200%);
   transition: all 400ms cubic-bezier(0.7, 0, 0.3, 1) 100ms;
   color: #000;
 
@@ -71,7 +73,7 @@ export const CategoryBlog = styled.p`
 `;
 
 export const InfoBlog = styled.div`
-  width: 100%;
+  width: 89%;
   height: 20%;
   display: flex;
   flex-wrap: wrap;
@@ -82,7 +84,7 @@ export const InfoBlog = styled.div`
   color: #fff;
   transition: all 400ms cubic-bezier(0.7, 0, 0.3, 1) 100ms;
   @media screen and (max-width: 768px) {
-    width: 70%;
+    width: 80%;
   }
 `;
 

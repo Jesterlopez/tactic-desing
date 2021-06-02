@@ -4,8 +4,8 @@ export const ArrowRight = styled.i`
   display: block;
   position: absolute;
   width: 40px;
-  top: 50%;
-  right: 100%;
+  top: 30%;
+  right: 95%;
   margin-right: 80px;
   transform: translateY(-50%);
   transition: all 600ms cubic-bezier(1, 0, 0, 1) 0ms;

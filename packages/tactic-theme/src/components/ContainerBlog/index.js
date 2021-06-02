@@ -1,5 +1,7 @@
 import React from "react";
 import { connect } from "frontity";
+import Link from "../Link";
+
 import {
   Container,
   Img,
@@ -9,7 +11,7 @@ import {
   InfoBlog,
   IntroBlog,
 } from "./styles";
-import Link from "../Link";
+
 const ContainerBlog = ({
   state,
   title,
@@ -22,7 +24,6 @@ const ContainerBlog = ({
 }) => {
   const data = state.source.get(state.router.link);
   const media = state.source.attachment[image];
-  // console.log(media);
   return (
     <>
       <Container key={key}>

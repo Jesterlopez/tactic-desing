@@ -51,7 +51,7 @@ export const MenuFooter = styled.div`
   display: flex;
   justify-content: space-between;
   width: 55vw;
-  margin-top: 70px;
+  margin-top: 50px;
 `;
 
 export const ColorMenu = styled.div`

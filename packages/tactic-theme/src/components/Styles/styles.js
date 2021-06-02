@@ -406,9 +406,11 @@ body.menuOpen{
     overflow: hidden;
     line-height: 1.2;
     font-family: "Poppins", sans-serif;
+    padding-left: 15% ;
   }
 
   .paragraph__blog{
+    padding-left: 15%;
     margin-top: 20px;
   font-size: 1rem;
   line-height: 1.4;

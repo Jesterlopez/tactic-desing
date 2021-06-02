@@ -96,7 +96,7 @@ const Root = ({ state, actions }) => {
     img.forEach((img) => {
       setTimeout(() => {
         Observer.observe(img);
-      }, 1000);
+      }, 500);
     });
   };
 
@@ -148,6 +148,7 @@ const Root = ({ state, actions }) => {
           <MenuNavbar />
           <ContactPopup />
           <ScrollDown2 />
+
           {data.isHome && (
             <>
               <ContentPage>
@@ -157,19 +158,10 @@ const Root = ({ state, actions }) => {
               {/* <FooterPage /> */}
             </>
           )}
-          {data.isServicioArchive && (
+          {data.isServiciosArchive && (
             <>
               <ContentPage>
                 <Servicios />
-              </ContentPage>
-            </>
-          )}
-
-          {data.isFetching && <Preloader />}
-          {data.isError && (
-            <>
-              <ContentPage>
-                <Error404 />
               </ContentPage>
             </>
           )}
@@ -191,6 +183,14 @@ const Root = ({ state, actions }) => {
             <>
               <ContentPage>
                 <Nosotros />
+              </ContentPage>
+            </>
+          )}
+          {data.isFetching && <Preloader />}
+          {data.isError && (
+            <>
+              <ContentPage>
+                <Error404 />
               </ContentPage>
             </>
           )}

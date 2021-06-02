@@ -2,7 +2,6 @@ import React from "react";
 import { connect } from "frontity";
 import { IconToggleClose } from "../Icons";
 import Link from "../Link";
-import ImgParallax from "../ImgParallax";
 import { Parallax } from "react-parallax";
 import AnchorLink from "../AnchorLink";
 import NavLink from "../NavLink";
@@ -22,13 +21,14 @@ import {
   ContainerRight,
   ContainerMedia,
   ContainerLeft,
+  ContainerFullWidth,
   Image,
-  Video,
   ImageTwo,
   ImgFullWidthContent,
   ContainerFooter,
   Button,
   Brand,
+  InfoBlog,
 } from "./styles";
 import { ScrollDown2 } from "../ScrollDown";
 
@@ -39,8 +39,6 @@ const PostSingle = ({ state, element }) => {
   const idCat = post.categories;
   const category = state.source.category[idCat].name;
   const secciones = post.acf.columnas;
-  console.log(post);
-  console.log(FeaturedMedia);
   if (element === "blog") {
     return (
       <>
@@ -61,15 +59,31 @@ const PostSingle = ({ state, element }) => {
           background={post.acf.background}
           color={post.acf.text_color}
         >
-          <Category className="text__italic">{category}</Category>
-          {/* {console.log(secciones)} */}
-          <TitleBlog>{post.title.rendered}</TitleBlog>
-          <IntroBlog
-            dangerouslySetInnerHTML={{
-              __html: post.excerpt.rendered || "Pequeño titulo del blog",
-            }}
-          ></IntroBlog>
-          <Container>
+          <div style={{ height: "auto", overflowY: "hidden" }}>
+            <Category className="text__italic fadeInUp ">{category}</Category>
+          </div>
+          <div style={{ height: "auto", overflowY: "hidden" }}>
+            <TitleBlog className="fadeInUp fadeObserve">
+              {post.title.rendered}
+            </TitleBlog>
+          </div>
+          <div style={{ height: "auto", overflowY: "hidden" }}>
+            <IntroBlog
+              className="fadeInUp fadeObserve"
+              dangerouslySetInnerHTML={{
+                __html: post.excerpt.rendered || "Pequeño titulo del blog",
+              }}
+            ></IntroBlog>
+          </div>
+          <div style={{ height: "auto", overflowY: "hidden" }}>
+            <InfoBlog className="fadeInUp fadeObserve">
+              <a href="#">Jester Lopez</a> /
+              <span className="text__italic">
+                {new Intl.DateTimeFormat("en-US").format(new Date(post.date))}
+              </span>
+            </InfoBlog>
+          </div>
+          {/* <Container>
             <HeaderContent>
               <p className="text__italic">Goal.</p>
               <p>
@@ -100,7 +114,7 @@ const PostSingle = ({ state, element }) => {
                 collaboration, we had carte blanche to create the new site.
               </p>
             </HeaderContent>
-          </Container>
+          </Container> */}
         </ContainerHeader>
         <ImgFullWidthParallax id="parallaxBlog">
           <Parallax
@@ -111,7 +125,14 @@ const PostSingle = ({ state, element }) => {
           ></Parallax>
         </ImgFullWidthParallax>
         <ContainerContent>
-          <ContainerLeft className="text__center">
+          {/* <div className="content__blog">
+            {
+              <div
+                dangerouslySetInnerHTML={{ __html: post.content.rendered }}
+              ></div>
+            }
+          </div> */}
+          {/* <ContainerLeft className="text__center">
             <Title>Espacios para exponer tu trabajo</Title>
           </ContainerLeft>
           <ContainerRight>
@@ -123,17 +144,57 @@ const PostSingle = ({ state, element }) => {
               experiencia moderna y social como diseñador independiente, está
               podría ser tu plataforma ideal.
             </Content>
-          </ContainerRight>
+          </ContainerRight> */}
+          <ContainerFullWidth>
+            <Title>Espacios para exponer tu trabajo</Title>
+            <Content>
+              Behance. Esta plataforma creada por Adobe, es la indicada si
+              quieres mostrar tus trabajos a otros, ya sea por proyecto
+              independiente o temática. Acá podés mostrar y apreciar diseños de
+              branding, editorial, entre otros. Entonces, si buscas una
+              experiencia moderna y social como diseñador independiente, está
+              podría ser tu plataforma ideal.
+            </Content>
+          </ContainerFullWidth>
           <ImgFullWidthContent>
             <ContainerMedia className="fadeObserve slideOutLeftMid"></ContainerMedia>
             <Image src="https://tactic-center.com/wp-content/uploads/2020/10/behance-1024x579.png" />
           </ImgFullWidthContent>
-          <ContainerLeft className="container__img order__2">
+          {/* <ContainerLeft className="container__img order__2">
             <ContainerMedia className="fadeObserve slideOutRightMid"></ContainerMedia>
             <ImageTwo src="https://tactic-center.com/wp-content/uploads/2020/10/behance-1024x579.png"></ImageTwo>
-          </ContainerLeft>
+          </ContainerLeft> */}
+          <ContainerFullWidth>
+            <Title>Issuu</Title>
+            <Content>
+              Este servicio en línea te permite publicar y compartir documentos
+              como portafolios, libros y revistas con un formato de
+              visualización atractivo y dinámico con la posibilidad de que otros
+              usuarios los localicen, compartan u opinen sobre ellos. Siendo una
+              manera sencilla para crear un portafolio dinámico y que vas a
+              poder compartir con posibles clientes o empleadores.
+            </Content>
+          </ContainerFullWidth>
+          <ImgFullWidthContent>
+            <ContainerMedia className="fadeObserve slideOutRightMid"></ContainerMedia>
+            <Image src="https://tactic-center.com/wp-content/uploads/2020/10/brand-new-1024x574.jpg" />
+          </ImgFullWidthContent>
 
-          <ContainerRight className="text__center">
+          <ContainerFullWidth>
+            <Title>Si quieres actualizarte</Title>
+            <Content>
+              ¿Cuáles son las tendencias de diseño? ¿Qué redes sociales están en
+              auge en estos momentos? En fin, si sentís que te gusta leer y
+              aprender nuevas cosas, estas son algunas plataformas que serán de
+              mucha ayuda:
+            </Content>
+          </ContainerFullWidth>
+          <ImgFullWidthContent>
+            <ContainerMedia className="fadeObserve slideOutRightMid"></ContainerMedia>
+            <Image src="https://tactic-center.com/wp-content/uploads/2020/10/behance-1024x579.png" />
+          </ImgFullWidthContent>
+
+          {/* <ContainerRight className="text__center">
             <Title className="margin__bottom">Issuu</Title>
             <Content>
               Este servicio en línea te permite publicar y compartir documentos
@@ -155,9 +216,9 @@ const PostSingle = ({ state, element }) => {
               sencilla (en ciertos aspectos), que no lleva a cabo concursos,
               sino que se basa en la puntuación de los clientes previos.
             </Content>
-          </ContainerLeft>
+          </ContainerLeft> */}
 
-          <ContainerRight className="text__center container__img">
+          {/* <ContainerRight className="text__center container__img">
             <ContainerMedia className="fadeObserve slideOutRightMid"></ContainerMedia>
             <ImageTwo src="https://tactic-center.com/wp-content/uploads/2020/10/behance-1024x579.png"></ImageTwo>
           </ContainerRight>
@@ -171,14 +232,14 @@ const PostSingle = ({ state, element }) => {
               aprender nuevas cosas, estas son algunas plataformas que serán de
               mucha ayuda:
             </Content>
-          </ContainerRight>
+          </ContainerRight> */}
         </ContainerContent>
         <ImgFullWidth>
           <ContainerMedia className="fadeObserve slideOutLeftMid"></ContainerMedia>
           <Image src="https://tactic-center.com/wp-content/uploads/2020/10/brand-new-1024x574.jpg" />
         </ImgFullWidth>
         <ContainerContent>
-          <ContainerLeft>
+          <ContainerFullWidth>
             <Content>
               Es una especie de blog que registra y brinda opiniones sobre el
               trabajo de identidad corporativa y de marca. Aunque si bien en
@@ -190,16 +251,14 @@ const PostSingle = ({ state, element }) => {
               el idioma inglés, pues a veces hay ciertas explicaciones
               complejas.
             </Content>
-          </ContainerLeft>
-          <ContainerRight className="container__img">
+          </ContainerFullWidth>
+          <ImgFullWidthContent>
             <ContainerMedia className="fadeObserve slideOutRightMid"></ContainerMedia>
             <ImageTwo src="https://tactic-center.com/wp-content/uploads/2020/10/brand-new-1024x574.jpg"></ImageTwo>
-          </ContainerRight>
+          </ImgFullWidthContent>
 
-          <ContainerLeft className="text__center">
-            <Title>Si deseas ampliar tus conocimientos </Title>
-          </ContainerLeft>
-          <ContainerRight>
+          <ContainerFullWidth>
+            <Title>Si deseas ampliar tus conocimientos</Title>
             <Content>
               Si durante esta pandemia has tenido algo de tiempo extra. Hay
               algunas plataformas ofreciendo cursos gratuitos, tal como lo hace
@@ -212,29 +271,29 @@ const PostSingle = ({ state, element }) => {
               materiales de cada curso en tu dispositivo. Por lo que podrías
               acceder a ello posteriormente.
             </Content>
-          </ContainerRight>
-          <ImgFullWidthContent>
+          </ContainerFullWidth>
+          {/* <ImgFullWidthContent>
             <ContainerMedia className="fadeObserve slideOutRightMid"></ContainerMedia>
             <Image src="https://tactic-center.com/wp-content/uploads/2020/10/brand-new-1024x574.jpg" />
-          </ImgFullWidthContent>
-          <ContainerLeft className="container__img">
+          </ImgFullWidthContent> */}
+          <ImgFullWidthContent>
             <ContainerMedia className="fadeObserve slideOutRightMid"></ContainerMedia>
             <ImageTwo src="https://tactic-center.com/wp-content/uploads/2020/10/brand-new-1024x574.jpg"></ImageTwo>
-          </ContainerLeft>
-          <ContainerRight>
+          </ImgFullWidthContent>
+          <ContainerFullWidth>
             <Content>
               Si buscas recursos gratuitos La lista es inmensa, pero de manera
               resumida acá tenés algunos sitios con recursos gratuitos, donde lo
               único que necesitaras (en algunos) será registrarte.
             </Content>
-          </ContainerRight>
+          </ContainerFullWidth>
         </ContainerContent>
         <ImgFullWidth className="padding__top">
           <ContainerMedia className="fadeObserve slideOutLeftMid"></ContainerMedia>
           <Image src="https://tactic-center.com/wp-content/uploads/2020/10/brand-new-1024x574.jpg" />
         </ImgFullWidth>
         <ContainerContent>
-          <ContainerLeft className="text__center">
+          <ContainerFullWidth>
             <Content>
               Vectoriales: <br />
               Freepik y Flaticon Ambos de la misma empresa, son los favoritos de
@@ -243,15 +302,14 @@ const PostSingle = ({ state, element }) => {
               necesitan atribución. La versión premium no la necesitás pero
               tenés una cantidad limitada de descargas.
             </Content>
-          </ContainerLeft>
-          <ContainerRight className="container__img">
+          </ContainerFullWidth>
+          <ImgFullWidth>
             <ContainerMedia className="fadeObserve slideOutLeftMid"></ContainerMedia>
             <ImageTwo src="https://tactic-center.com/wp-content/uploads/2020/10/brand-new-1024x574.jpg"></ImageTwo>
-          </ContainerRight>
-          <ContainerLeft className="text__center">
+          </ImgFullWidth>
+          <ContainerFullWidth>
             <Title>Tipografias:</Title>
-          </ContainerLeft>
-          <ContainerRight>
+
             <Content>
               Fontsquirrel <br /> Aunque tiene pocas categorías, las
               explicaciones de cada fuente con su autor nombrado te ayuda a
@@ -261,12 +319,12 @@ const PostSingle = ({ state, element }) => {
               es muy recomendable para productos de diseño en general, web y
               maquetación.
             </Content>
-          </ContainerRight>
+          </ContainerFullWidth>
           <ImgFullWidthContent>
             <ContainerMedia className="fadeObserve slideOutLeftMid"></ContainerMedia>
             <Image src="https://tactic-center.com/wp-content/uploads/2020/10/brand-new-1024x574.jpg" />
           </ImgFullWidthContent>
-          <ContainerLeft>
+          <ContainerFullWidth>
             <Title>Tipografias:</Title>
             <Content>
               Unsplash Si lo que buscas son fotografías artísticas y no las de
@@ -275,12 +333,12 @@ const PostSingle = ({ state, element }) => {
               comerciales. No es necesario pedir permiso, ni otorgar crédito al
               fotógrafo o a la plataforma como tal.
             </Content>
-          </ContainerLeft>
+          </ContainerFullWidth>
 
-          <ContainerRight className="text__center container__img padding__bottom__none">
+          <ImgFullWidthContent className="text__center container__img padding__bottom__none">
             <ContainerMedia className="fadeObserve slideOutRightMid"></ContainerMedia>
             <ImageTwo src="https://tactic-center.com/wp-content/uploads/2020/10/behance-1024x579.png"></ImageTwo>
-          </ContainerRight>
+          </ImgFullWidthContent>
         </ContainerContent>
 
         <ContainerFooter>

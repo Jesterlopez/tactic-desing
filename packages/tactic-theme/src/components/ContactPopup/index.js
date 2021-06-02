@@ -25,7 +25,7 @@ const ContactPopup = ({ state, className }) => {
         className={className || "hidden"}
       >
         <IconToggleCloseContact />
-        <div className="container__content">
+        <div className="container__content fadeInUp fadeObserve">
           <Title>Contáctanos</Title>
           <Form>
             <Input className="text__italic" type="text" placeholder="Email" />

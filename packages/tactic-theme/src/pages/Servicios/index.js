@@ -1,14 +1,18 @@
 import React from "react";
 import { connect } from "frontity";
-import {} from "./styles";
-import Paragraph from "../../components/Paragraph";
+import TitleHeader from "../../components/TitleHeader";
+import ColorHeader from "../../components/ColorHeader";
+
+import { HeaderContainer } from "./styles";
 
 const Servicios = ({ state }) => {
   const data = state.source.get(state.router.link);
   return (
     <>
-      <Paragraph />
-      <h1>Servicios</h1>
+      <HeaderContainer>
+        <ColorHeader />
+        <TitleHeader textUp="serv" textDown="icios" />
+      </HeaderContainer>
     </>
   );
 };

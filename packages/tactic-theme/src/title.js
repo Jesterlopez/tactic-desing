@@ -30,6 +30,16 @@ const Title = ({ state }) => {
     // renderiza el title
 
     title = `${cleanTitle} - ${state.frontity.title}`;
+  } else if (data.isPostTypeArchive) {
+    // Agrega el titulo del post
+    // 1. toma el titulo del post.
+    const postTypeTitle = data.type;
+    // console.log(data.type);
+    // 2.remueve la etiqueta html si es que hay
+    const cleanTitleType = decode(postTypeTitle);
+    // renderiza el title
+
+    title = `${cleanTitleType} - ${state.frontity.title}`;
   } else if (data.is404) {
     // si la pagina no se encuentra agregar 404 en el titulo
     title = `404 Not Found - ${state.frontity.title}`;

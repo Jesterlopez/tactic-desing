@@ -24,16 +24,26 @@ import SearchBar from "../../components/SearchBar";
 
 const Blog = ({ state, actions }) => {
   const data = state.source.get(state.router.link);
+
+  // se obtiene todo el objeto de blogs y se convierte a un array para poder iterar
   const allBlog = Object.values(state.source.blog);
 
+  const CatID = allBlog.map((blog) => {
+    const idCat = blog.categories;
+    const category = state.source.category[idCat].name;
+
+    return category;
+  });
+
+  // const category = state.source.category[CatID];
+
+  console.log(CatID);
+  // se filtran los blog por el nombre del blog
   const filterBlog = allBlog.filter((blog) =>
     blog.title.rendered
       .toLowerCase()
       .includes(state.theme.searchBlogValue.toLowerCase())
   );
-  console.log(filterBlog);
-  console.log(allBlog);
-
   return (
     <>
       <ContainerHeader>
@@ -75,7 +85,7 @@ const Blog = ({ state, actions }) => {
         {filterBlog.reverse().map((blog) => {
           const idCat = blog.categories;
           const category = state.source.category[idCat].name;
-          // console.log(id);
+          // console.log(category);
           // const blog = state.source.blog[id];
           // console.log(blog);
           return (
@@ -100,7 +110,7 @@ const Blog = ({ state, actions }) => {
           );
         })}
       </ContainerBlogs>
-      <ContainerClients>
+      {/* <ContainerClients>
         <BlockContent id="BlockContent" className="padding__left">
           <HeadBlockContent className="fadeInUp fadeObserve animate">
             <Title className="title__customTwo">
@@ -110,7 +120,7 @@ const Blog = ({ state, actions }) => {
           </HeadBlockContent>
         </BlockContent>
         <Client />
-      </ContainerClients>
+      </ContainerClients> */}
     </>
   );
 };

@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 export const H1 = styled.h1`
-  width: 280px;
+  width: 300px;
   /* height: 235px; */
   font-size: 7.2rem;
-  line-height: 1;
+  line-height: 6rem;
   display: flex;
   font-family: "Poppins", sans-serif;
   font-weight: 900;
@@ -16,12 +16,12 @@ export const H1 = styled.h1`
   left: 15%;
   & > div {
     overflow: hidden;
-    height: 110px;
+    /* height: 110px; */
     width: 125%;
   }
   & span {
     display: block;
-    transform: scaleY(1.1);
+    /* transform: scaleY(1.1); */
   }
 
   @media screen and (max-width: 768px) {
