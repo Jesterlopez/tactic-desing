@@ -21,11 +21,11 @@ const NavItem = ({ state }) => {
           <NavLink href="/blog">Blog</NavLink>
         </Item>
       </div>
-      <div style={{ height: "90", overflow: "hidden" }}>
+      {/* <div style={{ height: "90", overflow: "hidden" }}>
         <Item id="link" className="fadeInUp fadeObserve link__menu">
           <NavLink href="/contactanos">Contáctanos</NavLink>
         </Item>
-      </div>
+      </div> */}
       {/* <div style={{ height: "90", overflow: "hidden" }}>
         <Item className="fadeInUp fadeObserve link__menu">
           <NavLink href="/contactanos">Inicio</NavLink>

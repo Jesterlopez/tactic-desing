@@ -2,10 +2,10 @@ import React from "react";
 import { connect } from "frontity";
 import { Color } from "./styles";
 
-const ColorHeader = ({ state }) => {
+const ColorHeader = ({ state, className }) => {
   return (
     <>
-      <Color />
+      <Color className={className} />
     </>
   );
 };

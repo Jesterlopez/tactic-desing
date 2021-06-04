@@ -7,6 +7,7 @@ import {
   ArrowContact,
   Equis,
   CircleClose,
+  ArrowRightButton,
 } from "./styles";
 
 export const IconArrowRight = () => {
@@ -24,6 +25,24 @@ export const IconArrowRight = () => {
         <polygon points="1.05 12.88 0 11.81 5.44 6.44 0 1.07 1.05 0 7.57 6.44 1.05 12.88"></polygon>
       </svg>
     </ArrowRight>
+  );
+};
+
+export const IconArrowRightButton = ({ className }) => {
+  return (
+    <ArrowRightButton className={className}>
+      <span className="line__arrow">
+        <span className="inner"></span>
+      </span>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="8"
+        height="13"
+        viewBox="0 0 7.57 12.88"
+      >
+        <polygon points="1.05 12.88 0 11.81 5.44 6.44 0 1.07 1.05 0 7.57 6.44 1.05 12.88"></polygon>
+      </svg>
+    </ArrowRightButton>
   );
 };
 

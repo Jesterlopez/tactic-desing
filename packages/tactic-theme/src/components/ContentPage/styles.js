@@ -18,6 +18,7 @@ export const ContainerBlog = styled.div`
   background: #f8f8f8;
   /* color: ${(props) => props.color}; */
   position: relative;
+
   @media screen and (max-width: 768px) {
     padding: 0;
     margin-bottom: 60vh;

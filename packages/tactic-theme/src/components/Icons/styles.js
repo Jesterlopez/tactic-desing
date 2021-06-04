@@ -26,6 +26,27 @@ export const ArrowRight = styled.i`
     transform: translate(2px, -50%);
   }
 `;
+export const ArrowRightButton = styled.i`
+  display: block;
+  width: 40px;
+  transition: all 600ms cubic-bezier(1, 0, 0, 1) 0ms;
+
+  & .inner {
+    background: #1c1b20;
+    width: 100%;
+    height: 2px;
+    display: block;
+    float: right;
+    transition: width 600ms cubic-bezier(1, 0, 0, 1) 0ms;
+  }
+
+  & > svg {
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    transform: translate(2px, -50%);
+  }
+`;
 
 export const IconWave = styled.i`
   display: block;

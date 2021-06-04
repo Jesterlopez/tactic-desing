@@ -70,11 +70,12 @@ export const IntroBlog = styled.h3`
 export const CategoryBlog = styled.p`
   display: block;
   font-size: 1.1rem;
+  margin-bottom: 10px;
 `;
 
 export const InfoBlog = styled.div`
   width: 89%;
-  height: 20%;
+  height: 25%;
   display: flex;
   flex-wrap: wrap;
   position: absolute;

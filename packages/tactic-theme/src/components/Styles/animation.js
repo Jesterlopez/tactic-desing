@@ -369,3 +369,16 @@ transform: translateX(-15px);
 }
 
 `;
+
+export const animationColorHeader = keyframes`
+0%{
+  width: 100%;
+    height: 100%;
+    z-index: 3;
+}
+100%{
+  width: 50%;
+    height: 68%;
+    z-index: 0;
+}
+`;

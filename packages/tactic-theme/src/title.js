@@ -30,6 +30,10 @@ const Title = ({ state }) => {
     // renderiza el title
 
     title = `${cleanTitle} - ${state.frontity.title}`;
+  } else if (data.isHome) {
+    // Agrega el titulo del post
+    // 1. toma el titulo del post.
+    title = `${state.frontity.title}`;
   } else if (data.isPostTypeArchive) {
     // Agrega el titulo del post
     // 1. toma el titulo del post.

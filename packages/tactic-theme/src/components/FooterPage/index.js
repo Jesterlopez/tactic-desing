@@ -46,7 +46,7 @@ const FooterPage = () => {
           >
             <a href="#" className="logo__company credit__link">
               <img
-                src="https://tactic-center.com/wp-content/uploads/2018/04/Logo-TC.png"
+                src="https://admin-tactic.tactic-center.com/wp-content/uploads/2021/06/image-2.png"
                 alt=""
               />
               <span> ©Tactic Center</span>

@@ -82,7 +82,7 @@ export const HeaderContent = styled.div`
   }
 `;
 export const InfoBlog = styled.div`
-  width: 23%;
+  width: 25%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -118,10 +118,63 @@ export const Container = styled.div`
 export const ContainerContent = styled.div`
   display: flex;
   flex-wrap: wrap;
-  padding-top: 8%;
+  /* padding-top: 20%; */
+
+  & h3 {
+    font-size: 2rem;
+    font-weight: 900;
+    overflow: hidden;
+    line-height: 1.2;
+    font-family: "Poppins", sans-serif;
+    margin-bottom: 40px;
+  }
+  & h2 {
+    line-height: 1.2;
+    font-family: "Poppins", sans-serif;
+    margin-bottom: 40px;
+  }
+  & h4 {
+    line-height: 1.2;
+    font-family: "Poppins", sans-serif;
+    margin-bottom: 20px;
+  }
+  & h5 {
+    line-height: 1.2;
+    font-family: "Poppins", sans-serif;
+    margin-bottom: 20px;
+  }
+
+  & p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #888888;
+    margin-bottom: 20px;
+  }
+  & ul {
+    padding-left: 20px;
+    & li {
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: #888888;
+      margin-bottom: 20px;
+    }
+  }
 
   @media screen and (max-width: 768px) {
-    padding-top: 20%;
+    /* padding-top: 20%; */
+
+    & h3 {
+      font-size: 1.5rem;
+    }
+
+    & p {
+      width: 100%;
+      line-height: 1.8;
+    }
+    & ul li {
+      width: 100%;
+      line-height: 1.8;
+    }
   }
 `;
 
@@ -143,11 +196,13 @@ export const ImgFullWidthParallax = styled.div`
   margin-left: -7%;
   height: 540px;
   position: relative;
+  padding-bottom: 10%;
 
   @media screen and (max-width: 768px) {
     height: 350px;
     width: 100%;
     margin-left: 0;
+    padding-bottom: 20%;
   }
 `;
 
@@ -241,7 +296,7 @@ export const ContainerRight = styled.div`
 export const ContainerFullWidth = styled.div`
   display: flex;
   flex-wrap: wrap;
-  padding: 5% 10%;
+  padding: 0 10% 5%;
 `;
 
 export const ContainerMedia = styled.div`

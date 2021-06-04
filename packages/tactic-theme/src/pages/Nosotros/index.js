@@ -7,6 +7,8 @@ import Title from "../../components/Titles";
 import ItemTimeline from "../../components/ItemTimeline";
 import ServiceItem from "../../components/ServiceItem";
 import AnchorLink from "../../components/AnchorLink";
+import Client from "../../components/Client";
+
 import gsap from "gsap";
 import { Parallax } from "react-parallax";
 
@@ -28,6 +30,8 @@ import {
   ListService,
   ContainerImage,
   ContainerImageBig,
+  ContainerClients,
+  ContainerClient,
 } from "./styles";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -428,6 +432,17 @@ const Nosotros = ({ state }) => {
           </BodyContent>
         </ContainerRight>
       </ContainerSection>
+      <ContainerClients>
+        <BlockContent id="BlockContent" className="padding__left">
+          <HeadBlockContent className="fadeInUp fadeObserve animate">
+            <Title className="title__customTwo">
+              Nos clients
+              <span className="text__italic">depuis 2004</span>
+            </Title>
+          </HeadBlockContent>
+        </BlockContent>
+        <Client />
+      </ContainerClients>
     </>
   );
 };

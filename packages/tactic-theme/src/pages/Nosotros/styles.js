@@ -168,9 +168,16 @@ export const HeadBlockContent = styled.div`
   margin-bottom: 40px;
   color: var(--color-dark);
 
+  & H2 {
+    color: #fff;
+  }
+
   @media screen and (max-width: 768px) {
     padding-left: 0 !important;
     margin-bottom: 0;
+  }
+  &.animate {
+    opacity: 0;
   }
 `;
 export const BodyContent = styled.p`
@@ -380,5 +387,36 @@ export const ContainerImageBig = styled.div`
   }
   @media screen and (max-width: 768px) {
     height: auto;
+  }
+`;
+
+export const ContainerClients = styled.div`
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  background: var(--color-dark);
+  box-sizing: border-box;
+  color: #fff;
+  padding: 20vh 30vh;
+
+  @media screen and (max-width: 768px) {
+    padding: 5vh 4vh;
+  }
+`;
+
+export const ContainerClient = styled.div`
+  width: 165px;
+  height: 145px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 10px;
+  margin-bottom: 20px;
+
+  & img {
+    width: 100%;
+    height: 100%;
   }
 `;

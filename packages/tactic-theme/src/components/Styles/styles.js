@@ -15,6 +15,7 @@ import {
   fadeOutUp,
   slideDown,
   slideOutRightMid,
+  animationColorHeader,
   slideOutLeftMid,
 } from "./animation";
 export const Globalstyle = createGlobalStyle`
@@ -77,7 +78,6 @@ export const Globalstyle = createGlobalStyle`
 .order__2{
   order: 2;
 }
-
 
 .text__italic{
     font-family: "Libre Baskerville", serif;
@@ -383,6 +383,10 @@ body.menuOpen{
     }
     &.slideOutLeftMid{
       animation: ${slideOutLeftMid} 1s forwards;
+    }
+    &.animationColorHeader{
+      animation: ${animationColorHeader} .3s forwards;
+
     }
   }
 

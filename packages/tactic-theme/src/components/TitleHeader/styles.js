@@ -14,6 +14,12 @@ export const H1 = styled.h1`
   top: 20%;
   color: var(--color-dark);
   left: 15%;
+  &.mid {
+    font-size: 6rem;
+    line-height: 5.5rem;
+    top: 10%;
+    left: 15%;
+  }
   & > div {
     overflow: hidden;
     /* height: 110px; */

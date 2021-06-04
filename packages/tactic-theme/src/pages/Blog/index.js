@@ -7,10 +7,9 @@ import {
   HeadBlockContent,
   BodyContent,
   ContainerBlogs,
-  ContainerClients,
+  // ContainerClients,
   MessageInfo,
 } from "./styles";
-import Client from "../../components/Client";
 import Title from "../../components/Titles";
 import TitleHeader from "../../components/TitleHeader";
 import BlockContent from "../../components/BlockContent";
@@ -27,17 +26,25 @@ const Blog = ({ state, actions }) => {
 
   // se obtiene todo el objeto de blogs y se convierte a un array para poder iterar
   const allBlog = Object.values(state.source.blog);
+  // const id = Object.values(state.source.blog.acf.categoria);
 
-  const CatID = allBlog.map((blog) => {
-    const idCat = blog.categories;
-    const category = state.source.category[idCat].name;
+  // const categori = id.forEach((el) => {
+  //   state.source.category[el].name;
+  //   // console.log(el);
+  //   // console.log();
+  // });
+  // console.log(categori);
 
-    return category;
-  });
+  // const CatID = allBlog.map((blog) => {
+  //   const idCat = blog.categories;
+  //   // const category = state.source.category[idCat].name;
+
+  //   return category;
+  // });
 
   // const category = state.source.category[CatID];
 
-  console.log(CatID);
+  // console.log(CatID);
   // se filtran los blog por el nombre del blog
   const filterBlog = allBlog.filter((blog) =>
     blog.title.rendered
@@ -83,11 +90,7 @@ const Blog = ({ state, actions }) => {
           </MessageInfo>
         )}
         {filterBlog.reverse().map((blog) => {
-          const idCat = blog.categories;
-          const category = state.source.category[idCat].name;
-          // console.log(category);
-          // const blog = state.source.blog[id];
-          // console.log(blog);
+          const id = Object.values(blog.acf.categoria);
           return (
             // <LazyLoad
             //   height={320}
@@ -98,7 +101,12 @@ const Blog = ({ state, actions }) => {
             <Suspense fallback={<PlaceholderLazyLoad />}>
               <ContainerBlog
                 key={blog.id}
-                category={category}
+                category={id.map((el) => {
+                  // return state.source.category[el].name;
+                  return id.length > 1
+                    ? state.source.category[el].name + " "
+                    : state.source.category[el].name;
+                })}
                 title={blog.title.rendered}
                 image={blog.featured_media}
                 introBlog={blog.excerpt.rendered}
@@ -110,17 +118,6 @@ const Blog = ({ state, actions }) => {
           );
         })}
       </ContainerBlogs>
-      {/* <ContainerClients>
-        <BlockContent id="BlockContent" className="padding__left">
-          <HeadBlockContent className="fadeInUp fadeObserve animate">
-            <Title className="title__customTwo">
-              Nos clients
-              <span className="text__italic">depuis 2004</span>
-            </Title>
-          </HeadBlockContent>
-        </BlockContent>
-        <Client />
-      </ContainerClients> */}
     </>
   );
 };
