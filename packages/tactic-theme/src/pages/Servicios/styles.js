@@ -24,14 +24,7 @@ export const Container = styled.div`
   height: 68%;
   display: flex;
   /* background: var(--color-dark); */
-  & img {
-    width: 50%;
-    height: 100%;
-    object-fit: cover;
-    /* position: absolute;
-    right: 0;
-    bottom: 0; */
-  }
+
   @media screen and (max-width: 768px) {
     position: relative;
     display: flex;
@@ -49,18 +42,47 @@ export const Container = styled.div`
     }
   }
 `;
+export const ContainerImgHeader = styled.div`
+  width: 50%;
+  height: 100%;
+  opacity: 0;
+  & img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* position: absolute;
+    right: 0;
+    bottom: 0; */
+  }
+  @media screen and (max-width: 768px) {
+    width: 100%;
 
+    & img {
+      width: 100%;
+      height: auto;
+      position: absolute;
+      bottom: 0;
+      &.header__img {
+        position: relative;
+        width: 100%;
+      }
+    }
+  }
+`;
 export const Content = styled.div`
   width: 50%;
   height: 100%;
   padding: 10% 5% 10% 15%;
   box-sizing: border-box;
   color: #fff;
+  & div:nth-child(1) {
+    opacity: 0;
+  }
   &.custom {
     font-size: 0.9rem;
     line-height: 1.4;
     width: 60%;
-    height: auto;
+    height: 40%;
   }
   @media screen and (max-width: 768px) {
     width: 100%;
@@ -68,10 +90,12 @@ export const Content = styled.div`
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+
     &.custom {
       font-size: 0.8rem;
       width: 100%;
       margin-bottom: 15%;
+      height: auto;
     }
   }
 `;
@@ -81,6 +105,7 @@ export const Title = styled.h2`
   font-family: "Poppins", sans-serif;
   line-height: 1.2;
   font-size: 1.5rem;
+  opacity: 0;
   &.mid {
     font-size: 1.2rem;
   }
@@ -97,6 +122,9 @@ export const Title = styled.h2`
   }
   @media screen and (max-width: 768px) {
     margin-bottom: 8%;
+    &.center {
+      margin: 0 auto 8%;
+    }
   }
 `;
 export const ContentParagraph = styled.p`
@@ -200,6 +228,7 @@ export const ContainerLeft = styled.div`
   width: 33.3%;
   padding: 3%;
   box-sizing: border-box;
+  opacity: 0;
 
   @media screen and (max-width: 768px) {
     width: 100%;
@@ -209,6 +238,8 @@ export const ContainerRight = styled.div`
   width: 33.3%;
   padding: 3%;
   box-sizing: border-box;
+  opacity: 0;
+
   @media screen and (max-width: 768px) {
     width: 100%;
   }
@@ -217,6 +248,9 @@ export const ContainerCenter = styled.div`
   width: 33.3%;
   padding: 3%;
   box-sizing: border-box;
+
+  opacity: 0;
+
   @media screen and (max-width: 768px) {
     width: 100%;
   }
@@ -281,6 +315,7 @@ export const ContainerFullWidth = styled.div`
 `;
 
 export const Support = styled.a`
+  background: var(--color-dark);
   width: 145px;
   height: 145px;
   display: flex;
@@ -288,13 +323,15 @@ export const Support = styled.a`
   justify-content: center;
   position: relative;
   margin: 0 10px;
-
+  opacity: 0;
+  overflow: hidden;
   & img {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    opacity: 0;
   }
   @media screen and (max-width: 768px) {
     width: 100px;

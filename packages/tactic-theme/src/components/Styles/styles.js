@@ -17,6 +17,7 @@ import {
   slideOutRightMid,
   animationColorHeader,
   slideOutLeftMid,
+  slideDownImg,
 } from "./animation";
 export const Globalstyle = createGlobalStyle`
 :root{
@@ -388,6 +389,9 @@ body.menuOpen{
       animation: ${animationColorHeader} .3s forwards;
 
     }
+    &.slideDownImg{
+      animation: ${slideDownImg} .5s forwards;
+    }
   }
 
   .scrollDown{
@@ -598,9 +602,9 @@ body.menuOpen{
 
     @media screen and (max-width: 380px){
       .menuOpen .socialMedia__header {
-    left: 10%;
+      left: 15%;
 
-    }
+      }
     }
 
     

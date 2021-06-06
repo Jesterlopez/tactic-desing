@@ -126,7 +126,6 @@ const Home = ({ state }) => {
           <div className="container__fullWidth">
             <ImgParallax
               imgID={home.featured_media}
-              // height={"100vh"}
               strength={150}
               className="img_mobile"
             ></ImgParallax>
@@ -268,8 +267,12 @@ const Home = ({ state }) => {
                 <IconWaveQuote className="big" />
 
                 <TitleSection
-                  textUp={home.acf.seccion[0].titulo_parrafo.split(" ")[0]}
-                  textDown={home.acf.seccion[0].titulo_parrafo.split(" ")[1]}
+                  textUp={
+                    home.acf.ultima_seccion.titulo_de_la_seccion.split(" ")[0]
+                  }
+                  textDown={
+                    home.acf.ultima_seccion.titulo_de_la_seccion.split(" ")[1]
+                  }
                 />
               </NameSection>
             </div>
@@ -287,21 +290,20 @@ const Home = ({ state }) => {
               <BlockContent id="BlockContent">
                 <HeadBlockContent className="column__left">
                   <Title className="title__low">
-                    {home.acf.seccion[0].titulo_parrafo}
+                    {home.acf.ultima_seccion.titulo_de_parrafo}
                   </Title>
                 </HeadBlockContent>
                 <BodyContent className="column__center">
-                  {home.acf.seccion[0].contenido_parrafo}
+                  {home.acf.ultima_seccion.contenido_de_parrafo}
                 </BodyContent>
                 <BodyContent className="column__right">
-                  {home.acf.seccion[0].contenido_parrafo}
-
+                  {home.acf.ultima_seccion.contenido_de_parrafo}
                   <span>
                     <AnchorLink
                       className="text__italic link__blockContent"
                       href="#"
                     >
-                      see how
+                      {home.acf.ultima_seccion.enlace_parrafo}
                     </AnchorLink>
                   </span>
                 </BodyContent>

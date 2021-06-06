@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useEffect } from "react";
 import { connect } from "frontity";
 import {
   ContainerHeader,
@@ -7,13 +7,12 @@ import {
   HeadBlockContent,
   BodyContent,
   ContainerBlogs,
-  // ContainerClients,
+  ContainerFluid,
   MessageInfo,
 } from "./styles";
 import Title from "../../components/Titles";
 import TitleHeader from "../../components/TitleHeader";
 import BlockContent from "../../components/BlockContent";
-// import ContainerBlog from "../../components/ContainerBlog";
 import PlaceholderLazyLoad from "../../components/PlaceholderLazyLoad";
 const ContainerBlog = React.lazy(() =>
   import("../../components/ContainerBlog")
@@ -82,15 +81,39 @@ const Blog = ({ state, actions }) => {
         </ContainerRight>
       </ContainerHeader>
       <SearchBar />
+
+      {/* filtrar por etiquetas */}
+      {/* <ContainerFluid>
+        {allBlog.map((blog) => {
+          const idTags = Object.values(blog.tags);
+          return idTags.map((tag) => {
+            return (
+              <a
+                className="tags"
+                onClick={(e) => {
+                  e.preventDefault();
+                  console.log(e.target.text);
+                }}
+                href="#"
+              >
+                {state.source.tag[tag].name}
+              </a>
+            );
+          });
+        })}
+
+      </ContainerFluid> */}
       <ContainerBlogs>
         {!filterBlog.length > 0 && (
+          // Sino encuentra nada relacionado con lo que esta buscando
           <MessageInfo className="text__italic">
-            No hay resultados relacionados con{" "}
+            No hay resultados relacionados con
             <strong>"{state.theme.searchBlogValue}"</strong>
           </MessageInfo>
         )}
         {filterBlog.reverse().map((blog) => {
-          const id = Object.values(blog.acf.categoria);
+          const idCategories = Object.values(blog.categories);
+
           return (
             // <LazyLoad
             //   height={320}
@@ -101,9 +124,8 @@ const Blog = ({ state, actions }) => {
             <Suspense fallback={<PlaceholderLazyLoad />}>
               <ContainerBlog
                 key={blog.id}
-                category={id.map((el) => {
-                  // return state.source.category[el].name;
-                  return id.length > 1
+                category={idCategories.map((el) => {
+                  return idCategories.length > 1
                     ? state.source.category[el].name + " "
                     : state.source.category[el].name;
                 })}

@@ -127,9 +127,10 @@ export const Credits = styled.div`
       display: flex;
       /* flex-direction: column; */
       position: relative;
-      margin-bottom: 10px;
+      margin-bottom: 30px;
       & > img {
-        width: 65px;
+        width: 40px;
+        height: 40px;
         margin: 0;
       }
       & > span {

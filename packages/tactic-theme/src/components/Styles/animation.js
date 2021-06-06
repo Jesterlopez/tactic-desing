@@ -126,10 +126,11 @@ export const slideInRight = keyframes`
 export const slideOutRight = keyframes`
     from{
        width: 0;
+       opacity: 0;
     }
     to{
         width: 100%;
-
+      opacity: 1;
     }
     
 `;
@@ -165,6 +166,16 @@ export const slideDown = keyframes`
     }
     to{
         height: 300px;
+      opacity: 1;
+    }
+`;
+export const slideDownImg = keyframes`
+    from{
+       height: 0;
+       opacity: 0;
+    }
+    to{
+        height: 100%;
       opacity: 1;
     }
 `;

@@ -36,13 +36,11 @@ const PostSingle = ({ state, element }) => {
   const data = state.source.get(state.router.link);
   const post = state.source[data.type][data.id];
   const FeaturedMedia = state.source.attachment[post.featured_media].source_url;
-  const idCategory = Object.values(post.acf.categoria);
-  const idCat = post.categories;
-  // const category = state.source.category[idCat].name;
-  const secciones = post.acf.columnas;
-  idCategory.map((el) => {
-    console.log(post.acf.categoria);
-  });
+
+  const idCategories = Object.values(post.categories);
+  // console.log(idCategories);
+  const author = state.source.author[post.author];
+  const seccion = Object.values(post.acf.seccion);
 
   if (element === "blog") {
     return (
@@ -50,10 +48,6 @@ const PostSingle = ({ state, element }) => {
         <Brand id="brandBlog">
           <NavLink href="/" className="fadeOutUp height100 linkHome">
             Tactic Center
-            {/* <BrandImg
-                src="https://tactic-center.com/wp-content/uploads/2018/04/Logo-TC.png"
-                alt="logo tactic center"
-              /> */}
           </NavLink>
         </Brand>
         <Link href="/blog">
@@ -65,38 +59,40 @@ const PostSingle = ({ state, element }) => {
           color={post.acf.text_color}
         >
           <div style={{ height: "auto", overflowY: "hidden" }}>
-            <Category className="text__italic fadeInUp fadeObserve">
-              {idCategory.map((el) => {
-                // return console.log(state.source.category[el].name);
-                // return state.source.category[el].name;
-                return idCategory.length > 1
-                  ? state.source.category[el].name + ", "
+            <Category className="text__italic fadeInUp animation" id="category">
+              {idCategories.map((el) => {
+                return idCategories.length > 1
+                  ? state.source.category[el].name + ". "
                   : state.source.category[el].name;
               })}
             </Category>
           </div>
           <div style={{ height: "auto", overflowY: "hidden" }}>
-            <TitleBlog className="fadeInUp fadeObserve">
+            <TitleBlog className="fadeInUp animation ">
               {post.title.rendered}
             </TitleBlog>
           </div>
           <div style={{ height: "auto", overflowY: "hidden" }}>
             <IntroBlog
-              className="fadeInUp fadeObserve"
+              className="fadeInUp animation "
               dangerouslySetInnerHTML={{
                 __html: post.excerpt.rendered || "Pequeño titulo del blog",
               }}
             ></IntroBlog>
           </div>
           <div style={{ height: "auto", overflowY: "hidden" }}>
-            <InfoBlog className="fadeInUp fadeObserve">
-              <a href="#">Jester Lopez</a> /
+            <InfoBlog className="fadeInUp animation ">
+              <a href={author.link}>{author.name}</a>/
               <span className="text__italic">
-                {new Intl.DateTimeFormat("en-US").format(new Date(post.date))}
+                {new Intl.DateTimeFormat("es-ES", {
+                  dateStyle: "medium",
+                  day: "2-digit",
+                }).format(new Date(post.date))}
               </span>
             </InfoBlog>
           </div>
-          {/* <Container>
+        </ContainerHeader>
+        {/* <Container>
             <HeaderContent>
               <p className="text__italic">Goal.</p>
               <p>
@@ -128,7 +124,6 @@ const PostSingle = ({ state, element }) => {
               </p>
             </HeaderContent>
           </Container> */}
-        </ContainerHeader>
         <ImgFullWidthParallax id="parallaxBlog">
           <Parallax
             bgImage={FeaturedMedia}
@@ -137,15 +132,14 @@ const PostSingle = ({ state, element }) => {
             className="parallax__blog"
           ></Parallax>
         </ImgFullWidthParallax>
-        <ContainerContent>
-          {/* <div className="content__blog">
+        {/* <div className="content__blog">
             {
               <div
                 dangerouslySetInnerHTML={{ __html: post.content.rendered }}
               ></div>
             }
           </div> */}
-          {/* <ContainerLeft className="text__center">
+        {/* <ContainerLeft className="text__center">
             <Title>Espacios para exponer tu trabajo</Title>
           </ContainerLeft>
           <ContainerRight>
@@ -158,6 +152,43 @@ const PostSingle = ({ state, element }) => {
               podría ser tu plataforma ideal.
             </Content>
           </ContainerRight> */}
+        {seccion.map((seccion) => {
+          return (
+            <>
+              <ContainerContent>
+                {seccion.contenido ? (
+                  <ContainerFullWidth
+                    dangerouslySetInnerHTML={{ __html: seccion.contenido }}
+                  ></ContainerFullWidth>
+                ) : null}
+                {seccion.imagen_en_contenido ? (
+                  <ImgFullWidthContent>
+                    <ContainerMedia className="fadeObserve slideOutLeftMid"></ContainerMedia>
+                    <Image src={seccion.imagen_en_contenido.url} />
+                  </ImgFullWidthContent>
+                ) : null}
+              </ContainerContent>
+              {seccion.imagen_ancho_completo ? (
+                <ImgFullWidth>
+                  <ContainerMedia className="fadeObserve slideOutLeftMid"></ContainerMedia>
+                  <Image src={seccion.imagen_ancho_completo.url} />
+                </ImgFullWidth>
+              ) : null}
+              {/* <ContainerFullWidth
+                  dangerouslySetInnerHTML={{ __html: seccion.contenido }}
+                ></ContainerFullWidth>
+                <ImgFullWidthContent>
+                  <ContainerMedia className="fadeObserve slideOutLeftMid"></ContainerMedia>
+                  <Image src={seccion.imagen_en_contenido.url} />
+                </ImgFullWidthContent> */}
+              {/* <ImgFullWidth>
+                <ContainerMedia className="fadeObserve slideOutLeftMid"></ContainerMedia>
+                <Image src={seccion.imagen_ancho_completo.url} />
+              </ImgFullWidth> */}
+            </>
+          );
+        })}
+        {/* <ContainerContent>
           <ContainerFullWidth>
             <Title>Espacios para exponer tu trabajo</Title>
             <Content>
@@ -172,12 +203,12 @@ const PostSingle = ({ state, element }) => {
           <ImgFullWidthContent>
             <ContainerMedia className="fadeObserve slideOutLeftMid"></ContainerMedia>
             <Image src="https://tactic-center.com/wp-content/uploads/2020/10/behance-1024x579.png" />
-          </ImgFullWidthContent>
-          {/* <ContainerLeft className="container__img order__2">
+          </ImgFullWidthContent> */}
+        {/* <ContainerLeft className="container__img order__2">
             <ContainerMedia className="fadeObserve slideOutRightMid"></ContainerMedia>
             <ImageTwo src="https://tactic-center.com/wp-content/uploads/2020/10/behance-1024x579.png"></ImageTwo>
           </ContainerLeft> */}
-          <ContainerFullWidth>
+        {/* <ContainerFullWidth>
             <Title>Issuu</Title>
             <Content>
               Este servicio en línea te permite publicar y compartir documentos
@@ -205,9 +236,9 @@ const PostSingle = ({ state, element }) => {
           <ImgFullWidthContent>
             <ContainerMedia className="fadeObserve slideOutRightMid"></ContainerMedia>
             <Image src="https://tactic-center.com/wp-content/uploads/2020/10/behance-1024x579.png" />
-          </ImgFullWidthContent>
+          </ImgFullWidthContent> */}
 
-          {/* <ContainerRight className="text__center">
+        {/* <ContainerRight className="text__center">
             <Title className="margin__bottom">Issuu</Title>
             <Content>
               Este servicio en línea te permite publicar y compartir documentos
@@ -218,6 +249,7 @@ const PostSingle = ({ state, element }) => {
               poder compartir con posibles clientes o empleadores.
             </Content>
           </ContainerRight>
+
           <ContainerLeft className="order__2">
             <Title className="margin__bottom">Si buscas trabajo en línea</Title>
             <Content>
@@ -230,7 +262,7 @@ const PostSingle = ({ state, element }) => {
             </Content>
           </ContainerLeft> */}
 
-          {/* <ContainerRight className="text__center container__img">
+        {/* <ContainerRight className="text__center container__img">
             <ContainerMedia className="fadeObserve slideOutRightMid"></ContainerMedia>
             <ImageTwo src="https://tactic-center.com/wp-content/uploads/2020/10/behance-1024x579.png"></ImageTwo>
           </ContainerRight>
@@ -245,7 +277,7 @@ const PostSingle = ({ state, element }) => {
               mucha ayuda:
             </Content>
           </ContainerRight> */}
-        </ContainerContent>
+        {/* </ContainerContent>
         <ImgFullWidth>
           <ContainerMedia className="fadeObserve slideOutLeftMid"></ContainerMedia>
           <Image src="https://tactic-center.com/wp-content/uploads/2020/10/brand-new-1024x574.jpg" />
@@ -283,12 +315,12 @@ const PostSingle = ({ state, element }) => {
               materiales de cada curso en tu dispositivo. Por lo que podrías
               acceder a ello posteriormente.
             </Content>
-          </ContainerFullWidth>
-          {/* <ImgFullWidthContent>
+          </ContainerFullWidth> */}
+        {/* <ImgFullWidthContent>
             <ContainerMedia className="fadeObserve slideOutRightMid"></ContainerMedia>
             <Image src="https://tactic-center.com/wp-content/uploads/2020/10/brand-new-1024x574.jpg" />
           </ImgFullWidthContent> */}
-          <ImgFullWidthContent>
+        {/* <ImgFullWidthContent>
             <ContainerMedia className="fadeObserve slideOutRightMid"></ContainerMedia>
             <ImageTwo src="https://tactic-center.com/wp-content/uploads/2020/10/brand-new-1024x574.jpg"></ImageTwo>
           </ImgFullWidthContent>
@@ -345,13 +377,12 @@ const PostSingle = ({ state, element }) => {
               comerciales. No es necesario pedir permiso, ni otorgar crédito al
               fotógrafo o a la plataforma como tal.
             </Content>
-          </ContainerFullWidth>
-
-          <ImgFullWidthContent className="text__center container__img padding__bottom__none">
+          </ContainerFullWidth> 
+           <ImgFullWidthContent className="text__center container__img padding__bottom__none">
             <ContainerMedia className="fadeObserve slideOutRightMid"></ContainerMedia>
             <ImageTwo src="https://tactic-center.com/wp-content/uploads/2020/10/behance-1024x579.png"></ImageTwo>
           </ImgFullWidthContent>
-        </ContainerContent>
+        </ContainerContent> */}
 
         <ContainerFooter>
           <Button backgroundButton={post.acf.background}>

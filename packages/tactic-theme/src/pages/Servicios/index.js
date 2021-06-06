@@ -26,6 +26,7 @@ import {
   ContainerParagraph,
   Link,
   TitleItalic,
+  ContainerImgHeader,
 } from "./styles";
 import { IconArrowRightButton, IconWaveQuote } from "../../components/Icons";
 
@@ -35,14 +36,24 @@ const Servicios = ({ state }) => {
     <>
       <HeaderContainer>
         <ColorHeader className="animationColorHeader animation" />
-        <TitleHeader fontSize="mid" textUp="serv" textDown="icios" />
+        <TitleHeader
+          className="fadeInUp animation"
+          fontSize="mid"
+          textUp="serv"
+          textDown="icios"
+        />
         <Container>
           <Content>
-            <Title>
-              You have a good idea?
-              <span className="text__italic">We have a good team.</span>
-            </Title>
-            <ContentParagraph>
+            <div
+              className="fadeInUp animation"
+              style={{ height: "auto", overflowY: "hidden" }}
+            >
+              <Title className="fadeInUp animation">
+                You have a good idea?
+                <span className="text__italic">We have a good team.</span>
+              </Title>
+            </div>
+            <ContentParagraph className="fadeInUp animation">
               Our goal: to co-create startups with good breeding and shared
               values. Without being a co-working space, an investment fund or a
               business incubator, we offer digital expertise, dedicated desks
@@ -51,10 +62,12 @@ const Servicios = ({ state }) => {
               <span>#wokineForStartup</span>
             </ContentParagraph>
           </Content>
-          <img
-            className="header__img"
-            src="https://tactic-center.com/wp-content/uploads/2020/10/imagen-principal-1080x675.jpg"
-          />
+          <ContainerImgHeader className="animation slideDownImg">
+            <img
+              className="header__img"
+              src="https://tactic-center.com/wp-content/uploads/2020/10/imagen-principal-1080x675.jpg"
+            />
+          </ContainerImgHeader>
         </Container>
       </HeaderContainer>
       <Section className="dark">
@@ -79,16 +92,23 @@ const Servicios = ({ state }) => {
           </ContentParagraph>
         </ColumnRight>
       </Section>
-      <Section className="white">
+      <Section className="white center">
         <ContainerFullWidth className="left">
-          <Title>
+          <Title
+            className="fadeObserve fadeInUp"
+            style={{ height: "auto", overflow: "hidden" }}
+          >
             digital for equity
             <span className="text__italic">investment.</span>
           </Title>
         </ContainerFullWidth>
-        <ContainerLeft>
+        <ContainerLeft className="fadeObserve fadeInUp">
           <Tag>1</Tag>
-          <Title className="mid">Work here in total immersion</Title>
+          <div style={{ height: "auto", overflowY: "hidden" }}>
+            <Title className="fadeObserve fadeInUp mid">
+              Work here in total immersion
+            </Title>
+          </div>
           <ContentParagraph className="colorGray">
             On a poussé les murs pour faire de la place, votre place. Plus la
             peine de prendre rendez-vous, nous partageons le même espace.
@@ -96,20 +116,28 @@ const Servicios = ({ state }) => {
           </ContentParagraph>
         </ContainerLeft>
 
-        <ContainerCenter>
+        <ContainerCenter className="fadeObserve fadeInUp">
           <Tag>2</Tag>
+          <div style={{ height: "auto", overflowY: "hidden" }}>
+            <Title className="fadeObserve fadeInUp mid">
+              Real skills at your fingertips.
+            </Title>
+          </div>
 
-          <Title className="mid">Real skills at your fingertips.</Title>
           <ContentParagraph className="colorGray">
             L'agence n'est plus un prestataire, mais un partenaire. Parce que
             les idées se multiplient quand on les partage, nous nous
             enrichissons mutuellement.
           </ContentParagraph>
         </ContainerCenter>
-        <ContainerRight>
+        <ContainerRight className="fadeObserve fadeInUp">
           <Tag>3</Tag>
+          <div style={{ height: "auto", overflowY: "hidden" }}>
+            <Title className="fadeObserve fadeInUp mid">
+              An entrepreneurial ecosystem.
+            </Title>
+          </div>
 
-          <Title className="mid">An entrepreneurial ecosystem.</Title>
           <ContentParagraph className="colorGray">
             Autour de Wokine gravite un écosystème riche en compétences, des
             entrepreneurs et partenaires avec les pieds sur terre et la tête
@@ -123,7 +151,7 @@ const Servicios = ({ state }) => {
           bgImage={
             "https://www.wokine.com/wp-content/themes/wokine/assets/pages/ideas/visuel_full.jpg"
           }
-          strength={200}
+          strength={100}
           style={{ height: "100vh" }}
         ></Parallax>
       </ContainerImgParallax>
@@ -132,26 +160,48 @@ const Servicios = ({ state }) => {
           <IconWaveQuote className="big" />
         </ContainerFullWidth>
         <ContainerFullWidth>
-          <Title className="big">
-            Startups supported by
-            <span className="text__italic inline">wokine.</span>
-          </Title>
+          <div style={{ height: "auto", overflow: "hidden" }}>
+            <Title className="big center fadeObserve fadeInUp">
+              Startups supported by
+              <span className="text__italic inline">wokine.</span>
+            </Title>
+          </div>
         </ContainerFullWidth>
         <ContainerFullWidth>
-          <Support href="#">
-            <img src="https://www.wokine.com/wp-content/themes/wokine/assets/pages/ideas/startup-enfrenzy.png" />
+          <Support className="fadeObserve fadeInUp" href="#">
+            <img
+              className="fadeObserve fadeInUp"
+              style={{ animationDelay: ".5s" }}
+              src="https://www.wokine.com/wp-content/themes/wokine/assets/pages/ideas/startup-enfrenzy.png"
+            />
           </Support>
-          <Support href="#">
-            <img src="https://www.wokine.com/wp-content/themes/wokine/assets/pages/ideas/startup-livekult.png" />
+          <Support className="fadeObserve fadeInUp" href="#">
+            <img
+              className="fadeObserve fadeInUp"
+              style={{ animationDelay: ".7s" }}
+              src="https://www.wokine.com/wp-content/themes/wokine/assets/pages/ideas/startup-livekult.png"
+            />
           </Support>
-          <Support href="#">
-            <img src="https://www.wokine.com/wp-content/themes/wokine/assets/pages/ideas/startup-socialtrends.png" />
+          <Support className="fadeObserve fadeInUp" href="#">
+            <img
+              className="fadeObserve fadeInUp"
+              style={{ animationDelay: ".8s" }}
+              src="https://www.wokine.com/wp-content/themes/wokine/assets/pages/ideas/startup-socialtrends.png"
+            />
           </Support>
-          <Support href="#">
-            <img src="https://www.wokine.com/wp-content/themes/wokine/assets/pages/ideas/startup-makemetry.png" />
+          <Support className="fadeObserve fadeInUp" href="#">
+            <img
+              className="fadeObserve fadeInUp"
+              style={{ animationDelay: "1s" }}
+              src="https://www.wokine.com/wp-content/themes/wokine/assets/pages/ideas/startup-makemetry.png"
+            />
           </Support>
-          <Support href="#">
-            <img src="https://www.wokine.com/wp-content/themes/wokine/assets/pages/ideas/startup-bazar.png" />
+          <Support className="fadeObserve fadeInUp" href="#">
+            <img
+              className="fadeObserve fadeInUp"
+              style={{ animationDelay: "1.2s" }}
+              src="https://www.wokine.com/wp-content/themes/wokine/assets/pages/ideas/startup-bazar.png"
+            />
           </Support>
         </ContainerFullWidth>
       </Section>

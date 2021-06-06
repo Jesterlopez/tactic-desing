@@ -33,6 +33,14 @@ export const ContainerContent = styled.div`
   }
 `;
 
+export const ContainerImage = styled.div`
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+`;
+
 export const ContentSection = styled.section`
   width: 100vw;
   background: #f8f8f8;
@@ -41,10 +49,15 @@ export const ContentSection = styled.section`
   flex-wrap: wrap;
   box-sizing: border-box;
 
+  & div.parallax__none {
+    opacity: 0;
+  }
+
   & div.container__fullWidth {
     display: flex;
     flex-direction: column;
     width: 100vw;
+    position: relative;
     & > div {
       display: flex;
       flex-wrap: wrap;

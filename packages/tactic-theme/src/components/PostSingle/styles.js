@@ -56,6 +56,7 @@ export const IntroBlog = styled.h1`
   width: 100%;
   display: block;
   opacity: 0;
+
   @media screen and (max-width: 768px) {
     font-size: 1.2rem;
     margin-bottom: 10%;
@@ -81,12 +82,13 @@ export const HeaderContent = styled.div`
   }
 `;
 export const InfoBlog = styled.div`
-  width: 23%;
+  width: 25%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   font-size: 1rem;
   opacity: 0;
+
   & :first-child {
     font-family: "Poppins", sans-serif;
     color: #fff;
@@ -100,6 +102,7 @@ export const InfoBlog = styled.div`
     color: #fff;
     font-weight: 500;
   }
+
   @media screen and (max-width: 768px) {
     width: 65%;
     font-size: 0.8rem;
@@ -115,9 +118,63 @@ export const Container = styled.div`
 export const ContainerContent = styled.div`
   display: flex;
   flex-wrap: wrap;
-  padding-top: 8%;
+  /* padding-top: 20%; */
+
+  & h3 {
+    font-size: 2rem;
+    font-weight: 900;
+    overflow: hidden;
+    line-height: 1.2;
+    font-family: "Poppins", sans-serif;
+    margin-bottom: 40px;
+  }
+  & h2 {
+    line-height: 1.2;
+    font-family: "Poppins", sans-serif;
+    margin-bottom: 40px;
+  }
+  & h4 {
+    line-height: 1.2;
+    font-family: "Poppins", sans-serif;
+    margin-bottom: 20px;
+  }
+  & h5 {
+    line-height: 1.2;
+    font-family: "Poppins", sans-serif;
+    margin-bottom: 20px;
+  }
+
+  & p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #888888;
+    margin-bottom: 20px;
+  }
+  & ul {
+    padding-left: 20px;
+    & li {
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: #888888;
+      margin-bottom: 20px;
+    }
+  }
+
   @media screen and (max-width: 768px) {
-    padding-top: 20%;
+    /* padding-top: 20%; */
+
+    & h3 {
+      font-size: 1.5rem;
+    }
+
+    & p {
+      width: 100%;
+      line-height: 1.8;
+    }
+    & ul li {
+      width: 100%;
+      line-height: 1.8;
+    }
   }
 `;
 
@@ -139,10 +196,16 @@ export const ImgFullWidthParallax = styled.div`
   margin-left: -7%;
   height: 540px;
   position: relative;
+  padding-bottom: 10%;
+
   @media screen and (max-width: 768px) {
     height: 350px;
     width: 100%;
     margin-left: 0;
+    padding-bottom: 20%;
+    & img {
+      object-fit: cover;
+    }
   }
 `;
 
@@ -154,6 +217,7 @@ export const ImgFullWidth = styled.div`
   &.padding__top {
     padding-top: 8%;
   }
+
   @media screen and (max-width: 768px) {
     height: auto;
     margin-left: 0;
@@ -185,6 +249,7 @@ export const Title = styled.h3`
   &.margin__bottom {
     margin-bottom: 40px;
   }
+
   &.title__two {
     font-size: 2.5rem;
   }
@@ -202,6 +267,7 @@ export const Content = styled.p`
   line-height: 1.5;
   color: #888888;
   /* width: 85%; */
+
   @media screen and (max-width: 768px) {
     width: 100%;
     line-height: 1.8;
@@ -220,9 +286,11 @@ export const ContainerRight = styled.div`
   &.container__img {
     padding: 8% 0 8%;
   }
+
   @media screen and (max-width: 768px) {
     width: 100%;
     padding: 10% 10% 10%;
+
     &.container__img {
       padding: 8% 10%;
     }
@@ -231,7 +299,7 @@ export const ContainerRight = styled.div`
 export const ContainerFullWidth = styled.div`
   display: flex;
   flex-wrap: wrap;
-  padding: 5% 10%;
+  padding: 0 10% 5%;
 `;
 
 export const ContainerMedia = styled.div`
@@ -256,6 +324,7 @@ export const ContainerLeft = styled.div`
   &.container__img {
     padding: 8% 0 8%;
   }
+
   @media screen and (max-width: 768px) {
     width: 100%;
     padding: 0% 10% 0 10%;
@@ -322,7 +391,7 @@ export const Brand = styled.div`
     }
   }
   @media screen and (max-width: 768px) {
-    top: 0.8%;
+    top: 1.8%;
     position: absolute;
   }
 `;
