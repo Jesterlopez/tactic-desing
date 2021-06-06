@@ -116,11 +116,11 @@ const Root = ({ state, actions }) => {
           rel="stylesheet"
         />
         <link
-          href="http://admin-tactic.tactic-center.com/wp-includes/css/dist/block-library/style.min.css"
+          href="https://admin-tactic.tactic-center.com/wp-includes/css/dist/block-library/style.min.css"
           rel="stylesheet"
         />
         <link
-          href="http://admin-tactic.tactic-center.com/wp-includes/css/dist/block-library/theme.min.css"
+          href="https://admin-tactic.tactic-center.com/wp-includes/css/dist/block-library/theme.min.css"
           rel="stylesheet"
         />
       </Head>

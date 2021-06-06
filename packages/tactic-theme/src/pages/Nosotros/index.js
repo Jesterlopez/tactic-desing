@@ -99,27 +99,31 @@ const Nosotros = ({ state }) => {
 
   useEffect(() => {
     initScrollAnimation();
-    // setTimeout(() => {
-    const animation = document.querySelectorAll(".fadeInUp");
-    animation.forEach((e, i) => {
-      e.classList.add("animation");
-      e.style.animationDelay = `calc(${i + 1}00ms)`;
-    });
-    // }, 100);
+    // const animation = document.querySelectorAll(".fadeInUp");
+    // animation.forEach((e, i) => {
+    //   e.classList.add("animation");
+    //   e.style.animationDelay = `calc(${i + 1}00ms)`;
+    // });
   }, [initScrollAnimation]);
 
   return (
     <>
       <ContainerHeader style={{ background: "#f8f8f8" }}>
         <ColorYellow ref={containerYellowRef}></ColorYellow>
-        <TitleHeader className="fadeInUp" textUp="Noso" textDown="tros" />
+        <TitleHeader
+          className="fadeInUp animation"
+          textUp="Noso"
+          textDown="tros"
+        />
         <HeaderContent>
-          <p className="lemotiv fadeInUp font__italic">Tactic Center</p>
+          <p className="lemotiv fadeInUp animation font__italic">
+            Tactic Center
+          </p>
           <div>
-            <span className="fadeInUp">Conoce nuestro equipo</span>
+            <span className="fadeInUp animation">Conoce nuestro equipo</span>
           </div>
           <div>
-            <span className="fadeInUp" style={{ color: "#000" }}>
+            <span className="fadeInUp animation" style={{ color: "#000" }}>
               y nuestros objetivos.
             </span>
           </div>
@@ -132,7 +136,7 @@ const Nosotros = ({ state }) => {
         >
           <BlockContent id="BlockContent" className="padding__left">
             <HeadBlockContent>
-              <Title className="titles__about">
+              <Title className="titles__about dark">
                 <span>
                   Nuestra misión
                   {/* <span className="text__italic"> between us.</span> */}
@@ -147,7 +151,7 @@ const Nosotros = ({ state }) => {
               </p>
             </BodyContent>
             <HeadBlockContent>
-              <Title className="titles__about">
+              <Title className="titles__about dark">
                 <span>
                   Nuestra visión
                   {/* <span className="text__italic"> between us.</span> */}
@@ -214,7 +218,7 @@ const Nosotros = ({ state }) => {
         >
           <BlockContent id="BlockContent" className="padding__left">
             <HeadBlockContent>
-              <Title>
+              <Title className="dark">
                 <span>
                   Innovación
                   <span className="text__italic"> Innovación</span>
@@ -288,7 +292,7 @@ const Nosotros = ({ state }) => {
         <ContainerLeft className="margin__bottom__100">
           <BlockContent id="BlockContent" className="order__1 padding__left">
             <HeadBlockContent style={{ paddingLeft: "27%" }}>
-              <Title className="title__custom title__mobile">
+              <Title className="title__custom title__mobile dark">
                 Excelencia
                 <span className="text__italic">Excelencia</span>
               </Title>
@@ -377,7 +381,6 @@ const Nosotros = ({ state }) => {
         </ContainerRight>
       </ContainerSection>
       <ContainerSection
-        className="padding__bottom__footer"
         style={{
           background: "var(--color-blue)",
           justifyContent: "space-between",

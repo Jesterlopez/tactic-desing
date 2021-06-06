@@ -23,6 +23,7 @@ import {
   ContentSection,
   HeadBlockContent,
   BodyContent,
+  ContainerImage,
 } from "./styles";
 const Home = ({ state }) => {
   const data = state.source.get(state.router.link);
@@ -276,15 +277,17 @@ const Home = ({ state }) => {
                 />
               </NameSection>
             </div>
-            <div className="image container__fullWidth fadeObserve slideDown">
-              <Parallax
-                bgImage={
-                  "https://tactic-center.com/wp-content/uploads/2018/05/Suscribite-Home-min-1.jpg"
-                }
-                strength={150}
-                style={{ height: 300 }}
-              ></Parallax>
-            </div>
+            <ContainerImage>
+              <div className="image container__fullWidth fadeObserve slideDown">
+                <Parallax
+                  bgImage={
+                    "https://tactic-center.com/wp-content/uploads/2018/05/Suscribite-Home-min-1.jpg"
+                  }
+                  strength={150}
+                  style={{ height: 300 }}
+                ></Parallax>
+              </div>
+            </ContainerImage>
 
             <div className="container__fullWidth padding__top__80">
               <BlockContent id="BlockContent">

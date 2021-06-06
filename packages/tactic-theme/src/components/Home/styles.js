@@ -35,10 +35,13 @@ export const ContainerContent = styled.div`
 
 export const ContainerImage = styled.div`
   width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
+  height: 300px;
+  position: relative;
+  margin-left: -26%;
+
+  @media screen and (max-width: 768px) {
+    margin-left: 0%;
+  }
 `;
 
 export const ContentSection = styled.section`
@@ -140,6 +143,11 @@ export const ContentSection = styled.section`
   }
   @media screen and (max-width: 768px) {
     padding: 60px 40px;
+    & .container__fullWidth {
+      &.padding__top__80 {
+        padding-top: 0 !important;
+      }
+    }
     & .padding__left__none {
       padding-left: 0 !important;
     }

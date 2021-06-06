@@ -55,6 +55,12 @@ export const TitleBlock = styled.h2`
     left: 30%;
     width: 49%;
   }
+  &.white {
+    color: #fff;
+  }
+  &.dark {
+    color: var(--color-dark);
+  }
   @media screen and (max-width: 768px) {
     font-size: 2rem;
     &.title__low {
@@ -81,6 +87,7 @@ export const TitleBlock = styled.h2`
       z-index: 2;
       /* transform: translateY(-50px); */
     }
+
     .marginBottom__40 {
       margin-bottom: 40px;
     }

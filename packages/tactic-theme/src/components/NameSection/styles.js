@@ -9,6 +9,7 @@ export const TitleH1 = styled.h1`
   line-height: 0.9;
   letter-spacing: -2px;
   z-index: 2;
+  color: var(--color-dark);
   &.textUpImg {
     margin-bottom: -60px;
     z-index: 8;
