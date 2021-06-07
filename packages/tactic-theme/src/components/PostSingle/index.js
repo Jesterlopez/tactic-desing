@@ -41,7 +41,10 @@ const PostSingle = ({ state, element }) => {
   // console.log(idCategories);
   const author = state.source.author[post.author];
   const seccion = Object.values(post.acf.seccion);
+  var fecha = new Date();
+  var options = { year: "numeric", month: "long", day: "numeric" };
 
+  console.log(fecha.toLocaleDateString("es-ES", options));
   if (element === "blog") {
     return (
       <>
@@ -86,7 +89,7 @@ const PostSingle = ({ state, element }) => {
               <span className="text__italic">
                 {new Intl.DateTimeFormat("es-ES", {
                   dateStyle: "medium",
-                  day: "2-digit",
+                  // day: "2-digit",
                 }).format(new Date(post.date))}
               </span>
             </InfoBlog>
