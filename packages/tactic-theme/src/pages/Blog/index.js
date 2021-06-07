@@ -9,6 +9,7 @@ const ContainerBlog = React.lazy(() =>
 );
 import SearchBar from "../../components/SearchBar";
 import { ScrollDown2 } from "../../components/ScrollDown";
+import FilterBlog from "../../components/FilterBlog";
 // import LazyLoad from "react-lazyload";
 import {
   ContainerHeader,
@@ -51,6 +52,12 @@ const Blog = ({ state, actions }) => {
       .toLowerCase()
       .includes(state.theme.searchBlogValue.toLowerCase())
   );
+
+  // const Filter = allBlog.map((blog) => {
+  //   return Object.values(blog.tags).map((tag) => {
+  //     return state.source.tag[tag].name;
+  //   });
+  // });
   return (
     <>
       <ContainerHeader>
@@ -83,28 +90,15 @@ const Blog = ({ state, actions }) => {
         </ContainerRight>
       </ContainerHeader>
       <SearchBar />
+      {/* {allBlog.map((blog) => {
+        const idTags = Object.values(blog.tags);
+        return idTags.map((tag, i) => {
+          return <FilterBlog key={i}>{state.source.tag[tag].name}</FilterBlog>;
+        });
+      })} */}
 
       {/* filtrar por etiquetas */}
-      {/* <ContainerFluid>
-        {allBlog.map((blog) => {
-          const idTags = Object.values(blog.tags);
-          return idTags.map((tag) => {
-            return (
-              <a
-                className="tags"
-                onClick={(e) => {
-                  e.preventDefault();
-                  console.log(e.target.text);
-                }}
-                href="#"
-              >
-                {state.source.tag[tag].name}
-              </a>
-            );
-          });
-        })}
 
-      </ContainerFluid> */}
       <ContainerBlogs>
         {!filterBlog.length > 0 && (
           // Sino encuentra nada relacionado con lo que esta buscando
@@ -123,9 +117,8 @@ const Blog = ({ state, actions }) => {
             //   debounce={500}
             //   offset={[-200, 0]}
             // >
-            <Suspense fallback={<PlaceholderLazyLoad />}>
+            <Suspense key={blog.id} fallback={<PlaceholderLazyLoad />}>
               <ContainerBlog
-                key={blog.id.toString()}
                 category={idCategories.map((el) => {
                   return idCategories.length > 1
                     ? state.source.category[el].name + " "

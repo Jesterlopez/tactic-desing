@@ -17,7 +17,7 @@ const Preloader = () => {
         top: "0",
         left: "0",
         width: "100%",
-        zIndex: 1,
+        zIndex: "1",
       }}
       // timeout={1000} //3 secs
     />

@@ -68,7 +68,7 @@ const ContainerServices = ({ state }) => {
       ref={containerServiceRef}
     >
       <ContainerService className="container__services fadeObserve slideLeft">
-        <ServiceItem className="NoAnimation">
+        <ServiceItem>
           <ServiceName>Inbound Marketing</ServiceName>
           <ListService>
             <ListItem>Atraer</ListItem>
@@ -77,7 +77,7 @@ const ContainerServices = ({ state }) => {
             <ListItem>Fidelizar</ListItem>
           </ListService>
         </ServiceItem>
-        <ServiceItem className="NoAnimation">
+        <ServiceItem>
           <ServiceName>Integración de Tecnologías</ServiceName>
           <ListService>
             <ListItem>Optimización de Procesos y ERP’s</ListItem>
@@ -88,14 +88,14 @@ const ContainerServices = ({ state }) => {
             <ListItem>Comercio Electrónico</ListItem>
           </ListService>
         </ServiceItem>
-        <ServiceItem className="NoAnimation">
+        <ServiceItem>
           <ServiceName>Marketing Digital</ServiceName>
           <ListService>
             <ListItem>Administración de Redes Sociales</ListItem>
             <ListItem>Administración de Contenido</ListItem>
           </ListService>
         </ServiceItem>
-        <ServiceItem className="NoAnimation">
+        <ServiceItem>
           <ServiceName>Mercadeo Convencional</ServiceName>
           <ListService>
             <ListItem>Estrategias de medios masivos (ATL)</ListItem>

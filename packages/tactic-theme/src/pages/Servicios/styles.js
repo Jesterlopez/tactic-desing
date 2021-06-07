@@ -283,6 +283,11 @@ export const ContainerFullWidth = styled.div`
   display: flex;
   justify-content: center;
 
+  > .text__center {
+    display: flex;
+    justify-content: center;
+  }
+
   & i {
     height: 0;
   }

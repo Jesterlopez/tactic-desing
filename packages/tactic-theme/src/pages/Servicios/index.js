@@ -160,7 +160,10 @@ const Servicios = ({ state }) => {
           <IconWaveQuote className="big" />
         </ContainerFullWidth>
         <ContainerFullWidth>
-          <div style={{ height: "auto", overflow: "hidden" }}>
+          <div
+            className="text__center"
+            style={{ height: "auto", overflow: "hidden" }}
+          >
             <Title className="big center fadeObserve fadeInUp">
               Startups supported by
               <span className="text__italic inline">wokine.</span>

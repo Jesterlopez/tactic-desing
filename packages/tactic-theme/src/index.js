@@ -19,6 +19,7 @@ export default {
         showOnPost: false,
       },
       searchBlogValue: "",
+      filterBlogValue: "",
     },
   },
   actions: {
@@ -31,6 +32,9 @@ export default {
       },
       setSearchBlogValue: ({ state }) => (value) => {
         state.theme.searchBlogValue = value;
+      },
+      setFilterBlogValue: ({ state }) => (value) => {
+        state.theme.filterBlogValue = value;
       },
     },
   },

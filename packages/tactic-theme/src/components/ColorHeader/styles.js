@@ -6,7 +6,7 @@ export const Color = styled.div`
   position: absolute;
   left: 0;
   bottom: 0;
-  background: #606060;
+  background: #414a6b;
 
   @media screen and (max-width: 768px) {
     width: 100%;
