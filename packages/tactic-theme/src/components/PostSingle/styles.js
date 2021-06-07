@@ -149,6 +149,9 @@ export const ContainerContent = styled.div`
     line-height: 1.5;
     color: #888888;
     margin-bottom: 20px;
+    /* display: flex;
+    flex-wrap: wrap;
+    padding: 0 10% 5%; */
   }
   & ul {
     padding-left: 20px;
@@ -159,6 +162,16 @@ export const ContainerContent = styled.div`
       margin-bottom: 20px;
     }
   }
+  /* & figure.wp-block-image {
+    width: 100%;
+    height: 540px;
+    position: relative;
+    margin-bottom: 5%;
+    & img {
+      width: 100%;
+      height: 100%;
+    }
+  } */
 
   @media screen and (max-width: 768px) {
     /* padding-top: 20%; */
@@ -180,7 +193,7 @@ export const ContainerContent = styled.div`
 
 export const Button = styled.div`
   & .color__custom {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     color: #fff;
     &::before {
       background: ${(props) => props.backgroundButton};
@@ -196,7 +209,7 @@ export const ImgFullWidthParallax = styled.div`
   margin-left: -7%;
   height: 540px;
   position: relative;
-  padding-bottom: 10%;
+  padding-bottom: 5%;
 
   @media screen and (max-width: 768px) {
     height: 350px;

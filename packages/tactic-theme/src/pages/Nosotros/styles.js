@@ -400,8 +400,16 @@ export const ContainerClients = styled.div`
   color: #fff;
   padding: 20vh 30vh;
 
+  & .title__customTwo {
+    width: 500px;
+  }
+
   @media screen and (max-width: 768px) {
     padding: 5vh 4vh;
+
+    & .title__customTwo {
+      width: 270px;
+    }
   }
 `;
 

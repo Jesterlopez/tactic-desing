@@ -1,5 +1,15 @@
 import React, { Suspense, useEffect } from "react";
 import { connect } from "frontity";
+import Title from "../../components/Titles";
+import TitleHeader from "../../components/TitleHeader";
+import BlockContent from "../../components/BlockContent";
+import PlaceholderLazyLoad from "../../components/PlaceholderLazyLoad";
+const ContainerBlog = React.lazy(() =>
+  import("../../components/ContainerBlog")
+);
+import SearchBar from "../../components/SearchBar";
+import { ScrollDown2 } from "../../components/ScrollDown";
+// import LazyLoad from "react-lazyload";
 import {
   ContainerHeader,
   ContainerLeft,
@@ -10,15 +20,6 @@ import {
   ContainerFluid,
   MessageInfo,
 } from "./styles";
-import Title from "../../components/Titles";
-import TitleHeader from "../../components/TitleHeader";
-import BlockContent from "../../components/BlockContent";
-import PlaceholderLazyLoad from "../../components/PlaceholderLazyLoad";
-const ContainerBlog = React.lazy(() =>
-  import("../../components/ContainerBlog")
-);
-import SearchBar from "../../components/SearchBar";
-// import LazyLoad from "react-lazyload";
 
 const Blog = ({ state, actions }) => {
   const data = state.source.get(state.router.link);
@@ -53,6 +54,7 @@ const Blog = ({ state, actions }) => {
   return (
     <>
       <ContainerHeader>
+        <ScrollDown2 className="noAnimation scroll__custom" />
         <ContainerLeft>
           <TitleHeader
             className="fadeInUp animation"
@@ -123,7 +125,7 @@ const Blog = ({ state, actions }) => {
             // >
             <Suspense fallback={<PlaceholderLazyLoad />}>
               <ContainerBlog
-                key={blog.id}
+                key={blog.id.toString()}
                 category={idCategories.map((el) => {
                   return idCategories.length > 1
                     ? state.source.category[el].name + " "

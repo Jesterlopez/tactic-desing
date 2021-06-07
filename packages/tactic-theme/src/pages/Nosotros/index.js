@@ -37,6 +37,8 @@ import {
 gsap.registerPlugin(ScrollTrigger);
 const Nosotros = ({ state }) => {
   const data = state.source.get(state.router.link);
+  const pageData = state.source.page[data.id];
+  const InfoAcf = pageData.acf.titulo_seccion_certificados;
   const containerYellowRef = useRef(null);
   const containerLeftRef = useRef(null);
   const containerLeftRef2 = useRef(null);
@@ -439,8 +441,9 @@ const Nosotros = ({ state }) => {
         <BlockContent id="BlockContent" className="padding__left">
           <HeadBlockContent className="fadeInUp fadeObserve animate">
             <Title className="title__customTwo">
-              Nos clients
-              <span className="text__italic">depuis 2004</span>
+              <span dangerouslySetInnerHTML={{ __html: InfoAcf }}></span>
+              {/* Nos clients
+              <span className="text__italic">depuis 2004</span> */}
             </Title>
           </HeadBlockContent>
         </BlockContent>

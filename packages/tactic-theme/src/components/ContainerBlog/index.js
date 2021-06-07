@@ -21,12 +21,13 @@ const ContainerBlog = ({
   image,
   background,
   key,
+  className,
 }) => {
   const data = state.source.get(state.router.link);
   const media = state.source.attachment[image];
   return (
     <>
-      <Container key={key}>
+      <Container key={key} className={className}>
         <Link href={link}>
           <Img src={media.source_url} loading="lazy" />
           <Overlay background={background} />

@@ -8,6 +8,10 @@ export const ContainerHeader = styled.section`
   position: relative;
   padding: 0 15vh;
 
+  & .scroll__custom {
+    transform: translateY(-200%) rotate(-90deg);
+  }
+
   & .padding__top {
     padding-top: 15vh;
   }
