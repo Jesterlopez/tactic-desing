@@ -133,6 +133,7 @@ export const Credits = styled.div`
     order: 2;
     text-align: left;
     width: 100%;
+    transform: translateY(0) !important;
 
     .logo__company {
       display: flex;

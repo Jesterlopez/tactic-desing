@@ -24,6 +24,7 @@ export const ContainerContact = styled.div`
     }
   }
   @media screen and (max-width: 768px) {
+    transform: translateY(0) !important;
     order: 2;
     margin-top: auto;
     margin-bottom: 60px;

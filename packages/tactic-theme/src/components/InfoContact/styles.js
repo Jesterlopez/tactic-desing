@@ -25,6 +25,7 @@ export const AnchorEmail = styled.a`
   @media screen and (max-width: 768px) {
     display: none;
     width: 100%;
+    transform: translateY(0) !important;
   }
 `;
 
@@ -44,6 +45,7 @@ export const AnchorNewsletter = styled.a`
     font-size: 0.8rem;
   }
   @media screen and (max-width: 768px) {
+    transform: translateY(0) !important;
     position: absolute;
     bottom: 150px;
     left: 40px;
