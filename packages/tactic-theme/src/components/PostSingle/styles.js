@@ -207,7 +207,7 @@ export const Button = styled.div`
 export const ImgFullWidthParallax = styled.div`
   width: 100vw;
   margin-left: -7%;
-  height: 540px;
+  height: 650px;
   position: relative;
   padding-bottom: 5%;
 

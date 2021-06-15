@@ -11,15 +11,15 @@ const Contact = ({ state }) => {
     const ContentBlog = document.getElementById("contentBlog");
 
     if (Content === null) {
-      // if (ContentBlog.getBoundingClientRect().bottom < 850) {
-      //   if (
-      //     typeof contactRef.current === "undefined"
-      //       ? null
-      //       : (contactRef.current.style.transform = `translateY(calc(-${
-      //           ContentBlog.getBoundingClientRect().bottom / 25
-      //         }px))`)
-      //   );
-      // }
+      if (ContentBlog.getBoundingClientRect().bottom < 850) {
+        if (
+          typeof contactRef.current === "undefined"
+            ? null
+            : (contactRef.current.style.transform = `translateY(calc(-${
+                ContentBlog.getBoundingClientRect().bottom / 25
+              }px))`)
+        );
+      }
     } else {
       if (Content.getBoundingClientRect().bottom < 850) {
         if (

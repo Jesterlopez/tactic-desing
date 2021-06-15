@@ -46,6 +46,15 @@ export const Footer = styled.footer`
       & .font__bold {
         font-size: 1.2rem;
       }
+      & #contact {
+        transform: translateY(0) !important;
+      }
+      & #send__email {
+        transform: translateY(0) !important;
+      }
+      & #suscribe {
+        transform: translateY(0) !important;
+      }
     }
   }
   & div > a,
@@ -142,7 +151,7 @@ export const Credits = styled.div`
       margin-bottom: 30px;
       & > img {
         width: 40px;
-        height: 40px;
+        height: 100%;
         margin: 0;
       }
       & > span {

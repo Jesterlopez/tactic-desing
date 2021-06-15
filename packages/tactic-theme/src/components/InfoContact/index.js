@@ -26,6 +26,14 @@ const InfoContact = () => {
     const ContentBlog = document.getElementById("contentBlog");
 
     if (Content === null) {
+      if (ContentBlog.getBoundingClientRect().bottom < 850) {
+        emailRef.current.style.transform = `translateY(calc(-${
+          ContentBlog.getBoundingClientRect().bottom / 50
+        }px))`;
+        btn.current.style.transform = `translateY(calc(-${
+          ContentBlog.getBoundingClientRect().bottom / 50
+        }px))`;
+      }
     } else {
       if (Content.getBoundingClientRect().bottom < 850) {
         // var vertical_position = 0;

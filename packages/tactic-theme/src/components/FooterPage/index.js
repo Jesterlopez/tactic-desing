@@ -34,9 +34,18 @@ const FooterPage = () => {
   const scrollCustom = () => {
     const footer = document.getElementById("footer");
     const Content = document.getElementById("contentGeneral");
+    const ContentBlog = document.getElementById("contentBlog");
     const email = document.getElementById("send__email");
 
     if (Content === null) {
+      if (ContentBlog.getBoundingClientRect().bottom < 850) {
+        footer.style.position = "fixed";
+        creditsRef.current.style.transform = `translateY(calc(-${
+          ContentBlog.getBoundingClientRect().bottom / 15
+        }px))`;
+      } else {
+        footer.style.position = "relative";
+      }
     } else {
       if (Content.getBoundingClientRect().bottom < 850) {
         footer.style.position = "fixed";

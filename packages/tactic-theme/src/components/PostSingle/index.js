@@ -126,7 +126,7 @@ const PostSingle = ({ state, element }) => {
           <Parallax
             bgImage={FeaturedMedia}
             strength={150}
-            style={{ height: 540 }}
+            style={{ height: "100%" }}
             className="parallax__blog"
           ></Parallax>
         </ImgFullWidthParallax>
