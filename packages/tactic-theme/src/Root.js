@@ -19,7 +19,6 @@ import Nosotros from "./pages/Nosotros";
 import Blog from "./pages/Blog";
 import PostSingle from "./components/PostSingle";
 import ContactPopup from "./components/ContactPopup";
-import Contactanos from "./pages/Contactanos";
 import { ScrollDown2 } from "./components/ScrollDown";
 
 import { Globalstyle } from "./components/Styles/styles";
@@ -186,13 +185,7 @@ const Root = ({ state, actions }) => {
               </ContentPage>
             </>
           )}
-          {data.isPage && data2.page[id].slug == "contactanos" && (
-            <>
-              <ContentPage>
-                <Contactanos />
-              </ContentPage>
-            </>
-          )}
+
           {data.isFetching && <Preloader />}
           {data.isError && (
             <>
