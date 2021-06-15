@@ -2,18 +2,19 @@ import React, { useEffect, useState, useRef } from "react";
 import { connect } from "frontity";
 import { Toggle, Icon, Text } from "./styles";
 
-const MenuToggle = () => {
-  const [isOpen, setIsOpen] = useState(false);
+const MenuToggle = ({ state, actions }) => {
+  // const [isOpen, setIsOpen] = useState(false);
+
   const toggleMenuRef = useRef(null);
   useEffect(() => {
     const html = document.getElementsByTagName("html")[0];
-    html.classList.toggle("overflow", isOpen);
-    document.body.classList.toggle("menuOpen", isOpen);
+    html.classList.toggle("overflow", state.theme.isActive);
+    document.body.classList.toggle("menuOpen", state.theme.isActive);
     const link = document.querySelectorAll(".link__menu");
     const sendMail = document.querySelector("#send__email");
     const suscribe = document.querySelector("#suscribe");
 
-    if (isOpen) {
+    if (state.theme.isActive) {
       setTimeout(() => {
         sendMail.classList.add("animation");
         suscribe.classList.add("animation");
@@ -33,14 +34,17 @@ const MenuToggle = () => {
         }, 500);
       });
     }
-  }, [isOpen]);
+  }, [state.theme.isActive]);
   return (
     <>
       <Toggle
         ref={toggleMenuRef}
         onClick={(e) => {
           e.preventDefault();
-          setIsOpen(!isOpen);
+          // setIsOpen(!isOpen);
+          const newState = state.theme.isActive;
+          actions.theme.setToggleMenu(!newState);
+          // console.log(state.theme.isActive);
         }}
         onMouseEnter={() => document.body.classList.add("menu__hover")}
         onMouseLeave={() => document.body.classList.remove("menu__hover")}

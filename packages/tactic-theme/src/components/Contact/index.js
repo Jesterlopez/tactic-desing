@@ -1,22 +1,58 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { connect } from "frontity";
 import AnchorLink from "../AnchorLink";
 
 import { ContainerContact } from "./styles";
 
-const Contact = () => {
+const Contact = ({ state }) => {
+  const contactRef = useRef(null);
+  const scrollCustom = () => {
+    const Content = document.getElementById("contentGeneral");
+    const ContentBlog = document.getElementById("contentBlog");
+
+    if (Content === null) {
+      // if (ContentBlog.getBoundingClientRect().bottom < 850) {
+      //   if (
+      //     typeof contactRef.current === "undefined"
+      //       ? null
+      //       : (contactRef.current.style.transform = `translateY(calc(-${
+      //           ContentBlog.getBoundingClientRect().bottom / 25
+      //         }px))`)
+      //   );
+      // }
+    } else {
+      if (Content.getBoundingClientRect().bottom < 850) {
+        if (
+          typeof contactRef.current === "undefined"
+            ? null
+            : (contactRef.current.style.transform = `translateY(calc(-${
+                Content.getBoundingClientRect().bottom / 25
+              }px))`)
+        );
+      }
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", scrollCustom);
+  }, []);
+
   return (
     <>
-      <ContainerContact id="contact" className="fadeInUp">
-        <AnchorLink className="contact__address" href="#">
+      <ContainerContact id="contact" className="fadeInUp" ref={contactRef}>
+        <a
+          className="contact__address"
+          href="https://goo.gl/maps/Pryy8sjYrQ2uqNVj6"
+        >
           Planes de Altamira, Plaza San Agustín, Módulo 3. Managua, Nicaragua.
-        </AnchorLink>
-        <AnchorLink className="contact__phone" href="#">
+        </a>
+
+        <a className="contact__phone" href="tel:2223-6113">
           (505) 2223 6113
-        </AnchorLink>
-        <AnchorLink className="contact__email" href="#">
+        </a>
+        <a className="contact__email" href="mailto:info@tactic-center.com">
           info@tactic-center.com
-        </AnchorLink>
+        </a>
       </ContainerContact>
     </>
   );

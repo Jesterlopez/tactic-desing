@@ -16,7 +16,7 @@ const Client = ({ state, img }) => {
       <Container className="fadeInUp fadeObserve">
         {image.map((imagen) => {
           return (
-            <ContainerClient>
+            <ContainerClient key={imagen.imagen.id}>
               <img src={imagen.imagen.url} />
             </ContainerClient>
           );

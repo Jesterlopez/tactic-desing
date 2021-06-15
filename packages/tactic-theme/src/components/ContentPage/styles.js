@@ -2,7 +2,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   padding: 40px 40px 0 40px;
   box-sizing: border-box;
-  margin-bottom: 30vh;
+  margin-bottom: 35vh;
   position: relative;
   z-index: 1;
   @media screen and (max-width: 768px) {
@@ -13,7 +13,7 @@ export const Container = styled.div`
 export const ContainerBlog = styled.div`
   padding: 10% 6% 0;
   box-sizing: border-box;
-  margin-bottom: 30vh;
+  margin-bottom: 35vh;
   z-index: 16;
   background: #f8f8f8;
   /* color: ${(props) => props.color}; */

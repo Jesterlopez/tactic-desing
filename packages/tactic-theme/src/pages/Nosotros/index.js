@@ -8,6 +8,7 @@ import ItemTimeline from "../../components/ItemTimeline";
 import ServiceItem from "../../components/ServiceItem";
 import AnchorLink from "../../components/AnchorLink";
 import Client from "../../components/Client";
+import ColorHeader from "../../components/ColorHeader";
 
 import gsap from "gsap";
 import { Parallax } from "react-parallax";
@@ -42,7 +43,6 @@ const Nosotros = ({ state }) => {
   const containerYellowRef = useRef(null);
   const containerLeftRef = useRef(null);
   const containerLeftRef2 = useRef(null);
-
   const blockTwoRef = useRef(null);
 
   const initScrollAnimation = useCallback(() => {
@@ -88,6 +88,7 @@ const Nosotros = ({ state }) => {
       scrollTrigger: {
         trigger: !containerLeftRef2.current,
         // start: "center 80%",
+
         scrub: true,
       },
       translateY: "-40%",
@@ -112,23 +113,26 @@ const Nosotros = ({ state }) => {
     <>
       <ContainerHeader style={{ background: "#f8f8f8" }}>
         <ColorYellow ref={containerYellowRef}></ColorYellow>
+        <ColorHeader element="nosotros" className="slideLeftAbout animation" />
         <TitleHeader
           className="fadeInUp animation"
-          textUp="Noso"
-          textDown="tros"
+          textUp={pageData.acf.header_titulos[0].titulo_header.slice(0, 4)}
+          textDown={pageData.acf.header_titulos[0].titulo_header.slice(4)}
         />
         <HeaderContent>
           <p className="lemotiv fadeInUp animation font__italic">
             Tactic Center
           </p>
           <div>
-            <span className="fadeInUp animation">Conoce nuestro equipo</span>
+            <span className="fadeInUp animation">
+              {pageData.acf.header_titulos[0].titulo_header_low}
+            </span>
           </div>
-          <div>
+          {/* <div>
             <span className="fadeInUp animation" style={{ color: "#000" }}>
               y nuestros objetivos.
             </span>
-          </div>
+          </div> */}
         </HeaderContent>
       </ContainerHeader>
       <ContainerSection className="margin__top__negative">
@@ -140,32 +144,32 @@ const Nosotros = ({ state }) => {
             <HeadBlockContent>
               <Title className="titles__about dark">
                 <span>
-                  Nuestra misión
+                  {pageData.acf.mision.titulo}
                   {/* <span className="text__italic"> between us.</span> */}
                 </span>
               </Title>
             </HeadBlockContent>
             <BodyContent>
-              <p>
-                Poner a disposición de nuestros clientes, tácticas y
-                herramientas tecnológicas, que garanticen resultados medibles de
-                indicadores claves de desempeño.
-              </p>
+              <p
+                dangerouslySetInnerHTML={{
+                  __html: pageData.acf.mision.contenido,
+                }}
+              ></p>
             </BodyContent>
             <HeadBlockContent>
               <Title className="titles__about dark">
                 <span>
-                  Nuestra visión
+                  {pageData.acf.vision.titulo}
                   {/* <span className="text__italic"> between us.</span> */}
                 </span>
               </Title>
             </HeadBlockContent>
             <BodyContent>
-              <p>
-                Ser reconocidos como una agencia de Inbound Marketing y de
-                Optimización de Procesos, que realmente contribuya al alcance de
-                los objetivos requeridos por nuestros clientes.
-              </p>
+              <p
+                dangerouslySetInnerHTML={{
+                  __html: pageData.acf.vision.contenido,
+                }}
+              ></p>
             </BodyContent>
           </BlockContent>
         </ContainerLeft>
@@ -187,15 +191,19 @@ const Nosotros = ({ state }) => {
       </ContainerSection>
       <ContainerSection className="padding__top__none line__timeline">
         <ul className="list__timeline fadeInUp fadeObserve">
-          <li className="timelineItem padding__mobile">
-            <ItemTimeline
-              textUp="Relaciones"
-              textDown="estratégicas"
-              content="Cumplir con las metas de nuestros clientes al desarrollar relaciones que complementen nuestro servicio."
-            />
-          </li>
+          {pageData.acf.timeline.map((time) => {
+            return (
+              <li className="timelineItem padding__mobile">
+                <ItemTimeline
+                  textUp={time.titulo}
+                  textDown={time.subtitulo}
+                  content={time.contenido}
+                />
+              </li>
+            );
+          })}
 
-          <li className="timelineItem padding__mobile">
+          {/* <li className="timelineItem padding__mobile">
             <ItemTimeline
               textUp="Estrategias"
               textDown="con Visión"
@@ -209,7 +217,7 @@ const Nosotros = ({ state }) => {
               textDown="aterrizadas"
               content="Ofrecer propuestas de Servicios ajustadas a los requerimientos de nuestros clientes y a su industria."
             />
-          </li>
+          </li> */}
         </ul>
       </ContainerSection>
       <ContainerSection>
@@ -221,14 +229,24 @@ const Nosotros = ({ state }) => {
           <BlockContent id="BlockContent" className="padding__left">
             <HeadBlockContent>
               <Title className="dark">
-                <span>
+                <span
+                  dangerouslySetInnerHTML={{
+                    __html: pageData.acf.primer_seccion.titulos,
+                  }}
+                ></span>
+                {/* <span>
                   Innovación
                   <span className="text__italic"> Innovación</span>
-                </span>
+                </span> */}
               </Title>
             </HeadBlockContent>
             <BodyContent>
-              <p className="text__italic content__italic">
+              <span
+                dangerouslySetInnerHTML={{
+                  __html: pageData.acf.primer_seccion.contenido,
+                }}
+              ></span>
+              {/* <p className="text__italic content__italic">
                 La innovación constante es el principal diferenciador en nuestra
                 oferta de servicios y eje central de nuestra dinámica de
                 trabajo.
@@ -237,7 +255,7 @@ const Nosotros = ({ state }) => {
                 La innovación constante es el principal diferenciador en nuestra
                 oferta de servicios y eje central de nuestra dinámica de
                 trabajo.
-              </p>
+              </p> */}
             </BodyContent>
             {/* <AnchorLink
 						className="text__italic link__blockContent"
@@ -250,7 +268,7 @@ const Nosotros = ({ state }) => {
           // className="fadeObserve slideLeft"
           >
             <Parallax
-              bgImage="https://tactic-center.com/wp-content/uploads/2018/05/Misión-y-Visión-Nosotros-min.jpg"
+              bgImage={pageData.acf.primer_seccion.imagen.url}
               strength={200}
               style={{ height: "100%" }}
             ></Parallax>
@@ -261,31 +279,25 @@ const Nosotros = ({ state }) => {
       <ContainerSection className="padding__none H100vh H90vh">
         <ContainerLeft className="withImg" style={{ width: "45%" }}>
           <ContainerImageBig className="fadeObserve fadeInLeft">
-            <img src="https://tactic-center.com/wp-content/uploads/2018/04/Header-Nosotros-1.jpg" />
+            <img src={pageData.acf.segunda_seccion.imagen.url} />
           </ContainerImageBig>
         </ContainerLeft>
         <Title className="center__section title__mobile">
-          <span className="fontSize__titleContentBig">
-            Compromiso
-            <span className="text__italic fontSize__titleContentBig font__weight__400">
-              Compromiso
-            </span>
-          </span>
+          <span
+            dangerouslySetInnerHTML={{
+              __html: pageData.acf.segunda_seccion.titulos,
+            }}
+          ></span>
         </Title>
         <ContainerRight className="text__large order__2">
           <BlockContent id="BlockContent" className="padding__left">
             <HeadBlockContent></HeadBlockContent>
             <BodyContent style={{ order: 1 }}>
-              <p className="text__italic content__italic">
-                Estamos comprometidos a evaluar y asesorar las necesidades de
-                nuestros clientes de manera exhaustiva y con total pertenencia a
-                sus marcas.
-              </p>
-              <p>
-                Estamos comprometidos a evaluar y asesorar las necesidades de
-                nuestros clientes de manera exhaustiva y con total pertenencia a
-                sus marcas.
-              </p>
+              <span
+                dangerouslySetInnerHTML={{
+                  __html: pageData.acf.segunda_seccion.contenido,
+                }}
+              ></span>
             </BodyContent>
           </BlockContent>
         </ContainerRight>
@@ -326,7 +338,7 @@ const Nosotros = ({ state }) => {
         <ContainerFullWidth style={{ height: "350px" }} className="order__2 ">
           <img
             className="fadeObserve slideDown"
-            src="https://tactic-center.com/wp-content/uploads/2018/04/Header-Nosotros-1.jpg"
+            src={pageData.acf.tercer_seccion.imagen.url}
           />
         </ContainerFullWidth>
       </ContainerSection>
@@ -335,15 +347,34 @@ const Nosotros = ({ state }) => {
           <BlockContent id="BlockContent" className="padding__none">
             <HeadBlockContent style={{ paddingLeft: "27%", color: "#fff" }}>
               <Title className="title__custom title__mobile ">
-                <span>Objetivos Estratégicos</span>
-                <span className="text__italic">Objetivos Estratégicos </span>
+                <span
+                  dangerouslySetInnerHTML={{
+                    __html: pageData.acf.seccion_objetivos.titulos,
+                  }}
+                ></span>
               </Title>
             </HeadBlockContent>
           </BlockContent>
         </ContainerLeft>
         <ContainerRight className="order__2">
           <Services style={{ paddingTop: 0 }}>
-            <ServiceItem className="NoAnimation">
+            {pageData.acf.seccion_objetivos.objetivos.map((obj) => {
+              // console.log(obj);
+              return (
+                // console.log(obj.contenidos);
+                <ServiceItem key={obj.id} className="NoAnimation">
+                  <ServiceName>{obj.titulo}</ServiceName>
+                  <ListService>
+                    {obj.contenidos.map((obj) => {
+                      return <ListItem>{obj.contenido}</ListItem>;
+                    })}
+                  </ListService>
+                </ServiceItem>
+              );
+            })}
+          </Services>
+
+          {/* <ServiceItem className="NoAnimation">
               <ServiceName>Propuestas aterrizadas</ServiceName>
               <ListService>
                 <ListItem>Atraer</ListItem>
@@ -379,7 +410,7 @@ const Nosotros = ({ state }) => {
                 <ListItem>Fidelizar</ListItem>
               </ListService>
             </ServiceItem>
-          </Services>
+           */}
         </ContainerRight>
       </ContainerSection>
       <ContainerSection
@@ -399,8 +430,11 @@ const Nosotros = ({ state }) => {
               style={{ paddingLeft: "27%", color: "#fff", fontSize: "2rem" }}
             >
               <Title className="title__customTwo">
-                ¡Consolidá tu marca con los
-                <span className="text__italic"> expertos!</span>
+                <span
+                  dangerouslySetInnerHTML={{
+                    __html: pageData.acf.ultima_seccion.titulos,
+                  }}
+                ></span>
               </Title>
             </HeadBlockContent>
           </BlockContent>
@@ -423,16 +457,17 @@ const Nosotros = ({ state }) => {
               marginBottom: 0,
             }}
           >
-            <p style={{ marginTop: "-30px", marginBottom: "30px" }}>
-              Las empresas deben asesorarse correctamente para lograr una
-              valiosa ventaja competitiva, puesto que los competidores están en
-              todas partes.
-            </p>
+            <div
+              style={{ marginTop: "-30px", marginBottom: "30px" }}
+              dangerouslySetInnerHTML={{
+                __html: pageData.acf.ultima_seccion.contenido,
+              }}
+            ></div>
             <AnchorLink
               className="text__italic link__blockContent white"
-              href="#"
+              href={pageData.acf.ultima_seccion.boton.url}
             >
-              Ver más
+              {pageData.acf.ultima_seccion.boton.title}
             </AnchorLink>
           </BodyContent>
         </ContainerRight>

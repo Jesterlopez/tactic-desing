@@ -130,10 +130,10 @@ const PostSingle = ({ state, element }) => {
             className="parallax__blog"
           ></Parallax>
         </ImgFullWidthParallax>
-        {seccion.map((seccion) => {
+        {seccion.map((seccion, i) => {
           return (
             <>
-              <ContainerContent>
+              <ContainerContent key={seccion[i]}>
                 {seccion.contenido ? (
                   <ContainerFullWidth
                     dangerouslySetInnerHTML={{ __html: seccion.contenido }}
@@ -147,7 +147,7 @@ const PostSingle = ({ state, element }) => {
                 ) : null}
               </ContainerContent>
               {seccion.imagen_ancho_completo ? (
-                <ImgFullWidth>
+                <ImgFullWidth key={seccion[i]}>
                   <ContainerMedia className="fadeObserve slideOutLeftMid"></ContainerMedia>
                   <Image src={seccion.imagen_ancho_completo.url} />
                 </ImgFullWidth>

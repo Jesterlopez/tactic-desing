@@ -19,6 +19,7 @@ import Nosotros from "./pages/Nosotros";
 import Blog from "./pages/Blog";
 import PostSingle from "./components/PostSingle";
 import ContactPopup from "./components/ContactPopup";
+import Contactanos from "./pages/Contactanos";
 import { ScrollDown2 } from "./components/ScrollDown";
 
 import { Globalstyle } from "./components/Styles/styles";
@@ -49,7 +50,6 @@ const Root = ({ state, actions }) => {
   // animacion del home al hace scroll
   useEffect(() => {
     actions.source.fetch("/inicio");
-    // actions.source.fetch("/blog");
 
     // if (document.readyState === "complete") {
     window.addEventListener("scroll", scrollAnimations);
@@ -142,7 +142,7 @@ const Root = ({ state, actions }) => {
               (data.isPage && data2.page[id].title.rendered) ||
               (data.isPost && data2.post[id].title.rendered) ||
               (data.isBlogArchive && data.type) ||
-              (data.isServicioArchive && data.type)
+              (data.isServiciosArchive && data.type)
             }
           />
           <MenuNavbar />
@@ -183,6 +183,13 @@ const Root = ({ state, actions }) => {
             <>
               <ContentPage>
                 <Nosotros />
+              </ContentPage>
+            </>
+          )}
+          {data.isPage && data2.page[id].slug == "contactanos" && (
+            <>
+              <ContentPage>
+                <Contactanos />
               </ContentPage>
             </>
           )}

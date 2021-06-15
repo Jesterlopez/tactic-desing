@@ -9,29 +9,50 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 const FooterPage = () => {
   const creditsRef = useRef(null);
+
   const footerRef = useRef(null);
 
-  // const initScrollAnimation = useCallback(() => {
-  //   gsap.to(creditsRef.current, {
-  //     scrollTrigger: {
-  //       trigger: !creditsRef.current,
-  //       start: "center 90%",
-  //       // end: "center bottom",
-  //       // markers: true,
-  //       scrub: true,
-  //     },
-  //     translateY: "50%",
-  //     duration: 0.8,
-  //     stagger: {
-  //       from: "center",
-  //       amount: 0.9,
-  //     },
-  //   });
-  // }, []);
+  const initScrollAnimation = useCallback(() => {
+    // console.log(Content);
+    // gsap.to(footerRef.current, {
+    //   scrollTrigger: {
+    //     trigger: !footerRef.current,
+    //     start: "center 100%",
+    //     // end: "bottom bottom",
+    //     markers: true,
+    //     scrub: true,
+    //   },
+    //   background: "red",
+    //   duration: 0.8,
+    //   stagger: {
+    //     from: "center",
+    //     amount: 0.9,
+    //   },
+    // });
+  }, []);
 
-  // useEffect(() => {
-  //   initScrollAnimation();
-  // }, [initScrollAnimation]);
+  const scrollCustom = () => {
+    const footer = document.getElementById("footer");
+    const Content = document.getElementById("contentGeneral");
+    const email = document.getElementById("send__email");
+
+    if (Content === null) {
+    } else {
+      if (Content.getBoundingClientRect().bottom < 850) {
+        footer.style.position = "fixed";
+        creditsRef.current.style.transform = `translateY(calc(-${
+          Content.getBoundingClientRect().bottom / 15
+        }px))`;
+      } else {
+        footer.style.position = "relative";
+      }
+    }
+  };
+
+  useEffect(() => {
+    initScrollAnimation();
+    window.addEventListener("scroll", scrollCustom);
+  }, [initScrollAnimation]);
 
   return (
     <>

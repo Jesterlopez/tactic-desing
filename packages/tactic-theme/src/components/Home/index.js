@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { connect } from "frontity";
 import NameSection from "../NameSection";
-import { IconWaveQuote } from "../Icons";
+import { IconWaveQuote, IconWaveQuoteTwo } from "../Icons";
 import BlockContent from "../BlockContent";
 import Title from "../Titles";
 import AnchorLink from "../AnchorLink";
@@ -85,41 +85,7 @@ const Home = ({ state }) => {
       CHello.style.opacity = 1;
     }
   };
-  // useEffect(() => {
-  //   gsap.to("#suscribe", {
-  //     scrollTrigger: {
-  //       trigger: "#footer",
-  //       start: "top 10%",
-  //       end: "top 20%",
-  //       toggleActions: "restart pause reverse pause",
-  //       scrub: true,
-  //       markers: true,
-  //     },
-  //     y: 0,
-  //   });
-  // gsap.to("#send__email", {
-  //   scrollTrigger: {
-  //     trigger: "#footer",
-  //     start: "20px 100%",
-  //     end: "bottom 100px",
-  //     toggleActions: "restart pause reverse pause",
-  //     scrub: true,
-  //     markers: true,
-  //   },
-  //   y: 0,
-  // });
-  // gsap.to("#contact", {
-  //   scrollTrigger: {
-  //     trigger: "#footer",
-  //     start: "top center",
-  //     end: "+=300",
-  //     toggleActions: "restart pause reverse pause",
-  //     scrub: true,
-  //     markers: true,
-  //   },
-  //   y: 0,
-  // });
-  // }, []);
+
   return (
     <>
       {typeof home === "undefined" ? null : (
@@ -134,7 +100,7 @@ const Home = ({ state }) => {
           <ContentSection className="padding__bottom__none" id="section">
             <div className="container__fullWidth">
               <NameSection>
-                {/* recibe la clase big para cambiar el estilo depende la situacion | */}
+                {/* recibe la clase big para cambiar el estilo depende el lugar | */}
                 <IconWaveQuote className="big" />
                 <TitleSection
                   textUp={home.acf.primer_seccion.titulo_de_la_seccion.slice(
@@ -180,9 +146,9 @@ const Home = ({ state }) => {
                 </BodyContent>
                 <AnchorLink
                   className="text__italic link__blockContent"
-                  href="#"
+                  href={home.acf.primer_seccion.enlace_parrafo.url}
                 >
-                  {home.acf.primer_seccion.enlace_parrafo}
+                  {home.acf.primer_seccion.enlace_parrafo.title}
                 </AnchorLink>
               </BlockContent>
             </div>
@@ -219,7 +185,15 @@ const Home = ({ state }) => {
               <NameSection>
                 {/* recibe la clase big para cambiar el estilo depende la situacion | */}
                 <IconWaveQuote className="big" />
-                <TitleSection textUp={"proy"} textDown={"ectos"} />
+                <TitleSection
+                  textUp={home.acf.segunda_seccion.titulo_de_la_seccion.slice(
+                    0,
+                    3
+                  )}
+                  textDown={home.acf.segunda_seccion.titulo_de_la_seccion.slice(
+                    3
+                  )}
+                />
               </NameSection>
             </div>
             <div className="container__left imagen__content">
@@ -231,13 +205,19 @@ const Home = ({ state }) => {
                 ></Parallax>
               </div>
               <div className="footer__image">
-                <p className="title__project">Nombre del proyecto.</p>
-                <p className="category__project">Categoria - 2014</p>
+                <p className="title__project">
+                  {home.acf.seccion_con_proyecto.nombre_proyecto}
+                </p>
+                <p className="category__project">
+                  {home.acf.seccion_con_proyecto.categoria_proyecto[0].name +
+                    " - " +
+                    "2014"}
+                </p>
                 <AnchorLink
                   className="text__italic link__blockContent"
-                  href="#"
+                  href={home.acf.seccion_con_proyecto.enlace_proyecto.url}
                 >
-                  Ir a Proyectos
+                  {home.acf.seccion_con_proyecto.enlace_proyecto.title}
                 </AnchorLink>
               </div>
             </div>
@@ -253,9 +233,9 @@ const Home = ({ state }) => {
                 </BodyContent>
                 <AnchorLink
                   className="text__italic link__blockContent"
-                  href="#"
+                  href={home.acf.segunda_seccion.enlace_parrafo.url}
                 >
-                  {home.acf.segunda_seccion.enlace_parrafo}
+                  {home.acf.segunda_seccion.enlace_parrafo.title}
                 </AnchorLink>
               </BlockContent>
             </div>
@@ -304,9 +284,9 @@ const Home = ({ state }) => {
                   <span>
                     <AnchorLink
                       className="text__italic link__blockContent"
-                      href="#"
+                      href={home.acf.ultima_seccion.enlace_parrafo.title}
                     >
-                      {home.acf.ultima_seccion.enlace_parrafo}
+                      {home.acf.ultima_seccion.enlace_parrafo.title}
                     </AnchorLink>
                   </span>
                 </BodyContent>

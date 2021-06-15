@@ -14,12 +14,13 @@ export default {
       autoPrefetch: "in-view",
       menu: [],
       isMobileMenuOpen: false,
+      isActive: false,
       featured: {
         showOnList: false,
         showOnPost: false,
       },
       searchBlogValue: "",
-      filterBlogValue: "",
+      // filterBlogValue: "",
     },
   },
   actions: {
@@ -30,21 +31,27 @@ export default {
       closeMobileMenu: ({ state }) => {
         state.theme.isMobileMenuOpen = false;
       },
+      setToggleMenu: ({ state }) => (newState) => {
+        state.theme.isActive = newState;
+      },
       setSearchBlogValue: ({ state }) => (value) => {
         state.theme.searchBlogValue = value;
       },
-      setFilterBlogValue: ({ state }) => (value) => {
-        state.theme.filterBlogValue = value;
+      // setFilterBlogValue: ({ state }) => (value) => {
+      //   state.theme.filterBlogValue = value;
+      // },
+      beforeSSR: async ({ actions }) => {
+        await actions.source.fetch("/contactanos");
+
+        // await Promise.all(
+        //   state.theme.templates.map((slug) =>
+        //     actions.source.fetch(`/wp_template_part/${slug}`)
+        //   )
+        // );
       },
     },
   },
-  // beforeSSR: async ({ state, actions }) => {
-  //     await Promise.all(
-  //       state.theme.templates.map((slug) =>
-  //         actions.source.fetch(`/wp_template_part/${slug}`)
-  //       )
-  //     );
-  //   },
+
   libraries: {
     html2react: {
       processors: [image, iframe, link],

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { connect } from "frontity";
-import { IconWaveQuote } from "../Icons";
+import { IconWaveQuote, IconWaveQuoteTwo } from "../Icons";
 
 import {
   ContainerParagraph,
@@ -9,7 +9,7 @@ import {
   RefQuote,
 } from "./styles";
 
-const Paragraph = () => {
+const Paragraph = ({ referencia, fraseUp, fraseMid, fraseDown }) => {
   useEffect(() => {
     // if (document.readyState === "complete") {
     window.addEventListener("scroll", scrollAnimation);
@@ -71,23 +71,23 @@ const Paragraph = () => {
     <>
       <ContainerParagraph id="paragraph">
         <Quote>
-          <IconWaveQuote>
-            <div className="slideInRight"></div>
-          </IconWaveQuote>
+          <IconWaveQuoteTwo>
+            <div className="slideInRight fadeObserve"></div>
+          </IconWaveQuoteTwo>
           <RefQuote className="font__italic__paragraph fadeInLeft">
-            Tactic 2021.
+            {referencia}
           </RefQuote>
         </Quote>
         <ParagraphContent>
           <div className="text__primary text__dark">
-            <strong className="fadeInUp scrollAnime">Las oportunidades</strong>
+            <strong className="fadeInUp scrollAnime">{fraseUp}</strong>
           </div>
           <div className="text__secundary text__white">
             <span>
-              <strong className="fadeInUp scrollAnime">no pasan,</strong>
+              <strong className="fadeInUp scrollAnime">{fraseMid}</strong>
             </span>
             <span>
-              <strong className="fadeInUp scrollAnime">¡Uno las crea!</strong>
+              <strong className="fadeInUp scrollAnime">{fraseDown}</strong>
             </span>
           </div>
         </ParagraphContent>

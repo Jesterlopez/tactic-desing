@@ -1,0 +1,1 @@
+los procesadores Span y HiddenInput de cf7 usaban export default connect (), entonces Delete

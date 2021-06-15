@@ -72,6 +72,9 @@ export const ContainerSection = styled.section`
   flex-wrap: wrap;
   box-sizing: border-box;
   position: relative;
+  & ul {
+    opacity: 0;
+  }
   & > .margin__bottom__100 {
     margin-bottom: 100px;
   }
@@ -180,7 +183,7 @@ export const HeadBlockContent = styled.div`
     opacity: 0;
   }
 `;
-export const BodyContent = styled.p`
+export const BodyContent = styled.div`
   margin-bottom: 40px;
   font-size: 0.9rem;
   line-height: 1.3rem;
@@ -189,7 +192,7 @@ export const BodyContent = styled.p`
   &.padding__left__20 {
     padding-left: 20%;
   }
-  > p {
+  & p {
     margin-top: 30px;
     display: block;
   }
@@ -356,6 +359,7 @@ export const ListService = styled.ul`
 export const ListItem = styled.li`
   color: #4c4a57;
   font-size: 0.9rem;
+  width: 250px;
   @media screen and (max-width: 768px) {
     font-size: 0.8rem;
     line-height: 1.2rem;

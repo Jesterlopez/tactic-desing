@@ -55,7 +55,7 @@ export const MenuFooter = styled.div`
 `;
 
 export const ColorMenu = styled.div`
-  background: #ff5851;
+  background: ${(props) => props.color};
   position: fixed;
   top: 0;
   left: 0;

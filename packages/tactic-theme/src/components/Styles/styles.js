@@ -18,6 +18,9 @@ import {
   animationColorHeader,
   slideOutLeftMid,
   slideDownImg,
+  slideLeftAbout,
+  slideUpContact,
+  slideInRightHome,
 } from "./animation";
 export const Globalstyle = createGlobalStyle`
 :root{
@@ -387,10 +390,18 @@ body.menuOpen{
     }
     &.animationColorHeader{
       animation: ${animationColorHeader} .3s forwards;
-
     }
     &.slideDownImg{
       animation: ${slideDownImg} .5s forwards;
+    }
+    &.slideLeftAbout{
+      animation: ${slideLeftAbout} .5s forwards;
+    }
+    &.slideUpContact{
+      animation: ${slideUpContact} .5s forwards;
+    }
+    &.slideInRightHome{
+      animation: ${slideInRightHome} 1s forwards;
     }
   }
 

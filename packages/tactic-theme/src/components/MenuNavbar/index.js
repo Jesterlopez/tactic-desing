@@ -7,7 +7,9 @@ import ToggleLang from "../ToggleLang";
 
 import { Menu, ContainerNav, NavMenu, MenuFooter, ColorMenu } from "./styles";
 
-const MenuNavbar = () => {
+const MenuNavbar = ({ state }) => {
+  const data = state.source.get(state.router.link);
+
   return (
     <>
       <Menu id="navbarMenu">
@@ -22,7 +24,15 @@ const MenuNavbar = () => {
           </MenuFooter>
         </ContainerNav>
       </Menu>
-      <ColorMenu className="menu__color" />
+      {data.isHome ? (
+        <ColorMenu color="#FF5851" className="menu__color" />
+      ) : data.type === "servicios" ? (
+        <ColorMenu color="#414a6b" className="menu__color" />
+      ) : data.type === "blog" ? (
+        <ColorMenu color="yellow" className="menu__color" />
+      ) : (
+        <ColorMenu color="red" className="menu__color" />
+      )}
     </>
   );
 };

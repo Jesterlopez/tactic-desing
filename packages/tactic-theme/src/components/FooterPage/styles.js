@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const Footer = styled.footer`
-  position: fixed;
+  padding-top: 5vh;
+  position: relative;
   bottom: 0;
   left: 0;
   /* z-index: -1; */
@@ -10,7 +11,16 @@ export const Footer = styled.footer`
   display: flex;
   justify-content: center;
   /* height: 50vh; */
-
+  transition: 0.5s all;
+  & #contact {
+    transform: translateY(-100px);
+  }
+  & #send__email {
+    transform: translateY(100px);
+  }
+  & #suscribe {
+    transform: translateY(-100px);
+  }
   & .padding__custom {
     display: flex;
     align-items: center;
@@ -93,6 +103,7 @@ export const Credits = styled.div`
   flex-direction: column;
   text-align: right;
   width: 200px;
+  transform: translateY(-100px);
   & .logo__company {
     height: 40px;
     display: flex;

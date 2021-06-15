@@ -2,8 +2,10 @@ import React, { useEffect, useState, useRef } from "react";
 import { connect } from "frontity";
 import { Anchor, Mask, NameLink } from "./styles";
 
-const NavLink = ({ href, children, actions, state, className }) => {
+const NavLink = ({ href, children, actions, state, className, background }) => {
   const data = state.source.get(state.router.link);
+  // estado del menu
+  const newState = state.theme.isActive;
   // compruebo el estado del menubar, si esta abierto o no
   const [isOpen, setIsOpen] = useState(false);
   useEffect(() => {
@@ -22,12 +24,15 @@ const NavLink = ({ href, children, actions, state, className }) => {
         e.preventDefault();
         // seteo lo contrario del estado actual del menu, si esta abierto(true) pasa a false o Cerrado
         setIsOpen(!isOpen);
+        // actuliza el estado del menu globalmente
+        actions.theme.setToggleMenu(!newState);
+        // fija la ruta que se le pasa por href del tag
         actions.router.set(href);
       }}
       className={className}
     >
       <Mask className="mask">
-        <NameLink>{children}</NameLink>
+        <NameLink background={background}>{children}</NameLink>
       </Mask>
     </Anchor>
   );

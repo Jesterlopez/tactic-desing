@@ -8,17 +8,23 @@ const NavItem = ({ state }) => {
     <>
       <div style={{ height: "90", overflow: "hidden" }}>
         <Item className="fadeInUp fadeObserve link__menu ">
-          <NavLink href="/nosotros">Nosotros</NavLink>
+          <NavLink background="red" href="/nosotros">
+            Nosotros
+          </NavLink>
         </Item>
       </div>
       <div style={{ height: "90", overflow: "hidden" }}>
         <Item className="fadeInUp fadeObserve link__menu">
-          <NavLink href="/servicios">Servicios</NavLink>
+          <NavLink background="blue" href="/servicios">
+            Servicios
+          </NavLink>
         </Item>
       </div>
       <div style={{ height: "90", overflow: "hidden" }}>
         <Item className="fadeInUp fadeObserve link__menu">
-          <NavLink href="/blog">Blog</NavLink>
+          <NavLink background="yellow" href="/blog">
+            Blog
+          </NavLink>
         </Item>
       </div>
       {/* <div style={{ height: "90", overflow: "hidden" }}>
@@ -28,7 +34,7 @@ const NavItem = ({ state }) => {
       </div> */}
       {/* <div style={{ height: "90", overflow: "hidden" }}>
         <Item className="fadeInUp fadeObserve link__menu">
-          <NavLink href="/contactanos">Inicio</NavLink>
+          <NavLink href="/contactanos">Contáctanos</NavLink>
         </Item>
       </div> */}
     </>

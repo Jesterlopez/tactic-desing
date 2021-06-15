@@ -35,7 +35,10 @@ const Servicios = ({ state }) => {
   return (
     <>
       <HeaderContainer>
-        <ColorHeader className="animationColorHeader animation" />
+        <ColorHeader
+          element="servicios"
+          className="animationColorHeader animation"
+        />
         <TitleHeader
           className="fadeInUp animation"
           fontSize="mid"
@@ -78,7 +81,7 @@ const Servicios = ({ state }) => {
           <img src=" https://www.wokine.com/wp-content/themes/wokine/assets/kowin-explain.svg" />
         </ColumnCenter>
         <ColumnRight>
-          <Title className="mid">
+          <Title className="mid fadeInUp animation">
             A progressive and
             <span className="text__italic">effective program.</span>
           </Title>

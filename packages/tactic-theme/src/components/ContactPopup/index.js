@@ -1,11 +1,14 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { connect } from "frontity";
 import { Container, Title, Form, Submit, Content, Input } from "./styles";
 
 import { IconArrowContact, IconToggleCloseContact } from "../Icons";
 
-const ContactPopup = ({ state, className }) => {
+const ContactPopup = ({ state, className, libraries }) => {
   const formContact = useRef(null);
+  const data = state.source.get("/contactanos");
+  const contactForm = state.source.page[data.id];
+  const Html2React = libraries.html2react.Component;
 
   useEffect(() => {
     const btnClose = document.getElementById("btnClose");
@@ -25,6 +28,9 @@ const ContactPopup = ({ state, className }) => {
         className={className || "hidden"}
       >
         <IconToggleCloseContact />
+
+        {/* <Html2React html={contactForm.content.rendered}></Html2React> */}
+
         <div className="container__content fadeInUp fadeObserve">
           <Title>Contáctanos</Title>
           <Form>

@@ -34,7 +34,9 @@ export const NameLink = styled.span`
     left: 0px;
     right: 0px;
     height: 15px;
-    background: var(--color-primary);
+    background: ${(props) => props.background};
+    /* background: var(--color-primary); */
+
     opacity: 0.5;
     z-index: -1;
     transform-origin: left center;

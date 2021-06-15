@@ -123,6 +123,21 @@ export const slideInRight = keyframes`
     }
     
 `;
+export const slideInRightHome = keyframes`
+    0%{
+       width: 100%;
+       opacity: 1;
+    }
+    90%{
+      opacity: 1;
+    }
+    100%{
+        width: 0;
+       opacity: 0;
+
+    }
+    
+`;
 export const slideOutRight = keyframes`
     from{
        width: 0;
@@ -159,6 +174,18 @@ export const slideOutLeftMid = keyframes`
 
     }
 `;
+export const slideLeftAbout = keyframes`
+    0%{
+      left: 0;
+    }
+    90%{
+      opacity: 1;
+    }
+    100%{
+      left: 342px;
+      opacity: 0;
+    }
+`;
 export const slideDown = keyframes`
     from{
        height: 0;
@@ -167,6 +194,15 @@ export const slideDown = keyframes`
     to{
         height: 300px;
       opacity: 1;
+    }
+`;
+export const slideUpContact = keyframes`
+    from{
+      transform: translateY(100%);
+    }
+    to{
+      transform: translateY(0%);
+
     }
 `;
 export const slideDownImg = keyframes`

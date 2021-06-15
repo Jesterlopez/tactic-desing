@@ -4,9 +4,9 @@ import { Service } from "./styles";
 
 import { IconWaveQuote, IconWaveQuoteLow } from "../Icons";
 
-const ServiceItem = ({ children, className }) => {
+const ServiceItem = ({ children, className, key }) => {
   return (
-    <Service>
+    <Service key={key}>
       {className == "NoAnimation" ? (
         <IconWaveQuoteLow color="#fff" />
       ) : (

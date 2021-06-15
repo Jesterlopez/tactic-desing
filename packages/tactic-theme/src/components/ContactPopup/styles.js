@@ -12,6 +12,8 @@ export const Container = styled.div`
   color: #fff;
   padding: 0 8%;
   box-sizing: border-box;
+  /* transform: translateY(100%);
+  transition: 1s all; */
   &.hidden {
     display: none;
   }
