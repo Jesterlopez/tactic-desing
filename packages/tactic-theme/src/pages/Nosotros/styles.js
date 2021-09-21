@@ -25,7 +25,7 @@ export const ColorYellow = styled.div`
   }
 `;
 
-export const HeaderContent = styled.p`
+export const HeaderContent = styled.div`
   width: 37%;
   font-size: 1.9rem;
   display: flex;

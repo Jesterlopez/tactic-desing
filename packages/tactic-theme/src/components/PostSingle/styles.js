@@ -1,5 +1,19 @@
 import styled from "styled-components";
 
+export const BrandImg = styled.img`
+  height: 100%;
+  width: 120px;
+  object-fit: contain;
+  padding: 3px;
+  box-sizing: border-box;
+  /* background: #3cd; */
+  @media screen and (max-width: 768px) {
+    top: 30px;
+    left: 0px;
+    position: absolute;
+  }
+`;
+
 export const ContainerHeader = styled.div`
   width: 100vw;
   min-height: 90vh;

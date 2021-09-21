@@ -11,6 +11,7 @@ import {
   Category,
   TitleBlog,
   IntroBlog,
+  BrandImg,
   // HeaderContent,
   // Container,
   ContainerContent,
@@ -46,7 +47,8 @@ const PostSingle = ({ state, element }) => {
       <>
         <Brand id="brandBlog">
           <NavLink href="/" className="fadeOutUp height100 linkHome">
-            Tactic Center
+          <BrandImg src={state.source.post[1]?.page_logo_src} alt="logo Tactic Digital" />
+
           </NavLink>
         </Brand>
         <Link href="/blog">

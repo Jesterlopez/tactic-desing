@@ -3,7 +3,6 @@ import { connect } from "frontity";
 import TitleHeader from "../../components/TitleHeader";
 import ColorHeader from "../../components/ColorHeader";
 import { Parallax } from "react-parallax";
-import Titles from "../../components/Titles";
 
 import {
   HeaderContainer,

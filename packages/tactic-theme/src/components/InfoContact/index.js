@@ -26,16 +26,16 @@ const InfoContact = () => {
     const ContentBlog = document.getElementById("contentBlog");
 
     if (Content === null) {
-      if (ContentBlog.getBoundingClientRect().bottom < 850) {
+      if (ContentBlog?.getBoundingClientRect().bottom < 850) {
         emailRef.current.style.transform = `translateY(calc(-${
-          ContentBlog.getBoundingClientRect().bottom / 50
+          ContentBlog?.getBoundingClientRect().bottom / 50
         }px))`;
         btn.current.style.transform = `translateY(calc(-${
-          ContentBlog.getBoundingClientRect().bottom / 50
+          ContentBlog?.getBoundingClientRect().bottom / 50
         }px))`;
       }
     } else {
-      if (Content.getBoundingClientRect().bottom < 850) {
+      if (Content?.getBoundingClientRect().bottom < 850) {
         // var vertical_position = 0;
         // if (pageYOffset) {
         //   vertical_position = pageYOffset;
@@ -50,10 +50,10 @@ const InfoContact = () => {
         //   "translateY(calc(-" + vertical_position / 20 + "px))";
 
         emailRef.current.style.transform = `translateY(calc(-${
-          Content.getBoundingClientRect().bottom / 50
+          Content?.getBoundingClientRect().bottom / 50
         }px))`;
         btn.current.style.transform = `translateY(calc(-${
-          Content.getBoundingClientRect().bottom / 50
+          Content?.getBoundingClientRect().bottom / 50
         }px))`;
       }
     }

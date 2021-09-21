@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "frontity";
 
-const Link = ({ href, actions, children }) => {
+const Link = ({ href, actions, children, className }) => {
   return (
     <a
       href={href}
@@ -10,6 +10,7 @@ const Link = ({ href, actions, children }) => {
         actions.router.set(href);
         document.scrollingElement.scrollTop = 0;
       }}
+      className={className}
     >
       {children}
     </a>

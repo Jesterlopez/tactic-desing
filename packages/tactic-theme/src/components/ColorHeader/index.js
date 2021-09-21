@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "frontity";
 import { Color } from "./styles";
 
-const ColorHeader = ({ state, className, element }) => {
+const ColorHeader = ({ className, element }) => {
   if (element === "servicios") {
     return <Color className={"servicios" + " " + className} />;
   }

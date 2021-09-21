@@ -43,12 +43,12 @@ export const Brand = styled.div`
 export const BrandImg = styled.img`
   height: 100%;
   width: 120px;
-  padding: 5px;
+  object-fit: contain;
+  padding: 3px;
   box-sizing: border-box;
-  background: #3cd;
   @media screen and (max-width: 768px) {
-    top: 30px;
-    left: 0px;
+    top: 0;
+    left: -30px;
     position: absolute;
   }
 `;
@@ -58,10 +58,10 @@ export const NamePage = styled.a`
   text-transform: capitalize;
   color: var(--color-dark);
   font-size: 0.8rem;
-  margin-left: 10px;
+  margin-left: -20px;
 
   @media screen and (max-width: 768px) {
-    display: none;
+    display: none !important;
   }
 `;
 

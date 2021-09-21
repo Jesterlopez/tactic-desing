@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "frontity";
+
 import NavItem from "../NavItem";
 import InfoContact from "../InfoContact";
 import Contact from "../Contact";

@@ -193,7 +193,7 @@ const Nosotros = ({ state }) => {
         <ul className="list__timeline fadeInUp fadeObserve">
           {pageData.acf.timeline.map((time) => {
             return (
-              <li className="timelineItem padding__mobile">
+              <li key={time.titulo} className="timelineItem padding__mobile">
                 <ItemTimeline
                   textUp={time.titulo}
                   textDown={time.subtitulo}
@@ -202,22 +202,6 @@ const Nosotros = ({ state }) => {
               </li>
             );
           })}
-
-          {/* <li className="timelineItem padding__mobile">
-            <ItemTimeline
-              textUp="Estrategias"
-              textDown="con Visión"
-              content="Mantener la autenticidad en las propuestas planteadas a nuestros clientes y en el desarrollo de nuestra relación profesional."
-            />
-          </li>
-
-          <li className="timelineItem padding__mobile">
-            <ItemTimeline
-              textUp="Propuestas"
-              textDown="aterrizadas"
-              content="Ofrecer propuestas de Servicios ajustadas a los requerimientos de nuestros clientes y a su industria."
-            />
-          </li> */}
         </ul>
       </ContainerSection>
       <ContainerSection>
@@ -359,58 +343,20 @@ const Nosotros = ({ state }) => {
         <ContainerRight className="order__2">
           <Services style={{ paddingTop: 0 }}>
             {pageData.acf.seccion_objetivos.objetivos.map((obj) => {
-              // console.log(obj);
               return (
-                // console.log(obj.contenidos);
-                <ServiceItem key={obj.id} className="NoAnimation">
+                <ServiceItem key={obj.titulo} className="NoAnimation">
                   <ServiceName>{obj.titulo}</ServiceName>
                   <ListService>
-                    {obj.contenidos.map((obj) => {
-                      return <ListItem>{obj.contenido}</ListItem>;
+                    {obj.contenidos.map((obj, i) => {
+                      return <span key={'key' + i}>
+                        <ListItem>{obj.contenido}</ListItem>
+                        </span>
                     })}
                   </ListService>
                 </ServiceItem>
               );
             })}
           </Services>
-
-          {/* <ServiceItem className="NoAnimation">
-              <ServiceName>Propuestas aterrizadas</ServiceName>
-              <ListService>
-                <ListItem>Atraer</ListItem>
-                <ListItem>Convertir</ListItem>
-                <ListItem>Cerrar</ListItem>
-                <ListItem>Fidelizar</ListItem>
-              </ListService>
-            </ServiceItem>
-            <ServiceItem className="NoAnimation">
-              <ServiceName>Estrategias con Visión</ServiceName>
-              <ListService>
-                <ListItem>Atraer</ListItem>
-                <ListItem>Convertir</ListItem>
-                <ListItem>Cerrar</ListItem>
-                <ListItem>Fidelizar</ListItem>
-              </ListService>
-            </ServiceItem>
-            <ServiceItem className="NoAnimation">
-              <ServiceName>Relaciones estratégicas</ServiceName>
-              <ListService>
-                <ListItem>Atraer</ListItem>
-                <ListItem>Convertir</ListItem>
-                <ListItem>Cerrar</ListItem>
-                <ListItem>Fidelizar</ListItem>
-              </ListService>
-            </ServiceItem>
-            <ServiceItem className="NoAnimation">
-              <ServiceName>Autenticidad</ServiceName>
-              <ListService>
-                <ListItem>Atraer</ListItem>
-                <ListItem>Convertir</ListItem>
-                <ListItem>Cerrar</ListItem>
-                <ListItem>Fidelizar</ListItem>
-              </ListService>
-            </ServiceItem>
-           */}
         </ContainerRight>
       </ContainerSection>
       <ContainerSection

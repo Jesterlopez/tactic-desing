@@ -156,6 +156,9 @@ body.menuOpen{
   & span{
     font-size: 1rem;
     padding: 0;
+    display: flex; 
+    align-items: center;
+    height: 100%;
   }
 }
 .linkHome{

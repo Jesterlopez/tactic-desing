@@ -38,7 +38,7 @@ const FooterPage = () => {
     const email = document.getElementById("send__email");
 
     if (Content === null) {
-      if (ContentBlog.getBoundingClientRect().bottom < 850) {
+      if (ContentBlog?.getBoundingClientRect().bottom < 850) {
         footer.style.position = "fixed";
         creditsRef.current.style.transform = `translateY(calc(-${
           ContentBlog.getBoundingClientRect().bottom / 15
@@ -47,7 +47,7 @@ const FooterPage = () => {
         footer.style.position = "relative";
       }
     } else {
-      if (Content.getBoundingClientRect().bottom < 850) {
+      if (Content?.getBoundingClientRect().bottom < 850) {
         footer.style.position = "fixed";
         creditsRef.current.style.transform = `translateY(calc(-${
           Content.getBoundingClientRect().bottom / 15

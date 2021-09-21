@@ -7,10 +7,10 @@ const FilterBlog = ({ state, actions, children, key }) => {
     <>
       <Container key={key}>
         <a
-          className="tags"
+          className="category"
           onClick={(e) => {
             e.preventDefault();
-            actions.theme.setFilterBlogValue(e.target.value);
+            actions.theme.setFilterBlogValue(e.target.text);
           }}
           href="#"
         >

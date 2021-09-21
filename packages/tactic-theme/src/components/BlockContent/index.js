@@ -6,9 +6,8 @@ import { useIntersection } from "react-use";
 
 const BlockContent = ({ children, className, state }) => {
   const data = state.source.get(state.router.link);
-
   const contentRef = useRef(null);
-
+  
   const intersection = useIntersection(contentRef, {
     root: null,
     rootMargin: "-50px",
@@ -46,8 +45,8 @@ const BlockContent = ({ children, className, state }) => {
           className={
             "fadeInUp animation padding__right__none padding__mobile padding__left__none " +
             className
-          }
-        >
+          }>
+
           {children}
         </BlockCont>
       ) : (
@@ -55,8 +54,8 @@ const BlockContent = ({ children, className, state }) => {
           className={
             "fadeInUp fadeObserve padding__right__none padding__mobile padding__left__none " +
             className
-          }
-        >
+          }>
+            
           {children}
         </BlockCont>
       )}

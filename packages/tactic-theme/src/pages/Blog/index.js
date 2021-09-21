@@ -1,16 +1,16 @@
-import React, { Suspense, useEffect } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import { connect } from "frontity";
 import Title from "../../components/Titles";
 import TitleHeader from "../../components/TitleHeader";
 import BlockContent from "../../components/BlockContent";
 import PlaceholderLazyLoad from "../../components/PlaceholderLazyLoad";
-const ContainerBlog = React.lazy(() =>
-  import("../../components/ContainerBlog")
-);
 import SearchBar from "../../components/SearchBar";
 import { ScrollDown2 } from "../../components/ScrollDown";
 import FilterBlog from "../../components/FilterBlog";
-// import LazyLoad from "react-lazyload";
+
+const ContainerBlog = React.lazy(() =>
+  import("../../components/ContainerBlog")
+);
 import {
   ContainerHeader,
   ContainerLeft,
@@ -18,46 +18,37 @@ import {
   HeadBlockContent,
   BodyContent,
   ContainerBlogs,
-  ContainerFluid,
   MessageInfo,
+  ContainerCategories
 } from "./styles";
 
-const Blog = ({ state, actions }) => {
-  const data = state.source.get(state.router.link);
+const Blog = ({ state }) => {
+  
+  const [blogFilter, setBlogFilter] = useState([]);
+  
+  const categories = Object.values(state.source.category)
+  const allCategories = categories.map((category) => {
+    return category
+  })
 
   // se obtiene todo el objeto de blogs y se convierte a un array para poder iterar
   const allBlog = Object.values(state.source.blog);
-  // const id = Object.values(state.source.blog.acf.categoria);
 
-  // const categori = id.forEach((el) => {
-  //   state.source.category[el].name;
-  //   // console.log(el);
-  //   // console.log();
-  // });
-  // console.log(categori);
-
-  // const CatID = allBlog.map((blog) => {
-  //   const idCat = blog.categories;
-  //   // const category = state.source.category[idCat].name;
-
-  //   return category;
-  // });
-
-  // const category = state.source.category[CatID];
-
-  // console.log(CatID);
-  // se filtran los blog por el nombre del blog
-  const filterBlog = allBlog.filter((blog) =>
+  const searchBlog = allBlog.filter((blog) =>
     blog.title.rendered
       .toLowerCase()
       .includes(state.theme.searchBlogValue.toLowerCase())
   );
 
-  // const Filter = allBlog.map((blog) => {
-  //   return Object.values(blog.tags).map((tag) => {
-  //     return state.source.tag[tag].name;
-  //   });
-  // });
+  const idCategory = allCategories.filter((cat)=> cat.name.includes(state.theme.filterBlogValue))
+  const handleFindForCategory = (id) => {
+    return allBlog.filter((blog)=> blog.categories.includes(id))
+  }
+
+  useEffect(() => {
+    setBlogFilter(handleFindForCategory(idCategory[0]?.id))
+  }, [state.theme.filterBlogValue])
+
   return (
     <>
       <ContainerHeader>
@@ -90,49 +81,72 @@ const Blog = ({ state, actions }) => {
         </ContainerRight>
       </ContainerHeader>
       <SearchBar />
-      {/* {allBlog.map((blog) => {
-        const idTags = Object.values(blog.tags);
-        return idTags.map((tag, i) => {
-          return <FilterBlog key={i}>{state.source.tag[tag].name}</FilterBlog>;
-        });
-      })} */}
+      
+      <ContainerCategories>
+      <FilterBlog>Todos</FilterBlog>
+      {
+      categories.map((category) => {
+          return <FilterBlog key={category.name}>
+            {category.name}
+            </FilterBlog>;
+      })
+      }
+      </ContainerCategories>
 
       {/* filtrar por etiquetas */}
 
       <ContainerBlogs>
-        {!filterBlog.length > 0 && (
+      {!searchBlog.length > 0 && (
           // Sino encuentra nada relacionado con lo que esta buscando
           <MessageInfo className="text__italic">
             No hay resultados relacionados con
             <strong>"{state.theme.searchBlogValue}"</strong>
           </MessageInfo>
-        )}
-        {filterBlog.reverse().map((blog) => {
-          const idCategories = Object.values(blog.categories);
+        )
+      }
+      {
+        blogFilter?.length > 0 ? (
+          blogFilter?.reverse().map((blog) => {
+            const idCategories = Object.values(blog.categories);
+  
+            return (
+              <Suspense key={blog.id} fallback={<PlaceholderLazyLoad />}>
+                <ContainerBlog
+                  category={idCategories.map((el) => {
+                    return idCategories.length > 1
+                      ? state.source.category[el].name + " "
+                      : state.source.category[el].name;
+                  })}
+                  title={blog.title.rendered}
+                  image={blog.featured_media}
+                  introBlog={blog.excerpt.rendered}
+                  link={blog.link}
+                  background={blog.acf.background}
+                />
+              </Suspense>
+            );
+          })
+        ) 
+        :
+        searchBlog.reverse().map((blog) => {
+        const idCategories = Object.values(blog.categories);
 
-          return (
-            // <LazyLoad
-            //   height={320}
-            //   placeholder={<PlaceholderLazyLoad />}
-            //   debounce={500}
-            //   offset={[-200, 0]}
-            // >
-            <Suspense key={blog.id} fallback={<PlaceholderLazyLoad />}>
-              <ContainerBlog
-                category={idCategories.map((el) => {
-                  return idCategories.length > 1
-                    ? state.source.category[el].name + " "
-                    : state.source.category[el].name;
-                })}
-                title={blog.title.rendered}
-                image={blog.featured_media}
-                introBlog={blog.excerpt.rendered}
-                link={blog.link}
-                background={blog.acf.background}
-              />
-            </Suspense>
-            // </LazyLoad>
-          );
+        return (
+          <Suspense key={blog.id} fallback={<PlaceholderLazyLoad />}>
+            <ContainerBlog
+              category={idCategories.map((el) => {
+                return idCategories.length > 1
+                  ? state.source.category[el].name + " "
+                  : state.source.category[el].name;
+              })}
+              title={blog.title.rendered}
+              image={blog.featured_media}
+              introBlog={blog.excerpt.rendered}
+              link={blog.link}
+              background={blog.acf.background}
+            />
+          </Suspense>
+        );
         })}
       </ContainerBlogs>
     </>

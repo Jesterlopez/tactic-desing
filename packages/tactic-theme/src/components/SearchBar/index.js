@@ -12,8 +12,8 @@ const SearchBar = ({ state, actions }) => {
           placeholder="Buscar Blogs..."
           id="searchBar"
           value={state.theme.searchBlogValue}
-          onChange={(event) => {
-            actions.theme.setSearchBlogValue(event.target.value);
+          onChange={(e) => {
+            actions.theme.setSearchBlogValue(e.target.value);
           }}
         />
       </Container>

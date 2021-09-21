@@ -37,17 +37,11 @@ export default {
       setSearchBlogValue: ({ state }) => (value) => {
         state.theme.searchBlogValue = value;
       },
-      // setFilterBlogValue: ({ state }) => (value) => {
-      //   state.theme.filterBlogValue = value;
-      // },
+      setFilterBlogValue: ({ state }) => (value) => {
+        state.theme.filterBlogValue = value;
+      },
       beforeSSR: async ({ actions }) => {
         await actions.source.fetch("/contactanos");
-
-        // await Promise.all(
-        //   state.theme.templates.map((slug) =>
-        //     actions.source.fetch(`/wp_template_part/${slug}`)
-        //   )
-        // );
       },
     },
   },

@@ -122,3 +122,11 @@ export const MessageInfo = styled.div`
   padding: 5% 5%;
   background: #f8f8f8;
 `;
+
+export const ContainerCategories = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: left;
+    padding: 20px 10px;
+`

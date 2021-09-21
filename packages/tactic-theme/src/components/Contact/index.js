@@ -1,32 +1,32 @@
 import React, { useRef, useEffect } from "react";
 import { connect } from "frontity";
-import AnchorLink from "../AnchorLink";
 
 import { ContainerContact } from "./styles";
 
 const Contact = ({ state }) => {
   const contactRef = useRef(null);
+
   const scrollCustom = () => {
     const Content = document.getElementById("contentGeneral");
     const ContentBlog = document.getElementById("contentBlog");
 
     if (Content === null) {
-      if (ContentBlog.getBoundingClientRect().bottom < 850) {
+      if (ContentBlog?.getBoundingClientRect().bottom < 850) {
         if (
-          typeof contactRef.current === "undefined"
+          typeof contactRef.current === "null"
             ? null
             : (contactRef.current.style.transform = `translateY(calc(-${
-                ContentBlog.getBoundingClientRect().bottom / 25
+                ContentBlog?.getBoundingClientRect().bottom / 25
               }px))`)
         );
       }
     } else {
-      if (Content.getBoundingClientRect().bottom < 850) {
+      if (Content?.getBoundingClientRect().bottom < 850) {
         if (
-          typeof contactRef.current === "undefined"
+          typeof contactRef.current === "null"
             ? null
             : (contactRef.current.style.transform = `translateY(calc(-${
-                Content.getBoundingClientRect().bottom / 25
+                Content?.getBoundingClientRect().bottom / 25
               }px))`)
         );
       }
