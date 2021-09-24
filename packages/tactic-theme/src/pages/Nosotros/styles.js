@@ -355,6 +355,8 @@ export const ServiceName = styled.h3`
 
 export const ListService = styled.ul`
   list-style: none;
+  opacity: 1 !important;
+
 `;
 export const ListItem = styled.li`
   color: #4c4a57;
