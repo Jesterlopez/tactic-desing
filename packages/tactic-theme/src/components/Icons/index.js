@@ -70,7 +70,7 @@ export const IconWaveQuote = ({ color, children, className, animation }) => {
   );
 };
 
-export const IconWaveQuoteTwo = ({ color, children, className }) => {
+export const IconWaveQuoteTwo = ({ color, children}) => {
   const stroke = {
     stroke: color,
   };

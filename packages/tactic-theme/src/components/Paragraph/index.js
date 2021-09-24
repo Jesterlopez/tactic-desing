@@ -35,7 +35,7 @@ const Paragraph = ({ referencia, fraseUp, fraseMid, fraseDown }) => {
 
     const Content = document.querySelector("#content");
 
-    if (containerHeader.getBoundingClientRect().top < 0) {
+    if (containerHeader?.getBoundingClientRect().top < 0) {
       Paragraph.style.opacity = 1;
 
       fadeInUp.forEach((e) => {

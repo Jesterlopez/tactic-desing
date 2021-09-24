@@ -23,7 +23,7 @@ const HeaderPage = ({ namePage, state }) => {
         <Head>
           <Brand className="brand">
             <Link href="/" className="fadeOutUp height100 linkHome">
-              {/* Tactic Center */}
+              {/* Tactic Digital */}
               <BrandImg src={state.source.post[1]?.page_logo_src || Logo} alt="logo Tactic Digital" />
             </Link>
             <NamePage className="text__italic" href="#">

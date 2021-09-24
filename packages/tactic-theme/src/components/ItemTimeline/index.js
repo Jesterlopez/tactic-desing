@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "frontity";
 import { ContainerItem, TitleItem, ContentItem } from "./styles";
 
-const ItemTimeline = ({ state, textUp, textDown, content }) => {
+const ItemTimeline = ({ textUp, textDown, content }) => {
   return (
     <>
       <ContainerItem>

@@ -1,22 +1,20 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { connect } from "frontity";
 import NameSection from "../NameSection";
-import { IconWaveQuote, IconWaveQuoteTwo } from "../Icons";
+import { IconWaveQuote } from "../Icons";
 import BlockContent from "../BlockContent";
 import Title from "../Titles";
 import AnchorLink from "../AnchorLink";
-// import Media from "../Media";
 import ImgParallax from "../ImgParallax";
-// import { motion, useAnimation } from "framer-motion";
-import { Parallax, Background } from "react-parallax";
-// import { InView, useInView } from "react-intersection-observer";
+import { Parallax } from "react-parallax";
 import TitleSection from "../TitleSection";
 import ContainerServices from "../ContainerServices";
-import { ScrollDown2 } from "../ScrollDown";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
+
+import fxScrollHome from "../../utils/fxScrollHome";
 
 import {
   ContainerContent,
@@ -25,10 +23,8 @@ import {
   BodyContent,
   ContainerImage,
 } from "./styles";
+
 const Home = ({ state }) => {
-  const data = state.source.get(state.router.link);
-  const sourceData = state.source;
-  const id = data.id;
   const home = state.source.page[51];
 
   useEffect(() => {
@@ -38,53 +34,7 @@ const Home = ({ state }) => {
     };
   }, []);
 
-  const scrollAnimations = () => {
-    const containerHeader = document.getElementById("header");
-    // const Hello = document.getElementById("hello");
-    const CHello = document.getElementById("containerHello");
-
-    const Paragraph = document.getElementById("paragraph");
-    const ScrollDown = document.querySelector("#scrollDown");
-    const ScrollDown2 = document.querySelector("#scrollDown2");
-
-    // let scrollPosition = window.pageYOffset;
-    // const ElementParallax = document.querySelector("#paragraph");
-
-    const Content = document.querySelector("#content");
-
-    if (Content.getBoundingClientRect().bottom <= 700) {
-      ScrollDown2.style.zIndex = "-1";
-    } else {
-      ScrollDown2.style.zIndex = "10";
-    }
-
-    if (containerHeader.getBoundingClientRect().top < 0) {
-      containerHeader.classList.add("expanded__height");
-      Paragraph.style.opacity = 1;
-      ScrollDown.classList.add("animation");
-      ScrollDown.classList.add("fadeOut");
-
-      ScrollDown.classList.remove("fadeInScroll");
-      ScrollDown2.classList.add("fadeInScroll");
-    } else {
-      ScrollDown.classList.add("fadeOut");
-      ScrollDown2.classList.remove("fadeInScroll");
-
-      ScrollDown.classList.remove("fadeOut");
-      ScrollDown.classList.add("fadeInScroll");
-      containerHeader.classList.remove("expanded__height");
-    }
-    if (Content.getBoundingClientRect().top < 0) {
-      CHello.style.zIndex = "-1";
-      CHello.style.opacity = 0;
-      Paragraph.style.opacity = 0;
-      Paragraph.style.zIndex = -1;
-    } else {
-      Paragraph.style.zIndex = 1;
-      CHello.style.zIndex = 0;
-      CHello.style.opacity = 1;
-    }
-  };
+  const scrollAnimations = () => fxScrollHome();
 
   return (
     <>
@@ -100,7 +50,6 @@ const Home = ({ state }) => {
           <ContentSection className="padding__bottom__none" id="section">
             <div className="container__fullWidth">
               <NameSection>
-                {/* recibe la clase big para cambiar el estilo depende el lugar | */}
                 <IconWaveQuote className="big" />
                 <TitleSection
                   textUp={home.acf.primer_seccion.titulo_de_la_seccion.slice(
@@ -116,30 +65,13 @@ const Home = ({ state }) => {
             <div className="container__left middle">
               <BlockContent id="BlockContent">
                 <HeadBlockContent>
-                  <Title
-                    className="title__low"
-                    // dangerouslySetInnerHTML={{
-                    //   __html: home.acf.primer_seccion.titulo_de_parrafo,
-                    // }}
-                  >
+                  <Title className="title__low">
                     <span
                       dangerouslySetInnerHTML={{
                         __html: home.acf.primer_seccion.titulo_de_parrafo,
                       }}
                     ></span>
                   </Title>
-                  {/* <Title>
-                    {home.acf.primer_seccion.titulo_de_parrafo.split(" ")[0]}
-                  </Title>
-                  <Title className="text__italic">
-                    {home.acf.primer_seccion.titulo_de_parrafo.split(" ")[1]}
-                  </Title>
-                  <Title>
-                    {home.acf.primer_seccion.titulo_de_parrafo
-                      .split(" ")
-                      .slice(2)
-                      .join(" ")}
-                  </Title> */}
                 </HeadBlockContent>
                 <BodyContent>
                   {home.acf.primer_seccion.contenido_de_parrafo}
@@ -155,44 +87,13 @@ const Home = ({ state }) => {
             <ContainerServices />
           </ContentSection>
 
-          {/* <ContentSection className="padding__bottom__none">
-            <div className="container__fullWidth">
-              <NameSection> */}
-          {/* recibe la clase big para cambiar el estilo depende la situacion | */}
-          {/* <IconWaveQuote className="big" />
-                <TitleSection textUp={"Noso"} textDown={"tros"} />
-              </NameSection> */}
-          {/* </div>
-            <div className="container__left imagen__content">
-              <img src={home.acf.seccion_imagen_y_texto.imagen.sizes.medium} />
-            </div>
-            <div className="container__right">
-              <BlockContent id="BlockContent">
-                <HeadBlockContent>
-                  <Title>
-                    {home.acf.seccion_imagen_y_texto.titulo_seccion}
-                  </Title>
-                </HeadBlockContent>
-                <BodyContent>
-                  {home.acf.seccion_imagen_y_texto.contenido_seccion}
-                </BodyContent>
-              </BlockContent>
-            </div>
-          </ContentSection> */}
-
           <ContentSection className="padding__bottom__none padding__top__none">
             <div className="container__fullWidth">
               <NameSection>
-                {/* recibe la clase big para cambiar el estilo depende la situacion | */}
                 <IconWaveQuote className="big" />
                 <TitleSection
-                  textUp={home.acf.segunda_seccion.titulo_de_la_seccion.slice(
-                    0,
-                    3
-                  )}
-                  textDown={home.acf.segunda_seccion.titulo_de_la_seccion.slice(
-                    3
-                  )}
+                  textUp={home.acf.segunda_seccion.titulo_de_la_seccion.slice(0,3)}
+                  textDown={home.acf.segunda_seccion.titulo_de_la_seccion.slice(3)}
                 />
               </NameSection>
             </div>
@@ -244,16 +145,10 @@ const Home = ({ state }) => {
           <ContentSection className="padding__bottom__none">
             <div className="container__fullWidth">
               <NameSection className="textUpImg">
-                {/* recibe la clase big para cambiar el estilo depende la situacion | */}
                 <IconWaveQuote className="big" />
-
                 <TitleSection
-                  textUp={
-                    home.acf.ultima_seccion.titulo_de_la_seccion.split(" ")[0]
-                  }
-                  textDown={
-                    home.acf.ultima_seccion.titulo_de_la_seccion.split(" ")[1]
-                  }
+                  textUp={home.acf.ultima_seccion.titulo_de_la_seccion.split(" ")[0]}
+                  textDown={home.acf.ultima_seccion.titulo_de_la_seccion.split(" ")[1]}
                 />
               </NameSection>
             </div>
@@ -261,7 +156,7 @@ const Home = ({ state }) => {
               <div className="image container__fullWidth fadeObserve slideDown">
                 <Parallax
                   bgImage={
-                    "https://tactic-center.com/wp-content/uploads/2018/05/Suscribite-Home-min-1.jpg"
+                    home.acf.ultima_seccion.imagen_de_la_seccion.url
                   }
                   strength={150}
                   style={{ height: 300 }}

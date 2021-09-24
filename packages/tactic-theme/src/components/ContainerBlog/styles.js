@@ -31,7 +31,7 @@ export const Container = styled.article`
   }
   &:hover img {
     transform: translateY(-5%);
-    opacity: 0;
+    /* opacity: 0; */
   }
 
   @media screen and (max-width: 768px) {

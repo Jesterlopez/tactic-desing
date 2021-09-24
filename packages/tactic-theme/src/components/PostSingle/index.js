@@ -6,25 +6,20 @@ import { Parallax } from "react-parallax";
 import AnchorLink from "../AnchorLink";
 import NavLink from "../NavLink";
 
+import Logo from "../../assets/tactic-digital.png";
+
 import {
   ContainerHeader,
   Category,
   TitleBlog,
   IntroBlog,
   BrandImg,
-  // HeaderContent,
-  // Container,
   ContainerContent,
   ImgFullWidth,
   ImgFullWidthParallax,
-  // Title,
-  // Content,
-  // ContainerRight,
   ContainerMedia,
-  // ContainerLeft,
   ContainerFullWidth,
   Image,
-  // ImageTwo,
   ImgFullWidthContent,
   ContainerFooter,
   Button,
@@ -39,16 +34,14 @@ const PostSingle = ({ state, element }) => {
   const FeaturedMedia = state.source.attachment[post.featured_media].source_url;
 
   const idCategories = Object.values(post.categories);
-  // console.log(idCategories);
   const author = state.source.author[post.author];
-  const seccion = Object.values(post.acf.seccion);
+  const seccions = Object.values(post.acf.seccion);
   if (element === "blog") {
     return (
       <>
         <Brand id="brandBlog">
-          <NavLink href="/" className="fadeOutUp height100 linkHome">
-          <BrandImg src={state.source.post[1]?.page_logo_src} alt="logo Tactic Digital" />
-
+          <NavLink href="/" className="fadeOutUp height100 linkHomeBlog">
+            <BrandImg src={state.source.post[1]?.page_logo_src || Logo} alt="logo Tactic Digital" />
           </NavLink>
         </Brand>
         <Link href="/blog">
@@ -77,13 +70,13 @@ const PostSingle = ({ state, element }) => {
             <IntroBlog
               className="fadeInUp animation "
               dangerouslySetInnerHTML={{
-                __html: post.excerpt.rendered || "Pequeño titulo del blog",
+                __html: post.excerpt.rendered || null,
               }}
             ></IntroBlog>
           </div>
           <div style={{ height: "auto", overflowY: "hidden" }}>
             <InfoBlog className="fadeInUp animation ">
-              <a href={author.link}>{author.name}</a>/
+              <p>{author.name}</p>/
               <span className="text__italic">
                 {new Intl.DateTimeFormat("es-ES", {
                   dateStyle: "medium",
@@ -92,38 +85,7 @@ const PostSingle = ({ state, element }) => {
             </InfoBlog>
           </div>
         </ContainerHeader>
-        {/* <Container>
-            <HeaderContent>
-              <p className="text__italic">Goal.</p>
-              <p>
-                Los últimos años el contenido ha tomado fuerza en las redes
-                sociales, ya que, si las marcas no tienen presencia en estas
-                plataformas con una estrategia de contenido, difícilmente pueden
-                tener un lugar en este mundo tan competitivo donde hay bastantes
-                ofertas y poca demanda.
-              </p>
-            </HeaderContent>
-            <HeaderContent>
-              <p className="text__italic">Goal.</p>
-              <p>
-                Pero, ¿qué se puede hacer para que el contenido de mi marca sea
-                innovador y diferente del resto? Aunque no exista un lineamiento
-                exacto de cómo hacerlo, es necesario que empieces planteándote
-                que el marketing de contenidos no se limita a publicar textos en
-                un sitio, sino que detrás de lo que publicas hay una
-                planificación estratégica que busca generar engagement a través
-                de contenido variado y de calidad.
-              </p>
-            </HeaderContent>
-            <HeaderContent>
-              <p className="text__italic">Goal.</p>
-              <p>
-                The Zenith Arena in Lille is one of the main concert and event
-                halls in the Hauts-de-France. After nearly ten years of
-                collaboration, we had carte blanche to create the new site.
-              </p>
-            </HeaderContent>
-          </Container> */}
+        
         <ImgFullWidthParallax id="parallaxBlog">
           <Parallax
             bgImage={FeaturedMedia}
@@ -132,10 +94,10 @@ const PostSingle = ({ state, element }) => {
             className="parallax__blog"
           ></Parallax>
         </ImgFullWidthParallax>
-        {seccion.map((seccion, i) => {
+        {seccions.map((seccion, i )=> {
           return (
-            <>
-              <ContainerContent key={seccion[i]}>
+            <span key={i}>
+              <ContainerContent>
                 {seccion.contenido ? (
                   <ContainerFullWidth
                     dangerouslySetInnerHTML={{ __html: seccion.contenido }}
@@ -149,14 +111,15 @@ const PostSingle = ({ state, element }) => {
                 ) : null}
               </ContainerContent>
               {seccion.imagen_ancho_completo ? (
-                <ImgFullWidth key={seccion[i]}>
+                <ImgFullWidth>
                   <ContainerMedia className="fadeObserve slideOutLeftMid"></ContainerMedia>
                   <Image src={seccion.imagen_ancho_completo.url} />
                 </ImgFullWidth>
               ) : null}
-            </>
+            </span>
           );
         })}
+        
         <ContainerFooter>
           <Button backgroundButton={post.acf.background}>
             <AnchorLink
@@ -167,17 +130,13 @@ const PostSingle = ({ state, element }) => {
             </AnchorLink>
           </Button>
         </ContainerFooter>
-        {/* <ContainerContent>
-          <div
-            dangerouslySetInnerHTML={{ __html: post.content.rendered }}
-          ></div>
-        </ContainerContent> */}
+       
       </>
     );
   } else {
     <div dangerouslySetInnerHTML={{ __html: post.content.rendered }}></div>;
 
-    return <p>Soy un post</p>;
+    return <p>No hay nada por mostrar</p>;
   }
 };
 

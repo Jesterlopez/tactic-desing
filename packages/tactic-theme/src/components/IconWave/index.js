@@ -3,7 +3,6 @@ import { connect } from "frontity";
 import { InView, useInView } from "react-intersection-observer";
 import { motion, useAnimation } from "framer-motion";
 import { IconWaveQuote } from "../Icons";
-import {} from "./styles";
 
 const IconWave = () => {
   const controls = useAnimation();

@@ -7,11 +7,11 @@ export const BrandImg = styled.img`
   padding: 3px;
   box-sizing: border-box;
   /* background: #3cd; */
-  @media screen and (max-width: 768px) {
+  /* @media screen and (max-width: 768px) {
     top: 30px;
     left: 0px;
     position: absolute;
-  }
+  } */
 `;
 
 export const ContainerHeader = styled.div`
@@ -108,9 +108,9 @@ export const InfoBlog = styled.div`
     color: #fff;
     font-weight: 500;
     text-decoration: none;
-    &:hover {
+    /* &:hover {
       text-decoration: underline;
-    }
+    } */
   }
   & :last-child {
     color: #fff;
@@ -141,21 +141,28 @@ export const ContainerContent = styled.div`
     line-height: 1.2;
     font-family: "Poppins", sans-serif;
     margin-bottom: 40px;
+    width: 100%;
   }
   & h2 {
     line-height: 1.2;
     font-family: "Poppins", sans-serif;
     margin-bottom: 40px;
+    width: 100%;
+
   }
   & h4 {
     line-height: 1.2;
     font-family: "Poppins", sans-serif;
     margin-bottom: 20px;
+    width: 100%;
+
   }
   & h5 {
     line-height: 1.2;
     font-family: "Poppins", sans-serif;
     margin-bottom: 20px;
+    width: 100%;
+
   }
 
   & p {
@@ -167,13 +174,15 @@ export const ContainerContent = styled.div`
     flex-wrap: wrap;
     padding: 0 10% 5%; */
   }
-  & ul {
+  & ul, ol {
     padding-left: 20px;
+    width: 80%;
+    margin-bottom: 20px;
     & li {
       font-size: 0.9rem;
       line-height: 1.5;
       color: #888888;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
   }
   /* & figure.wp-block-image {
@@ -405,6 +414,9 @@ export const Brand = styled.div`
   white-space: nowrap;
   align-items: center;
   float: left;
+  & .mask{
+    height: 100%;
+  }
   & .linkHome span > span {
     color: #fff;
     font-weight: 600;
@@ -420,6 +432,11 @@ export const Brand = styled.div`
   }
   @media screen and (max-width: 768px) {
     top: 1.8%;
-    position: absolute;
+    position: absolute; 
+    &#brandBlog{
+      position: absolute;
+      top: 85px;
+      left: 0;
+    }
   }
 `;

@@ -1,6 +1,5 @@
 import React from "react";
-import { connect } from "frontity";
-import { ContainerScroll, IndicatorScrollDown } from "./styles";
+import { IndicatorScrollDown } from "./styles";
 import { IconScrollDown } from "../Icons";
 
 export const ScrollDown = () => {

@@ -3,6 +3,7 @@ import { connect } from "frontity";
 import { IconArrowRight } from "../Icons";
 
 import { AnchorEmail, AnchorNewsletter } from "./styles";
+import fxScrollFooter from "../../utils/fxScrollFooter";
 
 const InfoContact = () => {
   const btn = useRef(null);
@@ -22,41 +23,8 @@ const InfoContact = () => {
   };
 
   const scrollCustom = () => {
-    const Content = document.getElementById("contentGeneral");
-    const ContentBlog = document.getElementById("contentBlog");
-
-    if (Content === null) {
-      if (ContentBlog?.getBoundingClientRect().bottom < 850) {
-        emailRef.current.style.transform = `translateY(calc(-${
-          ContentBlog?.getBoundingClientRect().bottom / 50
-        }px))`;
-        btn.current.style.transform = `translateY(calc(-${
-          ContentBlog?.getBoundingClientRect().bottom / 50
-        }px))`;
-      }
-    } else {
-      if (Content?.getBoundingClientRect().bottom < 850) {
-        // var vertical_position = 0;
-        // if (pageYOffset) {
-        //   vertical_position = pageYOffset;
-        // } else if (document.documentElement.clientHeight) {
-        //   vertical_position = document.documentElement.scrollTop;
-        // } else if (document.body) {
-        //   vertical_position = document.body.scrollTop;
-        // }
-
-        // var your_div = emailRef.current;
-        // your_div.style.transform =
-        //   "translateY(calc(-" + vertical_position / 20 + "px))";
-
-        emailRef.current.style.transform = `translateY(calc(-${
-          Content?.getBoundingClientRect().bottom / 50
-        }px))`;
-        btn.current.style.transform = `translateY(calc(-${
-          Content?.getBoundingClientRect().bottom / 50
-        }px))`;
-      }
-    }
+    fxScrollFooter(emailRef);
+    fxScrollFooter(btn);
   };
 
   useEffect(() => {

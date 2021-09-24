@@ -3,9 +3,8 @@ import { connect } from "frontity";
 import { Toggle, Icon, Text } from "./styles";
 
 const MenuToggle = ({ state, actions }) => {
-  // const [isOpen, setIsOpen] = useState(false);
-
   const toggleMenuRef = useRef(null);
+
   useEffect(() => {
     const html = document.getElementsByTagName("html")[0];
     html.classList.toggle("overflow", state.theme.isActive);
@@ -19,15 +18,19 @@ const MenuToggle = ({ state, actions }) => {
         sendMail.classList.add("animation");
         suscribe.classList.add("animation");
       }, 100);
+
       link.forEach((e, i) => {
         e.classList.add("animation");
         e.style.animationDelay = `calc(${i + 2}00ms)`;
       });
+
     } else {
+
       setTimeout(() => {
         sendMail.classList.remove("animation");
         suscribe.classList.remove("animation");
       }, 500);
+      
       link.forEach((e) => {
         setTimeout(() => {
           e.classList.remove("animation");
@@ -36,15 +39,12 @@ const MenuToggle = ({ state, actions }) => {
     }
   }, [state.theme.isActive]);
   return (
-    <>
       <Toggle
         ref={toggleMenuRef}
         onClick={(e) => {
           e.preventDefault();
-          // setIsOpen(!isOpen);
           const newState = state.theme.isActive;
           actions.theme.setToggleMenu(!newState);
-          // console.log(state.theme.isActive);
         }}
         onMouseEnter={() => document.body.classList.add("menu__hover")}
         onMouseLeave={() => document.body.classList.remove("menu__hover")}
@@ -59,7 +59,6 @@ const MenuToggle = ({ state, actions }) => {
           <span>u</span>
         </Text>
       </Toggle>
-    </>
   );
 };
 

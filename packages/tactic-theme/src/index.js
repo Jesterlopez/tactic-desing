@@ -20,7 +20,6 @@ export default {
         showOnPost: false,
       },
       searchBlogValue: "",
-      // filterBlogValue: "",
     },
   },
   actions: {

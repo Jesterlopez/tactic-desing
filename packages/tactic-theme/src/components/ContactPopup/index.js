@@ -29,8 +29,6 @@ const ContactPopup = ({ state, className, libraries }) => {
       >
         <IconToggleCloseContact />
 
-        {/* <Html2React html={contactForm.content.rendered}></Html2React> */}
-
         <div className="container__content fadeInUp fadeObserve">
           <Title>Contáctanos</Title>
           <Form>

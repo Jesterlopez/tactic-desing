@@ -3,17 +3,11 @@ import { connect } from "frontity";
 import {} from "./styles";
 import { Parallax, Background } from "react-parallax";
 
-const ImgParallax = ({ state, imgID, height, strength }) => {
+const ImgParallax = ({ state, imgID, strength }) => {
   const media = state.source.attachment[imgID];
 
   return (
     <>
-      {/* <Parallax
-        bgImage={media.source_url}
-        strength={strength}
-        style={{ height: height }}
-        id="parallaxImage"
-      ></Parallax> */}
       <Parallax
         id="parallaxImage"
         strength={strength}

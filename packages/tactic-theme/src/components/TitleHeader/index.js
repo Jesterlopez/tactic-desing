@@ -1,12 +1,9 @@
 import React from "react";
-import { connect, styled } from "frontity";
+import { connect } from "frontity";
 import { H1 } from "./styles";
-import TitleSection from "../TitleSection";
 import { IconWaveQuote } from "../../components/Icons";
 
 const TitleHeader = ({ state, textUp, textDown, className, fontSize }) => {
-  const data = state.source.get(state.router.link);
-
   return (
     <>
       <H1 className={fontSize}>

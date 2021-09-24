@@ -4,9 +4,9 @@ const settings = {
   state: {
     frontity: {
       url: "https://tactic-build.tactic-center.com/",
-      title: "Tactic Center",
+      title: "Tactic Digital",
       description:
-        "agencia especializada en inbound Marketing y Optimización de procesos",
+        "Agencia especializada en Inbound Marketing y Optimización de procesos",
     },
   },
   packages: [
@@ -18,6 +18,9 @@ const settings = {
       state: {
         source: {
           api: "https://admin-tactic.tactic-center.com/wp-json",
+          params: {
+            per_page: 12
+          },
           postTypes: [
             {
               type: "blog",
@@ -30,13 +33,6 @@ const settings = {
               archive: "/servicios",
             },
           ],
-          // pages: [
-          //   {
-          //     type: "page",
-          //     endpoint: "en",
-          //     archive: "/en",
-          //   },
-          // ],
         },
       },
     },

@@ -27,9 +27,11 @@ const Blog = ({ state }) => {
   const [blogFilter, setBlogFilter] = useState([]);
   
   const categories = Object.values(state.source.category)
+  const uncategorized = 'Uncategorized'
   const allCategories = categories.map((category) => {
     return category
   })
+  const categories2 = allCategories.filter(catDelete => !uncategorized.includes(catDelete.name));
 
   // se obtiene todo el objeto de blogs y se convierte a un array para poder iterar
   const allBlog = Object.values(state.source.blog);
@@ -85,7 +87,7 @@ const Blog = ({ state }) => {
       <ContainerCategories>
       <FilterBlog>Todos</FilterBlog>
       {
-      categories.map((category) => {
+      categories2.map((category) => {
           return <FilterBlog key={category.name}>
             {category.name}
             </FilterBlog>;
@@ -97,7 +99,6 @@ const Blog = ({ state }) => {
 
       <ContainerBlogs>
       {!searchBlog.length > 0 && (
-          // Sino encuentra nada relacionado con lo que esta buscando
           <MessageInfo className="text__italic">
             No hay resultados relacionados con
             <strong>"{state.theme.searchBlogValue}"</strong>
@@ -118,7 +119,7 @@ const Blog = ({ state }) => {
                       : state.source.category[el].name;
                   })}
                   title={blog.title.rendered}
-                  image={blog.featured_media}
+                  image={blog?.featured_media}
                   introBlog={blog.excerpt.rendered}
                   link={blog.link}
                   background={blog.acf.background}

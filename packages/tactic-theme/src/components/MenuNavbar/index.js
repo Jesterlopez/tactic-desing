@@ -25,6 +25,7 @@ const MenuNavbar = ({ state }) => {
           </MenuFooter>
         </ContainerNav>
       </Menu>
+      
       {data.isHome ? (
         <ColorMenu color="#FF5851" className="menu__color" />
       ) : data.type === "servicios" ? (

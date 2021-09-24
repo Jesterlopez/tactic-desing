@@ -5,11 +5,8 @@ import BorderPage from "./components/BorderPage";
 import MenuNavbar from "./components/MenuNavbar";
 import MenuToggleMobile from "./components/MenuToggleMobile";
 import ContainerHeader from "./components/HeaderFirst";
-import Paragraph from "./components/Paragraph";
 import FooterPage from "./components/FooterPage";
-import Content from "./components/Content";
 import ContentPage from "./components/ContentPage";
-import Single from "./components/Single";
 import Error404 from "./components/404";
 import Home from "./components/Home";
 import Title from "./title";
@@ -35,45 +32,16 @@ const Root = ({ state, actions }) => {
     }, 500);
   }, []);
 
-  // useEffect(() => {
-  //   const linkMenu = document.querySelector(".link__menu");
-
-  //   if (document.body.classList.contains("menuOpen")) {
-  //     if (linkMenu.classList.contains("fadeInUp")) {
-  //       linkMenu.classList.remove("fadeInUp");
-  //     } else {
-  //       linkMenu.classList.add("fadeInUp");
-  //     }
-  //   }
-  // }, []);
-  // animacion del home al hace scroll
   useEffect(() => {
     actions.source.fetch("/inicio");
-
-    // if (document.readyState === "complete") {
     window.addEventListener("scroll", scrollAnimations);
-    // }
+
     return () => {
       window.removeEventListener("scroll", scrollAnimations);
     };
   }, []);
 
   const scrollAnimations = () => {
-    const content = document.querySelector("#contentGeneral");
-    const ScrollDown2 = document.querySelector("#scrollDown2");
-    const conten = document.querySelector("#contentGeneral");
-
-    // if (conten.getBoundingClientRect().top < 0) {
-    //   ScrollDown2.classList.add("animation");
-    // } else {
-    //   ScrollDown2.classList.remove("remove");
-    // }
-
-    // if (content.getBoundingClientRect().bottom <= 700) {
-    //   ScrollDown2.style.zIndex = "-1";
-    // } else {
-    //   ScrollDown2.style.zIndex = "10";
-    // }
     // referencia al elemento a animar
     const img = document.querySelectorAll(".fadeObserve");
 
@@ -114,14 +82,6 @@ const Root = ({ state, actions }) => {
           href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
           rel="stylesheet"
         />
-        <link
-          href="https://admin-tactic.tactic-center.com/wp-includes/css/dist/block-library/style.min.css"
-          rel="stylesheet"
-        />
-        <link
-          href="https://admin-tactic.tactic-center.com/wp-includes/css/dist/block-library/theme.min.css"
-          rel="stylesheet"
-        />
       </Head>
       <Globalstyle />
       <Title />
@@ -144,7 +104,7 @@ const Root = ({ state, actions }) => {
               (data.isServiciosArchive && data.type)
             }
           />
-          <MenuNavbar />
+          {data.isBlog ? null : <MenuNavbar />}
           <ContactPopup />
           <ScrollDown2 />
 
@@ -154,7 +114,6 @@ const Root = ({ state, actions }) => {
                 <ContainerHeader />
                 <Home />
               </ContentPage>
-              {/* <FooterPage /> */}
             </>
           )}
           {data.isServiciosArchive && (
@@ -196,7 +155,6 @@ const Root = ({ state, actions }) => {
           )}
         </>
       )}
-      {/* <iframe src="https://tactic-center.vercel.app"></iframe> */}
       <FooterPage />
     </>
   );

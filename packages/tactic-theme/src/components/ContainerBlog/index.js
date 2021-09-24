@@ -29,7 +29,7 @@ const ContainerBlog = ({
     <>
       <Container key={key} className={className}>
         <Link href={link}>
-          <Img src={media.source_url} loading="lazy" />
+          <Img src={media?.source_url} loading="lazy" />
           <Overlay background={background} />
           <InfoBlog>
             <CategoryBlog className="text__italic">{category}</CategoryBlog>

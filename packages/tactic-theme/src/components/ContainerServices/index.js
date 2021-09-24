@@ -13,33 +13,10 @@ import {
 } from "./styles";
 
 gsap.registerPlugin(ScrollTrigger);
+
 const ContainerServices = ({ state }) => {
-  const parallaxRef = useRef(null);
-  const [translate, setTranslate] = useState(0);
-  const parallax = document.getElementById("parallax");
-  const content = document.getElementById("content");
   const containerServiceRef = useRef(null);
 
-  // const windowSize = useWindowSize();
-  // const dataAnimation = {
-  //   ease: 0.1,
-  //   curr: 0,
-  //   prev: 0,
-  //   rounded: 0,
-  // };
-
-  // const smoothScroll = useCallback(() => {
-  //   dataAnimation.curr = window.scrollY;
-  //   dataAnimation.prev +=
-  //     (dataAnimation.curr - dataAnimation.prev) * dataAnimation.ease;
-  //   dataAnimation.rounded = Math.round((dataAnimation.prev * 100) / 100);
-  //   requestAnimationFrame(() => smoothScroll());
-  // }, [dataAnimation]);
-
-  // useEffect(() => {
-  //   requestAnimationFrame(() => smoothScroll());
-  // }, []);
-  // if (window.innerWidth > 768) {
   const initScrollAnimation = useCallback(() => {
     gsap.to(containerServiceRef.current, {
       scrollTrigger: {
@@ -59,7 +36,6 @@ const ContainerServices = ({ state }) => {
   useEffect(() => {
     initScrollAnimation();
   }, [initScrollAnimation]);
-  // }
 
   return (
     <ContainerParallax

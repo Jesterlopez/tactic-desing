@@ -1,13 +1,12 @@
 import React from "react";
 import { connect } from "frontity";
+import Logo from '../../assets/tactic-digital.png'
 import { Container } from "./styles";
 
-const PlaceholderLazyLoad = ({ state, background }) => {
-  const data = state.source.get(state.router.link);
-
+const PlaceholderLazyLoad = ({ state }) => {
   return (
     <Container>
-      <img src="https://tactic-center.com/wp-content/uploads/2018/04/Logo-TC.png" />
+      <img src={Logo} />
     </Container>
   );
 };

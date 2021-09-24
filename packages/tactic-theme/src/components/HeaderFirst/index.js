@@ -8,11 +8,8 @@ import ColorHeader from "../ColorHeader";
 import { HeaderContainer, HeaderRight, ContainerFullWidth } from "./styles";
 
 const ContainerHeader = ({ state }) => {
-  const data = state.source.get(state.router.link);
   const dataPage = state.source.page[51];
-
   return (
-    <>
       <HeaderContainer id="header">
         <ColorHeader element="home" className="slideInRightHome animation" />
         <ScrollDown />
@@ -29,7 +26,6 @@ const ContainerHeader = ({ state }) => {
           <HelloComponent />
         </ContainerFullWidth>
       </HeaderContainer>
-    </>
   );
 };
 

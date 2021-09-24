@@ -17,26 +17,6 @@ const FilterBlog = ({ state, actions, children, key }) => {
           {children}
         </a>
       </Container>
-      {/* <ContainerFluid>
-        {allBlog.map((blog) => {
-          const idTags = Object.values(blog.tags);
-          return idTags.map((tag) => {
-            return (
-              <a
-                className="tags"
-                onClick={(e) => {
-                  e.preventDefault();
-                  console.log(e.target.text);
-                }}
-                href="#"
-              >
-                {state.source.tag[tag].name}
-              </a>
-            );
-          });
-        })}
-
-      </ContainerFluid> */}
     </>
   );
 };

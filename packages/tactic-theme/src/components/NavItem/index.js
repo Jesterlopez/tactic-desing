@@ -9,7 +9,7 @@ const NavItem = () => {
     <>
       <div style={{ height: "90", overflow: "hidden" }}>
         <Item className="fadeInUp fadeObserve link__menu ">
-          <NavLink background="red" href="/nosotros">
+          <NavLink options="home" background="red" href="/nosotros">
             Nosotros
           </NavLink>
         </Item>

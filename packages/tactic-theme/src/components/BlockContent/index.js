@@ -38,9 +38,10 @@ const BlockContent = ({ children, className, state }) => {
       ? fadeOut(".fadeIn")
       : fadeIn(".fadeIn");
   }
+  
   return (
     <>
-      {data.type === "blog" ? (
+      {data.type === "blog" ? 
         <BlockCont
           className={
             "fadeInUp animation padding__right__none padding__mobile padding__left__none " +
@@ -49,7 +50,7 @@ const BlockContent = ({ children, className, state }) => {
 
           {children}
         </BlockCont>
-      ) : (
+      : 
         <BlockCont
           className={
             "fadeInUp fadeObserve padding__right__none padding__mobile padding__left__none " +
@@ -58,7 +59,7 @@ const BlockContent = ({ children, className, state }) => {
             
           {children}
         </BlockCont>
-      )}
+      }
     </>
   );
 };

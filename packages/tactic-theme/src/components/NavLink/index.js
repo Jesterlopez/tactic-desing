@@ -1,10 +1,8 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import { connect } from "frontity";
 import { Anchor, Mask, NameLink } from "./styles";
 
 const NavLink = ({ href, children, actions, state, className, background }) => {
-  const data = state.source.get(state.router.link);
-  // estado del menu
   const newState = state.theme.isActive;
   // compruebo el estado del menubar, si esta abierto o no
   const [isOpen, setIsOpen] = useState(false);
@@ -18,6 +16,7 @@ const NavLink = ({ href, children, actions, state, className, background }) => {
     }
   }, [isOpen]);
   return (
+    
     <Anchor
       href={href}
       onClick={(e) => {
