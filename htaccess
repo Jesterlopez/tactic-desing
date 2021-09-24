@@ -2,10 +2,10 @@
 
   RewriteEngine On
   RewriteBase /
-  RewriteRule ^$ http://tactic-build.tactic-center.com:3000/ [P,L]
+  RewriteRule ^$ https://tactic-build.tactic-center.com:3000/ [P,L]
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{REQUEST_FILENAME} !-l
-  RewriteRule ^(.*)$ http://tactic-build.tactic-center.com:3000/$1 [P,L]
+  RewriteRule ^(.*)$ https://tactic-build.tactic-center.com:3000/$1 [P,L]
 
 </IfModule>

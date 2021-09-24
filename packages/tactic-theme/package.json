@@ -1,13 +1,13 @@
 {
   "name": "tactic-theme",
   "version": "1.0.0",
-  "description": "Tactic Center",
+  "description": "Tactic Digital",
   "keywords": [
     "frontity",
     "frontity-theme"
   ],
   "license": "Apache-2.0",
   "dependencies": {
-    "frontity": "^1.15.0"
+    "frontity": "^1.17.1"
   }
 }
