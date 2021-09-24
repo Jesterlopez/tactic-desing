@@ -100,7 +100,7 @@ const Home = ({ state }) => {
             <div className="container__left imagen__content">
               <div className="parallax__none fadeObserve slideOutRight">
                 <Parallax
-                  bgImage={home.acf.imagen_seccion.url}
+                  bgImage={home.acf.seccion_con_proyecto.imagen_proyecto.url}
                   strength={150}
                   style={{ height: 300 }}
                 ></Parallax>
