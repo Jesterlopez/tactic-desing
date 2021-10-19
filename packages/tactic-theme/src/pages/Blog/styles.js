@@ -84,6 +84,20 @@ export const ContainerBlogs = styled.section`
   background: #ffffff;
   /* padding: 5vh 0; */
   box-sizing: border-box;
+
+  & div {
+    width: 100%;
+    flex-wrap: wrap;
+    display: flex;
+  }
+/* 
+  & .infinite-scroll-component__outerdiv {
+    width: 33.3%;
+
+    & .infinite-scroll-component{
+      width: 100%;
+    }
+  } */
 `;
 
 export const ContainerClients = styled.div`

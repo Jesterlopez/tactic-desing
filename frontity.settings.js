@@ -19,7 +19,7 @@ const settings = {
         source: {
           api: 'https://admin-tactic.tactic-center.com/wp-json/',
           params: {
-            per_page: 12
+            per_page: 9
           },
           postTypes: [
             {

@@ -7,10 +7,9 @@ import PlaceholderLazyLoad from "../../components/PlaceholderLazyLoad";
 import SearchBar from "../../components/SearchBar";
 import { ScrollDown2 } from "../../components/ScrollDown";
 import FilterBlog from "../../components/FilterBlog";
+import InfiniteScroll from 'react-infinite-scroll-component'
 
-const ContainerBlog = React.lazy(() =>
-  import("../../components/ContainerBlog")
-);
+import ContainerBlog from '../../components/ContainerBlog'
 import {
   ContainerHeader,
   ContainerLeft,
@@ -22,8 +21,25 @@ import {
   ContainerCategories
 } from "./styles";
 
-const Blog = ({ state }) => {
-  
+const Blog = ({ state, actions }) => {
+  const { next, totalPages } = state.source.get(state.router.link);
+
+  let data = state.source.get(state.router.link)
+  const [nextPage, setNextPage] = useState(2)
+  const [hasMore, setHasMore] = useState(true)
+
+  useEffect(() => {
+    data.next = `/blog/page/${nextPage}/`
+    nextPage > totalPages && setHasMore(false)
+  }, [next, nextPage]);
+
+  const handleNextPage = () => {
+    setTimeout(() => {
+      actions.source.fetch(next);
+      setNextPage(nextPage + 1)
+    }, 1000);
+  }
+
   const [blogFilter, setBlogFilter] = useState([]);
   
   const categories = Object.values(state.source.category)
@@ -93,11 +109,18 @@ const Blog = ({ state }) => {
             </FilterBlog>;
       })
       }
-      </ContainerCategories>
+            </ContainerCategories>
 
       {/* filtrar por etiquetas */}
 
       <ContainerBlogs>
+      <InfiniteScroll 
+          hasMore={hasMore} 
+          dataLength={searchBlog.length} 
+          next={handleNextPage}
+          loader={<PlaceholderLazyLoad />}
+          style={{ display: 'flex'}}
+          >
       {!searchBlog.length > 0 && (
           <MessageInfo className="text__italic">
             No hay resultados relacionados con
@@ -109,7 +132,6 @@ const Blog = ({ state }) => {
         blogFilter?.length > 0 ? (
           blogFilter?.reverse().map((blog) => {
             const idCategories = Object.values(blog.categories);
-  
             return (
               <Suspense key={blog.id} fallback={<PlaceholderLazyLoad />}>
                 <ContainerBlog
@@ -129,26 +151,27 @@ const Blog = ({ state }) => {
           })
         ) 
         :
-        searchBlog.reverse().map((blog) => {
-        const idCategories = Object.values(blog.categories);
-
-        return (
-          <Suspense key={blog.id} fallback={<PlaceholderLazyLoad />}>
-            <ContainerBlog
-              category={idCategories.map((el) => {
-                return idCategories.length > 1
-                  ? state.source.category[el].name + " "
-                  : state.source.category[el].name;
-              })}
-              title={blog.title.rendered}
-              image={blog.featured_media}
-              introBlog={blog.excerpt.rendered}
-              link={blog.link}
-              background={blog.acf.background}
-            />
-          </Suspense>
-        );
-        })}
+              searchBlog.reverse().map((blog) => {
+              const idCategories = Object.values(blog.categories);
+              return (
+            
+                  <ContainerBlog
+                    category={idCategories.map((el) => {
+                      return idCategories.length > 1
+                        ? state.source.category[el].name + " "
+                        : state.source.category[el].name;
+                    })}
+                    title={blog.title.rendered}
+                    image={blog.featured_media}
+                    introBlog={blog.excerpt.rendered}
+                    link={blog.link}
+                    background={blog.acf.background}
+                    key={blog.title.rendered}
+                  />
+              );
+              })
+            }
+            </InfiniteScroll>
       </ContainerBlogs>
     </>
   );
