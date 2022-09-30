@@ -1,71 +1,71 @@
-import { connect, Head } from "frontity";
-import React, { useEffect, useState } from "react";
-import HeaderPage from "./components/HeaderPage";
-import BorderPage from "./components/BorderPage";
-import MenuNavbar from "./components/MenuNavbar";
-import MenuToggleMobile from "./components/MenuToggleMobile";
-import ContainerHeader from "./components/HeaderFirst";
-import FooterPage from "./components/FooterPage";
-import ContentPage from "./components/ContentPage";
-import Error404 from "./components/404";
-import Home from "./components/Home";
-import Title from "./title";
-import Servicios from "./pages/Servicios";
-import Preloader from "./components/Loading";
-import Nosotros from "./pages/Nosotros";
-import Blog from "./pages/Blog";
-import PostSingle from "./components/PostSingle";
-import ContactPopup from "./components/ContactPopup";
-import { ScrollDown2 } from "./components/ScrollDown";
+import { connect, Head } from 'frontity'
+import React, { useEffect, useState } from 'react'
+import HeaderPage from './components/HeaderPage'
+import BorderPage from './components/BorderPage'
+import MenuNavbar from './components/MenuNavbar'
+import MenuToggleMobile from './components/MenuToggleMobile'
+import ContainerHeader from './components/HeaderFirst'
+import FooterPage from './components/FooterPage'
+import ContentPage from './components/ContentPage'
+import Error404 from './components/404'
+import Home from './components/Home'
+import Title from './title'
+import Servicios from './pages/Servicios'
+import Preloader from './components/Loading'
+import Nosotros from './pages/Nosotros'
+import Blog from './pages/Blog'
+import PostSingle from './components/PostSingle'
+import ContactPopup from './components/ContactPopup'
+import { ScrollDown2 } from './components/ScrollDown'
 
-import { Globalstyle } from "./components/Styles/styles";
+import { Globalstyle } from './components/Styles/styles'
 const Root = ({ state, actions }) => {
-  const data = state.source.get(state.router.link);
-  const data2 = state.source;
-  const id = data.id;
+  const data = state.source.get(state.router.link)
+  const data2 = state.source
+  const id = data.id
 
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
     setTimeout(() => {
-      setLoading(false);
-    }, 500);
-  }, []);
+      setLoading(false)
+    }, 500)
+  }, [])
 
   useEffect(() => {
-    actions.source.fetch("/inicio");
-    window.addEventListener("scroll", scrollAnimations);
+    actions.source.fetch('/inicio')
+    window.addEventListener('scroll', scrollAnimations)
 
     return () => {
-      window.removeEventListener("scroll", scrollAnimations);
-    };
-  }, []);
+      window.removeEventListener('scroll', scrollAnimations)
+    }
+  }, [])
 
   const scrollAnimations = () => {
     // referencia al elemento a animar
-    const img = document.querySelectorAll(".fadeObserve");
+    const img = document.querySelectorAll('.fadeObserve')
 
     const callback = (entries, observer) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("animation");
+          entry.target.classList.add('animation')
         }
-      });
-    };
+      })
+    }
     const options = {
       root: null,
-      rootMargin: "-100px",
-      threshold: 0,
-    };
+      rootMargin: '-100px',
+      threshold: 0
+    }
 
-    const Observer = new IntersectionObserver(callback, options);
+    const Observer = new IntersectionObserver(callback, options)
 
     img.forEach((img) => {
       setTimeout(() => {
-        Observer.observe(img);
-      }, 500);
-    });
-  };
+        Observer.observe(img)
+      }, 500)
+    })
+  }
 
   return (
     <>
@@ -85,19 +85,23 @@ const Root = ({ state, actions }) => {
       </Head>
       <Globalstyle />
       <Title />
-      {loading ? (
+      {loading
+        ? (
         <Preloader />
-      ) : (
+          )
+        : (
         <>
           <BorderPage />
-          {data.isBlog ? (
+          {data.isBlog
+            ? (
             <MenuToggleMobile className="d__none" />
-          ) : (
+              )
+            : (
             <MenuToggleMobile />
-          )}
+              )}
           <HeaderPage
             namePage={
-              (data.isError && "Not Found") ||
+              (data.isError && 'Not Found') ||
               (data.isPage && data2.page[id].title.rendered) ||
               (data.isPost && data2.post[id].title.rendered) ||
               (data.isBlogArchive && data.type) ||
@@ -116,7 +120,14 @@ const Root = ({ state, actions }) => {
               </ContentPage>
             </>
           )}
-          {data.isServiciosArchive && (
+          {/* {data.isServiciosArchive && (
+            <>
+              <ContentPage>
+                <Servicios />
+              </ContentPage>
+            </>
+          )} */}
+          {data.isPage && data2.page[id].slug === 'servicios' && (
             <>
               <ContentPage>
                 <Servicios />
@@ -137,7 +148,7 @@ const Root = ({ state, actions }) => {
               </ContentPage>
             </>
           )}
-          {data.isPage && data2.page[id].slug == "nosotros" && (
+          {data.isPage && data2.page[id].slug === 'nosotros' && (
             <>
               <ContentPage>
                 <Nosotros />
@@ -154,10 +165,10 @@ const Root = ({ state, actions }) => {
             </>
           )}
         </>
-      )}
+          )}
       <FooterPage />
     </>
-  );
-};
+  )
+}
 
-export default connect(Root);
+export default connect(Root)

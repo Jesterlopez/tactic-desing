@@ -1,8 +1,8 @@
-import React from "react";
-import { connect } from "frontity";
-import TitleHeader from "../../components/TitleHeader";
-import ColorHeader from "../../components/ColorHeader";
-import { Parallax } from "react-parallax";
+import React from 'react'
+import { connect } from 'frontity'
+import TitleHeader from '../../components/TitleHeader'
+import ColorHeader from '../../components/ColorHeader'
+import { Parallax } from 'react-parallax'
 
 import {
   HeaderContainer,
@@ -25,12 +25,14 @@ import {
   ContainerParagraph,
   Link,
   TitleItalic,
-  ContainerImgHeader,
-} from "./styles";
-import { IconArrowRightButton, IconWaveQuote } from "../../components/Icons";
+  ContainerImgHeader
+} from './styles'
+import { IconArrowRightButton, IconWaveQuote } from '../../components/Icons'
 
 const Servicios = ({ state }) => {
-  const data = state.source.get(state.router.link);
+  const data = state.source.get(state.router.link)
+  const pageData = state.source.page[data.id]
+
   return (
     <>
       <HeaderContainer>
@@ -48,7 +50,7 @@ const Servicios = ({ state }) => {
           <Content>
             <div
               className="fadeInUp animation"
-              style={{ height: "auto", overflowY: "hidden" }}
+              style={{ height: 'auto', overflowY: 'hidden' }}
             >
               <Title className="fadeInUp animation">
                 You have a good idea?
@@ -67,7 +69,7 @@ const Servicios = ({ state }) => {
           <ContainerImgHeader className="animation slideDownImg">
             <img
               className="header__img"
-              src="https://tactic-center.com/wp-content/uploads/2020/10/imagen-principal-1080x675.jpg"
+              src={pageData?.acf?.imagen_hero?.url}
             />
           </ContainerImgHeader>
         </Container>
@@ -98,7 +100,7 @@ const Servicios = ({ state }) => {
         <ContainerFullWidth className="left">
           <Title
             className="fadeObserve fadeInUp"
-            style={{ height: "auto", overflow: "hidden" }}
+            style={{ height: 'auto', overflow: 'hidden' }}
           >
             digital for equity
             <span className="text__italic">investment.</span>
@@ -106,7 +108,7 @@ const Servicios = ({ state }) => {
         </ContainerFullWidth>
         <ContainerLeft className="fadeObserve fadeInUp">
           <Tag>1</Tag>
-          <div style={{ height: "auto", overflowY: "hidden" }}>
+          <div style={{ height: 'auto', overflowY: 'hidden' }}>
             <Title className="fadeObserve fadeInUp mid">
               Work here in total immersion
             </Title>
@@ -120,7 +122,7 @@ const Servicios = ({ state }) => {
 
         <ContainerCenter className="fadeObserve fadeInUp">
           <Tag>2</Tag>
-          <div style={{ height: "auto", overflowY: "hidden" }}>
+          <div style={{ height: 'auto', overflowY: 'hidden' }}>
             <Title className="fadeObserve fadeInUp mid">
               Real skills at your fingertips.
             </Title>
@@ -134,7 +136,7 @@ const Servicios = ({ state }) => {
         </ContainerCenter>
         <ContainerRight className="fadeObserve fadeInUp">
           <Tag>3</Tag>
-          <div style={{ height: "auto", overflowY: "hidden" }}>
+          <div style={{ height: 'auto', overflowY: 'hidden' }}>
             <Title className="fadeObserve fadeInUp mid">
               An entrepreneurial ecosystem.
             </Title>
@@ -151,10 +153,10 @@ const Servicios = ({ state }) => {
       <ContainerImgParallax>
         <Parallax
           bgImage={
-            "https://www.wokine.com/wp-content/themes/wokine/assets/pages/ideas/visuel_full.jpg"
+            'https://www.wokine.com/wp-content/themes/wokine/assets/pages/ideas/visuel_full.jpg'
           }
           strength={100}
-          style={{ height: "100vh" }}
+          style={{ height: '100vh' }}
         ></Parallax>
       </ContainerImgParallax>
       <Section className="center">
@@ -164,7 +166,7 @@ const Servicios = ({ state }) => {
         <ContainerFullWidth>
           <div
             className="text__center"
-            style={{ height: "auto", overflow: "hidden" }}
+            style={{ height: 'auto', overflow: 'hidden' }}
           >
             <Title className="big center fadeObserve fadeInUp">
               Startups supported by
@@ -176,35 +178,35 @@ const Servicios = ({ state }) => {
           <Support className="fadeObserve fadeInUp" href="#">
             <img
               className="fadeObserve fadeInUp"
-              style={{ animationDelay: ".5s" }}
+              style={{ animationDelay: '.5s' }}
               src="https://www.wokine.com/wp-content/themes/wokine/assets/pages/ideas/startup-enfrenzy.png"
             />
           </Support>
           <Support className="fadeObserve fadeInUp" href="#">
             <img
               className="fadeObserve fadeInUp"
-              style={{ animationDelay: ".7s" }}
+              style={{ animationDelay: '.7s' }}
               src="https://www.wokine.com/wp-content/themes/wokine/assets/pages/ideas/startup-livekult.png"
             />
           </Support>
           <Support className="fadeObserve fadeInUp" href="#">
             <img
               className="fadeObserve fadeInUp"
-              style={{ animationDelay: ".8s" }}
+              style={{ animationDelay: '.8s' }}
               src="https://www.wokine.com/wp-content/themes/wokine/assets/pages/ideas/startup-socialtrends.png"
             />
           </Support>
           <Support className="fadeObserve fadeInUp" href="#">
             <img
               className="fadeObserve fadeInUp"
-              style={{ animationDelay: "1s" }}
+              style={{ animationDelay: '1s' }}
               src="https://www.wokine.com/wp-content/themes/wokine/assets/pages/ideas/startup-makemetry.png"
             />
           </Support>
           <Support className="fadeObserve fadeInUp" href="#">
             <img
               className="fadeObserve fadeInUp"
-              style={{ animationDelay: "1.2s" }}
+              style={{ animationDelay: '1.2s' }}
               src="https://www.wokine.com/wp-content/themes/wokine/assets/pages/ideas/startup-bazar.png"
             />
           </Support>
@@ -236,7 +238,7 @@ const Servicios = ({ state }) => {
         </ContainerParagraph>
       </Section>
     </>
-  );
-};
+  )
+}
 
-export default connect(Servicios);
+export default connect(Servicios)

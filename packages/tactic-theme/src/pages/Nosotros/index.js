@@ -1,19 +1,19 @@
-import React, { useRef, useEffect, useCallback } from "react";
-import { connect } from "frontity";
-import { IconWaveQuote } from "../../components/Icons";
-import TitleHeader from "../../components/TitleHeader";
-import BlockContent from "../../components/BlockContent";
-import Title from "../../components/Titles";
-import ItemTimeline from "../../components/ItemTimeline";
-import ServiceItem from "../../components/ServiceItem";
-import AnchorLink from "../../components/AnchorLink";
-import Client from "../../components/Client";
-import ColorHeader from "../../components/ColorHeader";
+import React, { useRef, useEffect, useCallback } from 'react'
+import { connect } from 'frontity'
+import { IconWaveQuote } from '../../components/Icons'
+import TitleHeader from '../../components/TitleHeader'
+import BlockContent from '../../components/BlockContent'
+import Title from '../../components/Titles'
+import ItemTimeline from '../../components/ItemTimeline'
+import ServiceItem from '../../components/ServiceItem'
+import AnchorLink from '../../components/AnchorLink'
+import Client from '../../components/Client'
+import ColorHeader from '../../components/ColorHeader'
 
-import gsap from "gsap";
-import { Parallax } from "react-parallax";
+import gsap from 'gsap'
+import { Parallax } from 'react-parallax'
 
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 
 import {
   ContainerHeader,
@@ -32,86 +32,86 @@ import {
   ContainerImage,
   ContainerImageBig,
   ContainerClients,
-  ContainerClient,
-} from "./styles";
+  ContainerClient
+} from './styles'
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger)
 const Nosotros = ({ state }) => {
-  const data = state.source.get(state.router.link);
-  const pageData = state.source.page[data.id];
-  const InfoAcf = pageData.acf.titulo_seccion_certificados;
-  const containerYellowRef = useRef(null);
-  const containerLeftRef = useRef(null);
-  const containerLeftRef2 = useRef(null);
-  const blockTwoRef = useRef(null);
+  const data = state.source.get(state.router.link)
+  const pageData = state.source.page[data.id]
+  const InfoAcf = pageData.acf.titulo_seccion_certificados
+  const containerYellowRef = useRef(null)
+  const containerLeftRef = useRef(null)
+  const containerLeftRef2 = useRef(null)
+  const blockTwoRef = useRef(null)
 
   const initScrollAnimation = useCallback(() => {
     gsap.to(containerYellowRef.current, {
       scrollTrigger: {
         trigger: !containerYellowRef.current,
         // start: "center 80%",
-        scrub: true,
+        scrub: true
       },
-      left: "100%",
+      left: '100%',
       duration: 0.8,
       stagger: {
-        from: "center",
-        amount: 0.9,
-      },
-    });
+        from: 'center',
+        amount: 0.9
+      }
+    })
     gsap.to(blockTwoRef.current, {
       scrollTrigger: {
         trigger: !blockTwoRef.current,
-        scrub: true,
+        scrub: true
       },
-      translateY: "200%",
+      translateY: '200%',
       duration: 0.2,
       stagger: {
-        from: "center",
-        amount: 0.1,
-      },
-    });
+        from: 'center',
+        amount: 0.1
+      }
+    })
     gsap.to(containerLeftRef.current, {
       scrollTrigger: {
         trigger: !containerLeftRef.current,
         // start: "center 80%",
-        scrub: true,
+        scrub: true
       },
-      translateY: "-50%",
+      translateY: '-50%',
       duration: 0.8,
       stagger: {
-        from: "center",
-        amount: 0.9,
-      },
-    });
+        from: 'center',
+        amount: 0.9
+      }
+    })
     gsap.to(containerLeftRef2.current, {
       scrollTrigger: {
         trigger: !containerLeftRef2.current,
         // start: "center 80%",
 
-        scrub: true,
+        scrub: true
       },
-      translateY: "-40%",
+      translateY: '-40%',
       duration: 0.8,
       stagger: {
-        from: "center",
-        amount: 0.9,
-      },
-    });
-  }, []);
+        from: 'center',
+        amount: 0.9
+      }
+    })
+  }, [])
 
   useEffect(() => {
-    initScrollAnimation();
+    initScrollAnimation()
     // const animation = document.querySelectorAll(".fadeInUp");
     // animation.forEach((e, i) => {
     //   e.classList.add("animation");
     //   e.style.animationDelay = `calc(${i + 1}00ms)`;
     // });
-  }, [initScrollAnimation]);
+  }, [initScrollAnimation])
 
   return (
     <>
-      <ContainerHeader style={{ background: "#f8f8f8" }}>
+      <ContainerHeader style={{ background: '#f8f8f8' }}>
         <ColorYellow ref={containerYellowRef}></ColorYellow>
         <ColorHeader element="nosotros" className="slideLeftAbout animation" />
         <TitleHeader
@@ -138,7 +138,7 @@ const Nosotros = ({ state }) => {
       <ContainerSection className="margin__top__negative">
         <ContainerLeft
           ref={containerLeftRef}
-          style={{ transform: "translateY(40%)" }}
+          style={{ transform: 'translateY(40%)' }}
         >
           <BlockContent id="BlockContent" className="padding__left">
             <HeadBlockContent>
@@ -152,7 +152,7 @@ const Nosotros = ({ state }) => {
             <BodyContent>
               <p
                 dangerouslySetInnerHTML={{
-                  __html: pageData.acf.mision.contenido,
+                  __html: pageData.acf.mision.contenido
                 }}
               ></p>
             </BodyContent>
@@ -167,7 +167,7 @@ const Nosotros = ({ state }) => {
             <BodyContent>
               <p
                 dangerouslySetInnerHTML={{
-                  __html: pageData.acf.vision.contenido,
+                  __html: pageData.acf.vision.contenido
                 }}
               ></p>
             </BodyContent>
@@ -177,14 +177,14 @@ const Nosotros = ({ state }) => {
         <ContainerRight className="d__none__mobile">
           <img
             className="blockOne"
-            style={{ objectFit: "contain" }}
+            style={{ objectFit: 'contain' }}
             src="https://www.wokine.com/wp-content/themes/wokine/assets/pages/philo/brique-partenaire.svg"
           />
 
           <img
             className="blockTwo"
             ref={blockTwoRef}
-            style={{ objectFit: "contain" }}
+            style={{ objectFit: 'contain' }}
             src="https://www.wokine.com/wp-content/themes/wokine/assets/pages/philo/brique-wokine.svg"
           />
         </ContainerRight>
@@ -200,14 +200,14 @@ const Nosotros = ({ state }) => {
                   content={time.contenido}
                 />
               </li>
-            );
+            )
           })}
         </ul>
       </ContainerSection>
       <ContainerSection>
         <ContainerLeft
           ref={containerLeftRef2}
-          style={{ transform: "translateY(70%)" }}
+          style={{ transform: 'translateY(70%)' }}
           className="right"
         >
           <BlockContent id="BlockContent" className="padding__left">
@@ -215,7 +215,7 @@ const Nosotros = ({ state }) => {
               <Title className="dark">
                 <span
                   dangerouslySetInnerHTML={{
-                    __html: pageData.acf.primer_seccion.titulos,
+                    __html: pageData.acf.primer_seccion.titulos
                   }}
                 ></span>
                 {/* <span>
@@ -227,7 +227,7 @@ const Nosotros = ({ state }) => {
             <BodyContent>
               <span
                 dangerouslySetInnerHTML={{
-                  __html: pageData.acf.primer_seccion.contenido,
+                  __html: pageData.acf.primer_seccion.contenido
                 }}
               ></span>
               {/* <p className="text__italic content__italic">
@@ -254,14 +254,14 @@ const Nosotros = ({ state }) => {
             <Parallax
               bgImage={pageData.acf.primer_seccion.imagen.url}
               strength={200}
-              style={{ height: "100%" }}
+              style={{ height: '100%' }}
             ></Parallax>
             {/* <img src="https://tactic-center.com/wp-content/uploads/2018/05/Misión-y-Visión-Nosotros-min.jpg" /> */}
           </ContainerImage>
         </ContainerRight>
       </ContainerSection>
       <ContainerSection className="padding__none H100vh H90vh">
-        <ContainerLeft className="withImg" style={{ width: "45%" }}>
+        <ContainerLeft className="withImg" style={{ width: '45%' }}>
           <ContainerImageBig className="fadeObserve fadeInLeft">
             <img src={pageData.acf.segunda_seccion.imagen.url} />
           </ContainerImageBig>
@@ -269,7 +269,7 @@ const Nosotros = ({ state }) => {
         <Title className="center__section title__mobile">
           <span
             dangerouslySetInnerHTML={{
-              __html: pageData.acf.segunda_seccion.titulos,
+              __html: pageData.acf.segunda_seccion.titulos
             }}
           ></span>
         </Title>
@@ -279,7 +279,7 @@ const Nosotros = ({ state }) => {
             <BodyContent style={{ order: 1 }}>
               <span
                 dangerouslySetInnerHTML={{
-                  __html: pageData.acf.segunda_seccion.contenido,
+                  __html: pageData.acf.segunda_seccion.contenido
                 }}
               ></span>
             </BodyContent>
@@ -289,7 +289,7 @@ const Nosotros = ({ state }) => {
       <ContainerSection className="padding__top" style={{ paddingBottom: 0 }}>
         <ContainerLeft className="margin__bottom__100">
           <BlockContent id="BlockContent" className="order__1 padding__left">
-            <HeadBlockContent style={{ paddingLeft: "27%" }}>
+            <HeadBlockContent style={{ paddingLeft: '27%' }}>
               <Title className="title__custom title__mobile dark">
                 Excelencia
                 <span className="text__italic">Excelencia</span>
@@ -300,7 +300,7 @@ const Nosotros = ({ state }) => {
         <ContainerRight className="order__2 margin__bottom__100">
           <BodyContent
             className="padding__left__10 padding__left__20"
-            style={{ width: "100%", marginRight: "20%", paddingRight: 0 }}
+            style={{ width: '100%', marginRight: '20%', paddingRight: 0 }}
           >
             <p
               className="text__italic content__italic"
@@ -319,7 +319,7 @@ const Nosotros = ({ state }) => {
             </p>
           </BodyContent>
         </ContainerRight>
-        <ContainerFullWidth style={{ height: "350px" }} className="order__2 ">
+        <ContainerFullWidth style={{ height: '350px' }} className="order__2 ">
           <img
             className="fadeObserve slideDown"
             src={pageData.acf.tercer_seccion.imagen.url}
@@ -329,11 +329,11 @@ const Nosotros = ({ state }) => {
       <ContainerSection className="container__services">
         <ContainerLeft>
           <BlockContent id="BlockContent" className="padding__none">
-            <HeadBlockContent style={{ paddingLeft: "27%", color: "#fff" }}>
+            <HeadBlockContent style={{ paddingLeft: '27%', color: '#fff' }}>
               <Title className="title__custom title__mobile ">
                 <span
                   dangerouslySetInnerHTML={{
-                    __html: pageData.acf.seccion_objetivos.titulos,
+                    __html: pageData.acf.seccion_objetivos.titulos
                   }}
                 ></span>
               </Title>
@@ -354,17 +354,17 @@ const Nosotros = ({ state }) => {
                     })}
                   </ListService>
                 </ServiceItem>
-              );
+              )
             })}
           </Services>
         </ContainerRight>
       </ContainerSection>
       <ContainerSection
         style={{
-          background: "var(--color-blue)",
-          justifyContent: "space-between",
-          paddingTop: "10vh",
-          paddingBottom: "10vh",
+          background: 'var(--color-blue)',
+          justifyContent: 'space-between',
+          paddingTop: '10vh',
+          paddingBottom: '10vh'
         }}
       >
         <ContainerLeft>
@@ -373,12 +373,12 @@ const Nosotros = ({ state }) => {
             className="padding__left fadeObserve fadeInUp"
           >
             <HeadBlockContent
-              style={{ paddingLeft: "27%", color: "#fff", fontSize: "2rem" }}
+              style={{ paddingLeft: '27%', color: '#fff', fontSize: '2rem' }}
             >
               <Title className="title__customTwo">
                 <span
                   dangerouslySetInnerHTML={{
-                    __html: pageData.acf.ultima_seccion.titulos,
+                    __html: pageData.acf.ultima_seccion.titulos
                   }}
                 ></span>
               </Title>
@@ -388,25 +388,25 @@ const Nosotros = ({ state }) => {
         <ContainerRight
           className="order__2 width__100 padding__left__10 fadeInUp fadeObserve "
           style={{
-            color: "#fff",
-            flexWrap: "wrap",
-            width: "50%",
-            justifyContent: "left",
+            color: '#fff',
+            flexWrap: 'wrap',
+            width: '50%',
+            justifyContent: 'left'
           }}
         >
           <BodyContent
             style={{
-              width: "100%",
-              marginRight: "44%",
+              width: '100%',
+              marginRight: '44%',
               paddingRight: 0,
-              color: "#fff",
-              marginBottom: 0,
+              color: '#fff',
+              marginBottom: 0
             }}
           >
             <div
-              style={{ marginTop: "-30px", marginBottom: "30px" }}
+              style={{ marginTop: '-30px', marginBottom: '30px' }}
               dangerouslySetInnerHTML={{
-                __html: pageData.acf.ultima_seccion.contenido,
+                __html: pageData.acf.ultima_seccion.contenido
               }}
             ></div>
             <AnchorLink
@@ -431,7 +431,7 @@ const Nosotros = ({ state }) => {
         <Client />
       </ContainerClients>
     </>
-  );
-};
+  )
+}
 
-export default connect(Nosotros);
+export default connect(Nosotros)

@@ -26,12 +26,12 @@ const settings = {
               type: 'blog',
               endpoint: 'blog',
               archive: '/blog'
-            },
-            {
-              type: 'servicios',
-              endpoint: 'servicios',
-              archive: '/servicios'
             }
+            // {
+            //   type: 'servicios',
+            //   endpoint: 'servicios',
+            //   archive: '/servicios'
+            // }
           ]
         }
       }
