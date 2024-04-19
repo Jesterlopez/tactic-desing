@@ -43,7 +43,7 @@ const ContactPopup = ({ state, className, libraries }) => {
           <Title>Contáctanos</Title>
 
           <FormContainer>
-            <Html2React html={contactForm.content.rendered} />
+            <Html2React html={contactForm?.content?.rendered} />
           </FormContainer>
           <Content>
             En soumettant ce formulaire, j’accepte que l’adresse mail saisie

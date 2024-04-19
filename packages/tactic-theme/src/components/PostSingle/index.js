@@ -134,7 +134,7 @@ const PostSingle = ({ state, element }) => {
       </>
     );
   } else {
-    <div dangerouslySetInnerHTML={{ __html: post.content.rendered }}></div>;
+    <div dangerouslySetInnerHTML={{ __html: post?.content?.rendered }}></div>;
 
     return <p>No hay nada por mostrar</p>;
   }

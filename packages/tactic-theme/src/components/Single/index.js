@@ -13,7 +13,7 @@ function Single ({ state, actions, libraries }) {
   return (
     <>
       <div dangerouslySetInnerHTML={{ __html: { post } }}></div>
-      <Html2react html={post.content.rendered} />
+      <Html2react html={post?.content?.rendered} />
     </>
   )
 }
