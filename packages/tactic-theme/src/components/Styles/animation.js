@@ -1,4 +1,4 @@
-import { keyframes } from "styled-components";
+import { keyframes } from 'styled-components'
 
 export const fadeIn = keyframes`
     from{
@@ -8,7 +8,7 @@ export const fadeIn = keyframes`
     to{
         opacity: 1;
     }
-`;
+`
 export const fadeOutUp = keyframes`
     from{
         opacity: 1;
@@ -17,7 +17,7 @@ export const fadeOutUp = keyframes`
     to{
         opacity: 0;
     }
-`;
+`
 
 export const fadeInScroll = keyframes`
 from{
@@ -29,7 +29,7 @@ to{
   transform: translateY(0) rotate(-90deg);
   opacity: 1;
 }
-`;
+`
 
 export const slideLeft = keyframes`
     from{
@@ -40,7 +40,7 @@ export const slideLeft = keyframes`
         opacity: 1;
     }
     
-`;
+`
 
 export const slideInRightInitial = keyframes`
  from{
@@ -50,7 +50,7 @@ export const slideInRightInitial = keyframes`
         width: 0;
     }
 
-`;
+`
 
 export const fadeOut = keyframes`
   0%{
@@ -61,7 +61,7 @@ export const fadeOut = keyframes`
     transform: translateY(100px) rotate(-90deg);
   opacity: 0;
   }
-`;
+`
 
 export const fadeInUp = keyframes`
     from{
@@ -72,7 +72,7 @@ export const fadeInUp = keyframes`
         opacity: 1;
         transform: translateY(0);
     }
-`;
+`
 export const fadeInDown = keyframes`
     from{
         opacity: 1;
@@ -82,7 +82,7 @@ export const fadeInDown = keyframes`
         opacity: 0;
         transform: translateY(100px);
     }
-`;
+`
 export const fadeInLeft = keyframes`
     from{
         opacity: 0;
@@ -93,7 +93,7 @@ export const fadeInLeft = keyframes`
         transform: translateX(0);
     }
     
-`;
+`
 export const fadeInRight = keyframes`
     from{
         transform: translate(110%, '');
@@ -102,7 +102,7 @@ export const fadeInRight = keyframes`
         transform: translate(0%, '');
     }
     
-`;
+`
 export const fadeOutLeft = keyframes`
     from{
         opacity: 1;
@@ -113,7 +113,7 @@ export const fadeOutLeft = keyframes`
         transform: translateX(-40px);
     }
     
-`;
+`
 export const slideInRight = keyframes`
     from{
        width: 100%;
@@ -122,7 +122,7 @@ export const slideInRight = keyframes`
         width: 0;
     }
     
-`;
+`
 export const slideInRightHome = keyframes`
     0%{
        width: 100%;
@@ -137,7 +137,7 @@ export const slideInRightHome = keyframes`
 
     }
     
-`;
+`
 export const slideOutRight = keyframes`
     from{
        width: 0;
@@ -148,7 +148,7 @@ export const slideOutRight = keyframes`
       opacity: 1;
     }
     
-`;
+`
 
 export const slideOutRightMid = keyframes`
     from{
@@ -161,7 +161,7 @@ export const slideOutRightMid = keyframes`
         width: 0%;
 
     }
-`;
+`
 export const slideOutLeftMid = keyframes`
     from{
       left: 0;
@@ -173,7 +173,7 @@ export const slideOutLeftMid = keyframes`
         width: 0%;
 
     }
-`;
+`
 export const slideLeftAbout = keyframes`
     0%{
       left: 0;
@@ -185,17 +185,18 @@ export const slideLeftAbout = keyframes`
       left: 342px;
       opacity: 0;
     }
-`;
+`
 export const slideDown = keyframes`
-    from{
+    from {
        height: 0;
        opacity: 0;
     }
-    to{
-        height: 300px;
+    to {
+      height: 300px;
       opacity: 1;
     }
-`;
+`
+
 export const slideUpContact = keyframes`
     from{
       transform: translateY(100%);
@@ -204,7 +205,7 @@ export const slideUpContact = keyframes`
       transform: translateY(0%);
 
     }
-`;
+`
 export const slideDownImg = keyframes`
     from{
        height: 0;
@@ -214,7 +215,7 @@ export const slideDownImg = keyframes`
         height: 100%;
       opacity: 1;
     }
-`;
+`
 
 export const HLeftMove = keyframes`
    0% {
@@ -226,7 +227,7 @@ export const HLeftMove = keyframes`
    100% {
     stroke-dashoffset: 0px;
 }
-`;
+`
 
 export const HMidMove = keyframes`
 
@@ -241,7 +242,7 @@ export const HMidMove = keyframes`
    }   
    100% {
      stroke-dashoffset: 0px;   }
-`;
+`
 
 export const HRightMove = keyframes`
   0% {
@@ -256,7 +257,7 @@ export const HRightMove = keyframes`
   100% {
     stroke-dashoffset: 0px;
   }
-`;
+`
 
 export const ELeftMove = keyframes`
   0% {
@@ -271,7 +272,7 @@ export const ELeftMove = keyframes`
   100% {
     stroke-dashoffset: 0px;
   }
-`;
+`
 export const ETopMove = keyframes`
   0% {
     stroke-dashoffset: 47px;
@@ -286,7 +287,7 @@ export const ETopMove = keyframes`
     stroke-dashoffset: 0px;
   }
 
-`;
+`
 export const EMidMove = keyframes`
  0% {
     stroke-dashoffset: 42px;
@@ -301,7 +302,7 @@ export const EMidMove = keyframes`
     stroke-dashoffset: 0px;
   }
 
-`;
+`
 export const EBottomMove = keyframes`
 0% {
     stroke-dashoffset: 47px;
@@ -316,7 +317,7 @@ export const EBottomMove = keyframes`
     stroke-dashoffset: 0px;
   }
 
-`;
+`
 export const LOneLongMove = keyframes`
 0% {
     stroke-dashoffset: 124px;
@@ -331,7 +332,7 @@ export const LOneLongMove = keyframes`
     stroke-dashoffset: 0px;
   }
 
-`;
+`
 export const LOneShortMove = keyframes`
 0% {
     stroke-dashoffset: 44px;
@@ -346,7 +347,7 @@ export const LOneShortMove = keyframes`
     stroke-dashoffset: 0px;
   }
 
-`;
+`
 export const LTwoLongMove = keyframes`
  0% {
     stroke-dashoffset: 124px;
@@ -361,7 +362,7 @@ export const LTwoLongMove = keyframes`
     stroke-dashoffset: 0px;
   }
 
-`;
+`
 export const LTwoShortMove = keyframes`
 0% {
     stroke-dashoffset: 44px;
@@ -376,7 +377,7 @@ export const LTwoShortMove = keyframes`
     stroke-dashoffset: 0px;
   }
 
-`;
+`
 export const OMove = keyframes`
  0% {
     stroke-dashoffset: 302px;
@@ -390,7 +391,7 @@ export const OMove = keyframes`
   100% {
     stroke-dashoffset: 0px;
   }
-`;
+`
 export const RedDotMove = keyframes`
 0% {
     stroke-width: 0px;
@@ -404,7 +405,7 @@ export const RedDotMove = keyframes`
   100% {
     stroke-width: 44px;
   }
-`;
+`
 
 export const BounceArrow = keyframes`
 
@@ -415,7 +416,7 @@ transform: translateX(-5px)
 transform: translateX(-15px);
 }
 
-`;
+`
 
 export const animationColorHeader = keyframes`
 0%{
@@ -428,4 +429,4 @@ export const animationColorHeader = keyframes`
     height: 68%;
     z-index: 0;
 }
-`;
+`

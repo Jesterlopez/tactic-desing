@@ -1,55 +1,54 @@
-import React, { useRef } from "react";
-import { useIntersection } from "react-use";
-import { connect } from "frontity";
-import { Span } from "./styles";
-
+import React, { useRef } from 'react'
+import { useIntersection } from 'react-use'
+import { connect } from 'frontity'
+import { Span } from './styles'
 
 const TitleSection = ({ state, textUp, textDown }) => {
-  const titleRef = useRef(null);
-  const titleSectionRef = useRef(null);
+  const titleRef = useRef(null)
+  const titleSectionRef = useRef(null)
 
   const intersection = useIntersection(titleRef, {
     root: null,
-    rootMargin: "-50px",
+    rootMargin: '-50px',
     threshold: 0.1,
-    nullTargetWarn: false,
-  });
+    nullTargetWarn: false
+  })
 
-  if (document.querySelector(".fadeIn")) {
+  if (document.querySelector('.fadeIn')) {
     const fadeIn = (el) => {
       gsap.to(el, 0.2, {
         opacity: 1,
         y: 0,
-        ease: "power4.out",
+        ease: 'power4.out',
         stagger: {
-          amount: 0.3,
-        },
-      });
-    };
+          amount: 0.3
+        }
+      })
+    }
 
     const fadeOut = (el) => {
       gsap.to(el, 0.2, {
         opacity: 0.5,
         y: 60,
-        ease: "power4.out",
-      });
-    };
+        ease: 'power4.out'
+      })
+    }
 
     intersection && intersection.intersectionRatio < 0.1
-      ? fadeOut(".fadeIn")
-      : fadeIn(".fadeIn");
+      ? fadeOut('.fadeIn')
+      : fadeIn('.fadeIn')
   }
 
   return (
     <>
-      <div ref={titleSectionRef} style={{ height: "90", overflow: "hidden" }}>
+      <div ref={titleSectionRef} style={{ height: '90', overflow: 'hidden' }}>
         <Span className="fadeInUp fadeObserve fadeIn">{textUp}</Span>
       </div>
-      <div style={{ height: "90", overflow: "hidden" }}>
+      <div style={{ height: '90', overflow: 'hidden' }}>
         <Span className="fadeInUp fadeObserve fadeIn">{textDown}</Span>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default connect(TitleSection);
+export default connect(TitleSection)

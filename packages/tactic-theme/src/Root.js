@@ -15,16 +15,17 @@ import Preloader from './components/Loading'
 import Nosotros from './pages/Nosotros'
 import Blog from './pages/Blog'
 import PostSingle from './components/PostSingle'
-import ContactPopup from './components/ContactPopup'
 import { ScrollDown2 } from './components/ScrollDown'
 
 import { Globalstyle } from './components/Styles/styles'
+import Popup from './components/Popup'
 const Root = ({ state, actions }) => {
   const data = state.source.get(state.router.link)
   const data2 = state.source
   const id = data.id
 
   const [loading, setLoading] = useState(true)
+  const [formPopup, setFormPopup] = useState(state.theme.formPopup)
 
   useEffect(() => {
     setTimeout(() => {
@@ -66,6 +67,10 @@ const Root = ({ state, actions }) => {
       }, 500)
     })
   }
+
+  useEffect(() => {
+    setFormPopup(state.theme.formPopup)
+  }, [state.theme.formPopup])
 
   return (
     <>
@@ -109,60 +114,41 @@ const Root = ({ state, actions }) => {
             }
           />
           {data.isBlog ? null : <MenuNavbar />}
-          <ContactPopup />
+          { formPopup && <Popup content={formPopup} /> }
           <ScrollDown2 />
 
           {data.isHome && (
-            <>
               <ContentPage>
                 <ContainerHeader />
                 <Home />
               </ContentPage>
-            </>
           )}
-          {/* {data.isServiciosArchive && (
-            <>
+          {data.isPage && data2.page[id].slug === 'services' && (
               <ContentPage>
                 <Servicios />
               </ContentPage>
-            </>
-          )} */}
-          {data.isPage && data2.page[id].slug === 'servicios' && (
-            <>
-              <ContentPage>
-                <Servicios />
-              </ContentPage>
-            </>
           )}
           {data.isBlogArchive && (
-            <>
               <ContentPage>
                 <Blog />
               </ContentPage>
-            </>
           )}
           {data.isBlog && (
-            <>
               <ContentPage element="blog">
                 <PostSingle element="blog" />
               </ContentPage>
-            </>
           )}
-          {data.isPage && data2.page[id].slug === 'nosotros' && (
-            <>
+          {data.isPage && data2.page[id].slug === 'about-us' && (
               <ContentPage>
                 <Nosotros />
               </ContentPage>
-            </>
           )}
 
           {data.isFetching && <Preloader />}
           {data.isError && (
-            <>
               <ContentPage>
                 <Error404 />
               </ContentPage>
-            </>
           )}
         </>
           )}

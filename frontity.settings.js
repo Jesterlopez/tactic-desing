@@ -27,11 +27,6 @@ const settings = {
               endpoint: 'blog',
               archive: '/blog'
             }
-            // {
-            //   type: 'servicios',
-            //   endpoint: 'servicios',
-            //   archive: '/servicios'
-            // }
           ]
         }
       }

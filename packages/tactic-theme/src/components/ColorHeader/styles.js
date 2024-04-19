@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const Color = styled.div`
   &.servicios {
@@ -6,8 +6,9 @@ export const Color = styled.div`
     height: 68%;
     position: absolute;
     left: 0;
-    bottom: 0;
-    background: #414a6b;
+    top: 0;
+    background: var(--color-blue);
+    z-index: 10;
   }
 
   &.nosotros {
@@ -17,6 +18,7 @@ export const Color = styled.div`
     right: 0;
     bottom: 0;
     background: var(--color-yellow);
+    z-index: 9;
   }
   &.normal {
   }
@@ -43,4 +45,4 @@ export const Color = styled.div`
       /* z-index: 0; */
     }
   }
-`;
+`

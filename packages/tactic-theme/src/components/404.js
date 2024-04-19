@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react'
 
-function Error404(props) {
+function Error404 (props) {
   return (
     <svg
       {...props}
@@ -9,9 +9,9 @@ function Error404(props) {
       xmlns="http://www.w3.org/2000/svg"
       viewBox="84.79 -92.208 330.42 334.415"
       style={{
-        background: "0 0",
-        margin: "auto",
-        display: "flex",
+        background: '0 0',
+        margin: 'auto',
+        display: 'flex'
       }}
       preserveAspectRatio="xMidYMid"
     >
@@ -35,7 +35,7 @@ function Error404(props) {
       </g>
       <style />
     </svg>
-  );
+  )
 }
 
-export default Error404;
+export default Error404

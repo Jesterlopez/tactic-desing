@@ -1,56 +1,52 @@
-import React, { useEffect } from "react";
-import { connect } from "frontity";
-import { Toggle, Icon } from "./styles";
+import React, { useEffect } from 'react'
+import { connect } from 'frontity'
+import { Toggle, Icon } from './styles'
 
 const MenuToggleMobile = ({ state, className, actions }) => {
   useEffect(() => {
-
-    document.body.classList.toggle("menuOpen", state.theme.isActive);
-    const html = document.getElementsByTagName("html")[0];
-    html.classList.toggle("overflow", state.theme.isActive);
-    const link = document.querySelectorAll(".link__menu");
-    const sendMail = document.querySelector("#send__email");
-    const suscribe = document.querySelector("#suscribe");
-    const contact = document.querySelector("#contact");
+    document.body.classList.toggle('menuOpen', state.theme.isActive)
+    const html = document.getElementsByTagName('html')[0]
+    html.classList.toggle('overflow', state.theme.isActive)
+    const link = document.querySelectorAll('.link__menu')
+    const sendMail = document.querySelector('#send__email')
+    const suscribe = document.querySelector('#suscribe')
+    const contact = document.querySelector('#contact')
 
     if (state.theme.isActive) {
       setTimeout(() => {
-        sendMail.classList.add("animation");
-        suscribe.classList.add("animation");
-        contact.classList.add("animation");
-      }, 100);
+        sendMail.classList.add('animation')
+        suscribe.classList.add('animation')
+        contact.classList.add('animation')
+      }, 100)
 
       link.forEach((e, i) => {
-        e.classList.add("animation");
-        e.style.animationDelay = `calc(${i + 2}00ms)`;
-      });
-
+        e.classList.add('animation')
+        e.style.animationDelay = `calc(${i + 2}00ms)`
+      })
     } else {
-
       setTimeout(() => {
-        sendMail.classList.remove("animation");
-        suscribe.classList.remove("animation");
-        contact.classList.remove("animation");
-      }, 500);
+        sendMail.classList.remove('animation')
+        suscribe.classList.remove('animation')
+        contact.classList.remove('animation')
+      }, 500)
 
       link.forEach((e) => {
         setTimeout(() => {
-          e.classList.remove("animation");
-        }, 500);
-
-      });
+          e.classList.remove('animation')
+        }, 500)
+      })
     }
-  }, [state.theme.isActive]);
+  }, [state.theme.isActive])
   return (
     <>
       <Toggle
         onClick={(e) => {
-          e.preventDefault();
-          const newState = state.theme.isActive;
-          actions.theme.setToggleMenu(!newState);
+          e.preventDefault()
+          const newState = state.theme.isActive
+          actions.theme.setToggleMenu(!newState)
         }}
-        onMouseEnter={() => document.body.classList.add("menu__hover")}
-        onMouseLeave={() => document.body.classList.remove("menu__hover")}
+        onMouseEnter={() => document.body.classList.add('menu__hover')}
+        onMouseLeave={() => document.body.classList.remove('menu__hover')}
         href="#"
         id="menu__toggle"
         className={className}
@@ -58,7 +54,7 @@ const MenuToggleMobile = ({ state, className, actions }) => {
         <Icon className="iconMenu"></Icon>
       </Toggle>
     </>
-  );
-};
+  )
+}
 
-export default connect(MenuToggleMobile);
+export default connect(MenuToggleMobile)

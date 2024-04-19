@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const ContainerContent = styled.div`
   &#content {
@@ -31,7 +31,7 @@ export const ContainerContent = styled.div`
       transform: translateY(0) translateX(-50%) !important;
     }
   }
-`;
+`
 
 export const ContainerImage = styled.div`
   width: 100%;
@@ -39,10 +39,14 @@ export const ContainerImage = styled.div`
   position: relative;
   margin-left: -26%;
 
+  & > .slideDown {
+    height: 0;
+  }
+
   @media screen and (max-width: 768px) {
     margin-left: 0%;
   }
-`;
+`
 
 export const ContentSection = styled.section`
   width: 100vw;
@@ -81,7 +85,8 @@ export const ContentSection = styled.section`
   }
   & div.container__right {
     display: flex;
-    width: 65%;
+    width: 61%;
+    height: 650px;
   }
   & div.imagen__content {
     width: 50%;
@@ -144,9 +149,7 @@ export const ContentSection = styled.section`
   @media screen and (max-width: 768px) {
     padding: 60px 40px;
     & .container__fullWidth {
-      &.padding__top__80 {
-        padding-top: 0 !important;
-      }
+     
     }
     & .padding__left__none {
       padding-left: 0 !important;
@@ -181,13 +184,13 @@ export const ContentSection = styled.section`
       width: 100vw;
     }
   }
-`;
+`
 
 export const HeadBlockContent = styled.div`
   margin-bottom: 40px;
   color: var(--color-dark);
-`;
-export const BodyContent = styled.p`
+`
+export const BodyContent = styled.div`
   margin-bottom: 40px;
   padding-right: 60px;
   font-size: 0.9rem;
@@ -198,7 +201,16 @@ export const BodyContent = styled.p`
     margin-top: 30px;
     display: block;
   }
+  p, h3 {
+    margin-bottom: 10px;
+  }
+  ul {
+    margin-left: 30px;
+  }
+  a {
+    font-size: 0.9rem;
+  }
   @media screen and (max-width: 768px) {
     font-size: 0.8rem;
   }
-`;
+`

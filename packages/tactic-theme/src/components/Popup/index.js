@@ -12,51 +12,47 @@ import {
 
 import { IconToggleCloseContact } from '../Icons'
 
-const ContactPopup = ({ state, className, libraries }) => {
-  const formContact = useRef(null)
-  const data = state.source.get('/subscribe')
+const Popup = ({ state, className, libraries, content }) => {
+  const popupContainerRef = useRef(null)
+  // const b2bForm = state.source.get('/b2b-form')
+  // const contactUs = state.source.get('/contact-us')
+  // const affiliateForm = state.source.get('/affiliate-page')
+  // const subscribe = state.source.get('/subscribe')
+  const form = state.source.get(`/${content}`)
 
-  const contactForm = state.source.page[data.id]
   const Html2React = libraries.html2react.Component
 
   useEffect(() => {
     const btnClose = document.getElementById('btnClose')
     const html = document.getElementsByTagName('html')[0]
+
     btnClose.addEventListener('click', () => {
-      formContact.current.classList.add('hidden')
+      popupContainerRef.current.classList.add('hidden')
+
       if (html.classList.contains('overflowContact')) {
         html.classList.remove('overflowContact')
       }
     })
   }, [])
-  
+
   return (
     <>
       <Container
-        ref={formContact}
-        id="formContact"
+        ref={popupContainerRef}
+        id="popup"
         className={className || 'hidden'}
       >
         <IconToggleCloseContact />
 
         <div className="container__content fadeInUp fadeObserve">
-          <Title>Contáctanos</Title>
-
+          <Title>{state.source.page[form.id]?.title?.rendered} </Title>
           <FormContainer>
-            <Html2React html={contactForm.content.rendered} />
+            <Html2React html={state.source.page[form.id]?.content?.rendered} />
           </FormContainer>
-          <Content>
-            En soumettant ce formulaire, j’accepte que l’adresse mail saisie
-            soit exploitée par Wokine, uniquement dans le cadre de mon
-            inscription à la newsletter. Pour connaître et exercer vos droits,
-            notamment de retrait de votre consentement à l’utilisation des
-            données collectées, veuillez consulter notre politique de
-            confidentialité
-          </Content>
         </div>
       </Container>
     </>
   )
 }
 
-export default connect(ContactPopup)
+export default connect(Popup)

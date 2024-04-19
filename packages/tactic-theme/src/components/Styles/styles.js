@@ -22,6 +22,7 @@ import {
   slideUpContact,
   slideInRightHome,
 } from "./animation";
+
 export const Globalstyle = createGlobalStyle`
 :root{
     --color-primary: #FF5851;
@@ -31,10 +32,16 @@ export const Globalstyle = createGlobalStyle`
     --color-blue: #414a6b;
     --color-gray:#d8d8e8;
     --color-gray2:#b49a85;
+
+    --font-primary: 'Poppins', sans-serif;
+    --font-secondary: "Libre Baskerville", serif;
 }
 
 #root{
   position: relative;
+}
+.text-white {
+  color: #fff;
 }
 .fontPrimary{
   font-family: 'Poppins', sans-serif;
@@ -75,11 +82,11 @@ export const Globalstyle = createGlobalStyle`
   padding: 0;
 }
 
-.order__1{
+.order__1 {
   order: 1;
-
 }
-.order__2{
+
+.order__2 {
   order: 2;
 }
 
@@ -120,6 +127,9 @@ export const Globalstyle = createGlobalStyle`
 .text__white{
     color: var(--color-secundary);
 }
+.text__blue{
+    color: var(--color-blue);
+}
 .text_dark{
     color: var(--color-dark);
 }
@@ -144,6 +154,20 @@ body{
 
 body.menuOpen{
   overflow: hidden;
+}
+
+body.menuOpen .ctaHeader {
+  right: 80px;
+}
+
+@media screen and (max-width: 767px) {
+  body.menuOpen .ctaHeader {
+    right: 5px;
+  }
+
+  .container__right {
+    height: auto !important;
+  }
 }
 
 .linkHome > span{
@@ -220,17 +244,21 @@ body.menuOpen{
   margin-top: -2px;
   transform: rotate(-45deg);
 }
+
 .menuOpen .iconMenu::after {
   display: none;
 }
+
 .menuOpen .iconMenuText{
     display: none;
 }
+
 .menuOpen .socialMedia__header {
   right: 30px;
   left: auto;
   top: 50%;
 }
+
 .padding__custom {
   padding: 20vh 165px 20vh 20%;
 }
@@ -319,7 +347,7 @@ body.menuOpen{
         transition-duration: 400ms;
       }
     }
-  }
+}
 
   .column__left {
     width: 25%;
@@ -573,7 +601,7 @@ body.menuOpen{
     }
     .react-parallax{
       width: 100%;
-      height: 200px !important;
+      height: 550px !important;
     }
     .react-parallax.parallax__blog{
       height: 100% !important;

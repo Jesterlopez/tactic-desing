@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { connect } from 'frontity'
 import TitleHeader from '../../components/TitleHeader'
 import ColorHeader from '../../components/ColorHeader'
+import HeaderFirst from '../../components/HeaderFirst'
 import { Parallax } from 'react-parallax'
+import HeroPageAnimated from '../../components/HeroPageAnimated'
 
 import {
   HeaderContainer,
@@ -28,14 +30,26 @@ import {
   ContainerImgHeader
 } from './styles'
 import { IconArrowRightButton, IconWaveQuote } from '../../components/Icons'
+import fxScrollHome from '../../utils/fxScrollHome'
 
 const Servicios = ({ state }) => {
   const data = state.source.get(state.router.link)
   const pageData = state.source.page[data.id]
 
+
+  useEffect(() => {
+    window.addEventListener('scroll', scrollAnimations)
+
+    return () => {
+      window.removeEventListener('scroll', scrollAnimations)
+    }
+  }, [])
+
+  const scrollAnimations = () => fxScrollHome('#content-body')
+
   return (
     <>
-      <HeaderContainer>
+      {/* <HeaderContainer>
         <ColorHeader
           element="servicios"
           className="animationColorHeader animation"
@@ -73,8 +87,9 @@ const Servicios = ({ state }) => {
             />
           </ContainerImgHeader>
         </Container>
-      </HeaderContainer>
-      <Section className="dark">
+      </HeaderContainer> */}
+      <HeroPageAnimated />
+      {/* <Section className="dark">
         <ColumnLeft>
           <img src="https://www.wokine.com/wp-content/themes/wokine/assets/kowin.svg" />
         </ColumnLeft>
@@ -95,22 +110,21 @@ const Servicios = ({ state }) => {
             structure, credible, strong and viable.
           </ContentParagraph>
         </ColumnRight>
-      </Section>
-      <Section className="white center">
+      </Section> */}
+      <Section className="white center" id="content-body">
         <ContainerFullWidth className="left">
           <Title
             className="fadeObserve fadeInUp"
             style={{ height: 'auto', overflow: 'hidden' }}
           >
-            digital for equity
-            <span className="text__italic">investment.</span>
+            HOW IT WORKS?
           </Title>
         </ContainerFullWidth>
         <ContainerLeft className="fadeObserve fadeInUp">
           <Tag>1</Tag>
           <div style={{ height: 'auto', overflowY: 'hidden' }}>
             <Title className="fadeObserve fadeInUp mid">
-              Work here in total immersion
+              Complete Form
             </Title>
           </div>
           <ContentParagraph className="colorGray">
@@ -124,7 +138,7 @@ const Servicios = ({ state }) => {
           <Tag>2</Tag>
           <div style={{ height: 'auto', overflowY: 'hidden' }}>
             <Title className="fadeObserve fadeInUp mid">
-              Real skills at your fingertips.
+             Free Consultation
             </Title>
           </div>
 
@@ -138,7 +152,7 @@ const Servicios = ({ state }) => {
           <Tag>3</Tag>
           <div style={{ height: 'auto', overflowY: 'hidden' }}>
             <Title className="fadeObserve fadeInUp mid">
-              An entrepreneurial ecosystem.
+              Get Proposal
             </Title>
           </div>
 
@@ -150,7 +164,7 @@ const Servicios = ({ state }) => {
           </ContentParagraph>
         </ContainerRight>
       </Section>
-      <ContainerImgParallax>
+      {/* <ContainerImgParallax>
         <Parallax
           bgImage={
             'https://www.wokine.com/wp-content/themes/wokine/assets/pages/ideas/visuel_full.jpg'
@@ -158,8 +172,8 @@ const Servicios = ({ state }) => {
           strength={100}
           style={{ height: '100vh' }}
         ></Parallax>
-      </ContainerImgParallax>
-      <Section className="center">
+      </ContainerImgParallax> */}
+      {/* <Section className="center">
         <ContainerFullWidth>
           <IconWaveQuote className="big" />
         </ContainerFullWidth>
@@ -236,7 +250,7 @@ const Servicios = ({ state }) => {
             </div>
           </Link>
         </ContainerParagraph>
-      </Section>
+      </Section> */}
     </>
   )
 }

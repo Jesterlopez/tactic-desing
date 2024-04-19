@@ -1,40 +1,39 @@
-import React from "react";
-import { connect } from "frontity";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from 'react'
+import { connect } from 'frontity'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faInstagram,
   faLinkedinIn,
-  faTwitter,
   faFacebookF,
-} from "@fortawesome/free-brands-svg-icons";
+  faTiktok
+} from '@fortawesome/free-brands-svg-icons'
 
-import { ListSocialMedia } from "./styles";
+import { ListSocialMedia } from './styles'
 
 const SocialMedia = () => {
-
   return (
     <ListSocialMedia className="socialMedia__header">
       <li>
-        <a href="#">
+        <a href="https://www.facebook.com/tacticdigitalni/">
           <FontAwesomeIcon icon={faFacebookF} />
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="https://www.instagram.com/tacticdigitalni/">
           <FontAwesomeIcon icon={faInstagram} />
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="https://ni.linkedin.com/company/tacticdigitalni">
           <FontAwesomeIcon icon={faLinkedinIn} />
         </a>
       </li>
       <li>
-        <a href="#">
-          <FontAwesomeIcon icon={faTwitter} />
+        <a href="https://www.tiktok.com/@tacticdigital">
+          <FontAwesomeIcon icon={faTiktok} />
         </a>
       </li>
     </ListSocialMedia>
-  );
-};
-export default connect(SocialMedia);
+  )
+}
+export default connect(SocialMedia)

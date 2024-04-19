@@ -1,24 +1,24 @@
-import React, { useState, useEffect } from "react";
-import { connect } from "frontity";
+import React from 'react'
+import { connect } from 'frontity'
 
-import SocialMedia from "../SocialMedia";
-import MenuToggle from "../MenuToggle";
-import ToggleLang from "../ToggleLang";
-import Link from "../Link";
-import Logo from "../../assets/tactic-digital.png";
+import SocialMedia from '../SocialMedia'
+import MenuToggle from '../MenuToggle'
+import ToggleLang from '../ToggleLang'
+import Link from '../Link'
+import Logo from '../../assets/tactic-digital.png'
 import {
   Header,
   Head,
   Brand,
   BrandImg,
   HeaderMiddle,
-  NamePage,
-} from "./styles";
+  NamePage
+} from './styles'
 
 const HeaderPage = ({ namePage, state }) => {
   return (
     <>
-    
+
       <Header>
         <Head>
           <Brand className="brand">
@@ -38,7 +38,7 @@ const HeaderPage = ({ namePage, state }) => {
         </HeaderMiddle>
       </Header>
     </>
-  );
-};
+  )
+}
 
-export default connect(HeaderPage);
+export default connect(HeaderPage)

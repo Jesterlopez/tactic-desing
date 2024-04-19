@@ -1,15 +1,15 @@
-import React from "react";
-import { connect } from "frontity";
+import React from 'react'
+import { connect } from 'frontity'
 
-import NavItem from "../NavItem";
-import InfoContact from "../InfoContact";
-import Contact from "../Contact";
-import ToggleLang from "../ToggleLang";
+import NavItem from '../NavItem'
+import InfoContact from '../InfoContact'
+import Contact from '../Contact'
+import ToggleLang from '../ToggleLang'
 
-import { Menu, ContainerNav, NavMenu, MenuFooter, ColorMenu } from "./styles";
+import { Menu, ContainerNav, NavMenu, MenuFooter, ColorMenu } from './styles'
 
 const MenuNavbar = ({ state }) => {
-  const data = state.source.get(state.router.link);
+  const data = state.source.get(state.router.link)
 
   return (
     <>
@@ -25,17 +25,23 @@ const MenuNavbar = ({ state }) => {
           </MenuFooter>
         </ContainerNav>
       </Menu>
-      
-      {data.isHome ? (
+
+      {data.isHome
+        ? (
         <ColorMenu color="#FF5851" className="menu__color" />
-      ) : data.type === "servicios" ? (
+          )
+        : data.type === 'servicios'
+          ? (
         <ColorMenu color="#414a6b" className="menu__color" />
-      ) : data.type === "blog" ? (
+            )
+          : data.type === 'blog'
+            ? (
         <ColorMenu color="yellow" className="menu__color" />
-      ) : (
-        <ColorMenu color="red" className="menu__color" />
-      )}
+              )
+            : (
+        <ColorMenu color="#FF5851" className="menu__color" />
+              )}
     </>
-  );
-};
-export default connect(MenuNavbar);
+  )
+}
+export default connect(MenuNavbar)

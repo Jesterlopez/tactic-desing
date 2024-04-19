@@ -1,53 +1,61 @@
-import React from "react";
-import Root from "./Root";
-import image from "@frontity/html2react/processors/image";
-import iframe from "@frontity/html2react/processors/iframe";
-import link from "@frontity/html2react/processors/link";
+import Root from './Root'
+import image from '@frontity/html2react/processors/image'
+import iframe from '@frontity/html2react/processors/iframe'
+import link from '@frontity/html2react/processors/link'
 
 export default {
-  name: "tactic-theme",
+  name: 'tactic-theme',
   roots: {
-    theme: Root,
+    theme: Root
   },
   state: {
     theme: {
-      autoPrefetch: "in-view",
+      autoPrefetch: 'in-view',
       menu: [],
       isMobileMenuOpen: false,
       isActive: false,
+      formPopup: '',
       featured: {
         showOnList: false,
-        showOnPost: false,
+        showOnPost: false
       },
-      searchBlogValue: "",
-    },
+      searchBlogValue: ''
+    }
   },
   actions: {
     theme: {
       toggleMobileMenu: ({ state }) => {
-        state.theme.isMobileMenuOpen = !state.theme.isMobileMenuOpen;
+        state.theme.isMobileMenuOpen = !state.theme.isMobileMenuOpen
       },
       closeMobileMenu: ({ state }) => {
-        state.theme.isMobileMenuOpen = false;
+        state.theme.isMobileMenuOpen = false
       },
       setToggleMenu: ({ state }) => (newState) => {
-        state.theme.isActive = newState;
+        state.theme.isActive = newState
       },
       setSearchBlogValue: ({ state }) => (value) => {
-        state.theme.searchBlogValue = value;
+        state.theme.searchBlogValue = value
       },
       setFilterBlogValue: ({ state }) => (value) => {
-        state.theme.filterBlogValue = value;
+        state.theme.filterBlogValue = value
       },
-      beforeSSR: async ({ actions }) => {
-        await actions.source.fetch("/contactanos");
+      setFormPopup: ({ state }) => (value) => {
+        state.theme.formPopup = value
       },
-    },
+      beforeSSR: async ({ state, actions }) => {
+        await actions.source.fetch('/b2b-form')
+        await actions.source.fetch('/contact-us')
+        await actions.source.fetch('/affiliate-page')
+
+        await actions.source.fetch('/subscribe')
+        await actions.source.fetch('/blog')
+      }
+    }
   },
 
   libraries: {
     html2react: {
-      processors: [image, iframe, link],
-    },
-  },
-};
+      processors: [image, iframe, link]
+    }
+  }
+}

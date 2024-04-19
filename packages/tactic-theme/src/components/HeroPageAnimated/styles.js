@@ -2,16 +2,34 @@ import styled from 'styled-components'
 
 export const HeaderContainer = styled.div`
   display: flex;
-  background: var(--color-primary);
+  background: var(--color-blue);
   position: relative;
   height: 110vh;
   width: 100vw;
   overflow: hidden;
+  z-index: -1;
   &.expanded__height .header__animation {
     transform: translateX(100%);
   }
   &.expanded__height #hello {
     transform: translateX(200%);
+  }
+  & #paragraph .text__secundary.text__white,  & #paragraph .text__primary {
+    color: var(--color-secundary);
+  }
+  & #paragraph .text__secundary {
+    color: var(--color-blue);
+    font-family: var(--font-secondary);
+    font-style: italic;
+  }
+  & #containerHello {
+    z-index: 10;
+  }
+  & #containerHello .mid{
+    top: 15%;
+  }
+  & #paragraph .fadeInUp.animation:not(.fadeInDown) {
+    animation-delay: .5s;
   }
   @media screen and (max-width: 768px) {
     height: 115vh;

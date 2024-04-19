@@ -1,23 +1,24 @@
-import React, { useRef, useCallback, useEffect } from "react";
-import { connect } from "frontity";
-import InfoContact from "../InfoContact";
-import Contact from "../Contact";
-import { Footer, Credits } from "./styles";
-import fxScrollFooter from "../../utils/fxScrollFooter";
+import React, { useRef, useEffect } from 'react'
+import { connect } from 'frontity'
+import InfoContact from '../InfoContact'
+import Contact from '../Contact'
+import { Footer, Credits } from './styles'
+import fxScrollFooter from '../../utils/fxScrollFooter'
+import Logo from '../../assets/tactic-digital.png'
 
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger)
 
 const FooterPage = () => {
-  const creditsRef = useRef(null);
-  const footerRef = useRef(null);
+  const creditsRef = useRef(null)
+  const footerRef = useRef(null)
 
-  const scrollCustom = () => fxScrollFooter(creditsRef);
+  const scrollCustom = () => fxScrollFooter(creditsRef)
 
   useEffect(() => {
-    window.addEventListener("scroll", scrollCustom);
-  }, []);
+    window.addEventListener('scroll', scrollCustom)
+  }, [])
 
   return (
     <>
@@ -31,22 +32,22 @@ const FooterPage = () => {
           >
             <a href="#" className="logo__company credit__link">
               <img
-                src="https://admin-tactic.tactic-center.com/wp-content/uploads/2021/06/image-2.png"
-                alt=""
+                src={Logo}
+                alt="Logo Tactic Digital"
               />
               <span> ©Tactic Digital</span>
             </a>
             <a href="#" className="credit__link">
-              Muestras legales
+              Legal samples
             </a>
             <a href="#" className="credit__link">
-              Nuestra politica de privacidad
+              Our privacy policy
             </a>
           </Credits>
         </div>
       </Footer>
     </>
-  );
-};
+  )
+}
 
-export default connect(FooterPage);
+export default connect(FooterPage)

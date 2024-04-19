@@ -1,5 +1,6 @@
 {
     "version": 2,
+    "buildCommand": "frontity build",
     "builds": [
         {
             "src": "package.json",

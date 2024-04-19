@@ -1,12 +1,12 @@
-import React, { Suspense, useEffect, useState } from "react";
-import { connect } from "frontity";
-import Title from "../../components/Titles";
-import TitleHeader from "../../components/TitleHeader";
-import BlockContent from "../../components/BlockContent";
-import PlaceholderLazyLoad from "../../components/PlaceholderLazyLoad";
-import SearchBar from "../../components/SearchBar";
-import { ScrollDown2 } from "../../components/ScrollDown";
-import FilterBlog from "../../components/FilterBlog";
+import React, { Suspense, useEffect, useState } from 'react'
+import { connect } from 'frontity'
+import Title from '../../components/Titles'
+import TitleHeader from '../../components/TitleHeader'
+import BlockContent from '../../components/BlockContent'
+import PlaceholderLazyLoad from '../../components/PlaceholderLazyLoad'
+import SearchBar from '../../components/SearchBar'
+import { ScrollDown2 } from '../../components/ScrollDown'
+import FilterBlog from '../../components/FilterBlog'
 import InfiniteScroll from 'react-infinite-scroll-component'
 
 import ContainerBlog from '../../components/ContainerBlog'
@@ -19,48 +19,48 @@ import {
   ContainerBlogs,
   MessageInfo,
   ContainerCategories
-} from "./styles";
+} from './styles'
 
 const Blog = ({ state, actions }) => {
-  const { next, totalPages } = state.source.get(state.router.link);
+  const { next, totalPages } = state.source.get(state.router.link)
 
-  let data = state.source.get(state.router.link)
+  const data = state.source.get(state.router.link)
   const [nextPage, setNextPage] = useState(2)
   const [hasMore, setHasMore] = useState(true)
 
   useEffect(() => {
     data.next = `/blog/page/${nextPage}/`
     nextPage > totalPages && setHasMore(false)
-  }, [next, nextPage]);
+  }, [next, nextPage])
 
   const handleNextPage = () => {
     setTimeout(() => {
-      actions.source.fetch(next);
+      actions.source.fetch(next)
       setNextPage(nextPage + 1)
-    }, 1000);
+    }, 1000)
   }
 
-  const [blogFilter, setBlogFilter] = useState([]);
-  
+  const [blogFilter, setBlogFilter] = useState([])
+
   const categories = Object.values(state.source.category)
   const uncategorized = 'Uncategorized'
   const allCategories = categories.map((category) => {
     return category
   })
-  const categories2 = allCategories.filter(catDelete => !uncategorized.includes(catDelete.name));
+  const categories2 = allCategories.filter(catDelete => !uncategorized.includes(catDelete.name))
 
   // se obtiene todo el objeto de blogs y se convierte a un array para poder iterar
-  const allBlog = Object.values(state.source.blog);
+  const allBlog = Object.values(state.source.blog)
 
   const searchBlog = allBlog.filter((blog) =>
     blog.title.rendered
       .toLowerCase()
       .includes(state.theme.searchBlogValue.toLowerCase())
-  );
+  )
 
-  const idCategory = allCategories.filter((cat)=> cat.name.includes(state.theme.filterBlogValue))
+  const idCategory = allCategories.filter((cat) => cat.name.includes(state.theme.filterBlogValue))
   const handleFindForCategory = (id) => {
-    return allBlog.filter((blog)=> blog.categories.includes(id))
+    return allBlog.filter((blog) => blog.categories.includes(id))
   }
 
   useEffect(() => {
@@ -74,8 +74,8 @@ const Blog = ({ state, actions }) => {
         <ContainerLeft>
           <TitleHeader
             className="fadeInUp animation"
-            textUp={"b"}
-            textDown={"log"}
+            textUp={'b'}
+            textDown={'log'}
           />
         </ContainerLeft>
         <ContainerRight className="padding__top fadeInUp animation">
@@ -99,14 +99,14 @@ const Blog = ({ state, actions }) => {
         </ContainerRight>
       </ContainerHeader>
       <SearchBar />
-      
+
       <ContainerCategories>
       <FilterBlog>Todos</FilterBlog>
       {
       categories2.map((category) => {
-          return <FilterBlog key={category.name}>
+        return <FilterBlog key={category.name}>
             {category.name}
-            </FilterBlog>;
+            </FilterBlog>
       })
       }
             </ContainerCategories>
@@ -114,31 +114,32 @@ const Blog = ({ state, actions }) => {
       {/* filtrar por etiquetas */}
 
       <ContainerBlogs>
-      <InfiniteScroll 
-          hasMore={hasMore} 
-          dataLength={searchBlog.length} 
+      <InfiniteScroll
+          hasMore={hasMore}
+          dataLength={searchBlog.length}
           next={handleNextPage}
           loader={<PlaceholderLazyLoad />}
-          style={{ display: 'flex'}}
+          style={{ display: 'flex' }}
           >
       {!searchBlog.length > 0 && (
           <MessageInfo className="text__italic">
             No hay resultados relacionados con
             <strong>"{state.theme.searchBlogValue}"</strong>
           </MessageInfo>
-        )
+      )
       }
       {
-        blogFilter?.length > 0 ? (
-          blogFilter?.reverse().map((blog) => {
-            const idCategories = Object.values(blog.categories);
-            return (
+        blogFilter?.length > 0
+          ? (
+              blogFilter?.reverse().map((blog) => {
+                const idCategories = Object.values(blog.categories)
+                return (
               <Suspense key={blog.id} fallback={<PlaceholderLazyLoad />}>
                 <ContainerBlog
                   category={idCategories.map((el) => {
                     return idCategories.length > 1
-                      ? state.source.category[el].name + " "
-                      : state.source.category[el].name;
+                      ? state.source.category[el].name + ' '
+                      : state.source.category[el].name
                   })}
                   title={blog.title.rendered}
                   image={blog?.featured_media}
@@ -147,19 +148,18 @@ const Blog = ({ state, actions }) => {
                   background={blog.acf.background}
                 />
               </Suspense>
-            );
-          })
-        ) 
-        :
-              searchBlog.reverse().map((blog) => {
-              const idCategories = Object.values(blog.categories);
-              return (
-            
+                )
+              })
+            )
+          : searchBlog.reverse().map((blog) => {
+            const idCategories = Object.values(blog.categories)
+            return (
+
                   <ContainerBlog
                     category={idCategories.map((el) => {
                       return idCategories.length > 1
-                        ? state.source.category[el].name + " "
-                        : state.source.category[el].name;
+                        ? state.source.category[el].name + ' '
+                        : state.source.category[el].name
                     })}
                     title={blog.title.rendered}
                     image={blog.featured_media}
@@ -168,13 +168,13 @@ const Blog = ({ state, actions }) => {
                     background={blog.acf.background}
                     key={blog.title.rendered}
                   />
-              );
-              })
+            )
+          })
             }
             </InfiniteScroll>
       </ContainerBlogs>
     </>
-  );
-};
+  )
+}
 
-export default connect(Blog);
+export default connect(Blog)

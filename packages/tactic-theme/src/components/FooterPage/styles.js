@@ -23,7 +23,7 @@ export const Footer = styled.footer`
   }
   & .padding__custom {
     display: flex;
-    align-items: center;
+    align-items: start;
     height: 30vh;
     padding-top: 0;
     padding-bottom: 0;

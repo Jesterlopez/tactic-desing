@@ -1,10 +1,15 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export const ContainerContact = styled.div`
   display: flex;
   flex-direction: column;
   font-family: "Gilroy Light", sans-serif;
-  margin: 40px 0;
+  /* margin: 40px 0; */
+  & .font__bold {
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    font-weight: 800;
+  }
   & > * {
     font-size: 0.7rem;
     line-height: 1.6;
@@ -22,6 +27,9 @@ export const ContainerContact = styled.div`
     &:hover {
       text-decoration: underline;
     }
+    /* & > svg {
+      margin-left: -1rem;
+    } */
   }
   @media screen and (max-width: 768px) {
     /* transform: translateY(0) !important; */
@@ -34,4 +42,4 @@ export const ContainerContact = styled.div`
       line-height: 0.8rem;
     }
   }
-`;
+`

@@ -7,10 +7,10 @@ const TitleHeader = ({ state, textUp, textDown, className, fontSize }) => {
   return (
     <>
       <H1 className={fontSize}>
-        <IconWaveQuote
+        {/* <IconWaveQuote
           className="big"
           animation="slideInRightInitial animation"
-        />
+        /> */}
         <div>
           <span className={className}>{textUp}</span>
         </div>

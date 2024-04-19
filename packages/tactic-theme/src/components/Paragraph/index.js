@@ -1,83 +1,81 @@
-import React, { useEffect } from "react";
-import { connect } from "frontity";
-import { IconWaveQuote, IconWaveQuoteTwo } from "../Icons";
+import React, { useEffect } from 'react'
+import { connect } from 'frontity'
 
 import {
   ContainerParagraph,
   Quote,
   ParagraphContent,
-  RefQuote,
-} from "./styles";
+  RefQuote
+} from './styles'
 
-const Paragraph = ({ referencia, fraseUp, fraseMid, fraseDown }) => {
+
+const Paragraph = ({ referencia, fraseUp, fraseMid, fraseDown, side, nextSection }) => {
+
   useEffect(() => {
-    // if (document.readyState === "complete") {
-    window.addEventListener("scroll", scrollAnimation);
-    // }
+    window.addEventListener('scroll', scrollAnimation)
 
     return () => {
-      window.removeEventListener("scroll", scrollAnimation);
-    };
-  }, []);
+      window.removeEventListener('scroll', scrollAnimation)
+    }
+  }, [])
 
   const scrollAnimation = () => {
-    const containerHeader = document.getElementById("header");
+    const containerHeader = document.getElementById('header')
 
-    const Paragraph = document.getElementById("paragraph");
+    const Paragraph = document.getElementById('paragraph')
 
-    const fadeInUp = document.querySelectorAll(".scrollAnime");
-    const slideInRight = document.querySelector(".slideInRight");
-    const fadeInLeft = document.querySelector(".fadeInLeft");
-    const fadeInRight = document.querySelector(".fadeInRight");
+    const fadeInUp = document.querySelectorAll('.scrollAnime')
+    // const slideInRight = document.querySelector('.slideInRight')
+    const fadeInLeft = document.querySelector('.fadeInLeft')
 
-    let scrollPosition = window.pageYOffset;
-    const ElementParallax = document.querySelector("#paragraph");
+    const scrollPosition = window.pageYOffset
+    const ElementParallax = document.querySelector('#paragraph')
 
-    const Content = document.querySelector("#content");
+    const Content = document.querySelector(nextSection)
 
     if (containerHeader?.getBoundingClientRect().top < 0) {
-      Paragraph.style.opacity = 1;
+      Paragraph.style.opacity = 1
+      Paragraph.style.visibility = 'visible'
 
       fadeInUp.forEach((e) => {
-        e.classList.add("animation");
-        e.classList.remove("fadeInDown");
-      });
+        e.classList.add('animation')
+        e.classList.remove('fadeInDown')
+      })
 
-      slideInRight.classList.add("animation");
-      slideInRight.classList.remove("slideOutRight");
-      fadeInLeft.classList.add("animation");
-      fadeInLeft.classList.remove("fadeOutLeft");
+      fadeInLeft && fadeInLeft.classList.add('animation')
+      fadeInLeft && fadeInLeft.classList.remove('fadeOutLeft')
     } else {
-      slideInRight.classList.add("slideOutRight");
-      fadeInLeft.classList.add("fadeOutLeft");
+      fadeInLeft && fadeInLeft.classList.add('fadeOutLeft')
 
       fadeInUp.forEach((e) => {
-        e.classList.add("fadeInDown");
-      });
+        e.classList.add('fadeInDown')
+      })
     }
-    if (
-      Content.getBoundingClientRect().top <= 700 &&
-      Content.getBoundingClientRect().top > 0
-    ) {
-      ElementParallax.style.transform = `translateY(calc(-25% + -${
-        (scrollPosition / 50) * 3
-      }%))`;
-    } else {
-      ElementParallax.style.transform = `translateY(-50%)`;
+
+    if (typeof Content !== 'undefined' && Content !== null) {
+      if (
+        Content.getBoundingClientRect().top <= 700 &&
+        Content.getBoundingClientRect().top > 0
+      ) {
+        ElementParallax.style.transform = `translateY(calc(0% + -${
+          (scrollPosition / 50) * 3
+        }%))`
+      } else {
+        ElementParallax.style.transform = 'translateY(-50%)'
+      }
     }
-  };
+  }
 
   return (
     <>
-      <ContainerParagraph id="paragraph">
-        <Quote>
-          <IconWaveQuoteTwo>
-            <div className="slideInRight fadeObserve"></div>
-          </IconWaveQuoteTwo>
+      <ContainerParagraph side={side} id="paragraph">
+        {
+          referencia && <Quote>
           <RefQuote className="font__italic__paragraph fadeInLeft">
             {referencia}
           </RefQuote>
         </Quote>
+        }
         <ParagraphContent>
           <div className="text__primary text__dark">
             <strong className="fadeInUp scrollAnime">{fraseUp}</strong>
@@ -93,7 +91,7 @@ const Paragraph = ({ referencia, fraseUp, fraseMid, fraseDown }) => {
         </ParagraphContent>
       </ContainerParagraph>
     </>
-  );
-};
+  )
+}
 
-export default connect(Paragraph);
+export default connect(Paragraph)
